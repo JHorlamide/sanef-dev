@@ -42,51 +42,136 @@ const index = () => {
         </p>
       </section>
 
-      <section className="flex flex-col justify-center items-center mt-10 space-y-20 md:hidden lg:hidden">
-        {/* BANK */}
-        <div>
-          <section className="flex flex-col justify-center items-center md:justify-start md:items-start">
+      <section className="md:hidden">
+        {/* BANKS LOGOS */}
+        <section className="container mt-10">
+          <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
             <h1 className="text-center text-2xl font-bold md:text-left lg:text-3xl">
               Banks
             </h1>
             <hr className="border-b-4 border-buttonColor w-16 mt-2" />
-          </section>
+          </div>
 
-          {/* BANKS LOGOS */}
-          <div className="overflow-x-auto space-x-8 flex mt-8">
-            {OUR_PARTNERS_LOGOS.Banks.map((logo) => (
-              <section key={logo.id} className="flex-shrink-0">
-                <Image
-                  imageClassName="flex-shrink-0 w-40"
-                  image={logo.logo}
+          <div className="relative flex items-center mt-8">
+            <div
+              id="slider"
+              className="overflow-x-scroll scroll whitespace-nowrap scroll-smooth"
+            >
+              {OUR_PARTNERS_LOGOS.Banks.map((logo) => (
+                <img
+                  className="inline-block w-32 p-3 rounded-full"
+                  key={logo.id}
+                  src={logo.logo}
                   alt={logo.name}
                 />
-              </section>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
 
-        {/* SUPER AGENT */}
-        <div>
-          <section className="flex flex-col justify-center items-center md:justify-start md:items-start">
+        {/* SUPER AGENTS LOGOS */}
+        <section className="container mt-10">
+          <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
             <h1 className="text-center text-2xl font-bold md:text-left lg:text-3xl">
-              Super Agent
+              Super Agents
             </h1>
             <hr className="border-b-4 border-buttonColor w-16 mt-2" />
-          </section>
+          </div>
 
-          <div className="overflow-x-auto space-x-8 flex">
-            {OUR_PARTNERS_LOGOS["Super Agents"].map((logo) => (
-              <section key={logo.id} className="flex-shrink-0">
-                <Image
-                  imageClassName="flex-shrink-0 w-40"
-                  image={logo.logo}
+          <div className="relative flex items-center mt-8">
+            <div
+              id="slider"
+              className="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth"
+            >
+              {OUR_PARTNERS_LOGOS["Super Agents"].map((logo) => (
+                <img
+                  className="inline-block w-32 p-3 rounded-full"
+                  key={logo.id}
+                  src={logo.logo}
                   alt={logo.name}
                 />
-              </section>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
+
+        {/* REGULATOR LOGOS */}
+        <section className="container mt-10">
+          <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
+            <h1 className="text-center text-2xl font-bold md:text-left lg:text-3xl">
+              Regulators
+            </h1>
+            <hr className="border-b-4 border-buttonColor w-16 mt-2" />
+          </div>
+
+          <div className="relative flex justify-center items-center mt-8">
+            <div
+              id="slider"
+              className="overflow-x-scroll scroll whitespace-nowrap scroll-smooth"
+            >
+              {OUR_PARTNERS_LOGOS.Regulators.map((logo) => (
+                <img
+                  className="inline-block w-32 p-3 rounded-full"
+                  key={logo.id}
+                  src={logo.logo}
+                  alt={logo.name}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* REGULATOR LOGOS */}
+        <section className="container mt-10">
+          <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
+            <h1 className="text-center text-2xl font-bold md:text-left lg:text-3xl">
+              Strategic Partners
+            </h1>
+            <hr className="border-b-4 border-buttonColor w-16 mt-2" />
+          </div>
+
+          <div className="relative flex justify-center items-center mt-8">
+            <div
+              id="slider"
+              className="overflow-x-scroll scroll whitespace-nowrap scroll-smooth"
+            >
+              {OUR_PARTNERS_LOGOS["Strategic Partners"].map((logo) => (
+                <img
+                  className="inline-block w-32 p-3 rounded-full"
+                  key={logo.id}
+                  src={logo.logo}
+                  alt={logo.name}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Government/MDA'S LOGOS */}
+        <section className="container mt-10">
+          <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
+            <h1 className="text-center text-2xl font-bold md:text-left lg:text-3xl">
+              Government/MDA'S
+            </h1>
+            <hr className="border-b-4 border-buttonColor w-16 mt-2" />
+          </div>
+
+          <div className="relative flex justify-center items-center mt-8">
+            <div
+              id="slider"
+              className="overflow-x-scroll scroll whitespace-nowrap scroll-smooth"
+            >
+              {OUR_PARTNERS_LOGOS["Government/MDA'S"].map((logo) => (
+                <img
+                  className="inline-block w-32 p-3 rounded-full"
+                  key={logo.id}
+                  src={logo.logo}
+                  alt={logo.name}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
       </section>
 
       <section>

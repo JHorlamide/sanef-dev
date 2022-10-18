@@ -1,5 +1,4 @@
 const IMAGES_PATH = "/assets/images";
-const NEW_PARTNERS_IMAGE_PATH = `${IMAGES_PATH}/new_partners_logos`;
 const BOARD_IMAGE_PATH = `${IMAGES_PATH}/board`;
 const EXECUTIVE_IMAGE_PATH = `${IMAGES_PATH}/executive`;
 const BANK_PARTNERS_IMAGE_PATH = `${IMAGES_PATH}/partners/banks`;
@@ -16,19 +15,6 @@ export const image4 = `${IMAGES_PATH}/image-4.png`;
 // LANDING PAGE IMAGES
 export const HOME_PAGE_IMAGE = `${IMAGES_PATH}/landing.png`;
 export const MOBILE_BACKGROUND = `${IMAGES_PATH}/Mobile-Background.png`;
-
-// PARTNERS LOGOS
-export const AIRVEND_LOGO = `${NEW_PARTNERS_IMAGE_PATH}/airvend-logo.png`;
-export const C_POINT_AGENT_CONNECTIONPOINT_LOGO = `${NEW_PARTNERS_IMAGE_PATH}/c-point-agent-logo.png`;
-export const DOTPAY_OFFICIAL_LOGO = `${NEW_PARTNERS_IMAGE_PATH}/dotpay-official-logo.png`;
-export const E_CASH_LUKEPORT_LOGO = `${NEW_PARTNERS_IMAGE_PATH}/e-cash-lukeport-logo.png`;
-export const FINTECH_NGR_LOGO = `${NEW_PARTNERS_IMAGE_PATH}/fintech-ngr-logo.png`;
-export const FORTRESS_BANK_LOGO = `${NEW_PARTNERS_IMAGE_PATH}/fortress-bank-logo.png`;
-export const KIPPA_PAY_LOGO = `${NEW_PARTNERS_IMAGE_PATH}/kippa-pay.png`;
-export const NESG_LOGO = `${NEW_PARTNERS_IMAGE_PATH}/nesg-logo.png`;
-export const NOMBA_LOGO = `${NEW_PARTNERS_IMAGE_PATH}/nomba-logo.png`;
-export const ORANGE_PAY_CITISERVE_LOGO = `${NEW_PARTNERS_IMAGE_PATH}/orange-pay-citiserve.png`;
-export const SHAGO_ALERZO_LOGO_ADAPTATION_LOGO = `${NEW_PARTNERS_IMAGE_PATH}/shago-alerzo-logo.png`;
 
 // OUR ROLE
 export const ROLE_IMAGE_DESKTOP = `${IMAGES_PATH}/Role-Image-Desktop.png`;
@@ -58,75 +44,85 @@ export const IHECHUKWU_IBEJI = `${EXECUTIVE_IMAGE_PATH}/Ihechukwu-Ibeji.png`;
 export const UCHE_UZOEBO = `${EXECUTIVE_IMAGE_PATH}/Uche-Uzoebo.png`;
 
 //PARTNERS BANKS
-export const ACCESS_BANK = `${BANK_PARTNERS_IMAGE_PATH}/access-bank.png`;
-export const CITY_BANK = `${BANK_PARTNERS_IMAGE_PATH}/city-bank.png`;
-export const ECOBANK_BANK = `${BANK_PARTNERS_IMAGE_PATH}/ecobank.png`;
-export const FCMB_BANK = `${BANK_PARTNERS_IMAGE_PATH}/fcmb-bank.png`;
-export const FIDELITY_BANK = `${BANK_PARTNERS_IMAGE_PATH}/fidelity-bank.png`;
-export const GLOBUS_BANK = `${BANK_PARTNERS_IMAGE_PATH}/globus-bank.png`;
-export const GT_BANK = `${BANK_PARTNERS_IMAGE_PATH}/gt-bank.png`;
-export const HERITAGE_BANK = `${BANK_PARTNERS_IMAGE_PATH}/heritage-bank.png`;
-export const JIAZ_BANK = `${BANK_PARTNERS_IMAGE_PATH}/jiaz-bank.png`;
-export const KEYSTONE_BANK = `${BANK_PARTNERS_IMAGE_PATH}/keystone-bank.png`;
-export const LOTUS_BANK = `${BANK_PARTNERS_IMAGE_PATH}/lotus-bank.png`;
-export const POLARIZE_BANK = `${BANK_PARTNERS_IMAGE_PATH}/polarize-bank.png`;
-export const PROVIDUS_BANK = `${BANK_PARTNERS_IMAGE_PATH}/providus-bank.png`;
-export const STANBIC_BANK = `${BANK_PARTNERS_IMAGE_PATH}/stanbic-bank.png`;
-export const STANDARD_CHARTED_BANK = `${BANK_PARTNERS_IMAGE_PATH}/standard-charted-bank.png`;
-export const STERLING_BANK = `${BANK_PARTNERS_IMAGE_PATH}/sterling-bank.png`;
-export const SUN_TRUST_BANK = `${BANK_PARTNERS_IMAGE_PATH}/sun-trust-bank.png`;
-export const TAJ_BANK = `${BANK_PARTNERS_IMAGE_PATH}/taj-bank.png`;
-export const TITAN_TRUST_BANK = `${BANK_PARTNERS_IMAGE_PATH}/titan-trust-bank.png`;
-export const UBA_BANK = `${BANK_PARTNERS_IMAGE_PATH}/uba-bank.png`;
-export const UNION_BANK = `${BANK_PARTNERS_IMAGE_PATH}/union-bank.png`;
-export const UNITY_BANK = `${BANK_PARTNERS_IMAGE_PATH}/unity-bank.png`;
-export const WEMA_BANK = `${BANK_PARTNERS_IMAGE_PATH}/wema-bank.png`;
-export const ZENITH_BANK = `${BANK_PARTNERS_IMAGE_PATH}/zeni-bank.png`;
-export const FIRST_BANK = `${BANK_PARTNERS_IMAGE_PATH}/first-bank.png`;
+export const ACCESS_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_access.jpg`;
+export const CITY_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_acitibank.jpg`;
+export const ECOBANK_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_ecobank.jpg`;
+export const FCMB_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_fcmb.jpg`;
+export const FIDELITY_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_fidelity.jpg`;
+export const GLOBUS_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_globus_bank.jpg`;
+export const GT_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_gtbank.jpg`;
+export const HERITAGE_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_heritage.jpg`;
+export const JIAZ_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_jaiz.jpg`;
+export const KEYSTONE_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_keystone.jpg`;
+export const LOTUS_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_lotus.jpg`;
+export const POLARIZE_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_polaris.jpg`;
+export const PROVIDUS_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_providus.jpg`;
+export const STANBIC_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_stanbic.jpg`;
+export const STANDARD_CHARTED_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_standard_chartered.jpg`;
+export const STERLING_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_sterling.jpg`;
+export const SUN_TRUST_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_suntrust.jpg`;
+export const TAJ_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_taj.jpg`;
+export const TITAN_TRUST_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_titan_trust.jpg`;
+export const UBA_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_uba.jpg`;
+export const UNION_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_union.jpg`;
+export const UNITY_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_unity.jpg`;
+export const WEMA_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_wema.jpg`;
+export const ZENITH_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_zenith.jpg`;
+export const FIRST_BANK = `${BANK_PARTNERS_IMAGE_PATH}/bank_first_bank.jpg`;
+export const FORTRESS_BANK_LOGO = `${BANK_PARTNERS_IMAGE_PATH}/bank_fortress.jpg`;
 
 //SUPER AGENTS
-export const THREE_LINE = `${SUPER_AGENT_IMAGE_PATH}/3line.png`;
-export const ACCELERE = `${SUPER_AGENT_IMAGE_PATH}/accelere.png`;
-export const AEXPRESS_AGENT = `${SUPER_AGENT_IMAGE_PATH}/aexpress-agent.png`;
-export const BAXI = `${SUPER_AGENT_IMAGE_PATH}/baxi.png`;
-export const C_PAY = `${SUPER_AGENT_IMAGE_PATH}/cpay.png`;
-export const FAIR_MONEY = `${SUPER_AGENT_IMAGE_PATH}/fair-money.png`;
-export const FEST_WALLET = `${SUPER_AGENT_IMAGE_PATH}/festswallet.png`;
-export const KADIC = `${SUPER_AGENT_IMAGE_PATH}/kadic.png`;
-export const KASH_EXPRESS = `${SUPER_AGENT_IMAGE_PATH}/kash-express.png`;
-export const KOLOMONI = `${SUPER_AGENT_IMAGE_PATH}/kolomoni.png`;
-export const KUDI = `${SUPER_AGENT_IMAGE_PATH}/kudi.png`;
-export const LAPO = `${SUPER_AGENT_IMAGE_PATH}/lapo.png`;
-export const M_CASH_POINT = `${SUPER_AGENT_IMAGE_PATH}/mCashpoint.png`;
-export const MONIE_POINT = `${SUPER_AGENT_IMAGE_PATH}/moniepoint.png`;
-export const NOW_NOW = `${SUPER_AGENT_IMAGE_PATH}/now-now.png`;
-export const PAGE = `${SUPER_AGENT_IMAGE_PATH}/page.png`;
-export const PALMPAY = `${SUPER_AGENT_IMAGE_PATH}/palmpay.png`;
-export const PAY_FORCE = `${SUPER_AGENT_IMAGE_PATH}/pay-force.png`;
-export const PAY_VICE = `${SUPER_AGENT_IMAGE_PATH}/pay-vice.png`;
-export const PAY_CENTER = `${SUPER_AGENT_IMAGE_PATH}/paycenter.png`;
-export const POCKET_MONI = `${SUPER_AGENT_IMAGE_PATH}/pocket-moni.png`;
-export const QUICK_TELLER = `${SUPER_AGENT_IMAGE_PATH}/quick-teller.png`;
-export const READY_CASH = `${SUPER_AGENT_IMAGE_PATH}/ready-cash.png`;
-export const TEASY_PAY = `${SUPER_AGENT_IMAGE_PATH}/teasy-pay.png`;
-export const UNIFIED_PAYMENT = `${SUPER_AGENT_IMAGE_PATH}/unified-payment.png`;
-export const TINGG = `${SUPER_AGENT_IMAGE_PATH}/tingg.png`;
+export const THREE_LINE = `${SUPER_AGENT_IMAGE_PATH}/superagent_3line.jpg`;
+export const ACCELERE = `${SUPER_AGENT_IMAGE_PATH}/superagent_accelerex.jpg`;
+export const AEXPRESS_AGENT = `${SUPER_AGENT_IMAGE_PATH}/superagent_express_agent.jpg`;
+export const BAXI = `${SUPER_AGENT_IMAGE_PATH}/superagent_baxi.jpg`;
+export const C_PAY = `${SUPER_AGENT_IMAGE_PATH}/superagent_cpay.jpg`;
+export const FAIR_MONEY = `${SUPER_AGENT_IMAGE_PATH}/superagent_fairmoney.jpg`;
+export const FEST_WALLET = `${SUPER_AGENT_IMAGE_PATH}/superagent_fets.jpg`;
+export const KADIC = `${SUPER_AGENT_IMAGE_PATH}/superagent_kadick.jpg`;
+export const KASH_EXPRESS = `${SUPER_AGENT_IMAGE_PATH}/superagent_kesh_express.jpg`;
+export const KOLOMONI = `${SUPER_AGENT_IMAGE_PATH}/superagent_kolomoni.jpg`;
+export const LAPO = `${SUPER_AGENT_IMAGE_PATH}/superagent_lapo.jpg`;
+export const M_CASH_POINT = `${SUPER_AGENT_IMAGE_PATH}/superagent_mcashpoint.jpg`;
+export const MONIE_POINT = `${SUPER_AGENT_IMAGE_PATH}/superagent_moniepoint.jpg`;
+export const NOW_NOW = `${SUPER_AGENT_IMAGE_PATH}/superagent_nownow.jpg`;
+export const PAGE = `${SUPER_AGENT_IMAGE_PATH}/superagent_paga.jpg`;
+export const PALMPAY = `${SUPER_AGENT_IMAGE_PATH}/superagent_palmpay.jpg`;
+export const PAY_FORCE = `${SUPER_AGENT_IMAGE_PATH}/superagent_payforce.jpg`;
+export const PAY_VICE = `${SUPER_AGENT_IMAGE_PATH}/superagent_payvice.jpg`;
+export const PAY_CENTER = `${SUPER_AGENT_IMAGE_PATH}/superagent_paycentre.jpg`;
+export const POCKET_MONI = `${SUPER_AGENT_IMAGE_PATH}/superagent_pocketmoni.jpg`;
+export const QUICK_TELLER = `${SUPER_AGENT_IMAGE_PATH}/superagent_quickteller.jpg`;
+export const READY_CASH = `${SUPER_AGENT_IMAGE_PATH}/superagent_readycash.jpg`;
+export const TEASY_PAY = `${SUPER_AGENT_IMAGE_PATH}/superagent_teasypay.jpg`;
+export const UNIFIED_PAYMENT = `${SUPER_AGENT_IMAGE_PATH}/superagent_up.jpg`;
+export const TINGG = `${SUPER_AGENT_IMAGE_PATH}/superagent_tingg.jpg`;
+export const SHAGO_ALERZO_LOGO_ADAPTATION_LOGO = `${SUPER_AGENT_IMAGE_PATH}/superagent_shago_payment.jpg`;
+export const AIRVEND_LOGO = `${SUPER_AGENT_IMAGE_PATH}/superagent_airvend.jpg`;
+export const C_POINT_AGENT_CONNECTIONPOINT_LOGO = `${SUPER_AGENT_IMAGE_PATH}/superagent_cpoint.jpg`;
+export const DOTPAY_OFFICIAL_LOGO = `${SUPER_AGENT_IMAGE_PATH}/superagent_dotpay.jpg`;
+export const E_CASH_LUKEPORT_LOGO = `${SUPER_AGENT_IMAGE_PATH}/superagent_ecash.jpg`;
+export const KIPPA_PAY_LOGO = `${SUPER_AGENT_IMAGE_PATH}/superagent_kippa_pay.jpg`;
+export const NOMBA_LOGO = `${SUPER_AGENT_IMAGE_PATH}/superagent_nomba.jpg`;
+export const ORANGE_PAY_CITISERVE_LOGO = `${SUPER_AGENT_IMAGE_PATH}/superagent_orangepay.jpg`;
 
 // REGULATORS
-export const CBN = `${REGULATOR_IMAGE_PATH}/CBN.png`;
+export const CBN = `${REGULATOR_IMAGE_PATH}/regulator_cbn.jpg`;
 
 // STRATEGIC PARTNERS
-export const AMMBAN = `${STRATEGIC_PARTNERS_IMAGE_PATH}/AMMBAN.png`;
-export const BUSSINESS_DAY = `${STRATEGIC_PARTNERS_IMAGE_PATH}/bussiness-day.png`;
-export const EFINA = `${STRATEGIC_PARTNERS_IMAGE_PATH}/EFINA.png`;
-export const GIZ = `${STRATEGIC_PARTNERS_IMAGE_PATH}/GIZ.png`;
-export const INTERMARC = `${STRATEGIC_PARTNERS_IMAGE_PATH}/intermarc.png`;
-export const LBS = `${STRATEGIC_PARTNERS_IMAGE_PATH}/LBS.png`;
-export const NIBSS = `${STRATEGIC_PARTNERS_IMAGE_PATH}/NIBSS.png`;
+export const AMMBAN = `${STRATEGIC_PARTNERS_IMAGE_PATH}/strategic_ammban.jpg`;
+export const BUSSINESS_DAY = `${STRATEGIC_PARTNERS_IMAGE_PATH}/strategic_businessday.jpg`;
+export const EFINA = `${STRATEGIC_PARTNERS_IMAGE_PATH}/strategic_efina.jpg`;
+export const GIZ = `${STRATEGIC_PARTNERS_IMAGE_PATH}/strategic_giz.jpg`;
+export const INTERMARC = `${STRATEGIC_PARTNERS_IMAGE_PATH}/strategic_intermac.jpg`;
+export const LBS = `${STRATEGIC_PARTNERS_IMAGE_PATH}/strategic_lbs.jpg`;
+export const NIBSS = `${STRATEGIC_PARTNERS_IMAGE_PATH}/strategic_nibss.jpg`;
+export const NESG_LOGO = `${STRATEGIC_PARTNERS_IMAGE_PATH}/strategic_nesg.jpg`;
+export const FINTECH_NGR = `${STRATEGIC_PARTNERS_IMAGE_PATH}/strategic_fintechngr.jpg`;
 
 // GOVERNMENT
-export const GOVT1 = `${GOVT_IMAGE_PATH}/govt1.png`;
-export const LGA = `${GOVT_IMAGE_PATH}/LGA.png`;
+export const GOVT1 = `${GOVT_IMAGE_PATH}/gov_fmhadmsd.jpg`;
+export const LGA = `${GOVT_IMAGE_PATH}/gov_lagos.jpg`;
 
 export const VAS_IMAGE = `${IMAGES_PATH}/vas-img.png`;
 export const VAS_IMAGE_DESKTOP = `${IMAGES_PATH}/vas-img-desktop.png`;

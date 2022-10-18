@@ -71,7 +71,7 @@ import {
   LBS,
   NIBSS,
   NESG_LOGO,
-  FINTECH_NGR_LOGO,
+  FINTECH_NGR,
 
   // GOVERNMENT
   GOVT1,
@@ -299,11 +299,15 @@ export const OUR_PARTNERS_LOGOS = {
     { id: 6, name: "LBS", logo: LBS },
     { id: 7, name: "AMMBAN", logo: AMMBAN },
     { id: 8, name: "NESG", logo: NESG_LOGO },
-    { id: 9, name: "FINTECHNGR", logo: FINTECH_NGR_LOGO }
+    { id: 9, name: "FINTECHNGR", logo: FINTECH_NGR }
   ],
 
   "Government/MDA'S": [
-    { id: 1, name: "GOVT1", logo: GOVT1 },
-    { id: 2, name: "", logo: LGA }
+    {
+      id: 1,
+      name: "FMHADMSD",
+      logo: GOVT1
+    },
+    { id: 2, name: "LGA", logo: LGA }
   ]
 };
