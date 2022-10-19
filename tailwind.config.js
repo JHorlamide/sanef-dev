@@ -22,12 +22,15 @@ module.exports = {
       },
 
       backgroundImage: {
-        "home-hero-desktop": "url('/public/assets/images/home-hero-bg-desktop.png')",
-        "home-hero-mobile": "url('/public/assets/images/home-hero-bg-mobile-bg.png')",
-        "about-hero-desktop": "url('/public/assets/images/about-hero-bg-desktop.png')",
-        "about-hero-mobile": "url('/public/assets/images/about-hero-bg-mobile.png')",
-        "footer-image-desktop": "url('/public/assets/images/Footer-Image-Desktop.png')",
-        "footer-image-mobile": "url('/public/assets/images/Footer-Image-Mobile.png')",
+        "home-hero-desktop": "url('/public/assets/images/hero-img/home-hero-bg-desktop.png')",
+        "home-hero-mobile": "url('/public/assets/images/hero-img/home-hero-bg-mobile-bg.png')",
+        "about-hero-desktop": "url('/public/assets/images/hero-img/about-hero-bg-desktop.png')",
+        "about-hero-mobile": "url('/public/assets/images/hero-img/about-hero-bg-mobile.png')",
+        "contact-hero-desktop": "url('/public/assets/images/hero-img/desktop_contact.jpg')",
+        "contact-hero-mobile": "url('/public/assets/images/hero-img/mobile_contact.jpg')",
+        "footer-image-desktop": "url('/public/assets/images/hero-img/Footer-Image-Desktop.png')",
+        "footer-image-mobile": "url('/public/assets/images/hero-img/Footer-Image-Mobile.png')",
+        "mobile-nav-bg": "url('/public/assets/images/hero-img/Mobile-Background.png')"
       },
       
       screens: {

@@ -38,3 +38,9 @@ export const GROUP_CIRCLE_COLORED = `${SVG_PATH}/group-circle-colored.svg`;
 // VALUE ADDED SERVICES
 export const LONG_VERTICAL_LINE = `${SVG_PATH}/long-vertical-line.svg`;
 export const LONG_HORIZONTAL_LINE = `${SVG_PATH}/long-horizontal-line.svg`;
+
+// CONTACT US
+export const VERTICAL_LINE = `${SVG_PATH}/v-line-contactus.svg`;
+
+// BECOME AN AGENT
+export const CIRCLE = `${SVG_PATH}/Ellipse.svg`;

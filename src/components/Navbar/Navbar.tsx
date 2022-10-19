@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import NavLink from "./NavLink/NavLink";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import { Logo } from "assets/index";
@@ -10,17 +10,22 @@ import {
   VALUE_ADDED_SERVICES,
   MEDIA,
   CONTACT_US,
-  LOGIN
+  LOGIN,
+  BECOME_AGENT
 } from "routes/ROUTES_CONSTANTS";
 import { Menu } from "assets/icons";
 import { NAVIGATION } from "utils/constants";
-import { MOBILE_BACKGROUND } from "assets/images";
 import { CLOSE_ICON } from "assets/icons";
 import { Transition } from "@headlessui/react";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [toggleMenu, setToggleMenu] = useState<boolean>(true);
   const [show, setShow] = useState<boolean>(false);
+
+  const handleNavigate = () => {
+    navigate(BECOME_AGENT);
+  };
 
   const handleToggle = () => {
     setShow(!show);
@@ -86,7 +91,10 @@ const Navbar = () => {
 
           {/* AUTH BUTTON */}
           <div className="hidden md:-mr-96 lg:mr-0 lg:flex space-x-10">
-            <CustomBtn className="px-4 py-2 border rounded-3xl font-bold bg-white text-dark">
+            <CustomBtn
+              className="px-4 py-2 border rounded-3xl font-bold bg-white text-dark"
+              onClick={handleNavigate}
+            >
               Become an Agent
             </CustomBtn>
 
@@ -114,12 +122,11 @@ const Navbar = () => {
       </nav>
 
       {/* MOBILE NAV */}
-      <nav className="lg:hidden md:flex z-50">
+      <nav className="lg:hidden md:flex">
         <div
           className={`${
             toggleMenu ? "hidden" : ""
-          } fixed top-0 right-0 left-0 bottom-0 z-10 bg-center bg-cover bg-no-repeat pt-16`}
-          style={{ backgroundImage: `url(${MOBILE_BACKGROUND})` }}
+          } bg-mobile-nav-bg fixed top-0 right-0 left-0 bottom-0 z-10 bg-center bg-cover bg-no-repeat pt-16`}
         >
           <Transition
             show={show}
@@ -154,7 +161,10 @@ const Navbar = () => {
               <hr className="border-3 w-64" />
 
               <div className="flex flex-col space-y-8 pt-10">
-                <CustomBtn className="px-4 py-2 border rounded-3xl font-bold bg-white text-dark">
+                <CustomBtn
+                  className="px-4 py-2 border rounded-3xl font-bold bg-white text-dark"
+                  onClick={handleNavigate}
+                >
                   Become an Agent
                 </CustomBtn>
 

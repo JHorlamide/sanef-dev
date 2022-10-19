@@ -34,7 +34,7 @@ const ValueAddedServices = () => {
       <section className="relative p-10 -mt-28 md:-mt-10">
         <Image
           image={DOTS}
-          parentClassName="absolute inset-y-0 -right-4 top-42 md:right-16 md:-top-32 lg:right-20 lg:-top-40"
+          parentClassName="absolute inset-y-0 -right-1 top-42 md:right-16 md:-top-32 lg:right-20 lg:-top-40"
           imageClassName="w-24 h-24 md:h-fit lg:h-fit"
         />
       </section>

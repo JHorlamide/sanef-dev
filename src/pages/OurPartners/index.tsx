@@ -11,7 +11,7 @@ const index = () => {
   return (
     <Fragment>
       <section
-        className={`${style.about_hero} bg-about-hero-mobile md:bg-about-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-full`}
+        className={`${style.about_hero} relative bg-about-hero-mobile md:bg-about-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-full`}
       >
         <Navbar />
 
@@ -25,7 +25,7 @@ const index = () => {
       <section className="relative p-10 -mt-28 md:-mt-10">
         <Image
           image={DOTS}
-          parentClassName="absolute inset-y-0 -right-4 top-42 lg:right-20 lg:-top-40"
+          parentClassName="absolute inset-y-0 -right-1 top-42 lg:right-20 lg:-top-40"
           imageClassName="w-24 h-24 lg:h-fit"
         />
       </section>

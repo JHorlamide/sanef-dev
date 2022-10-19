@@ -12,10 +12,6 @@ export const image2 = `${IMAGES_PATH}/image-2.png`;
 export const image3 = `${IMAGES_PATH}/image-3.png`;
 export const image4 = `${IMAGES_PATH}/image-4.png`;
 
-// LANDING PAGE IMAGES
-export const HOME_PAGE_IMAGE = `${IMAGES_PATH}/landing.png`;
-export const MOBILE_BACKGROUND = `${IMAGES_PATH}/Mobile-Background.png`;
-
 // OUR ROLE
 export const ROLE_IMAGE_DESKTOP = `${IMAGES_PATH}/Role-Image-Desktop.png`;
 export const ROLE_IMAGE_MOBILE = `${IMAGES_PATH}/homepage_img.png`;

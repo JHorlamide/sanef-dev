@@ -58,7 +58,7 @@ const About = () => {
             <div
               className={`absolute w-12 h-12 md:w-10 md:h-10 lg:w-12 lg:h-12 mt-2.5 md:mt-1 lg:mt-1 ml-[142px] md:ml-[90px] lg:ml-[142px] rounded-full bg-buttonColor`}
             ></div>
-            <h1 className="relative z-50 text-4xl text-left font-bold flex md:text-2xl lg:text-4xl lg:text-justify">
+            <h1 className="relative text-4xl text-left font-bold flex md:text-2xl lg:text-4xl lg:text-justify">
               Our Vision
             </h1>
 
