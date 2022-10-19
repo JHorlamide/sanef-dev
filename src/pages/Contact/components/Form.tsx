@@ -43,7 +43,7 @@ export const MobileForm = () => {
         </label>
         <CustomInput
           id="firstName"
-          className="rounded-full border border-gray-300 py-3 px-24"
+          className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 w-full"
           inputProps={{
             type: "text",
             name: "firstName",
@@ -57,7 +57,7 @@ export const MobileForm = () => {
         </label>
         <CustomInput
           id="lastName"
-          className="rounded-full border border-gray-300 py-3 px-24"
+          className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 w-full"
           inputProps={{
             type: "text",
             name: "lastName",
@@ -71,7 +71,7 @@ export const MobileForm = () => {
         </label>
         <CustomInput
           id="email"
-          className="rounded-full border border-gray-300 py-3 px-24"
+          className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 w-full"
           inputProps={{
             type: "text",
             name: "email",
@@ -85,26 +85,12 @@ export const MobileForm = () => {
         </label>
 
         <div>
-          {/* <CustomBtn className="z-50 bg-gray-200 ml-1 mt-1 py-[9px] px-6 rounded-full relative">
-            +234
-          </CustomBtn>
-
-          <CustomInput
-            id="phoneNumber"
-            className="absolute right-3 rounded-full border border-gray-300 py-3 px-24"
-            inputProps={{
-              type: "text",
-              name: "phoneNumber",
-              value: formData.phoneNumber,
-              onChange: handleChange
-            }}
-          /> */}
           <CustomBtn className="z-50 absolute bg-gray-200 py-[9px] px-6 rounded-full ml-1 mt-1">
             +234
           </CustomBtn>
           <CustomInput
             id="phoneNumber"
-            className="relative rounded-full border border-gray-300 py-3 w-full px-24"
+            className="relative rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 w-full px-24"
             inputProps={{
               type: "text",
               name: "phoneNumber",
@@ -119,7 +105,7 @@ export const MobileForm = () => {
         </label>
         <CustomInput
           id="businessName"
-          className="rounded-full border border-gray-300 py-3 px-24"
+          className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 w-full"
           inputProps={{
             type: "text",
             name: "businessName",
@@ -181,7 +167,7 @@ export const DesktopForm = () => {
               </label>
               <CustomInput
                 id="firstName"
-                className="rounded-full border border-gray-300 py-3 px-1 w-80"
+                className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 px-5 w-80"
                 inputProps={{
                   type: "text",
                   name: "firstName",
@@ -197,7 +183,7 @@ export const DesktopForm = () => {
               </label>
               <CustomInput
                 id="lastName"
-                className="rounded-full border border-gray-300 py-3 px-1 w-80"
+                className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 px-5 w-80"
                 inputProps={{
                   type: "text",
                   name: "lastName",
@@ -207,6 +193,7 @@ export const DesktopForm = () => {
               />
             </div>
           </div>
+
           <div className="flex space-x-8">
             <div className="flex flex-col space-y-2">
               <label className="" htmlFor="email">
@@ -214,7 +201,7 @@ export const DesktopForm = () => {
               </label>
               <CustomInput
                 id="email"
-                className="rounded-full border border-gray-300 py-3 px-1 w-80"
+                className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 px-5 w-80"
                 inputProps={{
                   type: "text",
                   name: "email",
@@ -235,7 +222,7 @@ export const DesktopForm = () => {
                 </CustomBtn>
                 <CustomInput
                   id="phoneNumber"
-                  className="relative rounded-full border border-gray-300 py-3 px-24 w-80"
+                  className="relative rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 px-24 w-80"
                   inputProps={{
                     type: "text",
                     name: "phoneNumber",
@@ -249,7 +236,7 @@ export const DesktopForm = () => {
 
           <CustomTextarea
             id="message"
-            className="container w-full rounded-2xl border border-gray-300"
+            className="container w-full rounded-2xl border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
             boxProps={{
               rows: 3
             }}
