@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomTextarea from "components/widgets/CustomInput/CustomTextarea";
-// import Image from "components/widgets/Image/Image";
-// import { VERTICAL_LINE } from "assets/icons";
+import Image from "components/widgets/Image/Image";
+import { VERTICAL_LINE } from "assets/icons";
 
 interface FormData {
   firstName: string;
@@ -159,7 +159,7 @@ export const DesktopForm = () => {
     <section className="z-50 container mx-auto -mt-32 lg:-mt-[170px] mb-40 flex justify-center items-center md:flex-col md:space-y-6 lg:space-y-0 lg:flex-row space-x-14 bg-white py-12 px-10 rounded-xl shadow-lg w-[1179px]">
       {/* <div id="form" className="container"> */}
       <div id="form" className="">
-        <form action="" className="relative flex flex-col space-y-8">
+        <form action="" className="flex flex-col space-y-8">
           <div className="flex space-x-8">
             <div className="flex flex-col space-y-2">
               <label className="" htmlFor="firstName">
@@ -248,7 +248,7 @@ export const DesktopForm = () => {
         </form>
       </div>
 
-      <div className="pt-6 relative md:w-full">
+      <div className="relative pt-6 md:w-full">
         <h1 className="font-bold text-[24px]">Contact Us</h1>
 
         <div className="md:flex md:space-x-5 lg:block lg:space-x-0">
@@ -274,9 +274,12 @@ export const DesktopForm = () => {
             </h1>
           </div>
         </div>
-      </div>
 
-      {/* <Image image={VERTICAL_LINE} parentClassName="absolute left-[780px]" /> */}
+        <Image
+          image={VERTICAL_LINE}
+          parentClassName="md:hidden lg:block absolute left-0 top-0 -left-5"
+        />
+      </div>
     </section>
   );
 };

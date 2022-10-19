@@ -13,21 +13,21 @@ const PartnersTabs = () => {
       <Tab.Group>
         <Tab.List className="flex justify-center items-center space-x-20 ">
           {Object.keys(OUR_PARTNERS_LOGOS).map((category, idx) => (
-            <Tab
-              key={idx}
-              className={({ selected }) =>
-                classNames(
-                  "text-md font-bold",
-                  "bg-secondaryColor ring-secondaryColor ring-opacity-60 ring-offset-1 focus:outline-none focus:ring-0",
-                  selected
-                    ? "text-buttonColor border-b-4 border-b-buttonColor"
-                    : ""
-                )
-              }
-            >
-              {category}
-              <hr className={""} />
-            </Tab>
+            <div className="flex space-x-14" key={idx}>
+              <Tab
+                className={({ selected }) =>
+                  classNames(
+                    "font-bold",
+                    "focus:outline-none",
+                    selected
+                      ? "text-buttonColor border-b-4 border-b-buttonColor"
+                      : ""
+                  )
+                }
+              >
+                {category}
+              </Tab>
+            </div>
           ))}
         </Tab.List>
 
