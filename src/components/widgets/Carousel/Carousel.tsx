@@ -1,13 +1,15 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { Fragment } from "react";
 import "tw-elements";
-import CustomBtn from "../CustomBtn/CustomBtn";
+import { useNavigate } from "react-router-dom";
 import {
   OUR_PARTNERS,
   ABOUT_US,
   VALUE_ADDED_SERVICES
 } from "routes/ROUTES_CONSTANTS";
+import CustomBtn from "../CustomBtn/CustomBtn";
 import "./style.css";
+import { DOTS } from "assets/icons";
+import Image from "../Image/Image";
 
 const Carousel = () => {
   const navigate = useNavigate();
@@ -17,14 +19,85 @@ const Carousel = () => {
   };
 
   return (
-    <div
-      id="carouselExampleCaptions"
-      className="carousel slide relative px-5 py-10 md:px-20 md:py-40 lg:px-48 lg:py-32"
-      data-bs-ride="carousel"
-    >
-      <div className="carousel-indicators absolute sm:right-1 sm:left-0 lg:right-1 top-full justify-center p-0 mb-4">
-        <div className="flex lg:justify-end">
+    <Fragment>
+      <div
+        id="carouselExampleCaptions"
+        className="carousel slide relative py-12 px-5 md:px-20 md:py-20 lg:px-48 lg:py-28"
+        // className="container carousel slide relative mx-auto space-y-10"
+        data-bs-ride="carousel"
+      >
+        {/* CAROUSEL SLIDER CONTAINER */}
+        <div className="carousel-inner relative overflow-hidden">
+          {/* 1st Slid */}
+          <div className="w-full carousel-item active float-left">
+            <div className="flex flex-col space-y-10">
+              <h1 className="max-w-lg text-4xl text-left text-white mb-3 font-extrabold md:max-w-6xl md:leading-snug md:text-[45px]">
+                Deepening Financial Inclusion through Partnerships and
+                Collaborations
+              </h1>
+
+              <CustomBtn
+                className="text-white text-[20px] font-medium rounded-full bg-buttonColor px-20 py-3 w-fit"
+                onClick={() => handleNavigate(OUR_PARTNERS)}
+              >
+                Partner with Us
+              </CustomBtn>
+            </div>
+          </div>
+
+          {/* 2nd Slid */}
+          <div className="w-full carousel-item relative float-left">
+            <div className="flex flex-col space-y-10">
+              <h1 className="max-w-lg text-4xl text-left text-white mb-3 font-extrabold md:font-extrabold md:max-w-6xl md:leading-snug md:text-[45px]">
+                Centre of Excellence for Financial Inclusion best practices
+              </h1>
+
+              <CustomBtn
+                className="text-white text-[20px] font-medium rounded-full bg-buttonColor px-20 py-3 w-fit"
+                onClick={() => handleNavigate(ABOUT_US)}
+              >
+                Learn More
+              </CustomBtn>
+            </div>
+          </div>
+
+          {/* 3rd Slid */}
+          <div className="w-full carousel-item relative float-left">
+            <div className="flex flex-col space-y-10">
+              <h1 className="max-w-lg text-4xl text-left text-white mb-3 font-extrabold md:font-extrabold md:max-w-6xl md:leading-snug md:text-[45px]">
+                Empowering the Ecosystem through Innovative Technology
+              </h1>
+
+              <CustomBtn
+                className="text-white text-[20px] font-medium rounded-full bg-buttonColor px-20 py-3 w-fit"
+                onClick={() => handleNavigate(VALUE_ADDED_SERVICES)}
+              >
+                Learn More
+              </CustomBtn>
+            </div>
+          </div>
+
+          {/* 4th Slid */}
+          <div className="w-full carousel-item relative float-left">
+            <div className="flex flex-col space-y-10">
+              <h1 className="max-w-lg text-4xl text-left text-white mb-3 font-extrabold md:font-extrabold md:max-w-6xl md:leading-snug md:text-[45px]">
+                Enhancing knowledge through Impactful Financial Literacy
+                Programmes
+              </h1>
+              <CustomBtn
+                className="text-white text-[20px] font-medium rounded-full bg-buttonColor px-20 py-3 w-fit"
+                onClick={() => handleNavigate(VALUE_ADDED_SERVICES)}
+              >
+                Learn More
+              </CustomBtn>
+            </div>
+          </div>
+        </div>
+
+        {/* CAROUSEL INDICATOR */}
+        <div className="carousel-indicators pt-10 lg:pt-16 flex justify-center items-center md:justify-end lg:items-end">
           <button
+            id="carousel-indicator-button"
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide-to="0"
@@ -34,6 +107,7 @@ const Carousel = () => {
           ></button>
 
           <button
+            id="carousel-indicator-button"
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide-to="1"
@@ -41,6 +115,7 @@ const Carousel = () => {
           ></button>
 
           <button
+            id="carousel-indicator-button"
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide-to="2"
@@ -48,70 +123,21 @@ const Carousel = () => {
           ></button>
 
           <button
+            id="carousel-indicator-button"
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide-to="3"
             aria-label="Slide 4"
           ></button>
         </div>
+
+        <Image
+          image={DOTS}
+          imageClassName="w-20 h-24 md:w-32 h-fit lg:w-fit lg:h-fit"
+          parentClassName="absolute inset-y-0 right-0 top-[380px] md:right-32 md:top-[490px] lg:right-56 lg:top-[490px]"
+        />
       </div>
-
-      <div className="carousel-inner relative w-full overflow-hidden">
-        <div className="carousel-item active relative float-left w-full space-y-6">
-          <h1 className="max-w-lg text-4xl text-left text-white mx-auto mb-3 font-extrabold md:font-extrabold md:max-w-6xl md:leading-snug md:text-[45px]">
-            Deepening Financial Inclusion through Partnerships and
-            Collaborations
-          </h1>
-
-          <CustomBtn
-            className="text-white text-[20px] font-medium rounded-full bg-buttonColor px-20 py-3"
-            onClick={() => handleNavigate(OUR_PARTNERS)}
-          >
-            Partner with Us
-          </CustomBtn>
-        </div>
-
-        <div className="carousel-item relative float-left w-full space-y-6">
-          <h1 className="max-w-lg text-4xl text-left text-white mx-auto mb-3 font-extrabold md:font-extrabold md:max-w-6xl md:leading-snug md:text-[45px]">
-            Centre of Excellence for Financial{" "}
-            <br className="hidden lg:block" /> Inclusion best practices
-          </h1>
-
-          <CustomBtn
-            className="text-white text-[20px] font-medium rounded-full bg-buttonColor px-20 py-3"
-            onClick={() => handleNavigate(ABOUT_US)}
-          >
-            Learn More
-          </CustomBtn>
-        </div>
-
-        <div className="carousel-item relative float-left w-full space-y-6">
-          <h1 className="max-w-lg text-4xl text-left text-white mx-auto mb-3 font-extrabold md:font-extrabold md:max-w-6xl md:leading-snug md:text-[45px]">
-            Empowering the Ecosystem through <br className="hidden lg:block" />{" "}
-            Innovative Technology
-          </h1>
-
-          <CustomBtn
-            className="text-white text-[20px] font-medium rounded-full bg-buttonColor px-20 py-3"
-            onClick={() => handleNavigate(VALUE_ADDED_SERVICES)}
-          >
-            Learn More
-          </CustomBtn>
-        </div>
-
-        <div className="carousel-item relative float-left w-full space-y-6">
-          <h1 className="max-w-lg text-4xl text-left text-white mx-auto mb-3 font-extrabold md:font-extrabold md:max-w-6xl md:leading-snug md:text-[45px]">
-            Enhancing knowledge through Impactful Financial Literacy Programmes
-          </h1>
-          <CustomBtn
-            className="text-white text-[20px] font-medium rounded-full bg-buttonColor px-20 py-3"
-            onClick={() => handleNavigate(VALUE_ADDED_SERVICES)}
-          >
-            Learn More
-          </CustomBtn>
-        </div>
-      </div>
-    </div>
+    </Fragment>
   );
 };
 

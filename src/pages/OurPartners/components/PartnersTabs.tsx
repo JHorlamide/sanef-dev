@@ -46,7 +46,9 @@ const PartnersTabs = () => {
                       imageClassName="container bg-white rounded-full w-32 p-2"
                     />
 
-                    <p className="text-center font-semibold">{name}</p>
+                    <p className="text-center font-[500px] text-[14px] font-semibold">
+                      {name}
+                    </p>
                   </div>
                 </section>
               ))}

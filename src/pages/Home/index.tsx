@@ -8,6 +8,7 @@ import { RECENT_NEW } from "./content";
 import Footer from "components/widgets/Footer";
 import Image from "components/widgets/Image/Image";
 import RouterLink from "components/Navbar/NavLink/RouterLink";
+import { ABOUT_US } from "routes/ROUTES_CONSTANTS";
 
 // CUSTOM COMPONENTS
 import Tab from "pages/Home/components/Tab";
@@ -21,28 +22,15 @@ const Home = () => {
     <Fragment>
       <header
         id="hero-mobile-hight"
-        className={`${style.home_header} bg-home-hero-mobile lg:bg-home-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-[810px]`}
+        className={`${style.home_header} bg-home-hero-mobile lg:bg-home-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-[600px] md:h-[690px]`}
       >
         <Navbar />
         <Carousel />
       </header>
 
       {/* SHARED AGENT NETWORK  */}
-      <section className="relative p-10 -mt-72 md:-mt-10">
-        {/* <section className="relative p-10 -mt-32 md:-mt-10"> */}
-        <Image
-          image={DOTS}
-          parentClassName="relative md:hidden lg:hidden"
-          imageClassName="absolute w-28 h-28 -mt-24 inset-y-0 left-64 right-0"
-        />
-
-        {/* DOTS-1 */}
-        <Image
-          image={DOTS}
-          parentClassName="relative hidden md:block lg:block"
-          imageClassName="absolute w-24 -mt-20 md:inset-y-0 md:right-5 lg:inset-y-0 lg:right-48 lg:w-32"
-        />
-
+      {/* <section className="relative p-10 -mt-32 md:-mt-10"> */}
+      <section className="relative px-8 py-0">
         <div className="relative flex flex-col justify-center items-center py-8 lg:mt-12">
           <h1 className="text-center text-2xl font-bold md:text-3xl lg:text-4xl">
             Shared Agent Network Facilities Limited (SANEF)
@@ -59,7 +47,7 @@ const Home = () => {
 
           <RouterLink
             className="text-buttonColor font-bold"
-            path="/"
+            path={ABOUT_US}
             title="Learn More"
           />
         </div>
@@ -77,9 +65,11 @@ const Home = () => {
         <hr className="border-b-4 border-buttonColor w-16 mt-2" />
       </section>
 
-      <section className="bg-white relative z-50 shadow-lg rounded-xl mt-5 mx-5 py-10 md:mx-10 lg:mx-28">
+      {/* <section className="bg-white relative z-50 shadow-lg rounded-xl mt-5 mx-5 py-10 md:mx-10 lg:mx-28"> */}
+      <section className="container mx-auto bg-white relative z-50 shadow-lg rounded-xl mt-5 py-10">
         {/* MD & LG -> FLEX CONTAINER */}
-        <div className="space-y-8 md:space-y-0 md:mt-10 md:mx-10 md:flex md:justify-evenly md:space-x-10 lg:mx-[80px] lg:flex lg:justify-start lg:space-x-64">
+        {/* <div className="space-y-8 md:space-y-0 md:mt-10 md:mx-10 md:flex md:justify-evenly md:space-x-10 lg:mx-[80px] lg:flex lg:justify-start lg:space-x-64"> */}
+        <div className="space-y-8 md:space-y-0 md:mt-10 md:mx-10 md:flex md:justify-evenly md:space-x-10 lg:mx-[80px] lg:grid lg:grid-cols-3 lg:gap-x-10">
           {/* ITEM 1 */}
           <OurImpactHeader
             headingText={OUR_IMPACT_CARD_CONTENT.SECOND_ITEM[0].headingText}
@@ -117,7 +107,9 @@ const Home = () => {
           parentClassName="hidden justify-center md:flex md:mt-10 md:mx-5 lg:flex lg:mt-10 lg:mx-auto"
         />
 
-        <section className="hidden md:grid md:grid-cols-2 md:gap-4 md:justify-items-center md:px-10 lg:mx-10 lg:mt-6 lg:px-10 lg:flex lg:justify-start lg:space-x-28">
+        {/* Impact Footer ==> Desktop */}
+        {/* <section className="hidden md:grid md:grid-cols-2 md:gap-4 md:justify-items-center md:px-10 lg:mx-10 lg:mt-6 lg:px-10 lg:flex lg:justify-start lg:space-x-28"> */}
+        <section className="hidden md:grid md:grid-cols-2 md:gap-4 md:px-10 lg:mx-10 lg:mt-6 lg:px-10 lg:grid lg:grid-cols-3 lg:gap-x-28">
           {OUR_IMPACT_CARD_CONTENT.FIRST_ITEM.map((cardContent) => (
             <OurImpactFooter
               key={cardContent.id}
@@ -139,6 +131,7 @@ const Home = () => {
         imageClassName="absolute w-24 -mt-20 md:-mt-5 md:inset-y-0 md:right-0 lg:inset-y-0 lg:right-16 lg:w-32"
       />
 
+      {/* Impact Footer ==> Mobile */}
       <section className="bg-white mt-10 py-20 md:hidden lg:hidden">
         {OUR_IMPACT_CARD_CONTENT.FIRST_ITEM.map((cardContent) => (
           <OurImpactFooter

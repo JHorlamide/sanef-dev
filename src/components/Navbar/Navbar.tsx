@@ -48,36 +48,37 @@ const Navbar = () => {
 
           {/* NAV LINK CONTAINER */}
           <div className="hidden justify-between items-center space-x-6 lg:flex lg:w-auto -mt-14 lg:mt-0">
-            <div className="flex flex-col text-base font-normal mt-4 lg:flex-row lg:space-x-4 lg:mt-0">
+            <div className="flex flex-col mt-4 text-[14px] font-bold lg:flex-row lg:space-x-4 lg:mt-0">
               <NavLink
                 path={ABOUT_US}
                 title={"About Us"}
-                className={`text-white hover:text-buttonColor whitespace-nowrap font-semibold block py-2 pr-4 pl-3`}
+                className={`text-white hover:text-buttonColor whitespace-nowrap block py-2 pr-4 pl-3`}
               />
 
               <NavLink
                 path={OUR_PARTNERS}
                 title={"Our Partners"}
-                className={`text-white hover:text-buttonColor whitespace-nowrap font-semibold block py-2 pr-4 pl-3`}
+                className={`text-white hover:text-buttonColor whitespace-nowrap block py-2 pr-4 pl-3`}
               />
 
               <NavLink
                 path={VALUE_ADDED_SERVICES}
                 title={"Value Added Services"}
-                className={`text-white hover:text-buttonColor whitespace-nowrap font-semibold block py-2 pr-4 pl-3`}
+                className={`text-white hover:text-buttonColor whitespace-nowrap block py-2 pr-4 pl-3`}
               />
 
               <NavLink
                 path={MEDIA}
                 title={"Media"}
-                className={`text-white hover:text-buttonColor whitespace-nowrap font-semibold block py-2 pr-4 pl-3`}
+                className={`text-white hover:text-buttonColor whitespace-nowrap block py-2 pr-4 pl-3`}
               />
 
               <NavLink
                 path={CONTACT_US}
                 title={"Contact"}
-                className={`text-white hover:text-buttonColor whitespace-nowrap font-semibold block py-2 pr-4 pl-3`}
+                className={`text-white hover:text-buttonColor whitespace-nowrap block py-2 pr-4 pl-3`}
               />
+
               {/* {NAVIGATION.map(({ id, path, title }) => (
                 <NavLink
                   key={id}
@@ -92,27 +93,27 @@ const Navbar = () => {
           {/* AUTH BUTTON */}
           <div className="hidden md:-mr-96 lg:mr-0 lg:flex space-x-10">
             <CustomBtn
-              className="px-4 py-2 border rounded-3xl font-bold bg-white text-dark"
+              className="px-4 py-2 border rounded-3xl font-bold bg-white text-dark whitespace-nowrap"
               onClick={handleNavigate}
             >
               Become an Agent
             </CustomBtn>
 
-            <div className="">
+            <div className="mt-1">
               <NavLink
                 title={"Login"}
                 path={LOGIN}
                 className="font-semibold text-white"
               />
 
-              <hr className="border-2 border-white" />
+              <hr className="border-2 border-white mt-1.5" />
             </div>
           </div>
 
           {/* MENU ICON */}
           <div className="flex md:flex lg:hidden">
             <img
-              className="hover:cursor-pointer"
+              className="hover:cursor-pointer h-8 mt-[26px]"
               src={Menu}
               alt="menu icon"
               onClick={handleToggle}
@@ -153,7 +154,7 @@ const Navbar = () => {
                     key={link.id}
                     path={link.path}
                     title={link.title}
-                    className={`text-white text-sm text-center whitespace-nowrap font-bold block py-2 pr-4 pl-3`}
+                    className={`text-white text-[14px] font-bold text-center whitespace-nowrap block py-2 pr-4 pl-3`}
                   />
                 ))}
               </div>

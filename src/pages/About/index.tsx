@@ -28,7 +28,7 @@ const About = () => {
       <section
         id="about-sanef-mobile"
         // className="relative mt-10 px-5 md:px-10 md:-mt-5 lg:px-40" // Old style
-        className="relative mt-10 px-5 md:px-10 lg:px-40" // New style
+        className="relative md:mt-10 px-5 md:px-10 lg:px-40" // New style
       >
         <div className="md:flex md:justify-center md:items-center md:gap-10 lg:gap-32">
           <p className="text-lg text-left md:text-md md:-mt-10 lg:-mt-20 md:w-3/4 lg:w-1/2 md:text-left lg:text-md md:leading-text-line-height">
@@ -93,7 +93,7 @@ const About = () => {
         </div>
 
         {/* Mobile View */}
-        <div className="md:hidden flex flex-col space-y-10 mt-12">
+        <div className="container mx-auto md:hidden flex flex-col space-y-10 mt-12">
           {CARD_CONTENT.map(({ id, image, heading, content }) => (
             <CoreValueCard
               key={id}
@@ -106,7 +106,8 @@ const About = () => {
 
         {/* Desktop View */}
         <div className="relative hidden md:grid md:grid-cols-2 lg:flex lg:flex-col lg:justify-center lg:items-center mt-10 px-1 lg:gap-10 lg:px-0">
-          <div className="z-50 md:grid md:grid-cols-1 md:gap-y-4 lg:flex lg:flex-wrap lg:justify-center lg:items-center lg:gap-0">
+          {/*  */}
+          <div className="z-50 md:grid md:grid-cols-1 md:gap-y-4 lg:flex lg:flex-wrap lg:justify-center lg:items-center lg:gap-4">
             {CARD_CONTENT.slice(0, 3).map(({ id, image, heading, content }) => (
               <CoreValueCard
                 key={id}
@@ -141,11 +142,12 @@ const About = () => {
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-4xl text-left font-bold flex">Our Team</h1>
         </div>
+      </section>
 
-        {/* MOBILE TAB */}
-        <div className="mt-10 flex justify-center items-center">
-          <TeamTab />
-        </div>
+      {/* Team TAB */}
+      {/* <section className="mt-10 flex justify-center items-center"> */}
+      <section>
+        <TeamTab />
       </section>
 
       <section>
