@@ -11,14 +11,15 @@ module.exports = {
     },
     extend: {
       lineHeight: {
-        "text-line-height": "34px"
+        "text-line-height": "34px",
       },
       colors: {
         primaryColor: "#432779",
         secondaryColor: "#F3FCF5",
         infoColor: "#FA9917",
         buttonColor: "#2AAF4A",
-        modalColor: "#463E52"
+        modalColor: "#463E52",
+        modalTextColor: "#0E0817"
       },
 
       backgroundImage: {
@@ -32,7 +33,7 @@ module.exports = {
         "footer-image-mobile": "url('/public/assets/images/hero-img/Footer-Image-Mobile.png')",
         "mobile-nav-bg": "url('/public/assets/images/hero-img/Mobile-Background.png')"
       },
-      
+
       screens: {
         sm: '512px',
         md: '768px',
@@ -42,5 +43,9 @@ module.exports = {
       },
     }
   },
-  plugins: [require("flowbite/plugin"), require("tw-elements/dist/plugin")]
+  plugins: [
+    require("flowbite/plugin"),
+    require("tw-elements/dist/plugin"),
+    require("@tailwindcss/aspect-ratio")
+  ]
 };

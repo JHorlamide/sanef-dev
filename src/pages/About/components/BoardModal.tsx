@@ -25,7 +25,7 @@ const BoardModal = ({
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
           as="div"
-          className="relative z-50 mx-auto"
+          className="container relative z-50 mx-auto"
           onClose={() => setIsOpen(false)}
         >
           <Transition.Child
@@ -52,19 +52,23 @@ const BoardModal = ({
                 leaveTo="opacity-0 scale-95"
                 className={"flex"}
               >
-                <Dialog.Panel className="w-full max-w-4xl h-fit transform overflow-hidden rounded-2xl bg-white ml-40 px-10 py-6 text-left align-middle shadow-xl transition-all">
-                  <div className="flex justify-between">
-                    <Dialog.Title as="h3" className="w-1/6">
-                      <Image image={image} />
-                    </Dialog.Title>
+                <Dialog.Panel className="w-[370px] md:w-[900px] lg:w-[965px] h-fit transform overflow-hidden rounded-2xl bg-white ml-40 px-12 md:px-10 py-6 text-left align-middle shadow-xl transition-all">
+                  <div className="flex flex-col justify-center items-center md:flex-row md:items-start">
+                    <Image
+                      image={image}
+                      parentClassName="w-full flex justify-center items-center md:justify-start md:items-start md:mx-0 md:w-1/6"
+                    />
 
-                    <div className="mt-2 w-5/6 space-y-8">
-                      <div className="flex flex-col">
-                        <h1 className="text-xl font-bold">{name}</h1>
+                    {/* <div className="mt-2 w-full md:mt-2 md:w-5/6 md:space-y-8"> */}
+                    <div className="mt-2 md:space-y-8 w-full">
+                      <div className="flex flex-col justify-center items-center space-y-4 md:space-y-0 md:justify-start md:items-start">
+                        <h1 className="text-md md:text-xl text-center md:text-start font-bold">
+                          {name}
+                        </h1>
                         <h1 className="text-md">{position}</h1>
                       </div>
 
-                      <p className="text-sm text-gray-500 leading-text-line-height">
+                      <p className="text-[16px] text-modalTextColor leading-[30px]">
                         {profileDetails}
                       </p>
                     </div>
@@ -72,7 +76,10 @@ const BoardModal = ({
                 </Dialog.Panel>
 
                 <button className="w-40 h-5" onClick={() => setIsOpen(false)}>
-                  <Image parentClassName="ml-5 mt-5" image={CLOSE_ICON} />
+                  <Image
+                    parentClassName="-ml-1 -mt-1 md:ml-5 md:mt-5"
+                    image={CLOSE_ICON}
+                  />
                 </button>
               </Transition.Child>
             </div>

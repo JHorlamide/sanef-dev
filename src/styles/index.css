@@ -1,12 +1,15 @@
+@import url('http://fonts.cdnfonts.com/css/social-media-circled');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 body {
   margin: 0;
   background-color: #F3FCF5;
 
-  font-family: "Avenir Next";
+  font-family: "Avenir Next", "Social Media Circled", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 

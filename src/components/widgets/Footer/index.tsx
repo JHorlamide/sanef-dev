@@ -130,11 +130,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <FooterContentTwo
-          parentClassName="flex flex-col justify-center items-center space-y-1 mt-16"
-          contentClassName="text-white md:text-xs mb-5 lg:text-md"
-          headingClassName="text-white md:text-2xl tracking-widest font-medium lg:text-3xl"
-        />
+        <FooterContentTwo iconSize={50} />
 
         {/* HORIZONTAL LINE */}
         <div className="pt-16">

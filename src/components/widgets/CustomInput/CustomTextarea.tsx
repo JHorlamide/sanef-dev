@@ -7,6 +7,7 @@ export interface CustomTextareaProps {
 }
 
 const CustomTextarea = ({ id, className, boxProps }: CustomTextareaProps) => {
+  // eslint-disable-next-line react/jsx-props-no-spreading
   return <textarea id={id} className={className} {...boxProps}></textarea>;
 };
 

@@ -97,11 +97,7 @@ const FooterMobile = ({
         <img src={MOBILE_LINE} alt="horizontal-line" />
       </div>
 
-      <FooterContentTwo
-        parentClassName="flex flex-col justify-center items-center space-y-1 mt-12"
-        contentClassName="text-white text-xs mb-5"
-        headingClassName="text-white text-2xl tracking-widest font-medium"
-      />
+      <FooterContentTwo iconSize={40} />
 
       <FooterCopyright
         parentStyle="flex justify-center items-center mt-10 mb-10"

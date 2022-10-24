@@ -10,8 +10,8 @@ function classNames(...classes: any) {
 
 const TeamTab = () => {
   return (
-    <div className="container mx-auto py-10">
-      <Tab.Group>
+    <Tab.Group>
+      <div className="md:space-y-14">
         <Tab.List className="flex justify-center items-center space-x-20 border-b-0">
           {Object.keys(BOARD_CONTENT).map((category, idx) => (
             <Tab
@@ -31,11 +31,11 @@ const TeamTab = () => {
           ))}
         </Tab.List>
 
-        <Tab.Panels className={"mt-20 md:mt-28"}>
+        <Tab.Panels className={"mt-16"}>
           {Object.values(BOARD_CONTENT).map((members, index) => (
             <Tab.Panel
               key={index}
-              className="relative grid grid-cols-1 md:grid-cols-2 md:gap-x-5 lg:-gap-x-96 gap-y-16"
+              className="container mx-auto max-w-screen-lg relative grid grid-cols-1 md:grid-cols-2 md:gap-x-10 gap-y-16"
             >
               {members.map(
                 ({ id, name, image, position, shortBio, fullBio }) => (
@@ -76,8 +76,8 @@ const TeamTab = () => {
             </Tab.Panel>
           ))}
         </Tab.Panels>
-      </Tab.Group>
-    </div>
+      </div>
+    </Tab.Group>
   );
 };
 

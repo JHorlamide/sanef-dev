@@ -5,9 +5,63 @@ import Image from "components/widgets/Image/Image";
 import { DOTS } from "assets/icons";
 import { OUR_PARTNERS_LOGOS } from "./content";
 import PartnersTabs from "./components/PartnersTabs";
+import PartnersAndName from "./components/PartnersAndName";
 import Footer from "components/widgets/Footer";
 
-const index = () => {
+// interface LogoAndNameProps {
+//   logo?: string;
+//   name?: string;
+//   partnerLogo?: {
+//     id: number;
+//     name: string;
+//     logo: string;
+//   }[];
+// }
+
+// const LogoAndName = ({ partnerLogo, logo, name }: LogoAndNameProps) => {
+//   return (
+//     <div className="inline-block flex-col space-y-2 justify-center items-center px-3 bg-clip-content">
+//       <div className="bg-white p-4 m-0 rounded-full">
+//         <img className="w-24 h-24 m-0" src={logo} alt={name} />
+//       </div>
+
+//       <p className="font-semibold text-center whitespace-pre-line md:whitespace-normal">
+//         {name}
+//       </p>
+//     </div>
+//   );
+// };
+
+// const LogoAndName2 = ({ partnerLogo }: LogoAndNameProps) => {
+//   return (
+//     <div className="inline-block flex-col space-y-2 justify-center items-center px-3 bg-clip-content">
+//       {partnerLogo.map((logo) => (
+//         <>
+//           <div className="relative flex items-center mt-8" key={logo.id}>
+//             <div
+//               id="slider"
+//               className="overflow-x-scroll scroll whitespace-nowrap scroll-smooth"
+//             >
+//               <div className="bg-white p-4 m-0 rounded-full">
+//                 <img
+//                   className="w-24 h-24 m-0"
+//                   src={logo.logo}
+//                   alt={logo.name}
+//                 />
+//               </div>
+//             </div>
+//           </div>
+
+//           <p className="font-semibold text-center whitespace-pre-line md:whitespace-normal">
+//             {logo.name}
+//           </p>
+//         </>
+//       ))}
+//     </div>
+//   );
+// };
+
+const OurPartners = () => {
   return (
     <Fragment>
       <section
@@ -42,136 +96,33 @@ const index = () => {
         </p>
       </section>
 
-      <section className="md:hidden">
+      <section className="md:hidden container mx-auto">
         {/* BANKS LOGOS */}
-        <section className="container mt-10">
-          <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
-            <h1 className="text-center text-2xl font-bold md:text-left lg:text-3xl">
-              Banks
-            </h1>
-            <hr className="border-b-4 border-buttonColor w-16 mt-2" />
-          </div>
-
-          <div className="relative flex items-center mt-8">
-            <div
-              id="slider"
-              className="overflow-x-scroll scroll whitespace-nowrap scroll-smooth"
-            >
-              {OUR_PARTNERS_LOGOS.Banks.map((logo) => (
-                <img
-                  className="inline-block w-32 p-3 rounded-full"
-                  key={logo.id}
-                  src={logo.logo}
-                  alt={logo.name}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
+        <PartnersAndName sectionName="Banks" logos={OUR_PARTNERS_LOGOS.Banks} />
 
         {/* SUPER AGENTS LOGOS */}
-        <section className="container mt-10">
-          <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
-            <h1 className="text-center text-2xl font-bold md:text-left lg:text-3xl">
-              Super Agents
-            </h1>
-            <hr className="border-b-4 border-buttonColor w-16 mt-2" />
-          </div>
-
-          <div className="relative flex items-center mt-8">
-            <div
-              id="slider"
-              className="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth"
-            >
-              {OUR_PARTNERS_LOGOS["Super Agents"].map((logo) => (
-                <img
-                  className="inline-block w-32 p-3 rounded-full"
-                  key={logo.id}
-                  src={logo.logo}
-                  alt={logo.name}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
+        <PartnersAndName
+          sectionName="Super Agents"
+          logos={OUR_PARTNERS_LOGOS["Super Agents"]}
+        />
 
         {/* REGULATOR LOGOS */}
-        <section className="container mt-10">
-          <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
-            <h1 className="text-center text-2xl font-bold md:text-left lg:text-3xl">
-              Regulators
-            </h1>
-            <hr className="border-b-4 border-buttonColor w-16 mt-2" />
-          </div>
+        <PartnersAndName
+          sectionName="Regulators"
+          logos={OUR_PARTNERS_LOGOS.Regulators}
+        />
 
-          <div className="relative flex justify-center items-center mt-8">
-            <div
-              id="slider"
-              className="overflow-x-scroll scroll whitespace-nowrap scroll-smooth"
-            >
-              {OUR_PARTNERS_LOGOS.Regulators.map((logo) => (
-                <img
-                  className="inline-block w-32 p-3 rounded-full"
-                  key={logo.id}
-                  src={logo.logo}
-                  alt={logo.name}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* REGULATOR LOGOS */}
-        <section className="container mt-10">
-          <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
-            <h1 className="text-center text-2xl font-bold md:text-left lg:text-3xl">
-              Strategic Partners
-            </h1>
-            <hr className="border-b-4 border-buttonColor w-16 mt-2" />
-          </div>
-
-          <div className="relative flex justify-center items-center mt-8">
-            <div
-              id="slider"
-              className="overflow-x-scroll scroll whitespace-nowrap scroll-smooth"
-            >
-              {OUR_PARTNERS_LOGOS["Strategic Partners"].map((logo) => (
-                <img
-                  className="inline-block w-32 p-3 rounded-full"
-                  key={logo.id}
-                  src={logo.logo}
-                  alt={logo.name}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* STRATEGIC PARTNERS */}
+        <PartnersAndName
+          sectionName="Strategic Partners"
+          logos={OUR_PARTNERS_LOGOS["Strategic Partners"]}
+        />
 
         {/* Government/MDA'S LOGOS */}
-        <section className="container mt-10">
-          <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
-            <h1 className="text-center text-2xl font-bold md:text-left lg:text-3xl">
-              Government/MDA'S
-            </h1>
-            <hr className="border-b-4 border-buttonColor w-16 mt-2" />
-          </div>
-
-          <div className="relative flex justify-center items-center mt-8">
-            <div
-              id="slider"
-              className="overflow-x-scroll scroll whitespace-nowrap scroll-smooth"
-            >
-              {OUR_PARTNERS_LOGOS["Government/MDA'S"].map((logo) => (
-                <img
-                  className="inline-block w-32 p-3 rounded-full"
-                  key={logo.id}
-                  src={logo.logo}
-                  alt={logo.name}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
+        <PartnersAndName
+          sectionName=" Government/MDA'S"
+          logos={OUR_PARTNERS_LOGOS["Government/MDA'S"]}
+        />
       </section>
 
       <section>
@@ -185,4 +136,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default OurPartners;

@@ -99,7 +99,7 @@ const Navbar = () => {
               Become an Agent
             </CustomBtn>
 
-            <div className="mt-1">
+            <div className="mt-0.5">
               <NavLink
                 title={"Login"}
                 path={LOGIN}
@@ -138,7 +138,7 @@ const Navbar = () => {
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
           >
-            <div className="flex justify-end mr-10">
+            <div className="flex justify-end mr-8 -mt-2">
               <img
                 className="w-8"
                 src={CLOSE_ICON}

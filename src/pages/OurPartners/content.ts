@@ -1,4 +1,5 @@
 import {
+  // BANKS
   ACCESS_BANK,
   CITY_BANK,
   ECOBANK_BANK,
@@ -163,7 +164,7 @@ export const OUR_PARTNERS_LOGOS = {
     },
     {
       id: 17,
-      name: "Standard Chartered Bank",
+      name: "Standard \n Chartered Bank",
       logo: STANDARD_CHARTED_BANK
     },
     {
@@ -188,7 +189,7 @@ export const OUR_PARTNERS_LOGOS = {
     },
     {
       id: 22,
-      name: "United Bank for Africa (UBA)",
+      name: "United Bank \n for Africa (UBA)",
       logo: UBA_BANK
     },
     {

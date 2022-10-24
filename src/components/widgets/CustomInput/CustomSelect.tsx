@@ -25,6 +25,7 @@ const CustomSelect = ({
   selectPlaceholder
 }: CustomSelectProps) => {
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <select className={className} id={id} {...selectProps}>
       {selectPlaceholder ? (
         <option value={""} disabled>

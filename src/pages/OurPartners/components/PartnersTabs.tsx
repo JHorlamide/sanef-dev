@@ -38,19 +38,21 @@ const PartnersTabs = () => {
               className="grid grid-cols-4 gap-y-10 gap-x-0 justify-items-center"
             >
               {members.map(({ id, name, logo }) => (
-                <section key={id} className="lg:space-y-2 flex ">
-                  <div className="flex flex-col justify-center items-center">
-                    <Image
-                      image={logo}
-                      alt={name}
-                      imageClassName="container bg-white rounded-full w-32 p-2"
-                    />
+                <div
+                  className="flex flex-col justify-center items-center md:space-y-5"
+                  key={id}
+                >
+                  <Image
+                    image={logo}
+                    alt={name}
+                    parentClassName="container bg-white rounded-full p-6"
+                    imageClassName=" w-32"
+                  />
 
-                    <p className="text-center font-[500px] text-[14px] font-semibold">
-                      {name}
-                    </p>
-                  </div>
-                </section>
+                  <p className="text-center font-[500px] text-[14px] font-semibold">
+                    {name}
+                  </p>
+                </div>
               ))}
             </Tab.Panel>
           ))}

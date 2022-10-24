@@ -182,13 +182,9 @@ const Home = () => {
           </section>
 
           <p className="text-md text-center mt-5 px-10 md:text-sm md:text-left md:px-0 lg:text-lg">
-            SANEF collaborates with partners to ensure Agents are present in{" "}
-            <br className="hidden md:hidden lg:block" /> all the{" "}
-            <br className="md:hidden" /> 774 Local Government Areas{" "}
-            <br className="md:hidden" /> to provide Financial Services{" "}
-            <br className="hidden md:hidden lg:block" /> to{" "}
-            <br className="md:hidden" /> Nigerians by deepening Financial
-            Inclusion.
+            SANEF collaborates with partners to ensure Agents are present in all
+            the 774 Local Government Areas to provide Financial Services to{" "}
+            Nigerians by deepening Financial Inclusion.
           </p>
 
           <RouterLink

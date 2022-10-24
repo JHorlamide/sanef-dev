@@ -134,7 +134,7 @@ const Carousel = () => {
         <Image
           image={DOTS}
           imageClassName="w-20 h-24 md:w-32 h-fit lg:w-fit lg:h-fit"
-          parentClassName="absolute inset-y-0 right-0 top-[380px] md:right-32 md:top-[490px] lg:right-56 lg:top-[490px]"
+          parentClassName="absolute inset-y-0 right-0 top-[380px] md:right-28 md:top-[490px] lg:right-56 lg:top-[490px]"
         />
       </div>
     </Fragment>

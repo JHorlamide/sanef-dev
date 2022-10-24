@@ -13,7 +13,7 @@ const About = () => {
   return (
     <Fragment>
       <section
-        className={`${style.about_hero} bg-about-hero-mobile md:bg-about-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-full`}
+        className={`${style.about_hero} relative bg-about-hero-mobile md:bg-about-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-full`}
       >
         <Navbar />
 
@@ -24,14 +24,18 @@ const About = () => {
         </div>
       </section>
 
+      <Image
+        parentClassName="hidden lg:block absolute inset-y-0 right-0 top-32 aspect-auto"
+        image={ABOUT_IMAGE_1}
+      />
+
       {/* VISION & MISSION */}
       <section
         id="about-sanef-mobile"
-        // className="relative mt-10 px-5 md:px-10 md:-mt-5 lg:px-40" // Old style
-        className="relative md:mt-10 px-5 md:px-10 lg:px-40" // New style
+        className="relative md:mt-10 container mx-auto" // New style
       >
-        <div className="md:flex md:justify-center md:items-center md:gap-10 lg:gap-32">
-          <p className="text-lg text-left md:text-md md:-mt-10 lg:-mt-20 md:w-3/4 lg:w-1/2 md:text-left lg:text-md md:leading-text-line-height">
+        <div className="lg:w-1/2 md:-mt-10 lg:-mt-0 px-5 md:px-0">
+          <p className="text-lg text-left md:text-md lg:text-md md:leading-text-line-height">
             SANEF serves as an enabler in the Financial Inclusion ecosystem in
             Nigeria, collaborating with various Stakeholders to expand the
             frontiers of Financial Inclusion which includes Agent Expansion,
@@ -39,22 +43,15 @@ const About = () => {
             Technological Solutions for Products and Services to increase Agent
             Business viability and Agent Network sustainability.
           </p>
-
-          <Image
-            id="about_image_1"
-            parentClassName="hidden md:block md:-mt-60 lg:w-1/2"
-            imageClassName="w-full"
-            image={ABOUT_IMAGE_1}
-          />
         </div>
 
         {/* Vision & Mission Mobile Container */}
         <div
           id="vision-mission-container"
-          className="flex flex-col space-y-8 mt-10 md:space-y-0 md:space-x-0 md:flex-col lg:flex-row lg:space-x-28"
+          className="flex flex-col space-y-8 mt-12 lg:mt-16 md:space-y-5 md:space-x-0 lg:flex-row lg:space-x-28"
         >
           {/* OUR VISION CONTAINER */}
-          <div className="flex flex-col space-y-5 md:space-y-3 lg:w-full">
+          <div className="flex flex-col space-y-5 px-5 md:space-y-3 md:px-0 lg:w-full">
             <div
               className={`absolute w-12 h-12 md:w-10 md:h-10 lg:w-12 lg:h-12 mt-2.5 md:mt-1 lg:mt-1 ml-[142px] md:ml-[90px] lg:ml-[142px] rounded-full bg-buttonColor`}
             ></div>
@@ -68,7 +65,7 @@ const About = () => {
           </div>
 
           {/* OUR MISSION CONTAINER */}
-          <div className="flex flex-col space-y-5 md:space-y-3 lg:w-full">
+          <div className="flex flex-col space-y-5 px-5 md:space-y-3 md:px-0 lg:w-full">
             <div
               className={`absolute w-12 h-12 md:w-10 md:h-10 lg:w-12 lg:h-12 mt-2 lg:mt-1 ml-[169px] md:ml-[110px] lg:ml-[12%] rounded-full bg-buttonColor`}
             ></div>
@@ -145,8 +142,7 @@ const About = () => {
       </section>
 
       {/* Team TAB */}
-      {/* <section className="mt-10 flex justify-center items-center"> */}
-      <section>
+      <section className="py-10">
         <TeamTab />
       </section>
 
