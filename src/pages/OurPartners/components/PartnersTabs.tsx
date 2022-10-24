@@ -31,32 +31,103 @@ const PartnersTabs = () => {
           ))}
         </Tab.List>
 
+        {/* {Object.values(OUR_PARTNERS_LOGOS).map((members, index) => ( */}
         <Tab.Panels className={"mt-16"}>
-          {Object.values(OUR_PARTNERS_LOGOS).map((members, index) => (
-            <Tab.Panel
-              key={index}
-              className="grid grid-cols-4 gap-y-10 gap-x-0 justify-items-center"
-            >
-              {members.map(({ id, name, logo }) => (
-                <div
-                  className="flex flex-col justify-center items-center md:space-y-5"
+          <Tab.Panel className="grid grid-custom gap-y-10 gap-x-14 justify-center">
+            {OUR_PARTNERS_LOGOS.Banks.map(({ id, name, logo }) => (
+              <div key={id}>
+                <Image
                   key={id}
-                >
+                  image={logo}
+                  alt={name}
+                  parentClassName="container bg-white rounded-full shadow-md p-6"
+                  imageClassName="w-28 m-0"
+                />
+
+                <p className="text-center font-[500px] text-[12px] font-semibold whitespace-pre-line mt-5">
+                  {name}
+                </p>
+              </div>
+            ))}
+          </Tab.Panel>
+
+          <Tab.Panel className="grid grid-custom gap-y-10 gap-x-14 justify-center">
+            {OUR_PARTNERS_LOGOS["Super Agents"].map(({ id, name, logo }) => (
+              <div key={id}>
+                <Image
+                  key={id}
+                  image={logo}
+                  alt={name}
+                  parentClassName="container bg-white rounded-full shadow-md p-6"
+                  imageClassName="w-28 m-0"
+                />
+
+                <p className="text-center font-[500px] text-[12px] font-semibold whitespace-pre-line mt-5">
+                  {name}
+                </p>
+              </div>
+            ))}
+          </Tab.Panel>
+
+          <Tab.Panel className="grid grid-custom gap-y-10 gap-x-0 space-x-10 justify-center">
+            {OUR_PARTNERS_LOGOS.Regulators.map(({ id, name, logo }) => (
+              <div key={id}>
+                <Image
+                  key={id}
+                  image={logo}
+                  alt={name}
+                  parentClassName="container bg-white rounded-full shadow-md p-6"
+                  imageClassName="w-28 m-0"
+                />
+
+                <p className="text-center font-[500px] text-[12px] font-semibold whitespace-pre-line mt-5">
+                  {name}
+                </p>
+              </div>
+            ))}
+          </Tab.Panel>
+
+          <Tab.Panel className="grid grid-custom gap-y-10 gap-x-14 justify-center">
+            {OUR_PARTNERS_LOGOS["Strategic Partners"].map(
+              ({ id, name, logo }) => (
+                <div key={id}>
                   <Image
+                    key={id}
                     image={logo}
                     alt={name}
-                    parentClassName="container bg-white rounded-full p-6"
-                    imageClassName=" w-32"
+                    parentClassName="container bg-white rounded-full shadow-md p-6"
+                    imageClassName="w-28 m-0"
                   />
 
-                  <p className="text-center font-[500px] text-[14px] font-semibold">
+                  <p className="text-center font-[500px] text-[12px] font-semibold whitespace-pre-line mt-5">
                     {name}
                   </p>
                 </div>
-              ))}
-            </Tab.Panel>
-          ))}
+              )
+            )}
+          </Tab.Panel>
+
+          <Tab.Panel className="grid grid-custom gap-y-10 gap-x-0 space-x-10 justify-center">
+            {OUR_PARTNERS_LOGOS["Government/MDA'S"].map(
+              ({ id, name, logo }) => (
+                <div key={id}>
+                  <Image
+                    key={id}
+                    image={logo}
+                    alt={name}
+                    parentClassName="container bg-white rounded-full shadow-md p-6"
+                    imageClassName="w-28 m-0"
+                  />
+
+                  <p className="text-center font-[500px] text-[12px] font-semibold whitespace-pre-line mt-5">
+                    {name}
+                  </p>
+                </div>
+              )
+            )}
+          </Tab.Panel>
         </Tab.Panels>
+        {/* ))} */}
       </Tab.Group>
     </div>
   );

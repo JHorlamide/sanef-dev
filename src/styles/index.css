@@ -18,6 +18,12 @@ body {
   animation-fill-mode: forwards;
 }
 
+@layer utilities {
+  .grid-custom {
+    grid-template-columns: repeat(4, minmax(0, max-content));
+  }
+}
+
 @keyframes fadeInAnimation {
   0% {
     opacity: 0;
