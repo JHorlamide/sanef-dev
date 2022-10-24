@@ -91,7 +91,7 @@ const Navbar = () => {
           </div>
 
           {/* AUTH BUTTON */}
-          <div className="hidden md:-mr-96 lg:mr-0 lg:flex space-x-10">
+          <div className="hidden md:-mr-96 lg:mr-0 lg:flex lg:items-baseline space-x-10">
             <CustomBtn
               className="px-4 py-2 border rounded-3xl font-bold bg-white text-dark whitespace-nowrap"
               onClick={handleNavigate}
@@ -99,14 +99,14 @@ const Navbar = () => {
               Become an Agent
             </CustomBtn>
 
-            <div className="mt-0.5">
+            <div>
               <NavLink
                 title={"Login"}
                 path={LOGIN}
                 className="font-semibold text-white"
               />
 
-              <hr className="border-2 border-white mt-1.5" />
+              <hr className="border-2 border-white mt-1" />
             </div>
           </div>
 

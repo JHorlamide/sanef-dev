@@ -8,59 +8,6 @@ import PartnersTabs from "./components/PartnersTabs";
 import PartnersAndName from "./components/PartnersAndName";
 import Footer from "components/widgets/Footer";
 
-// interface LogoAndNameProps {
-//   logo?: string;
-//   name?: string;
-//   partnerLogo?: {
-//     id: number;
-//     name: string;
-//     logo: string;
-//   }[];
-// }
-
-// const LogoAndName = ({ partnerLogo, logo, name }: LogoAndNameProps) => {
-//   return (
-//     <div className="inline-block flex-col space-y-2 justify-center items-center px-3 bg-clip-content">
-//       <div className="bg-white p-4 m-0 rounded-full">
-//         <img className="w-24 h-24 m-0" src={logo} alt={name} />
-//       </div>
-
-//       <p className="font-semibold text-center whitespace-pre-line md:whitespace-normal">
-//         {name}
-//       </p>
-//     </div>
-//   );
-// };
-
-// const LogoAndName2 = ({ partnerLogo }: LogoAndNameProps) => {
-//   return (
-//     <div className="inline-block flex-col space-y-2 justify-center items-center px-3 bg-clip-content">
-//       {partnerLogo.map((logo) => (
-//         <>
-//           <div className="relative flex items-center mt-8" key={logo.id}>
-//             <div
-//               id="slider"
-//               className="overflow-x-scroll scroll whitespace-nowrap scroll-smooth"
-//             >
-//               <div className="bg-white p-4 m-0 rounded-full">
-//                 <img
-//                   className="w-24 h-24 m-0"
-//                   src={logo.logo}
-//                   alt={logo.name}
-//                 />
-//               </div>
-//             </div>
-//           </div>
-
-//           <p className="font-semibold text-center whitespace-pre-line md:whitespace-normal">
-//             {logo.name}
-//           </p>
-//         </>
-//       ))}
-//     </div>
-//   );
-// };
-
 const OurPartners = () => {
   return (
     <Fragment>
@@ -89,7 +36,7 @@ const OurPartners = () => {
         // className="relative mt-10 px-5 md:px-10 md:-mt-5 lg:px-40" // Old style
         className="relative mt-16 px-5 md:px-10 lg:px-40" // New style
       >
-        <p className="text-lg text-center md:text-md md:-mt-10 lg:-mt-20">
+        <p className="text-[18px] text-center leading-[30px] md:text-md md:-mt-10 lg:-mt-20">
           We collaborate with Ecosystem Stakeholders, Government/MDAs and
           Developmental Organizations in expanding the frontiers of Financial
           Inclusion and advancing Economic Empowerment.
