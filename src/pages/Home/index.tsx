@@ -38,8 +38,8 @@ const Home = () => {
           <hr className="border-b-4 border-buttonColor w-16 mt-2" />
 
           <p
-            className="text-center my-5 md:my-8 md:text-sm md:max-w-2xl 
-          lg:my-6 lg:max-w-2xl lg:leading-text-line-height"
+            className="text-[18px] text-center my-5 md:my-8 md:max-w-4xl lg:my-6 
+            lg:leading-text-line-height"
           >
             Incorporated in 2019, the Shared Agent Network Expansion Facilities
             (SANEF Limited) is an initiative of the Central Bank of Nigeria

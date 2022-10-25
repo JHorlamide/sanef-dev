@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import NavLink from "./NavLink/NavLink";
+import NavLink, { BecomeAgent } from "./NavLink/NavLink";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import { Logo } from "assets/index";
 import {
@@ -92,21 +92,32 @@ const Navbar = () => {
 
           {/* AUTH BUTTON */}
           <div className="hidden md:-mr-96 lg:mr-0 lg:flex lg:items-baseline space-x-10">
-            <CustomBtn
-              className="px-4 py-2 border rounded-3xl font-bold bg-white text-dark whitespace-nowrap"
+            <div className="block">
+              <BecomeAgent
+                path={BECOME_AGENT}
+                title={"Become an Agent"}
+                className={`px-4 py-2 border rounded-3xl font-bold bg-white hover:border-buttonColor
+                whitespace-nowrap hover:text-white hover:bg-buttonColor`}
+              />
+            </div>
+
+            {/* <CustomBtn
+              className="px-4 py-2 border rounded-3xl font-bold bg-white text-dark 
+              whitespace-nowrap hover:text-white hover:bg-buttonColor hover:border-buttonColor"
               onClick={handleNavigate}
             >
               Become an Agent
-            </CustomBtn>
+            </CustomBtn> */}
 
             <div>
               <NavLink
                 title={"Login"}
                 path={LOGIN}
-                className="font-semibold text-white"
+                className="font-semibold text-white hover:text-buttonColor border-b-4 
+                border-b-white hover:border-b-buttonColor"
               />
 
-              <hr className="border-2 border-white mt-1" />
+              {/* <hr className="border-2 border-white mt-1 hover:border-buttonColor" /> */}
             </div>
           </div>
 
@@ -138,7 +149,7 @@ const Navbar = () => {
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
           >
-            <div className="flex justify-end mr-6 -mt-12">
+            <div className="flex justify-end mr-6 -mt-6 md:mr-9 md:-mt-5">
               <img
                 className="w-10"
                 src={CLOSE_ICON}

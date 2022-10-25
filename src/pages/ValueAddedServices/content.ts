@@ -12,37 +12,44 @@ export const SERVICES = [
   {
     id: 1,
     image: Frame10,
-    text: "Agent Expansion"
+    heading: "Agent Expansion",
+    details: `Worked with partners to ensure Agents are present in all the 774 Local Government Areas to provide Financial Services such as BVN Enrollment, Account Opening, Card distribution, Cash Deposit (Cash In), Cash Withdrawal (Cash Out), Funds Transfer, Bills Payment, Airtime Vending and Social Disbursement to Nigerians.`
   },
   {
     id: 2,
     image: Frame11,
-    text: "Support BVN Enrollment & Account Opening"
+    heading: "Support BVN Enrollment & Account Opening",
+    details: `Opening of Bank Accounts/Wallets at all SANEF Agent locations through Super Agents/MMOs and support registration of Bank Verification Number (BVN) at all Agent locations.`
   },
   {
     id: 3,
     image: Frame12,
-    text: "Products & Services"
+    heading: "Products & Services",
+    details: `Availability of simple financial products and services such as Cash Deposit (Cash In), Cash Withdrawal (Cash Out), Transfers, Bills Payments, Airtime Vending, Social Disbursement, amongst others at all SANEF Agent locations.`
   },
   {
     id: 4,
     image: Frame13,
-    text: "Financial Literacy & Awareness"
+    heading: "Financial Literacy & Awareness",
+    details: `Financial Literacy and Campaign Awareness campaigns, Agent Forums and Community Engagements have been held to provide capacity building and create awareness of Agent Banking business across all Six (6) geopolitical zones. Also, Branding of all Agent locations (with SANEF branded Signages, Stickers, Buntings, etc. printed in the three (3) major local languages) and Issuance of Certificates to all onboarded Agents as authentication and to enhance Customers’ trust and visibility of the Agents’ business.`
   },
   {
     id: 5,
     image: Frame14,
-    text: "Stakeholder Engagement"
+    heading: "Stakeholder Engagement",
+    details: `Collaborates with all Stakeholders, Regulators, Developmental Organizations, amongst others to advance Financial Inclusion in Nigeria.`
   },
   {
     id: 6,
     image: Frame15,
-    text: "Technology Solutions"
+    heading: "Technology Solutions",
+    details: `Through the SANEF Technology Platform, enabled Account Opening, Card distribution, Dispute Resolution and other Financial products and services at agent locations.  Customers can open Accounts, collect Debit cards with their choice Banks and resolve disputes seamlessly at agent locations within their communities.`
   },
   {
     id: 7,
     image: Frame9,
-    text: "Policy Advocacy"
+    heading: "Policy Advocacy",
+    details: `Partners with Regulatory Bodies to provide an enabling environment for Agent Banking Business viability and to make Financial Inclusion thrive.`
   }
 ];
 

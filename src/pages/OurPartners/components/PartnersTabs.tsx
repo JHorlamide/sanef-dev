@@ -23,8 +23,8 @@ const PartnersTabs = () => {
               <Tab
                 className={({ selected }) =>
                   classNames(
-                    `font-bold hover:rounded-full hover:px-5 hover:bg-lightGreen 
-                    hover:text-white hover:border-none py-3`,
+                    `font-bold transition ease-in-out delay-150 hover:-translate-y-1 
+                      hover:scale-110 duration-200 hover:border-b-4 hover:border-b-buttonColor`,
                     "focus:outline-none",
                     selected
                       ? "text-buttonColor border-b-4 border-b-buttonColor"

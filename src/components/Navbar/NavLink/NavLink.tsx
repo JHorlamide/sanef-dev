@@ -35,4 +35,27 @@ const NavLink = ({
   );
 };
 
+export const BecomeAgent = ({
+  path,
+  title,
+  className,
+  handleClick
+}: NavLinkProps) => {
+  const location = useLocation();
+  const { pathname } = location;
+  const isActive = pathname === path ? true : false;
+
+  return (
+    <Link
+      to={path}
+      className={`${className} ${
+        isActive ? "text-white bg-yellow-500 border-yellow-500" : "text-black"
+      }`}
+      onClick={handleClick}
+    >
+      {title}
+    </Link>
+  );
+};
+
 export default NavLink;

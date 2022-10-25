@@ -59,7 +59,8 @@ const ValueAddedServices = () => {
             <ServicesCardMobile
               key={service.id}
               image={service.image}
-              text={service.text}
+              heading={service.heading}
+              details={service.details}
             />
           ))}
         </div>
@@ -70,7 +71,8 @@ const ValueAddedServices = () => {
             <ServicesCardDesktop
               key={service.id}
               image={service.image}
-              text={service.text}
+              heading={service.heading}
+              details={service.details}
             />
           ))}
         </div>
@@ -80,7 +82,8 @@ const ValueAddedServices = () => {
             <ServicesCardDesktop
               key={service.id}
               image={service.image}
-              text={service.text}
+              heading={service.heading}
+              details={service.details}
             />
           ))}
         </div>

@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import Image from "components/widgets/Image/Image";
 import BoardModal from "./BoardModal";
+import TextTruncate from "react-text-truncate";
 
 export interface BoardCardProps {
   image: string;
@@ -69,15 +70,21 @@ const CardSubContentDesktop = ({
 }: CardProps) => {
   return (
     <div className="overflow-hidden space-y-4 items-baseline">
-      <div className="text-ellipsis leading-text-line-height">
-        <p className="">{shortBio2}</p>
+      <div className="text-ellipsis leading-[30px]">
+        <TextTruncate
+          line={3}
+          element="span"
+          truncateText="…"
+          text={shortBio2}
+          // textTruncateChild={<a href="#">Read on</a>}
+        />
+        {/* <p className="">{shortBio2}</p> */}
       </div>
 
       <div className="block">
         <CustomBtn
           className="text-buttonColor font-bold transition ease-in-out delay-150 
-            hover:-translate-y-1 hover:scale-110 hover:text-white hover:bg-lightGreen 
-            duration-300 rounded-l-none rounded-full px-3 py-2"
+            hover:-translate-y-1 hover:scale-110 duration-300"
           onClick={() =>
             handleSetUserInfo({
               image,
