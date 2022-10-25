@@ -3,7 +3,7 @@ import Navbar from "components/Navbar/Navbar";
 import Image from "components/widgets/Image/Image";
 import style from "./style.module.css";
 import { DOTS } from "assets/icons";
-import { VAS_IMAGE, VAS_IMAGE_DESKTOP } from "assets/images";
+import { VAS_IMAGE_DESKTOP } from "assets/images";
 
 import {
   ServicesCardMobile,
@@ -113,7 +113,7 @@ const ValueAddedServices = () => {
           </div>
 
           <Image
-            image={VAS_IMAGE}
+            image={VAS_IMAGE_DESKTOP}
             parentClassName="absolute -top-56"
             imageClassName=""
           />

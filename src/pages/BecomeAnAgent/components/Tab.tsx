@@ -161,14 +161,16 @@ const FirstTabPanel = () => {
             To become a licensed Super-Agent, visit:{" "}
           </h1>
 
-          <a
-            href="https://www.cbn.gov.ng"
-            target={"_blank"}
-            className="text-buttonColor text-[20px] font-bold mt-4"
-            rel="noreferrer"
-          >
-            www.cbn.gov.ng
-          </a>
+          <div className="mt-5">
+            <a
+              href="https://www.cbn.gov.ng"
+              target={"_blank"}
+              className="text-buttonColor text-[20px] font-bold"
+              rel="noreferrer"
+            >
+              www.cbn.gov.ng
+            </a>
+          </div>
         </div>
 
         <img

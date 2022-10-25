@@ -1,8 +1,8 @@
 import React from "react";
-import Image from "components/widgets/Image/Image";
 import ProductServiceList from "./ProductServicesList";
 import { PRODUCT_SERVICE } from "../content";
-import { LONG_VERTICAL_LINE, LONG_HORIZONTAL_LINE } from "assets/icons";
+// import Image from "components/widgets/Image/Image";
+// import { LONG_VERTICAL_LINE, LONG_HORIZONTAL_LINE } from "assets/icons";
 
 const ProductServiceDesktop = () => {
   return (
@@ -24,7 +24,7 @@ const ProductServiceDesktop = () => {
           )
         )}
 
-        <Image
+        {/* <Image
           parentClassName="absolute lg:left-[370px] top-0"
           imageClassName="h-[570px]"
           image={LONG_VERTICAL_LINE}
@@ -40,7 +40,7 @@ const ProductServiceDesktop = () => {
           parentClassName="absolute right-0 lg:top-10"
           imageClassName="h-[570px]"
           image={LONG_HORIZONTAL_LINE}
-        />
+        /> */}
       </div>
     </div>
   );
