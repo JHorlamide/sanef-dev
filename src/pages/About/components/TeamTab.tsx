@@ -67,19 +67,19 @@ const TeamTab = () => {
 
               <Image
                 image={GROUP_SHAPE}
-                parentClassName="hidden md:block absolute inset-y-0 -right-16 top-20"
+                parentClassName="hidden md:block absolute inset-y-0 right-0 top-20"
                 imageClassName="w-64"
               />
 
               <Image
                 image={GROUP_CIRCLE_COLORED}
-                parentClassName="hidden md:block absolute inset-y-0 -left-[6%] top-[22%]"
+                parentClassName="hidden md:block absolute inset-y-0 left-0 top-[22%]"
                 imageClassName="w-[80%]"
               />
 
               <Image
                 image={GROUP_CIRCLE_COLORED}
-                parentClassName="hidden md:block absolute inset-y-0 -right-[4%] top-[92%]"
+                parentClassName="hidden md:block absolute inset-y-0 right-0 top-[92%]"
                 imageClassName="w-[90%]"
               />
 

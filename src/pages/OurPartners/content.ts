@@ -225,6 +225,7 @@ export const OUR_PARTNERS_LOGOS = {
       name: "AccelerexNetwork",
       logo: ACCELERE
     },
+    { id: 30, name: "AFRICAVE TECH", logo: KIPPA_PAY_LOGO },
     {
       id: 3,
       name: "CapricornDigital",
@@ -235,58 +236,57 @@ export const OUR_PARTNERS_LOGOS = {
       name: "C24",
       logo: C_PAY
     },
+    { id: 12, name: "CONTEC GLOBAL", logo: NOW_NOW },
+    { id: 21, name: "CELLULANT", logo: TINGG },
+    { id: 16, name: "Crowforce", logo: PAY_FORCE },
+    { id: 27, name: "CITISERVE", logo: ORANGE_PAY_CITISERVE_LOGO },
+    { id: 28, name: "CALLPHONE", logo: AIRVEND_LOGO },
+    { id: 31, name: "CONNECT POINT", logo: C_POINT_AGENT_CONNECTIONPOINT_LOGO },
+    {
+      id: 8,
+      name: "CINTRUST MFB",
+      logo: KOLOMONI
+    },
+    { id: 26, name: "DOT FINANCIAL \n INCLUSION", logo: DOTPAY_OFFICIAL_LOGO },
+    { id: 15, name: "E-SETTLEMENT GROUP", logo: PAY_CENTER },
+    { id: 18, name: "E-TRANZACT", logo: POCKET_MONI },
+    {
+      id: 24,
+      name: "FAIRMONEY",
+      logo: FAIR_MONEY
+    },
     {
       id: 5,
       name: "FETS",
       logo: FEST_WALLET
     },
-    {
-      id: 6,
-      name: "KADICK INTEGRATED",
-      logo: KADIC
-    },
+    { id: 19, name: "IFIS", logo: QUICK_TELLER },
+    { id: 17, name: "ITEX INTEGRATED \n SERVICES", logo: PAY_VICE },
     {
       id: 7,
       name: "INNOVECTIVES",
       logo: KASH_EXPRESS
     },
     {
-      id: 8,
-      name: "CINTRUST MFB",
-      logo: KOLOMONI
+      id: 6,
+      name: "KADICK INTEGRATED",
+      logo: KADIC
     },
     { id: 9, name: "LAPO", logo: LAPO },
+    { id: 29, name: "LUKEPORT", logo: E_CASH_LUKEPORT_LOGO },
     { id: 10, name: "Microsystems", logo: M_CASH_POINT },
-    { id: 11, name: "TEAMAPT", logo: MONIE_POINT },
-    { id: 12, name: "CONTEC GLOBAL", logo: NOW_NOW },
     { id: 13, name: "Pagetech", logo: PAGE },
     { id: 14, name: "Palmpay", logo: PALMPAY },
-    { id: 15, name: "E-SETTLEMENT GROUP", logo: PAY_CENTER },
-    { id: 16, name: "Crowforce", logo: PAY_FORCE },
-    { id: 17, name: "ITEX INTEGRATED \n SERVICES", logo: PAY_VICE },
-    { id: 18, name: "E-TRANZACT", logo: POCKET_MONI },
-    { id: 19, name: "IFIS", logo: QUICK_TELLER },
+    { id: 25, name: "PARKWAY READYCASH", logo: READY_CASH },
+    { id: 32, name: "SHAGO PAYMENT", logo: SHAGO_ALERZO_LOGO_ADAPTATION_LOGO },
+    { id: 11, name: "TEAMAPT", logo: MONIE_POINT },
     { id: 20, name: "TEASY INTERNATIONAL", logo: TEASY_PAY },
-    { id: 21, name: "CELLULANT", logo: TINGG },
     { id: 22, name: "UNIFIED PAYMENTS", logo: UNIFIED_PAYMENT },
     {
       id: 23,
       name: "XPRESS PAYMENTS",
       logo: AEXPRESS_AGENT
-    },
-    {
-      id: 24,
-      name: "FAIRMONEY",
-      logo: FAIR_MONEY
-    },
-    { id: 25, name: "PARKWAY READYCASH", logo: READY_CASH },
-    { id: 26, name: "DOT FINANCIAL \n INCLUSION", logo: DOTPAY_OFFICIAL_LOGO },
-    { id: 27, name: "CITISERVE", logo: ORANGE_PAY_CITISERVE_LOGO },
-    { id: 28, name: "CALLPHONE", logo: AIRVEND_LOGO },
-    { id: 29, name: "LUKEPORT", logo: E_CASH_LUKEPORT_LOGO },
-    { id: 30, name: "AFRICAVE TECH", logo: KIPPA_PAY_LOGO },
-    { id: 31, name: "CONNECT POINT", logo: C_POINT_AGENT_CONNECTIONPOINT_LOGO },
-    { id: 32, name: "SHAGO PAYMENT", logo: SHAGO_ALERZO_LOGO_ADAPTATION_LOGO }
+    }
   ],
 
   Regulators: [{ id: 1, name: "CBN", logo: CBN }],

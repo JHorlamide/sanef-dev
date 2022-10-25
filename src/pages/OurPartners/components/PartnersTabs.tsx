@@ -16,7 +16,7 @@ const PartnersTabs = () => {
       className="hidden md:block w-full px-5 md:px-16 lg:px-60 mb-10 lg:mb-5
       lg:container-lg mt-20"
     >
-      <Tab.Group defaultIndex={tabIndex ? tabIndex : 1}>
+      <Tab.Group defaultIndex={tabIndex ? tabIndex : 0}>
         <Tab.List className="flex justify-center items-center space-x-20 ">
           {Object.keys(OUR_PARTNERS_LOGOS).map((category, idx) => (
             <div className="flex space-x-14" key={idx}>
