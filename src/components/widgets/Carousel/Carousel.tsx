@@ -22,7 +22,7 @@ const Carousel = () => {
     <Fragment>
       <div
         id="carouselExampleCaptions"
-        className="carousel slide relative py-12 px-5 md:px-20 md:py-20 lg:px-48 lg:py-28"
+        className="carousel slide relative py-12 px-5 md:px-20 md:py-20 lg:px-48 lg:py-20"
         // className="container carousel slide relative mx-auto space-y-10"
         data-bs-ride="carousel"
       >
@@ -134,7 +134,7 @@ const Carousel = () => {
         <Image
           image={DOTS}
           imageClassName="w-20 h-24 md:w-32 h-fit lg:w-fit lg:h-fit"
-          parentClassName="absolute inset-y-0 right-0 top-[380px] md:right-28 md:top-[490px] lg:right-56 lg:top-[490px]"
+          parentClassName="absolute inset-y-0 right-0 top-[380px] md:right-28 md:top-[490px] lg:right-56 lg:top-[430px]"
         />
       </div>
     </Fragment>

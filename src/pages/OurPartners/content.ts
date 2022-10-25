@@ -119,7 +119,7 @@ export const OUR_PARTNERS_LOGOS = {
     },
     {
       id: 8,
-      name: "GTbank",
+      name: "GTBank",
       logo: GT_BANK
     },
     {
@@ -263,7 +263,7 @@ export const OUR_PARTNERS_LOGOS = {
     { id: 14, name: "Palmpay", logo: PALMPAY },
     { id: 15, name: "E-SETTLEMENT GROUP", logo: PAY_CENTER },
     { id: 16, name: "Crowforce", logo: PAY_FORCE },
-    { id: 17, name: "ITEX INTEGRATED SERVICES", logo: PAY_VICE },
+    { id: 17, name: "ITEX INTEGRATED \n SERVICES", logo: PAY_VICE },
     { id: 18, name: "E-TRANZACT", logo: POCKET_MONI },
     { id: 19, name: "IFIS", logo: QUICK_TELLER },
     { id: 20, name: "TEASY INTERNATIONAL", logo: TEASY_PAY },
@@ -280,7 +280,7 @@ export const OUR_PARTNERS_LOGOS = {
       logo: FAIR_MONEY
     },
     { id: 25, name: "PARKWAY READYCASH", logo: READY_CASH },
-    { id: 26, name: "DOT FINANCIAL INCLUSION", logo: DOTPAY_OFFICIAL_LOGO },
+    { id: 26, name: "DOT FINANCIAL \n INCLUSION", logo: DOTPAY_OFFICIAL_LOGO },
     { id: 27, name: "CITISERVE", logo: ORANGE_PAY_CITISERVE_LOGO },
     { id: 28, name: "CALLPHONE", logo: AIRVEND_LOGO },
     { id: 29, name: "LUKEPORT", logo: E_CASH_LUKEPORT_LOGO },

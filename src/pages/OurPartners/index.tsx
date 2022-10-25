@@ -12,12 +12,12 @@ const OurPartners = () => {
   return (
     <Fragment>
       <section
-        className={`${style.about_hero} relative bg-about-hero-mobile md:bg-about-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-full`}
+        className={`${style.about_hero} relative bg-about-hero-mobile md:bg-about-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-[400px]`}
       >
         <Navbar />
 
-        <div className="lg:py-28">
-          <h1 className="text-white text-4xl text-center max-w-lg mx-auto my-10 font-extrabold lg:-mt-5">
+        <div className="">
+          <h1 className="text-white text-4xl text-center max-w-lg mx-auto my-10 font-extrabold lg:mt-5">
             Our Partners
           </h1>
         </div>

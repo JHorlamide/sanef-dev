@@ -138,9 +138,9 @@ const Navbar = () => {
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
           >
-            <div className="flex justify-end mr-8 -mt-2">
+            <div className="flex justify-end mr-6 -mt-12">
               <img
-                className="w-8"
+                className="w-10"
                 src={CLOSE_ICON}
                 alt="close-icon"
                 onClick={handleToggle}

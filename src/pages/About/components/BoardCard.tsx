@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from "react";
-import TextTruncate from "react-text-truncate"; // recommend
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import Image from "components/widgets/Image/Image";
 import BoardModal from "./BoardModal";
@@ -9,6 +8,7 @@ export interface BoardCardProps {
   name: string;
   position: string;
   shortBio?: string;
+  shortBio2: string;
   fullBio: string;
 }
 
@@ -21,6 +21,7 @@ interface UserInfoType {
 
 interface CardProps extends UserInfoType {
   shortBio?: string;
+  shortBio2?: string;
   fullBio: string;
   handleSetUserInfo: (params: UserInfoType) => void;
 }
@@ -34,14 +35,9 @@ const CardSubContentMobile = ({
   handleSetUserInfo
 }: CardProps) => {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 flex flex-col items-baseline">
       <div className="text-ellipsis leading-[30px]">
-        <TextTruncate
-          line={4}
-          element="span"
-          truncateText="…"
-          text={shortBio ? shortBio : fullBio}
-        />
+        <p className="">{shortBio}</p>
       </div>
 
       <div className="block">
@@ -64,7 +60,7 @@ const CardSubContentMobile = ({
 };
 
 const CardSubContentDesktop = ({
-  shortBio,
+  shortBio2,
   fullBio,
   image,
   name,
@@ -72,14 +68,9 @@ const CardSubContentDesktop = ({
   handleSetUserInfo
 }: CardProps) => {
   return (
-    <div className="overflow-hidden space-y-4">
+    <div className="overflow-hidden space-y-4 items-baseline">
       <div className="text-ellipsis leading-text-line-height">
-        <TextTruncate
-          line={3}
-          element="p"
-          truncateText="…"
-          text={shortBio ? shortBio : fullBio}
-        />
+        <p className="">{shortBio2}</p>
       </div>
 
       <div className="block">
@@ -106,6 +97,7 @@ const BoardCard = ({
   name,
   position,
   shortBio,
+  shortBio2,
   fullBio
 }: BoardCardProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -138,7 +130,9 @@ const BoardCard = ({
       />
 
       <div
-        className={`container mx-auto z-50 bg-white rounded-xl shadow-lg px-5 mt-5 w-[335px] h-[370px] md:w-[391px] md:h-[320px] lg:h-[330px] lg:w-[520px]`}
+        className="container mx-auto z-50 bg-white rounded-xl shadow-lg px-5 
+        mt-5 w-[335px] h-fit pb-10 md:w-[391px] md:h-[320px] lg:h-[330px]
+        lg:w-[520px]"
       >
         <Image
           parentClassName="flex justify-center items-center -mt-12"
@@ -159,7 +153,7 @@ const BoardCard = ({
               image={image}
               position={position}
               profileDetails={fullBio}
-              shortBio={shortBio}
+              shortBio2={shortBio2}
               fullBio={fullBio}
               handleSetUserInfo={handleSetUserInfo}
             />

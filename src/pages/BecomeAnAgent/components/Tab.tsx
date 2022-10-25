@@ -6,6 +6,7 @@ import style from "../style.module.css";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomSelect from "components/widgets/CustomInput/CustomSelect";
+import { CHECK_LIST } from "assets/icons";
 
 interface FormData {
   firstName: string;
@@ -45,14 +46,14 @@ const FirstTabPanel = () => {
 
       <div className="mt-6">
         <h1 className="font-bold text-center text-buttonColor">
-          View SANEF Super-Agent Partners. (link to Super-Agents list)
+          View SANEF Super-Agent Partners
         </h1>
       </div>
 
       {/* FLEX CONTAINER */}
       <div className="container mx-auto flex flex-col space-y-8 md:space-y-0 md:flex-row md:space-x-5 md:justify-center py-16 md:mb-16 md:px-5">
         {/* 1st CONTAINER */}
-        <div className="relative z-50 text-white bg-buttonColor rounded-xl w-[335px] px-5 py-4 md:py-12 md:w-96">
+        <div className="relative z-50 text-white bg-buttonColor rounded-xl w-full px-5 py-4 md:py-12 md:w-96">
           <div className="">
             <h1 className="font-bold">Requirements</h1>
             <div className="mt-2">
@@ -64,39 +65,85 @@ const FirstTabPanel = () => {
 
             <div className="mt-8 space-y-4">
               <div className="flex space-x-4 justify-center">
-                <div className="container w-4 h-2 mt-2 bg-white rounded-full"></div>
-                <p className="flex">
-                  Must be a company with an existing business, operational for
-                  at least 12 months
-                </p>
+                <div className="w-fit">
+                  <Image
+                    image={CHECK_LIST}
+                    parentClassName="mt-2"
+                    imageClassName="w-fit"
+                  />
+                </div>
+
+                <div className="w-full">
+                  <p className="flex">
+                    Must be a company with an existing business, operational for
+                    at least 12 months
+                  </p>
+                </div>
               </div>
 
               <div className="flex space-x-4">
-                <div className="w-3.5 h-2 mt-2 bg-white rounded-full"></div>
-                <p className="">
-                  Must be registered with the Corporate Affairs Commission (CAC)
-                </p>
+                <div className="w-fit">
+                  <Image
+                    image={CHECK_LIST}
+                    parentClassName="mt-2"
+                    imageClassName="w-fit"
+                  />
+                </div>
+
+                <div className="w-full">
+                  <p className="">
+                    Must be registered with the Corporate Affairs Commission
+                    (CAC)
+                  </p>
+                </div>
               </div>
 
               <div className="flex space-x-4">
-                <div className="w-4 h-2 mt-2 bg-white rounded-full"></div>
-                <p className="">
-                  Must have a minimum Shareholders’ Fund, unimpaired by losses
-                  of N250million
-                </p>
+                <div className="w-fit">
+                  <Image
+                    image={CHECK_LIST}
+                    parentClassName="mt-2"
+                    imageClassName="w-fit"
+                  />
+                </div>
+
+                <div className="w-full">
+                  <p className="">
+                    Must have a minimum Shareholders’ Fund, unimpaired by losses
+                    of N250million
+                  </p>
+                </div>
               </div>
 
               <div className="flex space-x-4">
-                <div className="w-5 h-2 mt-2 bg-white rounded-full"></div>
-                <p className="">
-                  Must obtain a reference letter from a Financial Institution
-                  (FI) as part of its documentation for license
-                </p>
+                <div className="w-fit">
+                  <Image
+                    image={CHECK_LIST}
+                    parentClassName="mt-2"
+                    imageClassName="w-fit"
+                  />
+                </div>
+
+                <div className="w-full">
+                  <p className="">
+                    Must obtain a reference letter from a Financial Institution
+                    (FI) as part of its documentation for license
+                  </p>
+                </div>
               </div>
 
               <div className="flex space-x-4">
-                <div className="w-2 h-2 mt-2 bg-white rounded-full"></div>
-                <p className="">Must have a minimum of 50 agents</p>
+                <div className="w-fit">
+                  <Image
+                    image={CHECK_LIST}
+                    parentClassName="mt-2"
+                    imageClassName="w-fit"
+                  />
+                </div>
+
+                <div className="w-full">
+                  <p className="">Must have a minimum of 50 agents</p>
+                </div>
               </div>
             </div>
           </div>
@@ -114,9 +161,14 @@ const FirstTabPanel = () => {
             To become a licensed Super-Agent, visit:{" "}
           </h1>
 
-          <p className="text-buttonColor text-[20px] font-bold mt-4">
+          <a
+            href="https://www.cbn.gov.ng"
+            target={"_blank"}
+            className="text-buttonColor text-[20px] font-bold mt-4"
+            rel="noreferrer"
+          >
             www.cbn.gov.ng
-          </p>
+          </a>
         </div>
 
         <img
@@ -168,55 +220,120 @@ const SecondTabPanel = () => {
       {/* FLEX CONTAINER */}
       <div className="container mx-auto flex flex-col lg:flex-row space-y-8 lg:space-x-6 lg:space-y-0 items-center md:items-start md:pb-24 mt-8">
         {/* 1st CONTAINER */}
-        <div className="text-white bg-buttonColor rounded-xl w-fit mx-5 md:mx-0 px-5 py-4 md:px-10 md:py-12 md:container lg:w-[450px]">
+        <div className="text-white bg-buttonColor rounded-xl w-full mx-5 md:mx-0 px-5 py-4 md:px-10 md:py-12 md:container lg:w-[450px]">
           <div className="">
             <h1 className="font-bold">Requirements</h1>
 
             <div className="mt-8 space-y-4">
               <div className="flex space-x-4 justify-start">
-                <div className="container w-2.5 h-2.5 mt-2 bg-white rounded-full"></div>
-                <p className="flex">Must be able to read and write</p>
+                <div className="block w-fit">
+                  <Image
+                    image={CHECK_LIST}
+                    parentClassName="mt-2"
+                    imageClassName="w-fit"
+                  />
+                </div>
+
+                <div className="w-full">
+                  <p className="flex">Must be able to read and write</p>
+                </div>
               </div>
 
               <div className="flex space-x-4">
-                <div className="w-5 h-2.5 mt-2 bg-white rounded-full"></div>
-                <p className="">
-                  Must have a functional computer or at least an android enabled
-                  mobile phone
-                </p>
+                <div className="w-fit">
+                  <Image
+                    image={CHECK_LIST}
+                    parentClassName="mt-2"
+                    imageClassName="w-fit"
+                  />
+                </div>
+
+                <div className="w-full">
+                  <p className="">
+                    Must have a functional computer or at least an android
+                    enabled mobile phone
+                  </p>
+                </div>
               </div>
 
               <div className="flex space-x-4">
-                <div className="w-3.5 h-2.5 mt-2 bg-white rounded-full"></div>
-                <p className="">
-                  Must have an existing physical shop/business outlet
-                </p>
+                <div className="w-fit">
+                  <Image
+                    image={CHECK_LIST}
+                    parentClassName="mt-2"
+                    imageClassName="w-fit"
+                  />
+                </div>
+
+                <div className="w-full">
+                  <p className="">
+                    Must have an existing physical shop/business outlet
+                  </p>
+                </div>
               </div>
 
               <div className="flex space-x-4">
-                <div className="w-6 h-2.5 mt-2 bg-white rounded-full"></div>
-                <p className="">
-                  A copy of ID or equivalent (Driver’s license, National ID
-                  card, Int’l passport, Voter’s card)
-                </p>
+                <div className="w-fit">
+                  <Image
+                    image={CHECK_LIST}
+                    parentClassName="mt-2"
+                    imageClassName="w-fit"
+                  />
+                </div>
+
+                <div className="w-full">
+                  <p className="">
+                    A copy of ID or equivalent (Driver’s license, National ID
+                    card, Int’l passport, Voter’s card)
+                  </p>
+                </div>
               </div>
 
               <div className="flex space-x-4">
-                <div className="w-6 h-2.5 mt-2 bg-white rounded-full"></div>
-                <p className="">
-                  A Passport-sized photograph Proof of Address (Utility bills
-                  e.g. PHCN, LAWMA, DStv, GOtv, StarTimes, etc.)
-                </p>
+                <div className="w-fit">
+                  <Image
+                    image={CHECK_LIST}
+                    parentClassName="mt-2"
+                    imageClassName="w-fit"
+                  />
+                </div>
+
+                <div className="w-full">
+                  <p className="">
+                    A Passport-sized photograph Proof of Address (Utility bills
+                    e.g. PHCN, LAWMA, DStv, GOtv, StarTimes, etc.)
+                  </p>
+                </div>
               </div>
 
               <div className="flex space-x-4">
-                <div className="w-3 h-2.5 mt-2 bg-white rounded-full"></div>
-                <p className="">Financial/Bank account detail or statements</p>
+                <div className="w-fit">
+                  <Image
+                    image={CHECK_LIST}
+                    parentClassName="mt-2"
+                    imageClassName="w-fit"
+                  />
+                </div>
+
+                <div className="w-full">
+                  <p className="">
+                    Financial/Bank account detail or statements
+                  </p>
+                </div>
               </div>
 
               <div className="flex space-x-4">
-                <div className="w-2.5 h-2.5 mt-2 bg-white rounded-full"></div>
-                <p className="">At least 10,000 Naira startup capital.</p>
+                <div className="w-fit">
+                  <Image
+                    image={CHECK_LIST}
+                    parentClassName="mt-2"
+                    imageClassName="w-fit"
+                  />
+                </div>
+
+                <div className="w-full">
+                  <p className="">At least 10,000 Naira startup capital.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -228,8 +345,7 @@ const SecondTabPanel = () => {
         >
           <div className="flex flex-col space-y-1.5 justify-center px-5 mt-8 md:mt-10">
             <h1 className="font-bold text-[24px] text-center">
-              Apply to become a SANEF Agent here (link to the Agent Form already
-              in the dumpsite)
+              Apply to become a SANEF Agent here
             </h1>
 
             <p className="text-[14px] text-center">
@@ -315,8 +431,8 @@ const SecondTabPanel = () => {
                     onChange: handleChange
                   }}
                   selectOptions={[
-                    { value: "", name: "Select a gender" },
-                    { value: "male", name: "Male" }
+                    { value: "male", name: "Male" },
+                    { value: "female", name: "Female" }
                   ]}
                   selectPlaceholder="Select a gender"
                 />
@@ -383,8 +499,9 @@ const SecondTabPanel = () => {
                     onChange: handleChange
                   }}
                   selectOptions={[
-                    { value: "", name: "Select a state" },
-                    { value: "lagos", name: "Lagos" }
+                    { value: "lagos", name: "Lagos" },
+                    { value: "abia", name: "Abia" },
+                    { value: "abuja", name: "Abuja" }
                   ]}
                   selectPlaceholder="Select a state"
                 />
@@ -401,8 +518,8 @@ const SecondTabPanel = () => {
                     onChange: handleChange
                   }}
                   selectOptions={[
-                    { value: "", name: "Select an LGA" },
-                    { value: "ifo", name: "Ifo" }
+                    { value: "ifo", name: "Ifo LGA" },
+                    { value: "eti Osa", name: "Eti Osa" }
                   ]}
                   selectPlaceholder="Select an LGA"
                 />
@@ -497,6 +614,7 @@ const AgentTab = () => {
           <Tab.Panel className={"px-5"}>
             <FirstTabPanel />
           </Tab.Panel>
+
           <Tab.Panel>
             <SecondTabPanel />
           </Tab.Panel>

@@ -22,23 +22,25 @@ const Home = () => {
     <Fragment>
       <header
         id="hero-mobile-hight"
-        className={`${style.home_header} bg-home-hero-mobile lg:bg-home-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-[600px] md:h-[690px]`}
+        className={`${style.home_header} bg-home-hero-mobile lg:bg-home-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-[600px] md:h-[630px]`}
       >
         <Navbar />
         <Carousel />
       </header>
 
       {/* SHARED AGENT NETWORK  */}
-      {/* <section className="relative p-10 -mt-32 md:-mt-10"> */}
       <section className="relative px-8 py-0">
-        <div className="relative flex flex-col justify-center items-center py-8 lg:mt-12">
+        <div className="relative flex flex-col justify-center items-center py-8">
           <h1 className="text-center text-2xl font-bold md:text-3xl lg:text-4xl">
             Shared Agent Network Facilities Limited (SANEF)
           </h1>
 
           <hr className="border-b-4 border-buttonColor w-16 mt-2" />
 
-          <p className="text-center my-5 md:my-8 md:text-sm md:max-w-2xl lg:my-10 lg:max-w-2xl lg:leading-text-line-height">
+          <p
+            className="text-center my-5 md:my-8 md:text-sm md:max-w-2xl 
+          lg:my-6 lg:max-w-2xl lg:leading-text-line-height"
+          >
             Incorporated in 2019, the Shared Agent Network Expansion Facilities
             (SANEF Limited) is an initiative of the Central Bank of Nigeria
             (CBN), supported by the Deposit Money Banks (DMBs), Nigeria
@@ -46,7 +48,9 @@ const Home = () => {
           </p>
 
           <RouterLink
-            className="text-buttonColor font-bold"
+            className="text-buttonColor font-bold transition ease-in-out delay-150 
+            hover:-translate-y-1 hover:scale-110 hover:text-white hover:bg-lightGreen 
+            duration-300 rounded-full px-5 py-3"
             path={ABOUT_US}
             title="Learn More"
           />
@@ -65,11 +69,16 @@ const Home = () => {
         <hr className="border-b-4 border-buttonColor w-16 mt-2" />
       </section>
 
-      {/* <section className="bg-white relative z-50 shadow-lg rounded-xl mt-5 mx-5 py-10 md:mx-10 lg:mx-28"> */}
-      <section className="container mx-auto bg-white relative z-50 shadow-lg rounded-xl mt-5 py-10">
+      <section
+        className="container mx-auto bg-white relative z-50 shadow-lg 
+        rounded-xl mt-5 py-10"
+      >
         {/* MD & LG -> FLEX CONTAINER */}
-        {/* <div className="space-y-8 md:space-y-0 md:mt-10 md:mx-10 md:flex md:justify-evenly md:space-x-10 lg:mx-[80px] lg:flex lg:justify-start lg:space-x-64"> */}
-        <div className="space-y-8 md:space-y-0 md:mt-10 md:mx-10 md:flex md:justify-evenly md:space-x-10 lg:mx-[80px] lg:grid lg:grid-cols-3 lg:gap-x-10">
+        <div
+          className="space-y-8 md:space-y-0 md:mt-10 md:mx-10 md:flex 
+          md:justify-evenly md:space-x-10 lg:mx-[80px] lg:grid lg:grid-cols-3
+          lg:gap-x-10"
+        >
           {/* ITEM 1 */}
           <OurImpactHeader
             headingText={OUR_IMPACT_CARD_CONTENT.SECOND_ITEM[0].headingText}
@@ -108,8 +117,10 @@ const Home = () => {
         />
 
         {/* Impact Footer ==> Desktop */}
-        {/* <section className="hidden md:grid md:grid-cols-2 md:gap-4 md:justify-items-center md:px-10 lg:mx-10 lg:mt-6 lg:px-10 lg:flex lg:justify-start lg:space-x-28"> */}
-        <section className="hidden md:grid md:grid-cols-2 md:gap-4 md:px-10 lg:mx-10 lg:mt-6 lg:px-10 lg:grid lg:grid-cols-3 lg:gap-x-28">
+        <section
+          className="hidden md:grid md:grid-cols-2 md:gap-4 md:px-10 lg:mx-10 
+          lg:mt-6 lg:px-10 lg:grid lg:grid-cols-3 lg:gap-x-28"
+        >
           {OUR_IMPACT_CARD_CONTENT.FIRST_ITEM.map((cardContent) => (
             <OurImpactFooter
               key={cardContent.id}
@@ -149,7 +160,7 @@ const Home = () => {
       <Image
         image={DOTS}
         parentClassName="relative md:hidden lg:hidden"
-        imageClassName="z-0 absolute w-24 -mt-8 inset-y-0 left-72 right-0"
+        imageClassName="z-0 absolute w-24 -mt-8 inset-y-0 left-[270px] md:left-72 right-0"
       />
 
       {/* OUR ROLE */}
@@ -175,8 +186,7 @@ const Home = () => {
         <div className="mt-10 flex flex-col justify-center items-center md:space-y-8 md:m-0 md:ml-0 md:justify-start md:items-start">
           <section className="flex flex-col justify-center items-center md:justify-start md:items-start">
             <h1 className="text-center text-2xl font-bold md:text-left lg:text-3xl">
-              Our Role In <br className="md:hidden" /> Enabling Financial{" "}
-              <br className="md:hidden" /> Inclusion
+              Our Role In Enabling Financial Inclusion
             </h1>
             <hr className="border-b-4 border-buttonColor w-16 mt-2" />
           </section>
@@ -188,7 +198,9 @@ const Home = () => {
           </p>
 
           <RouterLink
-            className="text-buttonColor font-bold border-2 border-buttonColor rounded-full px-6 py-3 mt-4 md:px-8 lg:px-16"
+            className="text-buttonColor font-bold border-2 border-buttonColor 
+            rounded-full px-6 py-3 mt-4 md:px-8 lg:px-16 hover:bg-lightGreen 
+            hover:text-white hover:border-lightGreen"
             path={"/about-us"}
             title="Learn More"
           />

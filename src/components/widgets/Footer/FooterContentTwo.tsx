@@ -8,7 +8,7 @@ interface FooterContentTwoProps {
   iconSize: number;
 }
 
-const SOCIAL_LINK = [
+export const SOCIAL_LINK = [
   {
     id: 1,
     Icon: GrFacebookOption,
@@ -42,9 +42,7 @@ const FooterContentTwo = ({ iconSize }: FooterContentTwoProps) => {
       <p className="text-white md:text-xs mb-5 lg:text-md">
         Follow us on social media
       </p>
-      {/* <h1 className={headingClassName}>E D Q P C</h1> */}
 
-      {/* <div className="text-white md:text-2xl tracking-widest font-medium lg:text-3xl"> */}
       <div className="flex space-x-8 md:space-x-10 items-center">
         {SOCIAL_LINK.map(({ id, link, Icon }) => (
           <a

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { PRODUCT_AND_SERVICE } from "../content";
-import ProductServiceList from "./ProductServicestList";
+import ProductServiceList from "./ProductServicesList";
 import { LINE_2, LONG_HORIZONTAL_LINE, LONG_VERTICAL_LINE } from "assets/icons";
 // import { LONG_HORIZONTAL_LINE } from "assets/icons";
 import Image from "components/widgets/Image/Image";
@@ -8,7 +8,7 @@ import Image from "components/widgets/Image/Image";
 export const ProductServicesDesktop = () => {
   return (
     <Fragment>
-      <div className="relative hidden md:block overflow-hidden container mx-auto mt-10 pt-10 bg-white rounded-xl shadow-lg w-[1201px] md:h-[1008px] lg:h-[800px]">
+      <div className="hidden md:block relative overflow-hidden container mx-auto mt-10 pt-10 bg-white rounded-xl shadow-lg w-[1201px] md:h-[1008px] lg:h-[800px]">
         <div className="container mx-auto flex flex-col space-y-24 justify-center items-center">
           <div className="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-[75px]">
             <div className="container w-[288.45px]">

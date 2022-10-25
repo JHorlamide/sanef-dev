@@ -35,20 +35,20 @@ const TeamTab = () => {
           {Object.values(BOARD_CONTENT).map((members, index) => (
             <Tab.Panel
               key={index}
-              className="container mx-auto max-w-screen-lg relative grid grid-cols-1 md:grid-cols-2 md:gap-x-10 gap-y-16"
+              className="relative mx-auto grid grid-cols-1 md:member-custom-grid 
+               gap-y-16 md:gap-x-10 md:max-w-screen-lg md:justify-center"
             >
-              {members.map(
-                ({ id, name, image, position, shortBio, fullBio }) => (
-                  <BoardCard
-                    key={id}
-                    image={image}
-                    name={name}
-                    position={position}
-                    shortBio={shortBio}
-                    fullBio={fullBio}
-                  />
-                )
-              )}
+              {members.map((info) => (
+                <BoardCard
+                  key={info.id}
+                  image={info.image}
+                  name={info.name}
+                  position={info.position}
+                  shortBio={info.shortBio}
+                  shortBio2={info.shortBio2}
+                  fullBio={info.fullBio}
+                />
+              ))}
 
               <Image
                 image={GROUP_SHAPE}

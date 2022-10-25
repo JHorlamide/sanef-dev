@@ -44,3 +44,5 @@ export const VERTICAL_LINE = `${SVG_PATH}/v-line-contactus.svg`;
 
 // BECOME AN AGENT
 export const CIRCLE = `${SVG_PATH}/Ellipse.svg`;
+
+export const CHECK_LIST = `${SVG_PATH}/checklist_item.svg`;

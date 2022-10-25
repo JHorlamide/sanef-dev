@@ -19,7 +19,8 @@ module.exports = {
         infoColor: "#FA9917",
         buttonColor: "#2AAF4A",
         modalColor: "#463E52",
-        modalTextColor: "#0E0817"
+        modalTextColor: "#0E0817",
+        lightGreen: "rgb(165, 222, 165)"
       },
 
       backgroundImage: {

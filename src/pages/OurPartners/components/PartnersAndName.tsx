@@ -32,7 +32,7 @@ const PartnersAndName = ({ sectionName, logos }: PartnersAndNameProps) => {
                 <img className="w-24 h-24 m-0" src={logo} alt={name} />
               </div>
 
-              <p className="font-semibold text-center whitespace-pre-line md:whitespace-normal">
+              <p className="text-center text-[12px] font-semibold whitespace-pre-line md:whitespace-normal">
                 {name}
               </p>
             </div>

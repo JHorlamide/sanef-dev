@@ -4,6 +4,7 @@ import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomTextarea from "components/widgets/CustomInput/CustomTextarea";
 import Image from "components/widgets/Image/Image";
 import { VERTICAL_LINE } from "assets/icons";
+import { SOCIAL_LINK } from "../../../components/widgets/Footer/FooterContentTwo";
 
 interface FormData {
   firstName: string;
@@ -12,6 +13,28 @@ interface FormData {
   phoneNumber: string;
   businessName: string;
 }
+
+interface SocialIconProps {
+  parentClassName: string;
+}
+
+export const SocialIcon = ({ parentClassName }: SocialIconProps) => {
+  return (
+    <div className={parentClassName}>
+      {SOCIAL_LINK.map(({ id, link, Icon }) => (
+        <a
+          key={id}
+          href={link}
+          target={"_blank"}
+          rel="noreferrer"
+          className="bg-buttonColor rounded-full shadow-lg p-2"
+        >
+          <Icon size={25} className="text-white" />
+        </a>
+      ))}
+    </div>
+  );
+};
 
 export const MobileForm = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -30,7 +53,7 @@ export const MobileForm = () => {
   };
 
   return (
-    <section className="relative overflow-hidden flex flex-col space-y-5 pt-20 px-5">
+    <section className="relative overflow-hidden flex flex-col space-y-5 pt-10 px-5">
       <div className="">
         <h1 className="text-[24px] leading-[32px] font-bold">
           Send Us a Message
@@ -125,15 +148,15 @@ export const MobileForm = () => {
           SANEF Limited, NCWS House, 2nd Floor, Plot 14B Ahmed Onibudo Street,
           Victoria Island, Lagos
         </p>
-        <p className="mt-3 font-medium">info@sanefng.com</p>
-        <p className="mt-3 font-medium">+234 909 555 7912</p>
-        <h1
-          className={
-            "py-10 text-buttonColor text-2xl tracking-widest font-medium"
-          }
-        >
-          E D Q P C
-        </h1>
+
+        <div className="">
+          <p className="mt-3 font-medium">info@sanefng.com</p>
+          <p className="mt-3 font-medium">+234 909 555 7912</p>
+        </div>
+
+        <div className="">
+          <SocialIcon parentClassName="flex space-x-5 py-10 w-full" />
+        </div>
       </div>
     </section>
   );
@@ -156,8 +179,12 @@ export const DesktopForm = () => {
   };
 
   return (
-    <section className="z-50 container mx-auto -mt-32 lg:-mt-[170px] mb-40 flex justify-center items-center md:flex-col md:space-y-6 lg:space-y-0 lg:flex-row space-x-14 bg-white py-12 px-10 rounded-xl shadow-lg w-[1179px]">
-      {/* <div id="form" className="container"> */}
+    <section
+      className="z-50 container mx-auto bg-white -mt-32 lg:-mt-[170px] mb-40 flex 
+      justify-center items-baseline md:flex-col md:space-y-10 lg:space-y-0
+      lg:flex-row lg:space-x-14 md:space-x-0 py-12 px-10 rounded-xl shadow-lg 
+      w-[1179px]"
+    >
       <div id="form" className="">
         <form action="" className="flex flex-col space-y-8">
           <div className="flex space-x-8">
@@ -242,44 +269,40 @@ export const DesktopForm = () => {
             }}
           />
 
-          <CustomBtn className="text-white bg-buttonColor rounded-full py-3 px-5 w-60">
-            Send Message
-          </CustomBtn>
+          <div className="pt-5">
+            <CustomBtn className="text-white bg-buttonColor rounded-full py-3 px-5 w-60">
+              Send Message
+            </CustomBtn>
+          </div>
         </form>
       </div>
 
-      <div className="relative pt-6 md:w-full">
-        <h1 className="font-bold text-[24px]">Contact Us</h1>
-
-        <div className="md:flex md:space-x-5 lg:block lg:space-x-0">
-          <div className="">
-            <p className="text-[18px] text-start w-64 mt-6">
-              SANEF Limited, NCWS House, 2nd Floor, Plot 14B Ahmed Onibudo
-              Street, Victoria Island, Lagos
-            </p>
-          </div>
-
-          <div className="flex flex-col space-y-3 md:mt-3 lg:mt-10">
-            <p className="mt-3 font-medium">info@sanefng.com</p>
-            <p className="mt-3 font-medium">+234 909 555 7912</p>
-          </div>
-
-          <div className="">
-            <h1
-              className={
-                "md:py-4.5 py-5 lg:py-16 text-buttonColor text-2xl tracking-widest font-medium"
-              }
-            >
-              E D Q P C
-            </h1>
-          </div>
+      <div
+        className="relative flex md:flex-row md:space-x-8 lg:space-x-0 
+        lg:flex-col md:space-y-0 lg:space-y-12 md:w-full"
+      >
+        <div className="">
+          <h1 className="font-bold text-[24px]">Contact Details</h1>
+        </div>
+        <div className="">
+          <p className="text-[18px] text-start w-64">
+            SANEF Limited, NCWS House, 2nd Floor, Plot 14B Ahmed Onibudo Street,
+            Victoria Island, Lagos
+          </p>
+        </div>
+        <div className="flex flex-col space-y-3 md:mt-3 lg:mt-0">
+          <p className="mt-3 font-medium">info@sanefng.com</p>
+          <p className="mt-3 font-medium">+234 909 555 7912</p>
         </div>
 
+        <SocialIcon parentClassName="md:hidden lg:flex space-x-5 py-10" />
         <Image
           image={VERTICAL_LINE}
-          parentClassName="md:hidden lg:block absolute left-0 top-0 -left-5"
+          parentClassName="md:hidden lg:block absolute -top-14 -left-7"
         />
       </div>
+
+      <SocialIcon parentClassName="lg:hidden md:flex justify-center space-x-5 py-4.5 w-full" />
     </section>
   );
 };

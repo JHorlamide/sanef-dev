@@ -9,7 +9,10 @@ function classNames(...classes: any) {
 
 const PartnersTabs = () => {
   return (
-    <div className="hidden md:block w-full px-5 md:px-16 lg:px-60 mb-10 lg:mb-5 lg:container-lg mt-20">
+    <div
+      className="hidden md:block w-full px-5 md:px-16 lg:px-60 mb-10 lg:mb-5
+      lg:container-lg mt-20"
+    >
       <Tab.Group>
         <Tab.List className="flex justify-center items-center space-x-20 ">
           {Object.keys(OUR_PARTNERS_LOGOS).map((category, idx) => (
@@ -31,8 +34,8 @@ const PartnersTabs = () => {
           ))}
         </Tab.List>
 
-        {/* {Object.values(OUR_PARTNERS_LOGOS).map((members, index) => ( */}
         <Tab.Panels className={"mt-16"}>
+          {/* Banks */}
           <Tab.Panel className="grid grid-custom gap-y-10 gap-x-14 justify-center">
             {OUR_PARTNERS_LOGOS.Banks.map(({ id, name, logo }) => (
               <div key={id}>
@@ -44,13 +47,17 @@ const PartnersTabs = () => {
                   imageClassName="w-28 m-0"
                 />
 
-                <p className="text-center font-[500px] text-[12px] font-semibold whitespace-pre-line mt-5">
+                <p
+                  className="text-center font-[500px] text-[12px] font-semibold 
+                  whitespace-pre-line mt-5"
+                >
                   {name}
                 </p>
               </div>
             ))}
           </Tab.Panel>
 
+          {/* Super Agents */}
           <Tab.Panel className="grid grid-custom gap-y-10 gap-x-14 justify-center">
             {OUR_PARTNERS_LOGOS["Super Agents"].map(({ id, name, logo }) => (
               <div key={id}>
@@ -62,14 +69,21 @@ const PartnersTabs = () => {
                   imageClassName="w-28 m-0"
                 />
 
-                <p className="text-center font-[500px] text-[12px] font-semibold whitespace-pre-line mt-5">
+                <p
+                  className="text-center font-[500px] text-[12px] font-semibold 
+                  whitespace-pre-line mt-5"
+                >
                   {name}
                 </p>
               </div>
             ))}
           </Tab.Panel>
 
-          <Tab.Panel className="grid grid-custom gap-y-10 gap-x-0 space-x-10 justify-center">
+          {/* Regulators */}
+          <Tab.Panel
+            className="grid grid-custom gap-y-10 gap-x-0 space-x-10 
+            justify-center"
+          >
             {OUR_PARTNERS_LOGOS.Regulators.map(({ id, name, logo }) => (
               <div key={id}>
                 <Image
@@ -80,13 +94,17 @@ const PartnersTabs = () => {
                   imageClassName="w-28 m-0"
                 />
 
-                <p className="text-center font-[500px] text-[12px] font-semibold whitespace-pre-line mt-5">
+                <p
+                  className="text-center font-[500px] text-[12px] font-semibold 
+                  whitespace-pre-line mt-5"
+                >
                   {name}
                 </p>
               </div>
             ))}
           </Tab.Panel>
 
+          {/* Strategic Partners */}
           <Tab.Panel className="grid grid-custom gap-y-10 gap-x-14 justify-center">
             {OUR_PARTNERS_LOGOS["Strategic Partners"].map(
               ({ id, name, logo }) => (
@@ -107,6 +125,7 @@ const PartnersTabs = () => {
             )}
           </Tab.Panel>
 
+          {/* Government/MDA's */}
           <Tab.Panel className="grid grid-custom gap-y-10 gap-x-0 space-x-10 justify-center">
             {OUR_PARTNERS_LOGOS["Government/MDA'S"].map(
               ({ id, name, logo }) => (
@@ -119,7 +138,10 @@ const PartnersTabs = () => {
                     imageClassName="w-28 m-0"
                   />
 
-                  <p className="text-center font-[500px] text-[12px] font-semibold whitespace-pre-line mt-5">
+                  <p
+                    className="text-center font-[500px] text-[12px] font-semibold 
+                    whitespace-pre-line mt-5"
+                  >
                     {name}
                   </p>
                 </div>
@@ -127,7 +149,6 @@ const PartnersTabs = () => {
             )}
           </Tab.Panel>
         </Tab.Panels>
-        {/* ))} */}
       </Tab.Group>
     </div>
   );

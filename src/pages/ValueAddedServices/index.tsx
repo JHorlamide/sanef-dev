@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import Navbar from "components/Navbar/Navbar";
 import Image from "components/widgets/Image/Image";
 import style from "./style.module.css";
-import { DOTS, GROUP_LINES } from "assets/icons";
+import { DOTS } from "assets/icons";
 import { VAS_IMAGE, VAS_IMAGE_DESKTOP } from "assets/images";
 
 import {
@@ -12,20 +12,21 @@ import {
 import { SERVICES } from "./content";
 import Footer from "components/widgets/Footer";
 import {
-  ProductServicesMobile,
-  ProductServicesDesktop
+  ProductServicesMobile
+  // ProductServicesDesktop
 } from "./components/ProductServices";
+import ProductServiceDesktop from "./components/ProductServiceDesktop";
 
 const ValueAddedServices = () => {
   return (
     <Fragment>
       <section
-        className={`${style.value_added_services_hero} bg-about-hero-mobile md:bg-about-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-[500px]`}
+        className={`${style.value_added_services_hero} bg-about-hero-mobile md:bg-about-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-[400px]`}
       >
         <Navbar />
 
-        <div className="lg:py-28">
-          <h1 className="text-white text-4xl text-center max-w-lg mx-auto my-10 font-extrabold lg:-mt-5">
+        <div className="">
+          <h1 className="text-white text-4xl text-center max-w-lg mx-auto my-10 font-extrabold lg:mt-5">
             Value Added Services
           </h1>
         </div>
@@ -87,17 +88,7 @@ const ValueAddedServices = () => {
 
       {/* OUTCOME MOBILE VIEW */}
       <section className="md:hidden py-10">
-        <Image
-          image={GROUP_LINES}
-          parentClassName="relative md:hidden lg:hidden"
-          imageClassName="absolute w-72 inset-y-0 right-60 top-10"
-        />
-
-        <div className="relative">
-          <Image image={VAS_IMAGE} imageClassName="absolute w-screen -top-16" />
-        </div>
-
-        <section className="container mx-auto bg-white shadow-lg mt-52 rounded-xl w-[335px] h-[310px] px-5">
+        <section className="relative container mx-auto bg-white shadow-lg mt-28 md:mt-52 rounded-xl w-[335px] h-[310px] px-5">
           <h1 className="text-[20px] font-bold pt-20"> Outcomes:</h1>
 
           <div className="flex flex-col space-y-4 py-6">
@@ -120,11 +111,17 @@ const ValueAddedServices = () => {
               <p className="text-[18px] leading-[32px]">Agent Sustainability</p>
             </div>
           </div>
+
+          <Image
+            image={VAS_IMAGE}
+            parentClassName="absolute -top-56"
+            imageClassName=""
+          />
         </section>
       </section>
 
       {/* OUTCOME DESKTOP VIEW */}
-      <section className="hidden md:block container mx-auto bg-white rounded-xl shadow-lg w-[995px] h-[310px] my-10 px-12">
+      <section className="hidden md:block relative container mx-auto bg-white rounded-xl shadow-lg w-[995px] h-[310px] my-10 px-12">
         <h1 className="font-bold text-[20px] pt-16 ml-20">Outcomes:</h1>
 
         <div className="flex flex-col space-y-4 py-6">
@@ -150,15 +147,16 @@ const ValueAddedServices = () => {
 
         <Image
           image={VAS_IMAGE_DESKTOP}
-          parentClassName="relative md:hidden lg:hidden"
-          imageClassName="absolute inset-x-0 right-0 top-0"
+          parentClassName="md:block absolute inset-x-0 left-[390px] md:top-20 lg:-top-10"
+          imageClassName=""
         />
       </section>
+
       <div className="hidden md:block relative">
-        <Image
+        {/* <Image
           image={VAS_IMAGE_DESKTOP}
           imageClassName="absolute w-[400px] right-20 -top-80 lg:-top-96 lg:right-40 lg:w-[600px]"
-        />
+        /> */}
       </div>
 
       <section className="px-5 py-8 md:mt-44">
@@ -183,7 +181,8 @@ const ValueAddedServices = () => {
         <ProductServicesMobile />
 
         {/* PRODUCT AND SERVICES DESKTOP VIEW */}
-        <ProductServicesDesktop />
+        {/* <ProductServicesDesktop /> */}
+        <ProductServiceDesktop />
       </section>
 
       <section>

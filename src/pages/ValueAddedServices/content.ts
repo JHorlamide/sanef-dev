@@ -46,6 +46,52 @@ export const SERVICES = [
   }
 ];
 
+export const PRODUCT_SERVICE = [
+  {
+    id: 1,
+    heading: "Bank Account/Wallet Opening",
+    firstList: "No need to visit a bank to open an account or wallet.",
+    secondList: `Simply go to any SANEF Agent close to you, open an account with any bank of your choice and at your convenience.`,
+    thirdList:
+      "Your account is secure and can be accessed at any bank branch that you have selected."
+  },
+  {
+    id: 2,
+    heading: "BVN Enrollment",
+    firstList: "Register and get your BVN from any SANEF Agent close to you.",
+    secondList: `SANEF Agents are also available to help with any BVN issues that you have.`,
+    thirdList:
+      "You no longer have to visit a bank to initiate and resolve issues."
+  },
+  {
+    id: 3,
+    heading: "Cash Deposit/Cash Withdrawal",
+    firstList: `You no longer need to get a bank or am ATM to make a deposit or to withdraw cash.`,
+    secondList: `You can do your Cash In and Cash Out transactions at any SANEF Agent location close to you.`,
+    thirdList: `Simply tell the Agent the type of transaction you wish to carry out and the amount.`,
+    fourthList: `The agent will facilitate your payment and you will receive a text message on your transaction instantly.`
+  },
+  {
+    id: 4,
+    heading: "Instant Transfer",
+    firstList: `Send and receive money through NIP (NIBSS Instant Payment) transfers.`,
+    secondList: `It is a fast, easy, safe and convenient way to perform transactions.`,
+    thirdList: `NIP transfers are available anywhere you see the SANEF logo.`
+  },
+  {
+    id: 5,
+    heading: "Bill Payment",
+    firstList: `You can pay your bills at any SANEF Agent location.`,
+    secondList: `Simply give the agent details of the payment and the required amount of cash.`,
+    thirdList: `You will receive a confirmation text message from the bank once payment is complete.`
+  },
+  {
+    id: 6,
+    heading: "Airtime Recharge",
+    firstList: `You can recharge your phone or that of your loved ones at any SANEF Agent location.`
+  }
+];
+
 export const PRODUCT_AND_SERVICE = {
   "Bank Account/Wallet Opening": [
     {
@@ -68,6 +114,7 @@ export const PRODUCT_AND_SERVICE = {
         "You no longer have to visit a bank to initiate and resolve issues."
     }
   ],
+
   "Cash Deposit/Cash Withdrawal": [
     {
       id: 1,

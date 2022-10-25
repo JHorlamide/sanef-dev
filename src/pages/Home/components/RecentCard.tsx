@@ -1,6 +1,7 @@
 import React from "react";
 import { RecentCardProps } from "types/card";
 import RouterLink from "components/Navbar/NavLink/RouterLink";
+import { IoIosArrowForward } from "react-icons/io";
 
 const RecentCard = ({ image, date, title, content, icon }: RecentCardProps) => {
   return (
@@ -17,10 +18,18 @@ const RecentCard = ({ image, date, title, content, icon }: RecentCardProps) => {
         </p>
 
         <RouterLink
-          className="text-xl text-buttonColor font-semibold flex md:text-base"
+          className="text-xl text-buttonColor font-semibold flex w-fit md:text-base hover:text-white 
+          hover:border-lightGreen hover:bg-lightGreen hover:rounded-full hover:max-w-fit
+          hover:px-4 hover:py-3"
           path="/continue-reading"
           title="Continue Reading"
-          rightIcon={<img className="ml-3 w-2" src={icon} alt="" />}
+          rightIcon={
+            <IoIosArrowForward
+              size={22}
+              className="ml-1 mt-0.5 text-sm hover:text-white"
+            />
+          }
+          // rightIcon={<img className="ml-3 w-2" src={icon} alt="" />}
         />
       </div>
     </div>
