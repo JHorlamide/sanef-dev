@@ -8,12 +8,15 @@ function classNames(...classes: any) {
 }
 
 const PartnersTabs = () => {
+  const queryParams = new URLSearchParams(window.location.search);
+
+  const tabIndex = Number(queryParams.get("tabIndex"));
   return (
     <div
       className="hidden md:block w-full px-5 md:px-16 lg:px-60 mb-10 lg:mb-5
       lg:container-lg mt-20"
     >
-      <Tab.Group>
+      <Tab.Group defaultIndex={tabIndex ? tabIndex : 1}>
         <Tab.List className="flex justify-center items-center space-x-20 ">
           {Object.keys(OUR_PARTNERS_LOGOS).map((category, idx) => (
             <div className="flex space-x-14" key={idx}>

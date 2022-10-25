@@ -7,6 +7,7 @@ import CustomInput from "components/widgets/CustomInput/CustomInput";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomSelect from "components/widgets/CustomInput/CustomSelect";
 import { CHECK_LIST } from "assets/icons";
+import RouterLink from "components/Navbar/NavLink/RouterLink";
 
 interface FormData {
   firstName: string;
@@ -44,10 +45,12 @@ const FirstTabPanel = () => {
         </p>
       </div>
 
-      <div className="mt-6">
-        <h1 className="font-bold text-center text-buttonColor">
-          View SANEF Super-Agent Partners
-        </h1>
+      <div className="mt-6 flex justify-center">
+        <RouterLink
+          path="/our-partners?tabIndex=1"
+          title=" View SANEF Super-Agent Partners"
+          className="font-bold text-center text-buttonColor"
+        />
       </div>
 
       {/* FLEX CONTAINER */}
@@ -156,7 +159,10 @@ const FirstTabPanel = () => {
         />
 
         {/* 2nd CONTAINER */}
-        <div className="relative overflow-hidden md:w-96 lg:w-[450px] md:h-52 z-50 bg-white rounded-xl shadow-lg px-5 py-12">
+        <div
+          className="relative overflow-hidden md:w-96 lg:w-[450px] md:h-52 z-50 
+          bg-white rounded-xl shadow-lg px-5 py-12"
+        >
           <h1 className="font-bold text-[24px]">
             To become a licensed Super-Agent, visit:{" "}
           </h1>

@@ -33,22 +33,37 @@ const TeamTab = () => {
 
         <Tab.Panels className={"mt-16"}>
           {Object.values(BOARD_CONTENT).map((members, index) => (
-            <Tab.Panel
-              key={index}
-              className="relative mx-auto grid grid-cols-1 md:member-custom-grid 
-               gap-y-16 md:gap-x-10 md:max-w-screen-lg md:justify-center"
-            >
-              {members.map((info) => (
-                <BoardCard
-                  key={info.id}
-                  image={info.image}
-                  name={info.name}
-                  position={info.position}
-                  shortBio={info.shortBio}
-                  shortBio2={info.shortBio2}
-                  fullBio={info.fullBio}
-                />
-              ))}
+            <Tab.Panel key={index} className="relative">
+              <div
+                className="mx-auto grid grid-cols-1 md:member-custom-grid gap-y-16 
+                md:gap-x-10 grid-flow-row md:max-w-screen-lg md:justify-center"
+              >
+                {members.slice(0, 6).map((info) => (
+                  <BoardCard
+                    key={info.id}
+                    image={info.image}
+                    name={info.name}
+                    position={info.position}
+                    shortBio={info.shortBio}
+                    shortBio2={info.shortBio2}
+                    fullBio={info.fullBio}
+                  />
+                ))}
+              </div>
+
+              <div className="flex w-full mx-auto justify-center py-16">
+                {members.slice(6, 8).map((info) => (
+                  <BoardCard
+                    key={info.id}
+                    image={info.image}
+                    name={info.name}
+                    position={info.position}
+                    shortBio={info.shortBio}
+                    shortBio2={info.shortBio2}
+                    fullBio={info.fullBio}
+                  />
+                ))}
+              </div>
 
               <Image
                 image={GROUP_SHAPE}
