@@ -30,6 +30,8 @@ module.exports = {
         "about-hero-mobile": "url('/public/assets/images/hero-img/about-hero-bg-mobile.png')",
         "contact-hero-desktop": "url('/public/assets/images/hero-img/desktop_contact.jpg')",
         "contact-hero-mobile": "url('/public/assets/images/hero-img/mobile_contact.jpg')",
+        "agent-hero-desktop": "url('/public/assets/images/hero-img/desktop_agent.jpeg')",
+        "agent-hero-mobile": "url('/public/assets/images/hero-img/mobile_agent.jpeg')",
         "footer-image-desktop": "url('/public/assets/images/hero-img/Footer-Image-Desktop.png')",
         "footer-image-mobile": "url('/public/assets/images/hero-img/Footer-Image-Mobile.png')",
         "mobile-nav-bg": "url('/public/assets/images/hero-img/Mobile-Background.png')"

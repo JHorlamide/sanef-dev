@@ -10,7 +10,7 @@ const BecomeAnAgent = () => {
   return (
     <Fragment>
       <section
-        className={`${style.agent_hero} relative bg-about-hero-mobile md:bg-about-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-full`}
+        className={`${style.agent_hero} relative bg-agent-hero-mobile md:bg-agent-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-full`}
       >
         <Navbar />
 

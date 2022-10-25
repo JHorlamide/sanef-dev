@@ -27,7 +27,8 @@ export const SocialIcon = ({ parentClassName }: SocialIconProps) => {
           href={link}
           target={"_blank"}
           rel="noreferrer"
-          className="bg-buttonColor rounded-full shadow-lg p-2"
+          className="bg-buttonColor rounded-full shadow-lg p-2 transition 
+          ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
         >
           <Icon size={25} className="text-white" />
         </a>

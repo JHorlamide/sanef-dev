@@ -49,7 +49,9 @@ const FirstTabPanel = () => {
         <RouterLink
           path="/our-partners?tabIndex=1"
           title=" View SANEF Super-Agent Partners"
-          className="font-bold text-center text-buttonColor"
+          className="font-bold text-center text-buttonColor transition ease-in-out delay-150 
+            hover:-translate-y-1 hover:scale-110 hover:text-white hover:bg-lightGreen 
+            duration-300 rounded-full px-5 py-3"
         />
       </div>
 
@@ -171,7 +173,9 @@ const FirstTabPanel = () => {
             <a
               href="https://www.cbn.gov.ng"
               target={"_blank"}
-              className="text-buttonColor text-[20px] font-bold"
+              className="text-buttonColor text-[20px] font-bold transition ease-in-out 
+              delay-150 hover:-translate-y-1 hover:scale-110 hover:text-white 
+              hover:bg-lightGreen duration-300 rounded-full hover:px-3 hover:py-3"
               rel="noreferrer"
             >
               www.cbn.gov.ng
@@ -591,7 +595,8 @@ const AgentTab = () => {
             <Tab
               className={({ selected }) =>
                 classNames(
-                  "text-[24px] font-bold",
+                  `text-[24px] font-bold hover:rounded-full hover:px-5 hover:bg-lightGreen 
+                  hover:text-white hover:border-none py-3`,
                   "focus:outline-none",
                   selected
                     ? "text-buttonColor border-b-4 border-b-buttonColor"
@@ -605,7 +610,8 @@ const AgentTab = () => {
             <Tab
               className={({ selected }) =>
                 classNames(
-                  "text-[24px] font-bold",
+                  `text-[24px] font-bold hover:rounded-full hover:px-5 hover:bg-lightGreen 
+                  hover:text-white hover:border-none py-3`,
                   "focus:outline-none",
                   selected
                     ? "text-buttonColor border-b-4 border-b-buttonColor"
