@@ -175,6 +175,7 @@ export const MobileForm = () => {
 };
 
 export const DesktopForm = () => {
+  const form = React.useRef<HTMLFormElement | string>("");
   const [formData, setFormData] = useState<IContactForm>({
     firstName: "",
     lastName: "",
@@ -182,8 +183,6 @@ export const DesktopForm = () => {
     phoneNumber: "",
     message: ""
   });
-
-  const form = React.useRef<HTMLFormElement | string>("");
 
   const { sendEmail } = useContactForm({
     formData: form.current
