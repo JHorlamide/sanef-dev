@@ -76,15 +76,12 @@ const CardSubContentDesktop = ({
           element="span"
           truncateText="…"
           text={shortBio2}
-          // textTruncateChild={<a href="#">Read on</a>}
         />
-        {/* <p className="">{shortBio2}</p> */}
       </div>
 
       <div className="block">
         <CustomBtn
-          className="text-buttonColor font-bold transition ease-in-out delay-150 
-            hover:-translate-y-1 hover:scale-110 duration-300"
+          className="text-buttonColor font-bold"
           onClick={() =>
             handleSetUserInfo({
               image,

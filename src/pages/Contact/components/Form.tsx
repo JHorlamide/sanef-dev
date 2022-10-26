@@ -5,13 +5,14 @@ import CustomTextarea from "components/widgets/CustomInput/CustomTextarea";
 import Image from "components/widgets/Image/Image";
 import { VERTICAL_LINE } from "assets/icons";
 import { SOCIAL_LINK } from "../../../components/widgets/Footer/FooterContentTwo";
+import useContactForm from "hooks/useContactForm";
 
-interface FormData {
+interface IContactForm {
   firstName: string;
   lastName: string;
   email: string;
   phoneNumber: string;
-  businessName: string;
+  message: string;
 }
 
 interface SocialIconProps {
@@ -38,12 +39,17 @@ export const SocialIcon = ({ parentClassName }: SocialIconProps) => {
 };
 
 export const MobileForm = () => {
-  const [formData, setFormData] = useState<FormData>({
+  const form = React.useRef<HTMLFormElement | string>("");
+  const [formData, setFormData] = useState<IContactForm>({
     firstName: "",
     lastName: "",
     email: "",
     phoneNumber: "",
-    businessName: ""
+    message: ""
+  });
+
+  const { sendEmail } = useContactForm({
+    formData: form.current
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -61,7 +67,11 @@ export const MobileForm = () => {
         </h1>
       </div>
 
-      <form action="" className="flex flex-col space-y-4">
+      <form
+        className="flex flex-col space-y-4"
+        ref={form as React.MutableRefObject<HTMLFormElement>}
+        onSubmit={sendEmail}
+      >
         <label className="" htmlFor="firstName">
           First Name
         </label>
@@ -125,15 +135,16 @@ export const MobileForm = () => {
         </div>
 
         <label className="" htmlFor="businessName">
-          Business Name
+          Message
         </label>
-        <CustomInput
-          id="businessName"
-          className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 w-full"
-          inputProps={{
-            type: "text",
-            name: "businessName",
-            value: formData.businessName,
+        <CustomTextarea
+          id="message"
+          className="container w-full rounded-2xl border border-gray-300 outline-buttonColor
+          focus:border-buttonColor focus:ring-buttonColor"
+          boxProps={{
+            name: "message",
+            rows: 3,
+            value: formData.message,
             onChange: handleChange
           }}
         />
@@ -164,12 +175,18 @@ export const MobileForm = () => {
 };
 
 export const DesktopForm = () => {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<IContactForm>({
     firstName: "",
     lastName: "",
     email: "",
     phoneNumber: "",
-    businessName: ""
+    message: ""
+  });
+
+  const form = React.useRef<HTMLFormElement | string>("");
+
+  const { sendEmail } = useContactForm({
+    formData: form.current
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -187,7 +204,11 @@ export const DesktopForm = () => {
       w-[1179px]"
     >
       <div id="form" className="">
-        <form action="" className="flex flex-col space-y-8">
+        <form
+          className="flex flex-col space-y-8"
+          ref={form as React.MutableRefObject<HTMLFormElement>}
+          onSubmit={sendEmail}
+        >
           <div className="flex space-x-8">
             <div className="flex flex-col space-y-2">
               <label className="" htmlFor="firstName">
@@ -264,9 +285,13 @@ export const DesktopForm = () => {
 
           <CustomTextarea
             id="message"
-            className="container w-full rounded-2xl border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
+            className="container w-full rounded-2xl border border-gray-300 outline-buttonColor
+          focus:border-buttonColor focus:ring-buttonColor"
             boxProps={{
-              rows: 3
+              name: "message",
+              rows: 3,
+              value: formData.message,
+              onChange: handleChange
             }}
           />
 

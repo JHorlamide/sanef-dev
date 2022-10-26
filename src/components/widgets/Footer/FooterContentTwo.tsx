@@ -54,7 +54,8 @@ const FooterContentTwo = ({ iconSize }: FooterContentTwoProps) => {
           >
             <Icon
               size={iconSize}
-              className="text-black bg-white rounded-full p-2 py-0 md:p-1 md:py-3"
+              className="text-black bg-white hover:bg-buttonColor hover:text-white
+              rounded-full p-2 py-0 md:p-1 md:py-3"
             />
           </a>
         ))}

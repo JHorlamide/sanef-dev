@@ -1,13 +1,13 @@
 import { BrowserRouter } from "react-router-dom";
 import RouteConfig from "routes/RouteConfig";
 import ScrollToTop from "utils/scrollToTop";
-import LogRocket from "logrocket";
-LogRocket.init("8xfukx/sanef-dev");
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <Toaster toastOptions={{ duration: 4000 }} />
       <RouteConfig />
     </BrowserRouter>
   );
