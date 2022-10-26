@@ -8,14 +8,29 @@
   margin: 0;
 }
 
-#carousel-indicator-button {
+.carousel_item {
+  position: relative;
+}
+
+.carousel_item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -60px;
+  height: 6rem;
+  background-color: #f3fcf5;
+  transform: skewY(-3deg);
+}
+
+#carousel_indicator_button {
   padding: 2px;
   border: solid 1px;
   border-radius: 10px;
 }
 
 [aria-current]:not([aria-current="false"]) {
-  width: 7%;
+  width: 45%;
   padding: 0.5px;
   background-color: #2aaf4a;
   border: solid #2aaf4a 1px;

@@ -17,7 +17,13 @@ const Image = ({
 }: ImageProps) => {
   return (
     <div className={parentClassName}>
-      <img id={id} className={imageClassName} src={image} alt={alt} />
+      <img
+        id={id}
+        className={imageClassName}
+        src={image}
+        alt={alt}
+        loading="lazy"
+      />
     </div>
   );
 };

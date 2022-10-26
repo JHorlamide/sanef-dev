@@ -13,7 +13,8 @@ const About = () => {
   return (
     <Fragment>
       <section
-        className={`${style.about_hero} relative bg-about-hero-mobile md:bg-about-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-[400px]`}
+        className={`${style.about_hero} relative bg-about-hero-mobile md:bg-about-hero-desktop
+        bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-[400px]`}
       >
         <Navbar />
 

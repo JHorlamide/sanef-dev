@@ -1,8 +1,9 @@
 import { Fragment } from "react";
-import Navbar from "components/Navbar/Navbar";
+// import Navbar from "components/Navbar/Navbar";
 import { DOTS, GROUP_SHAPE, LINE_1, LINE_2, GROUP_LINES } from "assets/icons";
 import { ROLE_IMAGE_DESKTOP, ROLE_IMAGE_MOBILE } from "assets/images";
 import Carousel from "components/widgets/Carousel/Carousel";
+// import FlowbitCarousel from "components/widgets/Carousel/FlowbitCarousel";
 import { OUR_IMPACT_CARD_CONTENT } from "./content";
 import { RECENT_NEW } from "./content";
 import Footer from "components/widgets/Footer";
@@ -15,18 +16,18 @@ import Tab from "pages/Home/components/Tab";
 import OurImpactFooter from "./components/OurImpactFooter";
 import OurImpactHeader from "./components/ImpactHeader";
 import RecentCard from "./components/RecentCard";
-import style from "./style.module.css";
+// import style from "./style.module.css";
 
 const Home = () => {
   return (
     <Fragment>
-      <header
+      {/* <header
         id="hero-mobile-hight"
-        className={`${style.home_header} bg-home-hero-mobile lg:bg-home-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-[600px] md:h-[630px]`}
-      >
-        <Navbar />
+        className={`${style.home_header} bg-center bg-cover bg-no-repeat items-center w-full`}
+      ></header> */}
+      <section>
         <Carousel />
-      </header>
+      </section>
 
       {/* SHARED AGENT NETWORK  */}
       <section className="relative px-8 py-0">
