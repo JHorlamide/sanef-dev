@@ -14,8 +14,6 @@ const useContactForm = ({ formData }: ContactFormData) => {
     const serviceID = process.env.REACT_APP_SERVICE_ID as string;
     const templateID = process.env.REACT_APP_TEMPLATE_ID as string;
 
-    console.log(pubKey, serviceID, templateID);
-
     try {
       const response = await emailjs.sendForm(
         serviceID,
