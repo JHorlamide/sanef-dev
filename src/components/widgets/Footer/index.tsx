@@ -76,7 +76,7 @@ const Footer = () => {
             <div className="flex flex-col space-y-3 mt-3 ">
               {FOOTER_NAVIGATION.FIRST_LINKS.map(({ id, title, path }) => (
                 <RouterLink
-                  className="text-white text-sm font-medium"
+                  className="text-white text-sm font-medium hover:text-buttonColor"
                   key={id}
                   path={path}
                   title={title}
@@ -92,7 +92,7 @@ const Footer = () => {
             <div className="flex flex-col space-y-3 mt-3 ">
               {FOOTER_NAVIGATION.SECOND_LINKS.map(({ id, title, path }) => (
                 <RouterLink
-                  className="text-white text-sm font-medium"
+                  className="text-white text-sm font-medium hover:text-buttonColor"
                   key={id}
                   path={path}
                   title={title}
@@ -108,7 +108,7 @@ const Footer = () => {
             <div className="flex flex-col space-y-3 mt-3 ">
               {FOOTER_NAVIGATION.THIRD_LINKS.map(({ id, title, path }) => (
                 <RouterLink
-                  className="text-white text-sm font-medium"
+                  className="text-white text-sm font-medium hover:text-buttonColor"
                   key={id}
                   path={path}
                   title={title}
