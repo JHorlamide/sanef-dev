@@ -45,17 +45,17 @@ export const MobileForm = () => {
     lastName: "",
     email: "",
     phoneNumber: "",
-    message: "",
+    message: ""
   });
 
   const { sendEmail } = useContactForm({
-    formData: form.current,
+    formData: form.current
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
@@ -82,7 +82,7 @@ export const MobileForm = () => {
             type: "text",
             name: "firstName",
             value: formData.firstName,
-            onChange: handleChange,
+            onChange: handleChange
           }}
         />
 
@@ -96,7 +96,7 @@ export const MobileForm = () => {
             type: "text",
             name: "lastName",
             value: formData.lastName,
-            onChange: handleChange,
+            onChange: handleChange
           }}
         />
 
@@ -110,7 +110,7 @@ export const MobileForm = () => {
             type: "text",
             name: "email",
             value: formData.email,
-            onChange: handleChange,
+            onChange: handleChange
           }}
         />
 
@@ -129,7 +129,7 @@ export const MobileForm = () => {
               type: "text",
               name: "phoneNumber",
               value: formData.phoneNumber,
-              onChange: handleChange,
+              onChange: handleChange
             }}
           />
         </div>
@@ -145,7 +145,7 @@ export const MobileForm = () => {
             name: "message",
             rows: 3,
             value: formData.message,
-            onChange: handleChange,
+            onChange: handleChange
           }}
         />
 
@@ -181,17 +181,17 @@ export const DesktopForm = () => {
     lastName: "",
     email: "",
     phoneNumber: "",
-    message: "",
+    message: ""
   });
 
   const { sendEmail } = useContactForm({
-    formData: form.current,
+    formData: form.current
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
@@ -220,7 +220,7 @@ export const DesktopForm = () => {
                   type: "text",
                   name: "firstName",
                   value: formData.firstName,
-                  onChange: handleChange,
+                  onChange: handleChange
                 }}
               />
             </div>
@@ -236,7 +236,7 @@ export const DesktopForm = () => {
                   type: "text",
                   name: "lastName",
                   value: formData.lastName,
-                  onChange: handleChange,
+                  onChange: handleChange
                 }}
               />
             </div>
@@ -254,7 +254,7 @@ export const DesktopForm = () => {
                   type: "text",
                   name: "email",
                   value: formData.email,
-                  onChange: handleChange,
+                  onChange: handleChange
                 }}
               />
             </div>
@@ -275,7 +275,7 @@ export const DesktopForm = () => {
                     type: "text",
                     name: "phoneNumber",
                     value: formData.phoneNumber,
-                    onChange: handleChange,
+                    onChange: handleChange
                   }}
                 />
               </div>
@@ -294,7 +294,7 @@ export const DesktopForm = () => {
                 name: "message",
                 rows: 3,
                 value: formData.message,
-                onChange: handleChange,
+                onChange: handleChange
               }}
             />
           </div>

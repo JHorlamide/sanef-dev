@@ -43,7 +43,7 @@ const Footer = () => {
                 name: "email",
                 placeholder: "Your Email",
                 value: email,
-                onChange: handleChange,
+                onChange: handleChange
               }}
             />
 

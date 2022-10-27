@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import {
   OUR_PARTNERS,
   ABOUT_US,
-  VALUE_ADDED_SERVICES,
+  VALUE_ADDED_SERVICES
 } from "routes/ROUTES_CONSTANTS";
 import CustomBtn from "../CustomBtn/CustomBtn";
 import { DOTS } from "assets/icons";
