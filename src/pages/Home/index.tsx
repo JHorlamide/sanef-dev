@@ -1,9 +1,7 @@
 import { Fragment } from "react";
-// import Navbar from "components/Navbar/Navbar";
 import { DOTS, GROUP_SHAPE, LINE_1, LINE_2, GROUP_LINES } from "assets/icons";
 import { ROLE_IMAGE_DESKTOP, ROLE_IMAGE_MOBILE } from "assets/images";
 import Carousel from "components/widgets/Carousel/Carousel";
-// import FlowbitCarousel from "components/widgets/Carousel/FlowbitCarousel";
 import { OUR_IMPACT_CARD_CONTENT } from "./content";
 import { RECENT_NEW } from "./content";
 import Footer from "components/widgets/Footer";
@@ -26,8 +24,8 @@ const Home = () => {
       </section>
 
       {/* SHARED AGENT NETWORK  */}
-      <section className="mt-[520px] px-8 py-0">
-        <div className="relative flex flex-col justify-center items-center py-8">
+      <section className="px-8 py-0">
+        <div className="relative z-50 flex flex-col justify-center items-center py-8">
           <h1 className="text-center text-2xl font-bold md:text-3xl lg:text-4xl">
             Shared Agent Network Facilities Limited (SANEF)
           </h1>

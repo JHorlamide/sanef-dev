@@ -23,19 +23,18 @@ const Carousel = () => {
   return (
     <div
       id="carouselExampleCaptions"
-      className="relative w-full carousel slide"
+      className={`${style.carousel_item} w-full carousel slide h-[600px] md:h-[630px]`}
       data-bs-ride="carousel"
     >
       <Navbar />
 
-      <div className="absolute top-0 z-0">
+      <div className="absolute top-0">
         {/* CAROUSEL SLIDER CONTAINER */}
         <div className="inline-block carousel-inner overflow-hidden">
           {/* 1st Slid */}
           <div
-            className={`${style.carousel_item} bg-desktop_home_deepening_financial_inclusion 
-            bg-center bg-cover bg-no-repeat items-center w-screen h-[600px] md:h-[630px] 
-            carousel-item active float-left py-48`}
+            className={`bg-desktop_home_deepening_financial_inclusion bg-center bg-cover
+            bg-no-repeat items-center carousel-item active w-screen float-left py-40 md:py-48`}
           >
             <div className="container mx-auto flex flex-col space-y-10 px-5">
               <h1
@@ -58,9 +57,8 @@ const Carousel = () => {
 
           {/* 2nd Slid */}
           <div
-            className={`${style.carousel_item} bg-desktop_home_centre_of_excellence bg-center 
-            bg-cover bg-no-repeat items-center w-screen h-[600px] md:h-[630px] carousel-item
-            relative float-left py-48`}
+            className={`bg-desktop_home_centre_of_excellence bg-center bg-cover bg-no-repeat
+            items-center carousel-item relative w-screen float-left py-40 md:py-48`}
           >
             <div className="container mx-auto flex flex-col space-y-10 px-5">
               <h1
@@ -82,9 +80,9 @@ const Carousel = () => {
 
           {/* 3rd Slid */}
           <div
-            className={`${style.carousel_item} bg-desktop_home_empowering_the_ecosystem 
-            bg-center bg-cover bg-no-repeat items-center w-screen h-[600px] md:h-[630px] 
-            carousel-item relative float-left py-48`}
+            className={`bg-desktop_home_empowering_the_ecosystem bg-center bg-cover 
+            bg-no-repeat items-center carousel-item relative w-screen float-left py-40
+            md:py-48`}
           >
             <div className="container mx-auto flex flex-col space-y-10 px-5">
               <h1
@@ -106,9 +104,8 @@ const Carousel = () => {
 
           {/* 4th Slid */}
           <div
-            className={`${style.carousel_item} bg-desktop_home_enhancing_knowledge bg-center 
-            bg-cover bg-no-repeat items-center w-screen h-[600px] md:h-[630px] carousel-item
-            relative float-left py-48`}
+            className={`bg-desktop_home_enhancing_knowledge bg-center bg-cover bg-no-repeat
+            items-center carousel-item relative w-screen float-left py-40 md:py-48`}
           >
             <div className="container mx-auto flex flex-col space-y-10 px-5">
               <h1
@@ -132,12 +129,12 @@ const Carousel = () => {
 
         {/* CAROUSEL INDICATOR */}
         <div
-          className="absolute flex flex-row md:flex-col py-5 md:pt-0 space-y-10 justify-center 
-          items-center right-28 md:right-24 lg:right-52 top-[490px]"
+          className="absolute flex flex-row md:flex-col py-5 md:pt-0 space-y-10 
+          justify-center items-center right-28 md:right-24 lg:right-52 top-[490px]"
         >
           <div
-            className="carousel-indicators flex justify-center items-end md:justify-end
-            lg:items-end"
+            className="carousel-indicators mt-3 md:mt-0 flex justify-center items-end
+            md:justify-end lg:items-end"
           >
             <button
               id={`${style.carousel_indicator_button}`}
@@ -176,14 +173,14 @@ const Carousel = () => {
 
           <Image
             image={DOTS}
-            parentClassName="hidden md:block"
-            imageClassName="w-40 h-24 md:w-32 h-fit lg:w-fit lg:h-fit"
+            parentClassName="hidden md:block z-50"
+            imageClassName="h-fit md:w-32 lg:w-fit"
           />
         </div>
 
         <Image
           image={DOTS}
-          parentClassName="block md:hidden absolute inset-y-0 right-0 top-[520px]"
+          parentClassName="block z-50 md:hidden absolute inset-y-0 right-0 top-[520px]"
           imageClassName="w-20 h-24 md:w-32 h-fit lg:w-fit lg:h-fit"
         />
       </div>
