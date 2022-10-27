@@ -309,6 +309,6 @@ export const OUR_PARTNERS_LOGOS = {
       name: "FMHADMSD",
       logo: GOVT1
     },
-    { id: 2, name: "LGA", logo: LGA }
+    { id: 2, name: "Local State Government", logo: LGA }
   ]
 };

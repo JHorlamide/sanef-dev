@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <header>
       {/* DESKTOP NAV */}
-      <nav className="relative py-5 px-5 md:py-0 lg:py-0 md:px-10 lg:px-10">
+      <nav className="z-50 relative py-5 px-5 md:py-0 lg:py-0 md:px-10 lg:px-10">
         <div className="flex justify-between items-center mx-auto max-w-screen-xl">
           {/* LOGO CONTAINER */}
           <Link to={HOME} arial-current="page">

@@ -49,9 +49,7 @@ const FirstTabPanel = () => {
         <RouterLink
           path="/our-partners?tabIndex=1"
           title=" View SANEF Super-Agent Partners"
-          className="font-bold text-center text-buttonColor transition ease-in-out delay-150 
-            hover:-translate-y-1 hover:scale-110 hover:text-white hover:bg-lightGreen 
-            duration-300 rounded-full px-5 py-3"
+          className="font-bold text-center hover:text-lightGreen"
         />
       </div>
 
@@ -205,13 +203,13 @@ const SecondTabPanel = () => {
     businessName: "",
     proposedAgencyService: "",
     preferredPhoneNumber: "",
-    alternatePhoneNumber: ""
+    alternatePhoneNumber: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
   return (
@@ -381,7 +379,7 @@ const SecondTabPanel = () => {
                     type: "text",
                     name: "firstName",
                     value: formData.firstName,
-                    onChange: handleChange
+                    onChange: handleChange,
                   }}
                 />
               </div>
@@ -395,7 +393,7 @@ const SecondTabPanel = () => {
                     type: "text",
                     name: "lastName",
                     value: formData.lastName,
-                    onChange: handleChange
+                    onChange: handleChange,
                   }}
                 />
               </div>
@@ -411,7 +409,7 @@ const SecondTabPanel = () => {
                   type: "text",
                   name: "businessName",
                   value: formData.businessName,
-                  onChange: handleChange
+                  onChange: handleChange,
                 }}
               />
             </div>
@@ -427,7 +425,7 @@ const SecondTabPanel = () => {
                     type: "text",
                     name: "email",
                     value: formData.email,
-                    onChange: handleChange
+                    onChange: handleChange,
                   }}
                 />
               </div>
@@ -440,11 +438,11 @@ const SecondTabPanel = () => {
                   selectProps={{
                     name: "gender",
                     value: formData.gender,
-                    onChange: handleChange
+                    onChange: handleChange,
                   }}
                   selectOptions={[
                     { value: "male", name: "Male" },
-                    { value: "female", name: "Female" }
+                    { value: "female", name: "Female" },
                   ]}
                   selectPlaceholder="Select a gender"
                 />
@@ -469,7 +467,7 @@ const SecondTabPanel = () => {
                       type: "text",
                       name: "preferredPhoneNumber",
                       value: formData.preferredPhoneNumber,
-                      onChange: handleChange
+                      onChange: handleChange,
                     }}
                   />
                 </div>
@@ -491,7 +489,7 @@ const SecondTabPanel = () => {
                       type: "text",
                       name: "alternatePhoneNumber",
                       value: formData.alternatePhoneNumber,
-                      onChange: handleChange
+                      onChange: handleChange,
                     }}
                   />
                 </div>
@@ -508,12 +506,12 @@ const SecondTabPanel = () => {
                   selectProps={{
                     name: "state",
                     value: formData.state,
-                    onChange: handleChange
+                    onChange: handleChange,
                   }}
                   selectOptions={[
                     { value: "lagos", name: "Lagos" },
                     { value: "abia", name: "Abia" },
-                    { value: "abuja", name: "Abuja" }
+                    { value: "abuja", name: "Abuja" },
                   ]}
                   selectPlaceholder="Select a state"
                 />
@@ -527,11 +525,11 @@ const SecondTabPanel = () => {
                   selectProps={{
                     name: "lga",
                     value: formData.lga,
-                    onChange: handleChange
+                    onChange: handleChange,
                   }}
                   selectOptions={[
                     { value: "ifo", name: "Ifo LGA" },
-                    { value: "eti Osa", name: "Eti Osa" }
+                    { value: "eti Osa", name: "Eti Osa" },
                   ]}
                   selectPlaceholder="Select an LGA"
                 />
@@ -550,7 +548,7 @@ const SecondTabPanel = () => {
                   type: "text",
                   name: "proposedAgencyService",
                   value: formData.proposedAgencyService,
-                  onChange: handleChange
+                  onChange: handleChange,
                 }}
               />
             </div>
@@ -566,11 +564,11 @@ const SecondTabPanel = () => {
                 selectProps={{
                   name: "superAgent",
                   value: formData.superAgent,
-                  onChange: handleChange
+                  onChange: handleChange,
                 }}
                 selectOptions={[
                   { value: "", name: "Business Name" },
-                  { value: "my agent 1", name: "Flutterwave" }
+                  { value: "my agent 1", name: "Flutterwave" },
                 ]}
                 selectPlaceholder="Business Name"
               />
@@ -595,8 +593,7 @@ const AgentTab = () => {
             <Tab
               className={({ selected }) =>
                 classNames(
-                  `text-[24px] font-bold hover:rounded-full hover:px-5 hover:bg-lightGreen 
-                  hover:text-white hover:border-none py-3`,
+                  `text-[24px] font-bold hover:text-lightGreen`,
                   "focus:outline-none",
                   selected
                     ? "text-buttonColor border-b-4 border-b-buttonColor"
@@ -610,8 +607,7 @@ const AgentTab = () => {
             <Tab
               className={({ selected }) =>
                 classNames(
-                  `text-[24px] font-bold hover:rounded-full hover:px-5 hover:bg-lightGreen 
-                  hover:text-white hover:border-none py-3`,
+                  `text-[24px] font-bold hover:text-lightGreen`,
                   "focus:outline-none",
                   selected
                     ? "text-buttonColor border-b-4 border-b-buttonColor"

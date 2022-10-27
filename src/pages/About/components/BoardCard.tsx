@@ -81,7 +81,7 @@ const CardSubContentDesktop = ({
 
       <div className="block">
         <CustomBtn
-          className="text-buttonColor font-bold"
+          className="text-buttonColor font-bold hover:text-lightGreen"
           onClick={() =>
             handleSetUserInfo({
               image,

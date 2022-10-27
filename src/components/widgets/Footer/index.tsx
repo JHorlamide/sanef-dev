@@ -43,7 +43,7 @@ const Footer = () => {
                 name: "email",
                 placeholder: "Your Email",
                 value: email,
-                onChange: handleChange
+                onChange: handleChange,
               }}
             />
 
@@ -122,10 +122,18 @@ const Footer = () => {
             <h1 className="text-white font-bold">Contact Us</h1>
 
             <div className="flex flex-col space-y-3 mt-3">
-              <p className="text-white text-sm font-medium">info@sanefng.com</p>
-              <p className="text-white text-sm font-medium">
+              <a
+                href="mailto:info@sanef.com"
+                className="text-white text-sm font-medium hover:text-buttonColor"
+              >
+                info@sanefng.com
+              </a>
+              <a
+                href="tel:+234 909 555 7912"
+                className="text-white text-sm font-medium hover:text-buttonColor"
+              >
                 +234 909 555 7912
-              </p>
+              </a>
             </div>
           </div>
         </div>

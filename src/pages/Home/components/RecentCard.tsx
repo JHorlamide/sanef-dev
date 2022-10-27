@@ -19,7 +19,7 @@ const RecentCard = ({ image, date, title, content, icon }: RecentCardProps) => {
 
         <RouterLink
           className="text-xl text-buttonColor font-semibold flex w-fit md:text-base 
-          transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+          hover:text-lightGreen"
           path="/continue-reading"
           title="Continue Reading"
           rightIcon={

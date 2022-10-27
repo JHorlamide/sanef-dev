@@ -19,7 +19,7 @@ const FooterCopyright = ({
           Shared Agent Network <br className="md:hidden lg:hidden" /> Expansion
           Facilities.
         </span>{" "}
-        All right reserved
+        All rights reserved
       </p>
     </div>
   );

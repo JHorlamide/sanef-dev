@@ -45,17 +45,17 @@ export const MobileForm = () => {
     lastName: "",
     email: "",
     phoneNumber: "",
-    message: ""
+    message: "",
   });
 
   const { sendEmail } = useContactForm({
-    formData: form.current
+    formData: form.current,
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -82,7 +82,7 @@ export const MobileForm = () => {
             type: "text",
             name: "firstName",
             value: formData.firstName,
-            onChange: handleChange
+            onChange: handleChange,
           }}
         />
 
@@ -96,7 +96,7 @@ export const MobileForm = () => {
             type: "text",
             name: "lastName",
             value: formData.lastName,
-            onChange: handleChange
+            onChange: handleChange,
           }}
         />
 
@@ -110,7 +110,7 @@ export const MobileForm = () => {
             type: "text",
             name: "email",
             value: formData.email,
-            onChange: handleChange
+            onChange: handleChange,
           }}
         />
 
@@ -129,7 +129,7 @@ export const MobileForm = () => {
               type: "text",
               name: "phoneNumber",
               value: formData.phoneNumber,
-              onChange: handleChange
+              onChange: handleChange,
             }}
           />
         </div>
@@ -145,7 +145,7 @@ export const MobileForm = () => {
             name: "message",
             rows: 3,
             value: formData.message,
-            onChange: handleChange
+            onChange: handleChange,
           }}
         />
 
@@ -181,17 +181,17 @@ export const DesktopForm = () => {
     lastName: "",
     email: "",
     phoneNumber: "",
-    message: ""
+    message: "",
   });
 
   const { sendEmail } = useContactForm({
-    formData: form.current
+    formData: form.current,
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -220,7 +220,7 @@ export const DesktopForm = () => {
                   type: "text",
                   name: "firstName",
                   value: formData.firstName,
-                  onChange: handleChange
+                  onChange: handleChange,
                 }}
               />
             </div>
@@ -236,7 +236,7 @@ export const DesktopForm = () => {
                   type: "text",
                   name: "lastName",
                   value: formData.lastName,
-                  onChange: handleChange
+                  onChange: handleChange,
                 }}
               />
             </div>
@@ -254,7 +254,7 @@ export const DesktopForm = () => {
                   type: "text",
                   name: "email",
                   value: formData.email,
-                  onChange: handleChange
+                  onChange: handleChange,
                 }}
               />
             </div>
@@ -275,24 +275,29 @@ export const DesktopForm = () => {
                     type: "text",
                     name: "phoneNumber",
                     value: formData.phoneNumber,
-                    onChange: handleChange
+                    onChange: handleChange,
                   }}
                 />
               </div>
             </div>
           </div>
 
-          <CustomTextarea
-            id="message"
-            className="container w-full rounded-2xl border border-gray-300 outline-buttonColor
-          focus:border-buttonColor focus:ring-buttonColor"
-            boxProps={{
-              name: "message",
-              rows: 3,
-              value: formData.message,
-              onChange: handleChange
-            }}
-          />
+          <div className="flex flex-col space-y-2">
+            <label className="" htmlFor="businessName">
+              Message
+            </label>
+            <CustomTextarea
+              id="message"
+              className="container w-full rounded-2xl border border-gray-300 
+              outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
+              boxProps={{
+                name: "message",
+                rows: 3,
+                value: formData.message,
+                onChange: handleChange,
+              }}
+            />
+          </div>
 
           <div className="pt-5">
             <CustomBtn className="text-white bg-buttonColor rounded-full py-3 px-5 w-60">
@@ -316,8 +321,18 @@ export const DesktopForm = () => {
           </p>
         </div>
         <div className="flex flex-col space-y-3 md:mt-3 lg:mt-0">
-          <p className="mt-3 font-medium">info@sanefng.com</p>
-          <p className="mt-3 font-medium">+234 909 555 7912</p>
+          <a
+            href="mailto:info@sanef.com"
+            className="mt-3 font-medium hover:text-buttonColor"
+          >
+            info@sanefng.com
+          </a>
+          <a
+            href="tel:+234 909 555 7912"
+            className="mt-3 font-medium hover:text-buttonColor"
+          >
+            +234 909 555 7912
+          </a>
         </div>
 
         <SocialIcon parentClassName="md:hidden lg:flex space-x-5 py-10" />

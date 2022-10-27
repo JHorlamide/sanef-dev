@@ -1,7 +1,7 @@
+import React, { Fragment } from "react";
 import { DOTS } from "assets/icons";
 import Navbar from "components/Navbar/Navbar";
 import Image from "components/widgets/Image/Image";
-import React, { Fragment } from "react";
 import style from "./style.module.css";
 import AgentTab from "./components/Tab";
 import Footer from "components/widgets/Footer";

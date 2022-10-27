@@ -21,16 +21,12 @@ import RecentCard from "./components/RecentCard";
 const Home = () => {
   return (
     <Fragment>
-      {/* <header
-        id="hero-mobile-hight"
-        className={`${style.home_header} bg-center bg-cover bg-no-repeat items-center w-full`}
-      ></header> */}
       <section>
         <Carousel />
       </section>
 
       {/* SHARED AGENT NETWORK  */}
-      <section className="relative px-8 py-0">
+      <section className="mt-[520px] px-8 py-0">
         <div className="relative flex flex-col justify-center items-center py-8">
           <h1 className="text-center text-2xl font-bold md:text-3xl lg:text-4xl">
             Shared Agent Network Facilities Limited (SANEF)
@@ -49,30 +45,29 @@ const Home = () => {
           </p>
 
           <RouterLink
-            className="text-buttonColor font-bold transition ease-in-out delay-150 
-            hover:-translate-y-1 hover:scale-110 hover:text-white hover:bg-lightGreen 
-            duration-300 rounded-full px-5 py-3"
+            className="text-buttonColor font-bold hover:text-lightGreen"
             path={ABOUT_US}
             title="Learn More"
+          />
+
+          <Image
+            image={GROUP_SHAPE}
+            parentClassName="absolute left-0 top-48"
+            imageClassName="hidden md:block w-40 md:w-72"
+            // imageClassName="hidden w-40 md:w-64 md:flex md:-mt-32 lg:w-72 lg:flex lg:-mt-40 lg:ml-20"
           />
         </div>
       </section>
 
-      <Image
-        image={GROUP_SHAPE}
-        parentClassName="absolute"
-        imageClassName="hidden w-40 md:w-64 md:flex md:-mt-32 lg:w-72 lg:flex lg:-mt-40 lg:ml-20"
-      />
-
       {/* OUR IMPACT */}
-      <section className="flex flex-col justify-center items-center">
+      <section className="flex flex-col justify-center items-center mt-16">
         <h1 className="text-center text-2xl font-bold">Our Impact</h1>
         <hr className="border-b-4 border-buttonColor w-16 mt-2" />
       </section>
 
       <section
-        className="container mx-auto bg-white relative z-50 shadow-lg 
-        rounded-xl mt-5 py-10"
+        className="relative container mx-auto bg-white z-50 shadow-lg 
+        rounded-xl mt-16 py-10"
       >
         {/* MD & LG -> FLEX CONTAINER */}
         <div

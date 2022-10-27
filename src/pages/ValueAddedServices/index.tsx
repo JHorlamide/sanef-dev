@@ -52,7 +52,7 @@ const ValueAddedServices = () => {
         </p>
       </section>
 
-      <section className="py-3 px-5 md:px-16 lg:px-28">
+      <section className="relative py-3 px-5 md:px-16 lg:px-28">
         {/* SERVICES MOBILE */}
         <div className="container mx-auto space-y-5 flex flex-col">
           {SERVICES.map((service) => (
