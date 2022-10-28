@@ -5,12 +5,18 @@ import { LINE_2, LONG_HORIZONTAL_LINE, LONG_VERTICAL_LINE } from "assets/icons";
 // import { LONG_HORIZONTAL_LINE } from "assets/icons";
 import Image from "components/widgets/Image/Image";
 
-export const ProductServicesDesktop = () => {
+export const ProductServicesTab = () => {
   return (
     <Fragment>
-      <div className="hidden md:block relative overflow-hidden container mx-auto mt-10 pt-10 bg-white rounded-xl shadow-lg w-[1201px] md:h-[1008px] lg:h-[800px]">
-        <div className="container mx-auto flex flex-col space-y-24 justify-center items-center">
-          <div className="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-[75px]">
+      <div
+        className="hidden md:block lg:hidden relative overflow-hidden container mx-auto mt-10
+        pt-10 bg-white rounded-xl shadow-lg w-[1201px] md:h-[1008px] lg:h-[800px]"
+      >
+        <div
+          className="container mx-auto flex flex-col space-y-24 justify-center
+          items-center"
+        >
+          <div className="md:grid md:grid-cols-2 md:gap-x-[75px] lg:hidden">
             <div className="container w-[288.45px]">
               {PRODUCT_AND_SERVICE["Bank Account/Wallet Opening"].map(
                 (service) => (
@@ -53,7 +59,7 @@ export const ProductServicesDesktop = () => {
             </div>
           </div>
 
-          <div className="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-[75px]">
+          <div className="md:grid md:grid-cols-2 md:gap-x-[75px] lg:hidden">
             <div className="container w-[288.45px]">
               {PRODUCT_AND_SERVICE["Instant Transfer"].map((service) => (
                 <ProductServiceList
@@ -89,7 +95,7 @@ export const ProductServicesDesktop = () => {
             </div>
           </div>
 
-          <div className="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-[75px]">
+          <div className="md:grid md:grid-cols-2 md:gap-x-[75px]  lg:hidden">
             <div className="container md:block lg:hidden w-[288.45px]">
               {PRODUCT_AND_SERVICE["Cash Deposit/Cash Withdrawal"].map(
                 (service) => (

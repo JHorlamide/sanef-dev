@@ -12,8 +12,8 @@ import {
 import { SERVICES } from "./content";
 import Footer from "components/widgets/Footer";
 import {
-  ProductServicesMobile
-  // ProductServicesDesktop
+  ProductServicesMobile,
+  ProductServicesTab
 } from "./components/ProductServices";
 import ProductServiceDesktop from "./components/ProductServiceDesktop";
 
@@ -42,8 +42,7 @@ const ValueAddedServices = () => {
 
       <section
         id="about-sanef-mobile"
-        // className="relative mt-10 px-5 md:px-10 md:-mt-5 lg:px-40" // Old style
-        className="relative mt-16 px-5 md:px-10 lg:px-40" // New style
+        className="relative mt-16 px-5 md:px-10 lg:px-40"
       >
         <p className="text-lg text-center md:text-md md:-mt-10 lg:-mt-20">
           Shared Agent Network Expansion Facilities Limited (SANEF) provides
@@ -184,7 +183,7 @@ const ValueAddedServices = () => {
         <ProductServicesMobile />
 
         {/* PRODUCT AND SERVICES DESKTOP VIEW */}
-        {/* <ProductServicesDesktop /> */}
+        <ProductServicesTab />
         <ProductServiceDesktop />
       </section>
 
