@@ -1,8 +1,8 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import Image from "components/widgets/Image/Image";
 import BoardModal from "./BoardModal";
-import TextTruncate from "react-text-truncate";
+import style from "../style.module.css";
 
 export interface BoardCardProps {
   image: string;
@@ -68,15 +68,15 @@ const CardSubContentDesktop = ({
   position,
   handleSetUserInfo
 }: CardProps) => {
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      console.log("I was resized");
+    });
+  });
   return (
     <div className="overflow-hidden space-y-4 items-baseline">
       <div className="text-ellipsis leading-[30px]">
-        <TextTruncate
-          line={3}
-          element="span"
-          truncateText="…"
-          text={shortBio2}
-        />
+        <p className={`${style.clamp}`}>{shortBio2}</p>
       </div>
 
       <div className="block">

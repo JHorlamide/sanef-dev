@@ -64,7 +64,7 @@ const Footer = () => {
           <img src={DESKTOP_LINE} alt="long-horizontal-lin" />
         </div>
 
-        <div className="grid grid-cols-5 md:gap-10 lg:gap-6 pt-10">
+        <div className="grid grid-cols-4 md:gap-10 lg:gap-6 pt-10">
           <div>
             <img className="w-28" src={Logo} alt="" />
           </div>
@@ -102,7 +102,7 @@ const Footer = () => {
           </div>
 
           {/* NAV ITEM THREE */}
-          <div className="">
+          {/* <div className="">
             <h1 className="text-white font-bold">Legal</h1>
 
             <div className="flex flex-col space-y-3 mt-3 ">
@@ -115,7 +115,7 @@ const Footer = () => {
                 />
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* NAV ITEM FOUR */}
           <div className="">

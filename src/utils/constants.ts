@@ -42,12 +42,12 @@ export const FOOTER_NAVIGATION = {
       id: 3,
       path: "/value-added-services",
       title: "Value Added Services"
-    },
-    {
-      id: 4,
-      path: "/agent-banking",
-      title: "Agent Banking"
     }
+    // {
+    //   id: 4,
+    //   path: "/agent-banking",
+    //   title: "Agent Banking"
+    // }
   ],
 
   SECOND_LINKS: [
@@ -63,7 +63,7 @@ export const FOOTER_NAVIGATION = {
     },
     {
       id: 3,
-      path: "/contact-us",
+      path: "/contact",
       title: "Contact Us"
     }
   ],

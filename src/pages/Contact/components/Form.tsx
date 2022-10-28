@@ -119,12 +119,14 @@ export const MobileForm = () => {
         </label>
 
         <div>
-          <CustomBtn className="z-50 absolute bg-gray-200 py-[9px] px-6 rounded-full ml-1 mt-1">
+          <p className="z-50 absolute bg-gray-200 py-[9px] px-6 rounded-full ml-1 mt-1">
             +234
-          </CustomBtn>
+          </p>
+
           <CustomInput
             id="phoneNumber"
-            className="relative rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 w-full px-24"
+            className="relative rounded-full border border-gray-300 outline-buttonColor
+            focus:border-buttonColor focus:ring-buttonColor py-3 w-full px-24"
             inputProps={{
               type: "text",
               name: "phoneNumber",
@@ -265,9 +267,9 @@ export const DesktopForm = () => {
               </label>
 
               <div className="">
-                <CustomBtn className="z-50 absolute bg-gray-200 py-[9px] px-6 rounded-full ml-1 mt-1">
+                <p className="z-50 absolute bg-gray-200 py-[9px] px-6 rounded-full ml-1 mt-1">
                   +234
-                </CustomBtn>
+                </p>
                 <CustomInput
                   id="phoneNumber"
                   className="relative rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 px-24 w-80"

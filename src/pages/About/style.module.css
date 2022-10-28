@@ -13,6 +13,16 @@
    transform: skewY(-5deg);
 }
 
+.clamp {
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+}
+
+
 @media (max-width: 390px) {
    .about_hero::before {
       content: "";

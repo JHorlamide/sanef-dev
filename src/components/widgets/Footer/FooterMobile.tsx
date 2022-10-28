@@ -30,7 +30,7 @@ const FooterMobile = ({
         <h1 className="text-white text-2xl font-bold">SANEF</h1>
         {FOOTER_NAVIGATION.FIRST_LINKS.map(({ id, title, path }) => (
           <RouterLink
-            className="text-white"
+            className="text-white hover:text-buttonColor"
             key={id}
             path={path}
             title={title}
@@ -42,7 +42,7 @@ const FooterMobile = ({
         <h1 className="text-white text-2xl font-bold">Quick Actions</h1>
         {FOOTER_NAVIGATION.SECOND_LINKS.map(({ id, title, path }) => (
           <RouterLink
-            className="text-white"
+            className="text-white hover:text-buttonColor"
             key={id}
             path={path}
             title={title}
@@ -87,10 +87,14 @@ const FooterMobile = ({
       </div>
 
       <div className="mt-10 text-white font-semibold flex flex-col justify-center items-center space-y-9">
-        <p>Terms and Condition</p>
-        <p>Privacy Policy</p>
-        <p>info@sanefng.com</p>
-        <p>+234 909 555 7912</p>
+        {/* <p>Terms and Condition</p>
+        <p>Privacy Policy</p> */}
+        <a href="mailto:info@sanefng.com" className="hover:text-buttonColor">
+          info@sanefng.com
+        </a>
+        <a href="tel:+234 909 555 7912" className="hover:text-buttonColor">
+          +234 909 555 7912
+        </a>
       </div>
 
       <div className="mt-10">

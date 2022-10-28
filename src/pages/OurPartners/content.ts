@@ -84,27 +84,27 @@ export const OUR_PARTNERS_LOGOS = {
   Banks: [
     {
       id: 1,
-      name: "Access Bank",
+      name: "ACCESS BANK",
       logo: ACCESS_BANK
     },
     {
       id: 2,
-      name: "CitiBank",
+      name: "CITIBANK",
       logo: CITY_BANK
     },
     {
       id: 3,
-      name: "EcoBank",
+      name: "ECOBANK",
       logo: ECOBANK_BANK
     },
     {
       id: 4,
-      name: "Fidelity Bank",
+      name: "FIDELITY BANK",
       logo: FIDELITY_BANK
     },
     {
       id: 5,
-      name: "First Bank",
+      name: "FIRST BANK",
       logo: FIRST_BANK
     },
     {
@@ -114,102 +114,102 @@ export const OUR_PARTNERS_LOGOS = {
     },
     {
       id: 7,
-      name: "Fortress MFB",
+      name: "FORTRESS MFB",
       logo: FORTRESS_BANK_LOGO
     },
     {
       id: 8,
-      name: "GTBank",
+      name: "GTBANK",
       logo: GT_BANK
     },
     {
       id: 9,
-      name: "Globus Bank",
+      name: "GLOBUS BANK",
       logo: GLOBUS_BANK
     },
     {
       id: 10,
-      name: "Heritage Bank",
+      name: "HERITAGE BANK",
       logo: HERITAGE_BANK
     },
     {
       id: 11,
-      name: "Jaiz Bank",
+      name: "JAIZ BANK",
       logo: JIAZ_BANK
     },
     {
       id: 12,
-      name: "Keystone Bank",
+      name: "KEYSTONE BANK",
       logo: KEYSTONE_BANK
     },
     {
       id: 13,
-      name: "Lotus Bank",
+      name: "LOTUS BANK",
       logo: LOTUS_BANK
     },
     {
       id: 14,
-      name: "Polaris Bank",
+      name: "POLARIS BANK",
       logo: POLARIZE_BANK
     },
     {
       id: 15,
-      name: "Providus Bank",
+      name: "PROVIDUS BANK",
       logo: PROVIDUS_BANK
     },
     {
       id: 16,
-      name: "Stanbic IBTC",
+      name: "STANBIC IBTC",
       logo: STANBIC_BANK
     },
     {
       id: 17,
-      name: "Standard \n Chartered Bank",
+      name: "STANDARD \n CHARTERED BANK",
       logo: STANDARD_CHARTED_BANK
     },
     {
       id: 18,
-      name: "Sterling Bank",
+      name: "STERLING BANK",
       logo: STERLING_BANK
     },
     {
       id: 19,
-      name: "Sun Trust Bank",
+      name: "SUN TRUST BANK",
       logo: SUN_TRUST_BANK
     },
     {
       id: 20,
-      name: "TAJ Bank",
+      name: "TAJ BANK",
       logo: TAJ_BANK
     },
     {
       id: 21,
-      name: "Titan Trust Bank",
+      name: "TITAN TRUST BANK",
       logo: TITAN_TRUST_BANK
     },
     {
       id: 22,
-      name: "United Bank \n for Africa (UBA)",
+      name: "UNITED BANK \n FOR  AFRICA (UBA)",
       logo: UBA_BANK
     },
     {
       id: 23,
-      name: "Unity Bank",
+      name: "UNITY BANK",
       logo: UNITY_BANK
     },
     {
       id: 24,
-      name: "Union Bank",
+      name: "UNION BANK",
       logo: UNION_BANK
     },
     {
       id: 25,
-      name: "Wema Bank",
+      name: "WEMA BANK",
       logo: WEMA_BANK
     },
     {
       id: 26,
-      name: "Zenith Bank",
+      name: "ZENITH BANK",
       logo: ZENITH_BANK
     }
   ],
@@ -222,13 +222,13 @@ export const OUR_PARTNERS_LOGOS = {
     },
     {
       id: 2,
-      name: "AccelerexNetwork",
+      name: "ACCELEREX NETWORK",
       logo: ACCELERE
     },
     { id: 30, name: "AFRICAVE TECH", logo: KIPPA_PAY_LOGO },
     {
       id: 3,
-      name: "CapricornDigital",
+      name: "CAPRICON DIGITAL",
       logo: BAXI
     },
     {
@@ -238,7 +238,7 @@ export const OUR_PARTNERS_LOGOS = {
     },
     { id: 12, name: "CONTEC GLOBAL", logo: NOW_NOW },
     { id: 21, name: "CELLULANT", logo: TINGG },
-    { id: 16, name: "Crowforce", logo: PAY_FORCE },
+    { id: 16, name: "CROWFORCE", logo: PAY_FORCE },
     { id: 27, name: "CITISERVE", logo: ORANGE_PAY_CITISERVE_LOGO },
     { id: 28, name: "CALLPHONE", logo: AIRVEND_LOGO },
     { id: 31, name: "CONNECT POINT", logo: C_POINT_AGENT_CONNECTIONPOINT_LOGO },
@@ -274,9 +274,9 @@ export const OUR_PARTNERS_LOGOS = {
     },
     { id: 9, name: "LAPO", logo: LAPO },
     { id: 29, name: "LUKEPORT", logo: E_CASH_LUKEPORT_LOGO },
-    { id: 10, name: "Microsystems", logo: M_CASH_POINT },
-    { id: 13, name: "Pagetech", logo: PAGE },
-    { id: 14, name: "Palmpay", logo: PALMPAY },
+    { id: 10, name: "MICROSYSTEMS", logo: M_CASH_POINT },
+    { id: 13, name: "PAGETECH", logo: PAGE },
+    { id: 14, name: "PALMPAY", logo: PALMPAY },
     { id: 25, name: "PARKWAY READYCASH", logo: READY_CASH },
     { id: 32, name: "SHAGO PAYMENT", logo: SHAGO_ALERZO_LOGO_ADAPTATION_LOGO },
     { id: 11, name: "TEAMAPT", logo: MONIE_POINT },
@@ -309,6 +309,6 @@ export const OUR_PARTNERS_LOGOS = {
       name: "FMHADMSD",
       logo: GOVT1
     },
-    { id: 2, name: "Local State Government", logo: LGA }
+    { id: 2, name: "LOCAL STATE GOVERNMENT", logo: LGA }
   ]
 };
