@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Navbar from "components/Navbar/Navbar";
 import style from "./style.module.css";
 import Image from "components/widgets/Image/Image";
@@ -7,10 +7,11 @@ import { OUR_PARTNERS_LOGOS } from "./content";
 import PartnersTabs from "./components/PartnersTabs";
 import PartnersAndName from "./components/PartnersAndName";
 import Footer from "components/widgets/Footer";
+import Layout from "pages/Layout";
 
 const OurPartners = () => {
   return (
-    <Fragment>
+    <Layout>
       <section
         className={`${style.about_hero} relative bg-about-hero-mobile md:bg-about-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-[400px]`}
       >
@@ -31,11 +32,7 @@ const OurPartners = () => {
         />
       </section>
 
-      <section
-        id="about-sanef-mobile"
-        // className="relative mt-10 px-5 md:px-10 md:-mt-5 lg:px-40" // Old style
-        className="relative mt-16 px-5 md:px-10 lg:px-40" // New style
-      >
+      <section className="relative mt-16 px-5 md:px-10 lg:px-40">
         <p className="text-[18px] text-center leading-[30px] md:text-md md:-mt-10 lg:-mt-20">
           We collaborate with Ecosystem Stakeholders, Government/MDAs and
           Developmental Organizations in expanding the frontiers of Financial
@@ -79,7 +76,7 @@ const OurPartners = () => {
       <section className="mt-16">
         <Footer />
       </section>
-    </Fragment>
+    </Layout>
   );
 };
 

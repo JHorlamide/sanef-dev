@@ -19,17 +19,15 @@ import BecomeAnAgent from "pages/BecomeAnAgent";
 
 const RouteConfig = () => {
   return (
-    <div>
-      <Routes>
-        <Route path={HOME} element={<Home />} />
-        <Route path={MEDIA} element={<Media />} />
-        <Route path={CONTACT_US} element={<ContactUs />} />
-        <Route path={ABOUT_US} element={<About />} />
-        <Route path={OUR_PARTNERS} element={<OurPartners />} />
-        <Route path={VALUE_ADDED_SERVICES} element={<ValueAddedServices />} />
-        <Route path={BECOME_AGENT} element={<BecomeAnAgent />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path={HOME} element={<Home />} />
+      <Route path={MEDIA} element={<Media />} />
+      <Route path={CONTACT_US} element={<ContactUs />} />
+      <Route path={ABOUT_US} element={<About />} />
+      <Route path={OUR_PARTNERS} element={<OurPartners />} />
+      <Route path={VALUE_ADDED_SERVICES} element={<ValueAddedServices />} />
+      <Route path={BECOME_AGENT} element={<BecomeAnAgent />} />
+    </Routes>
   );
 };
 

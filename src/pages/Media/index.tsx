@@ -1,7 +1,7 @@
 import React from "react";
-
+import Layout from "pages/Layout";
 const Media = () => {
-  return <div>Media</div>;
+  return <Layout>Media</Layout>;
 };
 
 export default Media;

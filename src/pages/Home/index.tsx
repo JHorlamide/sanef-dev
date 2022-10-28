@@ -8,6 +8,7 @@ import Footer from "components/widgets/Footer";
 import Image from "components/widgets/Image/Image";
 import RouterLink from "components/Navbar/NavLink/RouterLink";
 import { ABOUT_US } from "routes/ROUTES_CONSTANTS";
+import Layout from "pages/Layout";
 
 // CUSTOM COMPONENTS
 import Tab from "pages/Home/components/Tab";
@@ -18,10 +19,8 @@ import RecentCard from "./components/RecentCard";
 
 const Home = () => {
   return (
-    <Fragment>
-      <section>
-        <Carousel />
-      </section>
+    <Layout>
+      <Carousel />
 
       {/* SHARED AGENT NETWORK  */}
       <section className="px-8 py-0">
@@ -236,7 +235,7 @@ const Home = () => {
       <section>
         <Footer />
       </section>
-    </Fragment>
+    </Layout>
   );
 };
 

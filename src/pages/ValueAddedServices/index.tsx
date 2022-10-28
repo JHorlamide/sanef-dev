@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Navbar from "components/Navbar/Navbar";
 import Image from "components/widgets/Image/Image";
 import style from "./style.module.css";
@@ -16,17 +16,22 @@ import {
   ProductServicesTab
 } from "./components/ProductServices";
 import ProductServiceDesktop from "./components/ProductServiceDesktop";
+import Layout from "pages/Layout";
 
 const ValueAddedServices = () => {
   return (
-    <Fragment>
+    <Layout>
       <section
-        className={`${style.value_added_services_hero} bg-about-hero-mobile md:bg-about-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-[400px]`}
+        className={`${style.value_added_services_hero} bg-about-hero-mobile md:bg-about-hero-desktop 
+        bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-[400px]`}
       >
         <Navbar />
 
         <div className="">
-          <h1 className="text-white text-4xl text-center max-w-lg mx-auto my-10 font-extrabold lg:mt-5">
+          <h1
+            className="text-white text-4xl text-center max-w-lg mx-auto my-10 font-extrabold
+            lg:mt-5"
+          >
             Value Added Services
           </h1>
         </div>
@@ -35,15 +40,13 @@ const ValueAddedServices = () => {
       <section className="relative p-10 -mt-28 md:-mt-10">
         <Image
           image={DOTS}
-          parentClassName="absolute inset-y-0 -right-1 top-42 md:right-16 md:-top-32 lg:right-20 lg:-top-40"
+          parentClassName="absolute inset-y-0 -right-1 top-42 md:right-16 md:-top-32
+          lg:right-20 lg:-top-40"
           imageClassName="w-24 h-24 md:h-fit lg:h-fit"
         />
       </section>
 
-      <section
-        id="about-sanef-mobile"
-        className="relative mt-16 px-5 md:px-10 lg:px-40"
-      >
+      <section className="relative mt-16 px-5 md:px-10 lg:px-40">
         <p className="text-lg text-center md:text-md md:-mt-10 lg:-mt-20">
           Shared Agent Network Expansion Facilities Limited (SANEF) provides
           strong support to expand the Agent Banking Ecosystem along these focus
@@ -76,7 +79,10 @@ const ValueAddedServices = () => {
           ))}
         </div>
 
-        <div className="container mx-auto md:grid md:grid-cols-3 md:gap-5 lg:gap-0 py-5 lg:flex justify-between items-center space-x-3">
+        <div
+          className="container mx-auto md:grid md:grid-cols-3 md:gap-5 lg:gap-0 py-5 
+          lg:flex justify-between items-center space-x-3"
+        >
           {SERVICES.slice(3, 7).map((service) => (
             <ServicesCardDesktop
               key={service.id}
@@ -90,7 +96,10 @@ const ValueAddedServices = () => {
 
       {/* OUTCOME MOBILE VIEW */}
       <section className="md:hidden py-10">
-        <section className="relative container mx-auto bg-white shadow-lg mt-28 md:mt-52 rounded-xl w-[335px] h-[310px] px-5">
+        <section
+          className="relative container mx-auto bg-white shadow-lg mt-28 md:mt-52 
+          rounded-xl w-[335px] h-[310px] px-5"
+        >
           <h1 className="text-[20px] font-bold pt-20"> Outcomes:</h1>
 
           <div className="flex flex-col space-y-4 py-6">
@@ -123,7 +132,10 @@ const ValueAddedServices = () => {
       </section>
 
       {/* OUTCOME DESKTOP VIEW */}
-      <section className="hidden md:block relative container mx-auto bg-white rounded-xl shadow-lg w-[995px] h-[310px] my-10 px-12">
+      <section
+        className="hidden md:block relative container mx-auto bg-white rounded-xl 
+        shadow-lg w-[995px] h-[310px] my-10 px-12"
+      >
         <h1 className="font-bold text-[20px] pt-16 ml-20">Outcomes:</h1>
 
         <div className="flex flex-col space-y-4 py-6">
@@ -190,7 +202,7 @@ const ValueAddedServices = () => {
       <section>
         <Footer />
       </section>
-    </Fragment>
+    </Layout>
   );
 };
 

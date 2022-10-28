@@ -1,14 +1,15 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { DOTS } from "assets/icons";
 import Navbar from "components/Navbar/Navbar";
 import Image from "components/widgets/Image/Image";
 import style from "./style.module.css";
 import AgentTab from "./components/Tab";
 import Footer from "components/widgets/Footer";
+import Layout from "pages/Layout";
 
 const BecomeAnAgent = () => {
   return (
-    <Fragment>
+    <Layout>
       <section
         className={`${style.agent_hero} relative bg-agent-hero-mobile md:bg-agent-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-full`}
       >
@@ -36,7 +37,7 @@ const BecomeAnAgent = () => {
       <section>
         <Footer />
       </section>
-    </Fragment>
+    </Layout>
   );
 };
 

@@ -40,7 +40,7 @@ export const ServicesCardMobile = ({
 
       <div
         className="md:hidden container bg-white shadow-lg rounded-xl py-8
-       px-5 flex items-center space-x-6"
+        px-5 flex items-center space-x-6"
         onClick={() =>
           handleSetServiceDetails({ heading: heading, details: details })
         }
@@ -81,13 +81,16 @@ export const ServicesCardDesktop = ({
 
       <div
         className="hidden md:flex container bg-white shadow-lg rounded-xl h-32 w-fit 
-      px-5 items-center space-x-6 cursor-pointer"
+        px-5 items-center space-x-6 cursor-pointer"
         onClick={() =>
           handleSetServiceDetails({ heading: heading, details: details })
         }
       >
-        <Image parentClassName="h-fit" image={image} />
-        <p className="font-bold text-[20px] leading-[27px]">{heading}</p>
+        <img src={image} alt="" />
+        {/* <Image image={image} parentClassName="" imageClassName="" /> */}
+        <div className="w-fit">
+          <p className="font-bold text-[20px] leading-[27px]">{heading}</p>
+        </div>
       </div>
     </Fragment>
   );

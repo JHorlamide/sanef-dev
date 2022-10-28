@@ -26,7 +26,7 @@ const PartnersAndName = ({ sectionName, logos }: PartnersAndNameProps) => {
           {logos.map(({ id, logo, name }) => (
             <div
               key={id}
-              className="inline-block flex-col space-y-2 justify-center items-center px-3 bg-clip-content"
+              className="inline-block align-top flex-col space-y-2 justify-center items-center px-3 bg-clip-content"
             >
               <div className="bg-white p-4 m-0 rounded-full">
                 <img className="w-24 h-24 m-0" src={logo} alt={name} />

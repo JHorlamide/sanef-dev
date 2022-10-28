@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import NavLink, { BecomeAgent } from "./NavLink/NavLink";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
@@ -33,10 +33,10 @@ const Navbar = () => {
   };
 
   return (
-    <header>
+    <Fragment>
       {/* DESKTOP NAV */}
-      <nav className="z-50 relative py-5 px-5 md:py-0 lg:py-0 md:px-10 lg:px-10">
-        <div className="flex justify-between items-center mx-auto max-w-screen-xl">
+      <nav className="z-50 relative py-5 px-5 md:py-0 lg:py-0 md:px-14">
+        <div className="flex justify-between items-center">
           {/* LOGO CONTAINER */}
           <Link to={HOME} arial-current="page">
             <img
@@ -101,14 +101,6 @@ const Navbar = () => {
               />
             </div>
 
-            {/* <CustomBtn
-              className="px-4 py-2 border rounded-3xl font-bold bg-white text-dark 
-              whitespace-nowrap hover:text-white hover:bg-buttonColor hover:border-buttonColor"
-              onClick={handleNavigate}
-            >
-              Become an Agent
-            </CustomBtn> */}
-
             <div>
               <NavLink
                 title={"Login"}
@@ -116,7 +108,6 @@ const Navbar = () => {
                 className="font-semibold text-white hover:text-buttonColor border-b-4 
                 border-b-white hover:border-b-buttonColor"
               />
-
               {/* <hr className="border-2 border-white mt-1 hover:border-buttonColor" /> */}
             </div>
           </div>
@@ -190,7 +181,7 @@ const Navbar = () => {
           </Transition>
         </div>
       </nav>
-    </header>
+    </Fragment>
   );
 };
 

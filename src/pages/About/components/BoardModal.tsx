@@ -72,7 +72,7 @@ const BoardModal = ({
                         <h1 className="text-md">{position}</h1>
                       </div>
 
-                      <p className="text-[16px] text-modalTextColor leading-[30px] mt-7 md:mt-0">
+                      <p className="text-[16px] text-modalTextColor leading-[30px] mt-7 md:mt-0 whitespace-pre-line">
                         {profileDetails}
                       </p>
                     </div>

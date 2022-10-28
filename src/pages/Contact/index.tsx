@@ -1,14 +1,15 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Navbar from "components/Navbar/Navbar";
 import style from "./style.module.css";
 import Footer from "components/widgets/Footer";
 import { MobileForm, DesktopForm } from "./components/Form";
 import Image from "components/widgets/Image/Image";
 import { DOTS } from "assets/icons";
+import Layout from "pages/Layout";
 
 const ContactUs = () => {
   return (
-    <Fragment>
+    <Layout>
       <section
         className={`${style.contact_hero} bg-contact-hero-mobile md:bg-contact-hero-desktop bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-[400px]`}
       >
@@ -40,7 +41,7 @@ const ContactUs = () => {
       <section>
         <Footer />
       </section>
-    </Fragment>
+    </Layout>
   );
 };
 

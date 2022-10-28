@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Navbar from "components/Navbar/Navbar";
 import Image from "components/widgets/Image/Image";
 import { ABOUT_IMAGE_1 } from "assets/images";
@@ -8,13 +8,14 @@ import CoreValueCard from "./components/CoreValueCard";
 import style from "./style.module.css";
 import TeamTab from "./components/TeamTab";
 import Footer from "components/widgets/Footer";
+import Layout from "pages/Layout";
 
 const About = () => {
   return (
-    <Fragment>
+    <Layout>
       <section
         className={`${style.about_hero} relative bg-about-hero-mobile md:bg-about-hero-desktop
-        bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-[400px]`}
+        bg-center bg-cover bg-no-repeat items-center h-96 lg:h-[400px]`}
       >
         <Navbar />
 
@@ -31,10 +32,7 @@ const About = () => {
       />
 
       {/* VISION & MISSION */}
-      <section
-        id="about-sanef-mobile"
-        className="relative md:mt-10 container mx-auto" // New style
-      >
+      <section className="relative md:mt-10 px-32">
         <div className="lg:w-1/2 md:-mt-10 lg:-mt-0 px-5 md:px-0">
           <p className="text-lg text-left md:text-md lg:text-md md:leading-text-line-height">
             SANEF serves as an enabler in the Financial Inclusion ecosystem in
@@ -150,7 +148,7 @@ const About = () => {
       <section>
         <Footer />
       </section>
-    </Fragment>
+    </Layout>
   );
 };
 
