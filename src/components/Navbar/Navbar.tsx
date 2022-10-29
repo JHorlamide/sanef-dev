@@ -129,7 +129,7 @@ const Navbar = () => {
         <div
           className={`${
             toggleMenu ? "hidden" : ""
-          } bg-mobile-nav-bg fixed top-0 right-0 left-0 bottom-0 z-10 bg-center bg-cover bg-no-repeat pt-16`}
+          } z-50 bg-mobile_nav_bg fixed top-0 right-0 left-0 bottom-0 bg-center bg-cover bg-no-repeat pt-16`}
         >
           <Transition
             show={show}
@@ -140,7 +140,7 @@ const Navbar = () => {
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
           >
-            <div className="flex justify-end mr-6 -mt-6 md:mr-9 md:-mt-5">
+            <div className="flex justify-end mr-6 -mt-6 md:mr-14 md:-mt-5">
               <img
                 className="w-10"
                 src={CLOSE_ICON}

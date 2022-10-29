@@ -61,7 +61,7 @@ const Footer = () => {
 
         {/* HORIZONTAL LINE */}
         <div className="pt-16">
-          <img src={DESKTOP_LINE} alt="long-horizontal-lin" />
+          <img src={DESKTOP_LINE} alt="long-horizontal-lin" width={"100%"} />
         </div>
 
         <div className="grid grid-cols-4 md:gap-10 lg:gap-6 pt-10">
@@ -142,7 +142,7 @@ const Footer = () => {
 
         {/* HORIZONTAL LINE */}
         <div className="pt-16">
-          <img src={DESKTOP_LINE} alt="long-horizontal-lin" />
+          <img src={DESKTOP_LINE} alt="long-horizontal-lin" width={"100%"} />
         </div>
 
         <FooterCopyright

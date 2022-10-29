@@ -1,13 +1,3 @@
-.animates {
-  transition: transform 0.2s ease-in-out;
-  transform: translateX(10px);
-  transform: translateX(0);
-}
-
-.carousel-indicators {
-  margin: 0;
-}
-
 .carousel_item {
   position: relative;
 }
@@ -20,8 +10,19 @@
   bottom: -75px;
   height: 8rem;
   background-color: #f3fcf5;
+  /* background-color: red; */
   transform: skewY(-3deg);
   z-index: 10;
+}
+
+.animates {
+  transition: transform 0.2s ease-in-out;
+  transform: translateX(10px);
+  transform: translateX(0);
+}
+
+.carousel-indicators {
+  margin: 0;
 }
 
 #carousel_indicator_button {

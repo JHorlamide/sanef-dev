@@ -15,6 +15,7 @@ const FooterContentOne = ({
   return (
     <section className={parentClassName}>
       <h1 className={headingClassName}>Subscribe</h1>
+
       <RouterLink
         className={contentClassName}
         path={"/about-us"}

@@ -1,4 +1,5 @@
 const IMAGES_PATH = "/assets/images";
+const HERO_IMAGE_PATH = `${IMAGES_PATH}/hero-img`;
 const BOARD_IMAGE_PATH = `${IMAGES_PATH}/board`;
 const EXECUTIVE_IMAGE_PATH = `${IMAGES_PATH}/executive`;
 const BANK_PARTNERS_IMAGE_PATH = `${IMAGES_PATH}/partners/banks`;
@@ -11,6 +12,11 @@ export const image1 = `${IMAGES_PATH}/image-1.png`;
 export const image2 = `${IMAGES_PATH}/image-2.png`;
 export const image3 = `${IMAGES_PATH}/image-3.png`;
 export const image4 = `${IMAGES_PATH}/image-4.png`;
+
+export const DEEPENING_FINANCIAL = `${HERO_IMAGE_PATH}/desktop_home_deepening_financial_inclusion.jpeg`;
+export const CENTER_OF_EXCELLENCE = `${HERO_IMAGE_PATH}/desktop_home_centre_of_excellence.jpeg`;
+export const EMPOWERING_ECOSYSTEM = `${HERO_IMAGE_PATH}/desktop_home_empowering_the_ecosystem.jpeg`;
+export const ENHANCING_KNOWLEDGE = `${HERO_IMAGE_PATH}/desktop_home_enhancing_knowledge.jpeg`;
 
 // OUR ROLE
 export const ROLE_IMAGE_DESKTOP = `${IMAGES_PATH}/Role-Image-Desktop.png`;

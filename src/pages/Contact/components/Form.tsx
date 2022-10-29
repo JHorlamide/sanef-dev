@@ -4,7 +4,7 @@ import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomTextarea from "components/widgets/CustomInput/CustomTextarea";
 import Image from "components/widgets/Image/Image";
 import { VERTICAL_LINE } from "assets/icons";
-import { SOCIAL_LINK } from "../../../components/widgets/Footer/FooterContentTwo";
+import { SOCIAL_LINK } from "utils/constants";
 import useContactForm from "hooks/useContactForm";
 
 interface IContactForm {

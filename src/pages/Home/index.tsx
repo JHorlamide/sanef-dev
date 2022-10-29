@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { DOTS, GROUP_SHAPE, LINE_1, LINE_2, GROUP_LINES } from "assets/icons";
 import { ROLE_IMAGE_DESKTOP, ROLE_IMAGE_MOBILE } from "assets/images";
-import Carousel from "components/widgets/Carousel/Carousel";
+// import Carousel from "components/widgets/Carousel/Carousel";
 import { OUR_IMPACT_CARD_CONTENT } from "./content";
 import { RECENT_NEW } from "./content";
 import Footer from "components/widgets/Footer";
@@ -15,6 +15,9 @@ import Tab from "pages/Home/components/Tab";
 import OurImpactFooter from "./components/OurImpactFooter";
 import OurImpactHeader from "./components/ImpactHeader";
 import RecentCard from "./components/RecentCard";
+// import Carousel from "./components/Carousel";
+import Carousel from "components/widgets/Carousel/Carousel";
+// import Slider from "./components/Slider";
 // import style from "./style.module.css";
 
 const Home = () => {
@@ -24,7 +27,7 @@ const Home = () => {
 
       {/* SHARED AGENT NETWORK  */}
       <section className="px-8 py-0">
-        <div className="relative z-50 flex flex-col justify-center items-center py-8">
+        <div className="relative flex flex-col justify-center items-center py-8">
           <h1 className="text-center text-2xl font-bold md:text-3xl lg:text-4xl">
             Shared Agent Network Facilities Limited (SANEF)
           </h1>

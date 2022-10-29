@@ -23,17 +23,19 @@ const Carousel = () => {
   return (
     <div
       id="carouselExampleCaptions"
-      className={`${style.carousel_item} carousel slide h-[600px] md:h-[630px]`}
+      className={`carousel slide h-[670px] md:h-[630px]`}
       data-bs-ride="carousel"
     >
       <Navbar />
 
-      <div className="absolute top-0">
+      <div className={`absolute top-0`}>
         {/* CAROUSEL SLIDER CONTAINER */}
-        <div className="inline-block carousel-inner overflow-hidden">
+        <div
+          className={`${style.carousel_item} inline-block carousel-inner overflow-hidden`}
+        >
           {/* 1st Slid */}
           <div
-            className={`bg-desktop_home_deepening_financial_inclusion bg-center bg-cover
+            className={`bg-desktop_home_deepening_financial_inclusion bg-center bg-cover h-[670px]
             bg-no-repeat items-center carousel-item active w-screen float-left py-40 md:py-48`}
           >
             <div className="container mx-auto flex flex-col space-y-10 px-5">
@@ -58,7 +60,7 @@ const Carousel = () => {
           {/* 2nd Slid */}
           <div
             className={`bg-desktop_home_centre_of_excellence bg-center bg-cover bg-no-repeat
-            items-center carousel-item relative w-screen float-left py-40 md:py-48`}
+            items-center carousel-item relative w-screen float-left py-40 md:py-48 h-[670px]`}
           >
             <div className="container mx-auto flex flex-col space-y-10 px-5">
               <h1
@@ -80,7 +82,7 @@ const Carousel = () => {
 
           {/* 3rd Slid */}
           <div
-            className={`bg-desktop_home_empowering_the_ecosystem bg-center bg-cover 
+            className={`bg-desktop_home_empowering_the_ecosystem bg-center bg-cover h-[670px]
             bg-no-repeat items-center carousel-item relative w-screen float-left py-40
             md:py-48`}
           >
@@ -105,7 +107,7 @@ const Carousel = () => {
           {/* 4th Slid */}
           <div
             className={`bg-desktop_home_enhancing_knowledge bg-center bg-cover bg-no-repeat
-            items-center carousel-item relative w-screen float-left py-40 md:py-48`}
+            items-center carousel-item relative w-screen float-left py-40 md:py-48 h-[670px]`}
           >
             <div className="container mx-auto flex flex-col space-y-10 px-5">
               <h1
@@ -127,13 +129,13 @@ const Carousel = () => {
           </div>
         </div>
 
-        {/* CAROUSEL INDICATOR */}
+        {/* CAROUSEL INDICATOR/NAVIGATOR */}
         <div
           className="absolute flex flex-row md:flex-col py-5 md:pt-0 space-y-10 
           justify-center items-center right-28 md:right-24 lg:right-52 top-[490px]"
         >
           <div
-            className="carousel-indicators mt-3 md:mt-0 flex justify-center items-end
+            className="carousel-indicators mt-3 md:mt-0 flex justify-start items-start
             md:justify-end lg:items-end"
           >
             <button
@@ -173,14 +175,14 @@ const Carousel = () => {
 
           <Image
             image={DOTS}
-            parentClassName="hidden md:block z-50"
+            parentClassName="hidden md:block"
             imageClassName="h-fit md:w-32 lg:w-fit"
           />
         </div>
 
         <Image
           image={DOTS}
-          parentClassName="block z-50 md:hidden absolute inset-y-0 right-0 top-[520px]"
+          parentClassName="block md:hidden absolute inset-y-0 right-0 top-[580px]"
           imageClassName="w-20 h-24 md:w-32 h-fit lg:w-fit lg:h-fit"
         />
       </div>

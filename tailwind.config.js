@@ -44,7 +44,7 @@ module.exports = {
         "agent-hero-mobile": "url('/public/assets/images/hero-img/mobile_agent.jpeg')",
         "footer-image-desktop": "url('/public/assets/images/hero-img/Footer-Image-Desktop.png')",
         "footer-image-mobile": "url('/public/assets/images/hero-img/Footer-Image-Mobile.png')",
-        "mobile-nav-bg": "url('/public/assets/images/hero-img/Mobile-Background.png')"
+        "mobile_nav_bg": "url('/public/assets/images/hero-img/Mobile-Background.png')"
       },
 
       screens: {

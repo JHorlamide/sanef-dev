@@ -13,31 +13,6 @@
   transform: skewY(-5deg);
 }
 
-/* .form_tab {
-  padding: 80px 0;
-  text-align: center;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.form_tab::after {
-  width: 100%;
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  top: 10%;
-  -webkit-transform: skewY(-8deg);
-  -moz-transform: skewY(-8deg);
-  -ms-transform: skewY(-8deg);
-  -o-transform: skewY(-8deg);
-  transform: skewY(-8deg);
-  background-color: yellow;
-  z-index: 2;
-} */
-
 @media (max-width: 390px) {
   .agent_hero::before {
     content: "";

@@ -1,40 +1,9 @@
 import React from "react";
-import { TfiYoutube } from "react-icons/tfi";
-import { GrFacebookOption } from "react-icons/gr";
-import { BsInstagram, BsTwitter } from "react-icons/bs";
-import { FaLinkedinIn } from "react-icons/fa";
+import { SOCIAL_LINK } from "utils/constants";
 
 interface FooterContentTwoProps {
   iconSize: number;
 }
-
-export const SOCIAL_LINK = [
-  {
-    id: 1,
-    Icon: GrFacebookOption,
-    link: "https://web.facebook.com/saneflimited"
-  },
-  {
-    id: 2,
-    Icon: BsTwitter,
-    link: "https://twitter.com/saneflimited"
-  },
-  {
-    id: 3,
-    Icon: BsInstagram,
-    link: "https://www.instagram.com/saneflimited/"
-  },
-  {
-    id: 4,
-    Icon: TfiYoutube,
-    link: "https://www.youtube.com/c/SANEFNigeria"
-  },
-  {
-    id: 5,
-    Icon: FaLinkedinIn,
-    link: "https://www.linkedin.com/company/sanef-nigeria-ltd/"
-  }
-];
 
 const FooterContentTwo = ({ iconSize }: FooterContentTwoProps) => {
   return (
