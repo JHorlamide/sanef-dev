@@ -171,9 +171,7 @@ const FirstTabPanel = () => {
             <a
               href="https://www.cbn.gov.ng"
               target={"_blank"}
-              className="text-buttonColor text-[20px] font-bold transition ease-in-out 
-              delay-150 hover:-translate-y-1 hover:scale-110 hover:text-white 
-              hover:bg-lightGreen duration-300 rounded-full hover:px-3 hover:py-3"
+              className="text-buttonColor text-[20px] font-bold hover:text-lightGreen"
               rel="noreferrer"
             >
               www.cbn.gov.ng
