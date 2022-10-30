@@ -32,7 +32,7 @@ const About = () => {
       />
 
       {/* VISION & MISSION */}
-      <section className="relative md:mt-10 px-32">
+      <section className="relative z-0 md:mt-10 px-32">
         <div className="lg:w-1/2 md:-mt-10 lg:-mt-0 px-5 md:px-0">
           <p className="text-lg text-left md:text-md lg:text-md md:leading-text-line-height">
             SANEF serves as an enabler in the Financial Inclusion ecosystem in

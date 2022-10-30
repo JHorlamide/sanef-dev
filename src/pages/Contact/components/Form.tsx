@@ -199,7 +199,7 @@ export const DesktopForm = () => {
 
   return (
     <section
-      className="z-50 container mx-auto bg-white -mt-32 lg:-mt-[170px] mb-40 flex 
+      className="z-10 container mx-auto bg-white -mt-32 lg:-mt-[170px] mb-40 flex 
       justify-center items-baseline md:flex-col md:space-y-10 lg:space-y-0
       lg:flex-row lg:space-x-14 md:space-x-0 py-12 px-10 rounded-xl shadow-lg 
       w-[1179px]"

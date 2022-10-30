@@ -56,7 +56,7 @@ const FirstTabPanel = () => {
       {/* FLEX CONTAINER */}
       <div className="container mx-auto flex flex-col space-y-8 md:space-y-0 md:flex-row md:space-x-5 md:justify-center py-16 md:mb-16 md:px-5">
         {/* 1st CONTAINER */}
-        <div className="relative z-50 text-white bg-buttonColor rounded-xl w-full px-5 py-4 md:py-12 md:w-96">
+        <div className="relative z-10 text-white bg-buttonColor rounded-xl w-full px-5 py-4 md:py-12 md:w-96">
           <div className="">
             <h1 className="font-bold">Requirements</h1>
             <div className="mt-2">
@@ -160,7 +160,7 @@ const FirstTabPanel = () => {
 
         {/* 2nd CONTAINER */}
         <div
-          className="relative overflow-hidden md:w-96 lg:w-[450px] md:h-52 z-50 
+          className="relative overflow-hidden md:w-96 lg:w-[450px] md:h-52 z-10 
           bg-white rounded-xl shadow-lg px-5 py-12"
         >
           <h1 className="font-bold text-[24px]">
@@ -457,7 +457,7 @@ const SecondTabPanel = () => {
                 </label>
 
                 <div>
-                  <p className="z-50 absolute bg-gray-200 py-[9px] px-6 rounded-full ml-1 mt-1">
+                  <p className="z-10 absolute bg-gray-200 py-[9px] px-6 rounded-full ml-1 mt-1">
                     +234
                   </p>
                   <CustomInput
@@ -480,7 +480,7 @@ const SecondTabPanel = () => {
                 </label>
 
                 <div>
-                  <p className="z-50 absolute bg-gray-200 py-[9px] px-6 rounded-full ml-1 mt-1">
+                  <p className="z-10 absolute bg-gray-200 py-[9px] px-6 rounded-full ml-1 mt-1">
                     +234
                   </p>
                   <CustomInput

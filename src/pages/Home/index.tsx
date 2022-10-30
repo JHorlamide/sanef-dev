@@ -26,7 +26,7 @@ const Home = () => {
       <Carousel />
 
       {/* SHARED AGENT NETWORK  */}
-      <section className="px-8 py-0">
+      <section className="relative z-20 px-8 py-0">
         <div className="relative flex flex-col justify-center items-center py-8">
           <h1 className="text-center text-2xl font-bold md:text-3xl lg:text-4xl">
             Shared Agent Network Facilities Limited (SANEF)

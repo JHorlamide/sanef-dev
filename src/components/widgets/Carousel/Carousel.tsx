@@ -23,22 +23,21 @@ const Carousel = () => {
   return (
     <div
       id="carouselExampleCaptions"
-      className={`carousel slide h-[670px] md:h-[630px]`}
+      className={`${style.carousel_item} carousel slide h-[670px] md:h-[630px]`}
       data-bs-ride="carousel"
     >
       <Navbar />
 
       <div className={`absolute top-0`}>
         {/* CAROUSEL SLIDER CONTAINER */}
-        <div
-          className={`${style.carousel_item} inline-block carousel-inner overflow-hidden`}
-        >
+        <div className={`inline-block carousel-inner overflow-hidden`}>
           {/* 1st Slid */}
           <div
-            className={`bg-desktop_home_deepening_financial_inclusion bg-center bg-cover h-[670px]
-            bg-no-repeat items-center carousel-item active w-screen float-left py-40 md:py-48`}
+            className={`bg-mobile_home_deepening_financial_inclusion md:bg-desktop_home_deepening_financial_inclusion 
+            bg-center bg-cover h-[670px] bg-no-repeat items-center carousel-item active w-screen float-left
+            py-40 md:py-[165px] lg:py-48`}
           >
-            <div className="container mx-auto flex flex-col space-y-10 px-5">
+            <div className="flex flex-col space-y-10 px-5 md:px-40">
               <h1
                 className="max-w-lg text-4xl text-left text-white mb-3 font-extrabold
                 md:max-w-6xl md:leading-snug md:text-[45px]"
@@ -59,10 +58,11 @@ const Carousel = () => {
 
           {/* 2nd Slid */}
           <div
-            className={`bg-desktop_home_centre_of_excellence bg-center bg-cover bg-no-repeat
-            items-center carousel-item relative w-screen float-left py-40 md:py-48 h-[670px]`}
+            className={`bg-mobile_home_centre_of_excellence md:bg-desktop_home_centre_of_excellence 
+            bg-center bg-cover bg-no-repeat items-center carousel-item relative w-screen float-left
+            py-40 md:py-[165px] lg:py-48 h-[670px]`}
           >
-            <div className="container mx-auto flex flex-col space-y-10 px-5">
+            <div className="flex flex-col space-y-10 px-5 md:px-40">
               <h1
                 className="max-w-lg text-4xl text-left text-white mb-3 font-extrabold
                 md:font-extrabold md:max-w-6xl md:leading-snug md:text-[45px]"
@@ -82,11 +82,11 @@ const Carousel = () => {
 
           {/* 3rd Slid */}
           <div
-            className={`bg-desktop_home_empowering_the_ecosystem bg-center bg-cover h-[670px]
-            bg-no-repeat items-center carousel-item relative w-screen float-left py-40
-            md:py-48`}
+            className={`bg-mobile_home_empowering_the_ecosystem md:bg-desktop_home_empowering_the_ecosystem 
+            bg-center bg-cover h-[670px] bg-no-repeat items-center carousel-item relative w-screen float-left
+            py-40 md:py-[165px] lg:py-48`}
           >
-            <div className="container mx-auto flex flex-col space-y-10 px-5">
+            <div className="flex flex-col space-y-10 px-5 md:px-40">
               <h1
                 className="max-w-lg text-4xl text-left text-white mb-3 font-extrabold
                 md:font-extrabold md:max-w-6xl md:leading-snug md:text-[45px]"
@@ -106,10 +106,11 @@ const Carousel = () => {
 
           {/* 4th Slid */}
           <div
-            className={`bg-desktop_home_enhancing_knowledge bg-center bg-cover bg-no-repeat
-            items-center carousel-item relative w-screen float-left py-40 md:py-48 h-[670px]`}
+            className={`bg-mobile_home_enhancing_knowledge md:bg-desktop_home_enhancing_knowledge 
+            bg-center bg-cover bg-no-repeat items-center carousel-item relative w-screen float-left
+            py-40 md:py-[165px] lg:py-48 h-[670px]`}
           >
-            <div className="container mx-auto flex flex-col space-y-10 px-5">
+            <div className="flex flex-col space-y-10 px-5 md:px-40">
               <h1
                 className="max-w-lg text-4xl text-left text-white mb-3 font-extrabold
                 md:font-extrabold md:max-w-6xl md:leading-snug md:text-[45px]"
@@ -131,7 +132,7 @@ const Carousel = () => {
 
         {/* CAROUSEL INDICATOR/NAVIGATOR */}
         <div
-          className="absolute flex flex-row md:flex-col py-5 md:pt-0 space-y-10 
+          className="absolute z-20 flex flex-row md:flex-col py-5 md:pt-0 space-y-10 
           justify-center items-center right-28 md:right-24 lg:right-52 top-[490px]"
         >
           <div

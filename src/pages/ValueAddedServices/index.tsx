@@ -68,29 +68,34 @@ const ValueAddedServices = () => {
         </div>
 
         {/* SERVICES DESKTOP */}
-        <div className="container mx-auto md:flex justify-between items-center space-x-3 lg:py-6">
-          {SERVICES.slice(0, 3).map((service) => (
-            <ServicesCardDesktop
-              key={service.id}
-              image={service.image}
-              heading={service.heading}
-              details={service.details}
-            />
-          ))}
-        </div>
+        <div className="container mx-auto flex md:flex-col-reverse lg:flex-col">
+          <div
+            className="md:grid md:grid-cols-2 md:gap-y-5 md:gap-x-3 md:justify-center lg:flex 
+            lg:justify-between lg:items-center lg:space-x-3 lg:py-6 mt-10"
+          >
+            {SERVICES.slice(0, 3).map((service) => (
+              <ServicesCardDesktop
+                key={service.id}
+                image={service.image}
+                heading={service.heading}
+                details={service.details}
+              />
+            ))}
+          </div>
 
-        <div
-          className="container mx-auto md:grid md:grid-cols-3 md:gap-5 lg:gap-0 py-5 
-          lg:flex justify-between items-center space-x-3"
-        >
-          {SERVICES.slice(3, 7).map((service) => (
-            <ServicesCardDesktop
-              key={service.id}
-              image={service.image}
-              heading={service.heading}
-              details={service.details}
-            />
-          ))}
+          <div
+            className="md:grid md:grid-cols-2 md:gap-y-5 md:gap-x-3 md:justify-center lg:flex 
+            lg:justify-between lg:items-center lg:space-x-3 lg:py-6"
+          >
+            {SERVICES.slice(3, 7).map((service) => (
+              <ServicesCardDesktop
+                key={service.id}
+                image={service.image}
+                heading={service.heading}
+                details={service.details}
+              />
+            ))}
+          </div>
         </div>
       </section>
 

@@ -13,10 +13,10 @@ import {
   LOGIN,
   BECOME_AGENT
 } from "routes/ROUTES_CONSTANTS";
-import { Menu } from "assets/icons";
 import { NAVIGATION } from "utils/constants";
 import { CLOSE_ICON } from "assets/icons";
 import { Transition } from "@headlessui/react";
+import { FiMenu } from "react-icons/fi";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -114,12 +114,16 @@ const Navbar = () => {
 
           {/* MENU ICON */}
           <div className="flex md:flex lg:hidden">
-            <img
-              className="hover:cursor-pointer h-8 mt-[26px]"
+            <FiMenu
+              className={`w-[50px] h-[50px] hover:text-buttonColor text-white hover:cursor-pointer mt-[26px]`}
+              onClick={handleToggle}
+            />
+            {/* <img
+              className={`${style.svg} hover:opacity-[0.5] hover:cursor-pointer h-8 mt-[26px]`}
               src={Menu}
               alt="menu icon"
               onClick={handleToggle}
-            />
+            /> */}
           </div>
         </div>
       </nav>
@@ -140,7 +144,7 @@ const Navbar = () => {
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
           >
-            <div className="flex justify-end mr-6 -mt-6 md:mr-14 md:-mt-5">
+            <div className="flex justify-end mr-6 -mt-8 md:mr-[59px] md:-mt-5">
               <img
                 className="w-10"
                 src={CLOSE_ICON}
