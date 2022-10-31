@@ -48,7 +48,7 @@ const Carousel = () => {
 
               <CustomBtn
                 className="text-white text-[20px] font-medium rounded-full
-                bg-buttonColor px-20 py-3 w-fit"
+                bg-buttonColor px-20 py-3 w-fit hover:bg-lightGreen"
                 onClick={() => handleNavigate(OUR_PARTNERS)}
               >
                 Partner with Us
@@ -72,7 +72,7 @@ const Carousel = () => {
 
               <CustomBtn
                 className="text-white text-[20px] font-medium rounded-full
-                bg-buttonColor px-20 py-3 w-fit"
+                bg-buttonColor px-20 py-3 w-fit hover:bg-lightGreen"
                 onClick={() => handleNavigate(ABOUT_US)}
               >
                 Learn More
@@ -96,7 +96,7 @@ const Carousel = () => {
 
               <CustomBtn
                 className="text-white text-[20px] font-medium rounded-full
-                bg-buttonColor px-20 py-3 w-fit"
+                bg-buttonColor px-20 py-3 w-fit hover:bg-lightGreen"
                 onClick={() => handleNavigate(VALUE_ADDED_SERVICES)}
               >
                 Learn More
@@ -121,7 +121,7 @@ const Carousel = () => {
 
               <CustomBtn
                 className="text-white text-[20px] font-medium rounded-full
-                bg-buttonColor px-20 py-3 w-fit"
+                bg-buttonColor px-20 py-3 w-fit hover:bg-lightGreen"
                 onClick={() => handleNavigate(VALUE_ADDED_SERVICES)}
               >
                 Learn More

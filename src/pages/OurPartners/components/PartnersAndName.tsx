@@ -29,7 +29,7 @@ const PartnersAndName = ({ sectionName, logos }: PartnersAndNameProps) => {
               className="inline-block align-top flex-col space-y-2 justify-center items-center px-3 bg-clip-content"
             >
               <div className="bg-white p-4 m-0 rounded-full">
-                <img className="w-24 h-24 m-0" src={logo} alt={name} />
+                <img className="w-20 h-20 m-0" src={logo} alt={name} />
               </div>
 
               <div>

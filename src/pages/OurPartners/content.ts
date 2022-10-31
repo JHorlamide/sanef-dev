@@ -222,7 +222,7 @@ export const OUR_PARTNERS_LOGOS = {
     },
     {
       id: 2,
-      name: "ACCELEREX NETWORK",
+      name: "ACCELEREX \nNETWORK",
       logo: ACCELERE
     },
     { id: 30, name: "AFRICAVE TECH", logo: KIPPA_PAY_LOGO },
@@ -280,7 +280,7 @@ export const OUR_PARTNERS_LOGOS = {
     { id: 25, name: "PARKWAY READYCASH", logo: READY_CASH },
     { id: 32, name: "SHAGO PAYMENT", logo: SHAGO_ALERZO_LOGO_ADAPTATION_LOGO },
     { id: 11, name: "TEAMAPT", logo: MONIE_POINT },
-    { id: 20, name: "TEASY INTERNATIONAL", logo: TEASY_PAY },
+    { id: 20, name: "TEASY \nINTERNATIONAL", logo: TEASY_PAY },
     { id: 22, name: "UNIFIED PAYMENTS", logo: UNIFIED_PAYMENT },
     {
       id: 23,

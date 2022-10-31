@@ -38,6 +38,7 @@ export const SocialIcon = ({ parentClassName }: SocialIconProps) => {
   );
 };
 
+// MOBILE FORM
 export const MobileForm = () => {
   const form = React.useRef<HTMLFormElement | string>("");
   const [formData, setFormData] = useState<IContactForm>({
@@ -151,7 +152,10 @@ export const MobileForm = () => {
           }}
         />
 
-        <CustomBtn className="text-white bg-buttonColor rounded-full py-3 px-5 w-60">
+        <CustomBtn
+          className="text-white bg-buttonColor rounded-full py-3 px-5 w-60 
+         hover:bg-lightGreen"
+        >
           Send Message
         </CustomBtn>
       </form>
@@ -176,6 +180,7 @@ export const MobileForm = () => {
   );
 };
 
+// DESKTOP FORM
 export const DesktopForm = () => {
   const form = React.useRef<HTMLFormElement | string>("");
   const [formData, setFormData] = useState<IContactForm>({
@@ -302,7 +307,10 @@ export const DesktopForm = () => {
           </div>
 
           <div className="pt-5">
-            <CustomBtn className="text-white bg-buttonColor rounded-full py-3 px-5 w-60">
+            <CustomBtn
+              className="text-white bg-buttonColor rounded-full py-3 px-5 w-60 
+             hover:bg-lightGreen"
+            >
               Send Message
             </CustomBtn>
           </div>

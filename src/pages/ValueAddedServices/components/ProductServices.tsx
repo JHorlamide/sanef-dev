@@ -9,7 +9,7 @@ export const ProductServicesTab = () => {
   return (
     <Fragment>
       <div
-        className="hidden md:block lg:hidden relative overflow-hidden container mx-auto mt-10
+        className="z-0 hidden md:block lg:hidden relative overflow-hidden container mx-auto mt-10
         pt-10 bg-white rounded-xl shadow-lg w-[1201px] md:h-[1008px] lg:h-[800px]"
       >
         <div

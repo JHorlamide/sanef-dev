@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="pt-10 flex flex-col justify-center items-center space-y-8">
           <FooterContentOne
             headingClassName="text-white text-2xl text-center font-semibold"
-            contentClassName="text-white text-md text-center"
+            contentClassName="text-white text-md text-center hover:text-buttonColor"
           />
 
           <form
@@ -50,7 +50,7 @@ const Footer = () => {
             <div className="inset-y-0 right-0 flex items-center">
               <CustomBtn
                 className={
-                  "text-white font-medium px-8 py-3 rounded-full bg-buttonColor"
+                  "text-white font-medium px-8 py-3 rounded-full bg-buttonColor hover:bg-lightGreen"
                 }
               >
                 Get Started

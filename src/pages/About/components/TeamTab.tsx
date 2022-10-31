@@ -33,7 +33,7 @@ const TeamTab = () => {
 
         <Tab.Panels className={"mt-16"}>
           {Object.values(BOARD_CONTENT).map((members, index) => (
-            <Tab.Panel key={index} className="relative">
+            <Tab.Panel key={index} className="z-0 relative">
               <div
                 className="mx-auto grid grid-cols-1 md:member-custom-grid gap-y-16 
                 md:gap-x-10 grid-flow-row md:max-w-screen-lg md:justify-center"

@@ -66,7 +66,7 @@ const Home = () => {
       </section>
 
       <section
-        className="relative container mx-auto bg-white z-50 shadow-lg 
+        className="relative container mx-auto bg-white z-10 shadow-lg 
         rounded-xl mt-16 py-10"
       >
         {/* MD & LG -> FLEX CONTAINER */}
@@ -195,8 +195,8 @@ const Home = () => {
 
           <RouterLink
             className="text-buttonColor font-bold border-2 border-buttonColor 
-            rounded-full px-6 py-3 mt-4 md:px-8 lg:px-16 hover:bg-lightGreen 
-            hover:text-white hover:border-lightGreen"
+            rounded-full px-6 py-3 mt-4 md:px-8 lg:px-16 hover:text-lightGreen
+            hover:border-lightGreen"
             path={"/about-us"}
             title="Learn More"
           />

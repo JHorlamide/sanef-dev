@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import NavLink, { BecomeAgent } from "./NavLink/NavLink";
-import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
+// import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import { Logo } from "assets/index";
 import {
   HOME,
@@ -19,13 +19,13 @@ import { Transition } from "@headlessui/react";
 import { FiMenu } from "react-icons/fi";
 
 const Navbar = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [toggleMenu, setToggleMenu] = useState<boolean>(true);
   const [show, setShow] = useState<boolean>(false);
 
-  const handleNavigate = () => {
-    navigate(BECOME_AGENT);
-  };
+  // const handleNavigate = () => {
+  //   navigate(BECOME_AGENT);
+  // };
 
   const handleToggle = () => {
     setShow(!show);
@@ -160,7 +160,8 @@ const Navbar = () => {
                     key={link.id}
                     path={link.path}
                     title={link.title}
-                    className={`text-white text-[14px] font-bold text-center whitespace-nowrap block py-2 pr-4 pl-3`}
+                    className={`text-white text-[14px] font-bold text-center whitespace-nowrap 
+                    block py-2 pr-4 pl-3 hover:text-buttonColor`}
                   />
                 ))}
               </div>
@@ -168,17 +169,25 @@ const Navbar = () => {
               <hr className="border-3 w-64" />
 
               <div className="flex flex-col space-y-8 pt-10">
-                <CustomBtn
-                  className="px-4 py-2 border rounded-3xl font-bold bg-white text-dark"
+                <BecomeAgent
+                  path={BECOME_AGENT}
+                  title={"Become an Agent"}
+                  className={`px-4 py-2 border rounded-3xl font-bold bg-white hover:border-buttonColor
+                whitespace-nowrap hover:text-white hover:bg-buttonColor`}
+                />
+                {/* <CustomBtn
+                  className="px-4 py-2 border rounded-3xl font-bold bg-white text-dark hover:text-white 
+                 hover:bg-buttonColor hover:border-buttonColor"
                   onClick={handleNavigate}
                 >
                   Become an Agent
-                </CustomBtn>
+                </CustomBtn> */}
 
                 <NavLink
                   path={LOGIN}
                   title={"Login"}
-                  className="text-center mx-auto w-12 font-semibold border-b-4 text-white"
+                  className="text-center mx-auto w-12 font-semibold border-b-4 text-white 
+                  hover:text-buttonColor hover:border-b-buttonColor"
                 />
               </div>
             </div>

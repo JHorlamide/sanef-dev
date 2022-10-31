@@ -47,7 +47,7 @@ const About = () => {
         {/* Vision & Mission Mobile Container */}
         <div
           id="vision-mission-container"
-          className="flex flex-col space-y-8 mt-12 lg:mt-16 md:space-y-5 md:space-x-0 lg:flex-row lg:space-x-28"
+          className="flex flex-col space-y-8 mt-12 lg:space-y-0 lg:mt-16 md:space-y-5 md:space-x-0 lg:flex-row lg:space-x-28"
         >
           {/* OUR VISION CONTAINER */}
           <div className="flex flex-col space-y-5 px-5 md:space-y-3 md:px-0 lg:w-full">
@@ -68,7 +68,7 @@ const About = () => {
             <div
               className={`absolute w-12 h-12 md:w-10 md:h-10 lg:w-12 lg:h-12 mt-2 lg:mt-1 ml-[169px] md:ml-[110px] lg:ml-[12%] rounded-full bg-buttonColor`}
             ></div>
-            <h1 className="relative z-50 text-4xl text-left font-bold flex md:text-2xl lg:text-4xl lg:text-justify">
+            <h1 className="relative z-10 text-4xl text-left font-bold flex md:text-2xl lg:text-4xl lg:text-justify">
               Our Mission
             </h1>
 
@@ -103,7 +103,7 @@ const About = () => {
         {/* Desktop View */}
         <div className="relative hidden md:grid md:grid-cols-2 lg:flex lg:flex-col lg:justify-center lg:items-center mt-10 px-1 lg:gap-10 lg:px-0">
           {/*  */}
-          <div className="z-50 md:grid md:grid-cols-1 md:gap-y-4 lg:flex lg:flex-wrap lg:justify-center lg:items-center lg:gap-4">
+          <div className="z-10 md:grid md:grid-cols-1 md:gap-y-4 lg:flex lg:flex-wrap lg:justify-center lg:items-center lg:gap-4">
             {CARD_CONTENT.slice(0, 3).map(({ id, image, heading, content }) => (
               <CoreValueCard
                 key={id}
@@ -114,7 +114,7 @@ const About = () => {
             ))}
           </div>
 
-          <div className="z-50 md:grid md:grid-cols-1 md:gap-0 lg:flex lg:flex-wrap lg:justify-center lg:items-center lg:gap-6">
+          <div className="z-10 md:grid md:grid-cols-1 md:gap-0 lg:flex lg:flex-wrap lg:justify-center lg:items-center lg:gap-6">
             {CARD_CONTENT.slice(3).map(({ id, image, heading, content }) => (
               <CoreValueCard
                 key={id}
@@ -141,7 +141,7 @@ const About = () => {
       </section>
 
       {/* Team TAB */}
-      <section className="py-10">
+      <section className="z-0 py-10">
         <TeamTab />
       </section>
 

@@ -49,7 +49,7 @@ const FirstTabPanel = () => {
         <RouterLink
           path="/our-partners?tabIndex=1"
           title=" View SANEF Super-Agent Partners"
-          className="font-bold text-center hover:text-lightGreen"
+          className="text-buttonColor font-bold text-center hover:text-lightGreen"
         />
       </div>
 
@@ -574,7 +574,10 @@ const SecondTabPanel = () => {
               />
             </div>
 
-            <CustomBtn className="text-white font-semibold bg-buttonColor rounded-full py-3 px-5 w-full">
+            <CustomBtn
+              className="text-white font-semibold bg-buttonColor rounded-full py-3 px-5 w-full 
+              hover:bg-lightGreen"
+            >
               Submit Application
             </CustomBtn>
           </form>
