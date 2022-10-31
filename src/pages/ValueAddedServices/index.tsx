@@ -54,9 +54,9 @@ const ValueAddedServices = () => {
         </p>
       </section>
 
-      <section className="relative py-3 px-5 md:px-16 lg:px-28">
+      <section className="container mx-auto relative">
         {/* SERVICES MOBILE */}
-        <div className="container mx-auto space-y-5 flex flex-col">
+        <div className="space-y-5 flex flex-col">
           {SERVICES.map((service) => (
             <ServicesCardMobile
               key={service.id}
@@ -68,10 +68,10 @@ const ValueAddedServices = () => {
         </div>
 
         {/* SERVICES DESKTOP */}
-        <div className="container mx-auto flex md:flex-col-reverse lg:flex-col">
+        <div className="flex md:flex-col-reverse lg:flex-col">
           <div
-            className="md:grid md:grid-cols-2 md:gap-y-5 md:gap-x-3 md:justify-center lg:flex 
-            lg:justify-between lg:items-center lg:space-x-3 lg:py-6 mt-10"
+            className="md:grid md:grid-cols-2 md:gap-y-5 md:gap-x-3 md:justify-center lg:flex
+            lg:justify-center lg:items-center lg:space-x-1 lg:py-6 mt-10"
           >
             {SERVICES.slice(0, 3).map((service) => (
               <ServicesCardDesktop
@@ -84,8 +84,8 @@ const ValueAddedServices = () => {
           </div>
 
           <div
-            className="md:grid md:grid-cols-2 md:gap-y-5 md:gap-x-3 md:justify-center lg:flex 
-            lg:justify-between lg:items-center lg:space-x-3 lg:py-6"
+            className="md:grid md:grid-cols-2 md:gap-y-5 md:gap-x-3 md:justify-center lg:flex
+            lg:flex-1 lg:justify-center lg:items-center lg:space-x-1 lg:py-6"
           >
             {SERVICES.slice(3, 7).map((service) => (
               <ServicesCardDesktop

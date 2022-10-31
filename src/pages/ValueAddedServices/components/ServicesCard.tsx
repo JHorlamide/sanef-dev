@@ -81,23 +81,23 @@ export const ServicesCardDesktop = ({
 
       <div
         className="hidden md:flex md:w-full lg:w-fit bg-white shadow-lg rounded-xl items-center
-        space-x-6 cursor-pointer px-5 h-36"
+        space-x-6 cursor-pointer px-5 h-36 lg:px-8"
         onClick={() =>
           handleSetServiceDetails({ heading: heading, details: details })
         }
       >
+        {/* <img src={image} alt="..." className="bg-center bg-cover" /> */}
         <Image
           image={image}
-          // parentClassName="w-full"
-          imageClassName="w-full m-0"
+          parentClassName="flex-none w-20 h-20"
+          imageClassName="container w-full m-0"
         />
-        {/* <img src={image} alt="..." className="bg-center bg-cover" /> */}
 
-        {/* <div className="max-w-xl"> */}
-        <p className="w-full -ml-20 font-bold text-[20px] leading-[27px] md:whitespace-pre-line">
-          {heading}
-        </p>
-        {/* </div> */}
+        <div className="flex-1">
+          <p className="w-full font-bold text-[20px] leading-[27px] lg:whitespace-pre-line">
+            {heading}
+          </p>
+        </div>
       </div>
     </Fragment>
   );
