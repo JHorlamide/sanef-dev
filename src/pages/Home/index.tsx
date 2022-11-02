@@ -3,7 +3,7 @@ import { DOTS, GROUP_SHAPE, LINE_1, LINE_2, GROUP_LINES } from "assets/icons";
 import { ROLE_IMAGE_DESKTOP, ROLE_IMAGE_MOBILE } from "assets/images";
 // import Carousel from "components/widgets/Carousel/Carousel";
 import { OUR_IMPACT_CARD_CONTENT } from "./content";
-import { RECENT_NEW } from "./content";
+import { RECENT_NEWS } from "./content";
 import Footer from "components/widgets/Footer";
 import Image from "components/widgets/Image/Image";
 import RouterLink from "components/Navbar/NavLink/RouterLink";
@@ -194,8 +194,8 @@ const Home = () => {
           </p>
 
           <RouterLink
-            className="text-buttonColor font-bold border-2 border-buttonColor 
-            rounded-full px-6 py-3 mt-4 md:px-8 lg:px-16 hover:text-lightGreen
+            className="text-white font-bold border-2 bg-buttonColor border-buttonColor 
+            rounded-full px-6 py-3 mt-4 md:px-8 lg:px-16 hover:bg-lightGreen
             hover:border-lightGreen"
             path={"/about-us"}
             title="Learn More"
@@ -216,20 +216,23 @@ const Home = () => {
         </div>
 
         <div className="hidden md:grid md:grid-cols-3 md:gap-4 md:px-10 lg:px-16">
-          {Object.values(RECENT_NEW)
+          {Object.values(RECENT_NEWS)
             .splice(1, 4)
             .map((posts, idx) => (
               <Fragment key={idx}>
-                {posts.map(({ id, image, icon, title, content, date }) => (
-                  <RecentCard
-                    key={id}
-                    icon={icon}
-                    date={date}
-                    image={image}
-                    title={title}
-                    content={content}
-                  />
-                ))}
+                {posts.map(
+                  ({ id, image, icon, title, content, date, link }) => (
+                    <RecentCard
+                      key={id}
+                      icon={icon}
+                      date={date}
+                      image={image}
+                      title={title}
+                      content={content}
+                      link={link}
+                    />
+                  )
+                )}
               </Fragment>
             ))}
         </div>

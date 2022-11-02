@@ -10,9 +10,10 @@ export interface CardProps {
 
 export interface RecentCardProps {
   id?: number;
-  icon: string;
+  icon?: string;
   image: string;
   date: string;
   title: string;
   content: string;
+  link: string;
 }

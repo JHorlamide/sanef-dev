@@ -1,6 +1,7 @@
 import { Tab } from "@headlessui/react";
-import { RECENT_NEW } from "pages/Home/content";
-import RecentCard from "pages/Home/components/RecentCard";
+import { RECENT_NEWS } from "pages/Home/content";
+import CustomCard from "components/widgets/Cards/Card";
+// import RecentCard from "pages/Home/components/RecentCard";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -11,7 +12,7 @@ export default function Example() {
     <div className="w-full max-w-md px-2 sm:px-0 mb-10">
       <Tab.Group>
         <Tab.Panels className="mt-2">
-          {Object.values(RECENT_NEW).map((posts, idx) => (
+          {Object.values(RECENT_NEWS).map((posts, idx) => (
             <Tab.Panel
               key={idx}
               className={classNames(
@@ -19,14 +20,15 @@ export default function Example() {
                 "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
               )}
             >
-              {posts.map(({ id, image, icon, title, content, date }) => (
-                <RecentCard
+              {posts.map(({ id, image, icon, title, content, date, link }) => (
+                <CustomCard
                   key={id}
                   icon={icon}
                   date={date}
                   image={image}
                   title={title}
                   content={content}
+                  link={link}
                 />
               ))}
             </Tab.Panel>
@@ -34,7 +36,7 @@ export default function Example() {
         </Tab.Panels>
 
         <Tab.List className="flex space-x-6 justify-center rounded-xl">
-          {Object.keys(RECENT_NEW).map((category) => (
+          {Object.keys(RECENT_NEWS).map((category) => (
             <Tab
               key={category}
               className={({ selected }) =>

@@ -20,7 +20,9 @@ module.exports = {
         buttonColor: "#2AAF4A",
         modalColor: "#463E52",
         modalTextColor: "#0E0817",
-        lightGreen: "rgb(165, 222, 165)"
+        lightGreen: "rgb(165, 222, 165)",
+        newBackground: "#060733",
+        gradientBackground: "rgba(9, 9, 10, 1)"
       },
 
       backgroundImage: {
@@ -35,7 +37,8 @@ module.exports = {
         "mobile_home_centre_of_excellence": "url('/public/assets/images/hero-img/mobile_home_centre_of_excellence.jpeg')",
         "mobile_home_empowering_the_ecosystem": "url('/public/assets/images/hero-img/mobile_home_empowering_the_ecosystem.jpeg')",
         "mobile_home_enhancing_knowledge": "url('/public/assets/images/hero-img/mobile_home_enhancing_knowledge.jpeg')",
-
+        "media_hero_mobile": "url('/public/assets/images/hero-img/media_hero_mobile.png')",
+        
         "about-hero-desktop": "url('/public/assets/images/hero-img/about-hero-bg-desktop.png')",
         "about-hero-mobile": "url('/public/assets/images/hero-img/about-hero-bg-mobile.png')",
         "contact-hero-desktop": "url('/public/assets/images/hero-img/desktop_contact.jpg')",
@@ -44,7 +47,17 @@ module.exports = {
         "agent-hero-mobile": "url('/public/assets/images/hero-img/mobile_agent.jpeg')",
         "footer-image-desktop": "url('/public/assets/images/hero-img/Footer-Image-Desktop.png')",
         "footer-image-mobile": "url('/public/assets/images/hero-img/Footer-Image-Mobile.png')",
-        "mobile_nav_bg": "url('/public/assets/images/hero-img/Mobile-Background.png')"
+        "mobile_nav_bg": "url('/public/assets/images/hero-img/Mobile-Background.png')",
+
+        // NEWS
+        "news_desktop_img": "url('/public/assets/images/news/news_details.png')",
+        "news_mobile_img": "url('/public/assets/images/news/news_details_mobile.png')",
+
+        // GALLERY
+        "mobile_img_1": "url('/public/assets/images/gallery/gallery_mobile_1.png')",
+        "mobile_img_2": "url('/public/assets/images/gallery/gallery_mobile_2.png')",
+        "mobile_img_3": "url('/public/assets/images/gallery/gallery_mobile_3.png')",
+        "mobile_img_4": "url('/public/assets/images/gallery/gallery_mobile_4.png')",
       },
 
       screens: {

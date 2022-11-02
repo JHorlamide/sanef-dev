@@ -52,7 +52,7 @@ export const OUR_IMPACT_CARD_CONTENT = {
   ]
 };
 
-export const RECENT_NEW = {
+export const RECENT_NEWS = {
   First: [
     {
       id: 1,
@@ -61,7 +61,8 @@ export const RECENT_NEW = {
       date: "Thursday, June 17, 2021",
       title: "Sustaining the Financial Inclusion Drive in Nigeria",
       content:
-        "Uniquely brand high-quality human capital whereas economically sound niche markets. Compellingly unleash"
+        "Uniquely brand high-quality human capital whereas economically sound niche markets. Compellingly unleash",
+      link: "/continue/1"
     }
   ],
 
@@ -74,7 +75,8 @@ export const RECENT_NEW = {
       title:
         "SANEF Holds South-west Financial Services Agent Forum In Ibadan, Oyo State; Deepens Financial Inclusion",
       content:
-        "Uniquely brand high-quality human capital whereas economically sound niche markets. Compellingly unleash"
+        "Uniquely brand high-quality human capital whereas economically sound niche markets. Compellingly unleash",
+      link: "/continue/1"
     }
   ],
 
@@ -87,7 +89,8 @@ export const RECENT_NEW = {
       title:
         "The Central Bank of Nigeria (CBN) in Partnership with SANEF Holds Consumer Awareness/Financial Literacy Workshop",
       content:
-        "Uniquely brand high-quality human capital whereas economically sound niche markets. Compellingly unleash"
+        "Uniquely brand high-quality human capital whereas economically sound niche markets. Compellingly unleash",
+      link: "/continue/1"
     }
   ],
 
@@ -100,7 +103,8 @@ export const RECENT_NEW = {
       title:
         "The Central Bank of Nigeria (CBN) in Partnership with SANEF Holds Consumer Awareness/Financial Literacy Workshop",
       content:
-        "Uniquely brand high-quality human capital whereas economically sound niche markets. Compellingly unleash"
+        "Uniquely brand high-quality human capital whereas economically sound niche markets. Compellingly unleash",
+      link: "/continue/1"
     }
   ]
 };

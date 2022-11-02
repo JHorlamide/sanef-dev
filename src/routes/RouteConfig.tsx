@@ -7,7 +7,9 @@ import {
   CONTACT_US,
   OUR_PARTNERS,
   VALUE_ADDED_SERVICES,
-  BECOME_AGENT
+  BECOME_AGENT,
+  NEWS_DETAILS,
+  EVENT_DETAILS
 } from "./ROUTES_CONSTANTS";
 import Home from "pages/Home";
 import About from "pages/About";
@@ -16,6 +18,8 @@ import ValueAddedServices from "pages/ValueAddedServices";
 import Media from "pages/Media";
 import ContactUs from "pages/Contact";
 import BecomeAnAgent from "pages/BecomeAnAgent";
+import NewsDetails from "pages/Media/components/NewsDetails";
+import EventDetails from "pages/Media/components/EventDetails";
 
 const RouteConfig = () => {
   return (
@@ -27,6 +31,8 @@ const RouteConfig = () => {
       <Route path={OUR_PARTNERS} element={<OurPartners />} />
       <Route path={VALUE_ADDED_SERVICES} element={<ValueAddedServices />} />
       <Route path={BECOME_AGENT} element={<BecomeAnAgent />} />
+      <Route path={NEWS_DETAILS} element={<NewsDetails />} />
+      <Route path={EVENT_DETAILS} element={<EventDetails />} />
     </Routes>
   );
 };

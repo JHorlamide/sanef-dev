@@ -6,3 +6,5 @@ export const MEDIA = "/media";
 export const CONTACT_US = "/contact";
 export const BECOME_AGENT = "/become-agent";
 export const LOGIN = "/login";
+export const NEWS_DETAILS = "/media/:id";
+export const EVENT_DETAILS = "/events/:id";
