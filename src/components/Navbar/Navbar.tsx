@@ -1,7 +1,6 @@
 import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import NavLink, { BecomeAgent } from "./NavLink/NavLink";
-// import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import { Logo } from "assets/index";
 import {
   HOME,
@@ -19,13 +18,8 @@ import { Transition } from "@headlessui/react";
 import { FiMenu } from "react-icons/fi";
 
 const Navbar = () => {
-  // const navigate = useNavigate();
   const [toggleMenu, setToggleMenu] = useState<boolean>(true);
   const [show, setShow] = useState<boolean>(false);
-
-  // const handleNavigate = () => {
-  //   navigate(BECOME_AGENT);
-  // };
 
   const handleToggle = () => {
     setShow(!show);
@@ -35,7 +29,7 @@ const Navbar = () => {
   return (
     <Fragment>
       {/* DESKTOP NAV */}
-      <nav className="z-50 relative py-5 px-5 md:py-0 lg:py-0 md:px-14">
+      <nav className="z-50 relative py-5 px-5 md:px-14 md:py-0 lg:py-0">
         <div className="flex justify-between items-center">
           {/* LOGO CONTAINER */}
           <Link to={HOME} arial-current="page">

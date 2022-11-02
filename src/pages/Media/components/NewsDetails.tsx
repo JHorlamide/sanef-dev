@@ -7,7 +7,7 @@ import { NEW_DETAILS } from "../content";
 const NewsDetails = () => {
   return (
     <Layout>
-      <header className="bg-newBackground align-top pb-2">
+      <header className="bg-gradient-to-r from-lightBlue to-darkBlue align-top pb-2">
         <Navbar />
       </header>
 

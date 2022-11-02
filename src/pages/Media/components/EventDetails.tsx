@@ -6,7 +6,7 @@ import { GALLERY } from "../content";
 const EventDetails = () => {
   return (
     <Layout>
-      <header className="bg-newBackground align-top pb-2">
+      <header className="bg-gradient-to-r from-lightBlue to-darkBlue align-top pb-2">
         <Navbar />
       </header>
 

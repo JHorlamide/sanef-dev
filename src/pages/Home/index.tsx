@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import { DOTS, GROUP_SHAPE, LINE_1, LINE_2, GROUP_LINES } from "assets/icons";
 import { ROLE_IMAGE_DESKTOP, ROLE_IMAGE_MOBILE } from "assets/images";
-// import Carousel from "components/widgets/Carousel/Carousel";
 import { OUR_IMPACT_CARD_CONTENT } from "./content";
 import { RECENT_NEWS } from "./content";
 import Footer from "components/widgets/Footer";
@@ -15,10 +14,7 @@ import Tab from "pages/Home/components/Tab";
 import OurImpactFooter from "./components/OurImpactFooter";
 import OurImpactHeader from "./components/ImpactHeader";
 import RecentCard from "./components/RecentCard";
-// import Carousel from "./components/Carousel";
 import Carousel from "components/widgets/Carousel/Carousel";
-// import Slider from "./components/Slider";
-// import style from "./style.module.css";
 
 const Home = () => {
   return (

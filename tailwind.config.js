@@ -22,7 +22,9 @@ module.exports = {
         modalTextColor: "#0E0817",
         lightGreen: "rgb(165, 222, 165)",
         newBackground: "#060733",
-        gradientBackground: "rgba(9, 9, 10, 1)"
+        gradientBackground: "rgba(9, 9, 10, 1)",
+        lightBlue: "#23667A",
+        darkBlue: "#121321"
       },
 
       backgroundImage: {

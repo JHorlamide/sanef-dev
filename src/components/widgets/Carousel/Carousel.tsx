@@ -28,13 +28,13 @@ const Carousel = () => {
     >
       <Navbar />
 
-      <div className={`absolute top-0`}>
+      <div className="absolute top-0">
         {/* CAROUSEL SLIDER CONTAINER */}
         <div className={`inline-block carousel-inner overflow-hidden`}>
           {/* 1st Slid */}
           <div
             className={`bg-mobile_home_deepening_financial_inclusion md:bg-desktop_home_deepening_financial_inclusion 
-            bg-center bg-cover h-[670px] bg-no-repeat items-center carousel-item active w-screen float-left
+            bg-center bg-cover h-[670px] bg-no-repeat items-center carousel-item active w-full float-left
             py-40 md:py-[165px] lg:py-48`}
           >
             <div className="flex flex-col space-y-10 px-5 md:px-40">
@@ -59,7 +59,7 @@ const Carousel = () => {
           {/* 2nd Slid */}
           <div
             className={`bg-mobile_home_centre_of_excellence md:bg-desktop_home_centre_of_excellence 
-            bg-center bg-cover bg-no-repeat items-center carousel-item relative w-screen float-left
+            bg-center bg-cover bg-no-repeat items-center carousel-item relative w-full float-left
             py-40 md:py-[165px] lg:py-48 h-[670px]`}
           >
             <div className="flex flex-col space-y-10 px-5 md:px-40">
@@ -83,7 +83,7 @@ const Carousel = () => {
           {/* 3rd Slid */}
           <div
             className={`bg-mobile_home_empowering_the_ecosystem md:bg-desktop_home_empowering_the_ecosystem 
-            bg-center bg-cover h-[670px] bg-no-repeat items-center carousel-item relative w-screen float-left
+            bg-center bg-cover h-[670px] bg-no-repeat items-center carousel-item relative w-full float-left
             py-40 md:py-[165px] lg:py-48`}
           >
             <div className="flex flex-col space-y-10 px-5 md:px-40">
@@ -107,7 +107,7 @@ const Carousel = () => {
           {/* 4th Slid */}
           <div
             className={`bg-mobile_home_enhancing_knowledge md:bg-desktop_home_enhancing_knowledge 
-            bg-center bg-cover bg-no-repeat items-center carousel-item relative w-screen float-left
+            bg-center bg-cover bg-no-repeat items-center carousel-item relative w-full float-left
             py-40 md:py-[165px] lg:py-48 h-[670px]`}
           >
             <div className="flex flex-col space-y-10 px-5 md:px-40">
