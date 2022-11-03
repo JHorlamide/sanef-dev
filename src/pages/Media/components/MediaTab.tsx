@@ -2,23 +2,37 @@ import React, { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import { Tab } from "@headlessui/react";
 import CustomCard from "components/widgets/Cards/Card";
-import { RECENT_NEWS, GALLERY } from "../content";
+import { GALLERY } from "../content";
+import { useData } from "hooks/useFetch";
+import moment from "moment";
+import { urlFor } from "lib/client";
+import { NewsType } from "types/news";
+import { GET_NEWS_QUERIES } from "utils/constants";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
 const NewsTab = () => {
+  const { data } = useData<NewsType[]>(GET_NEWS_QUERIES);
+
+  if (!data)
+    return (
+      <div className="container mx-auto text-[28px] text-center font-bold min-h-80">
+        Loading News...
+      </div>
+    );
+
   return (
     <div className="container mx-auto">
-      {RECENT_NEWS.map(({ id, date, image, title, content, link }) => (
+      {data.map((post) => (
         <CustomCard
-          key={id}
-          date={date}
-          image={image}
-          title={title}
-          content={content}
-          link={link}
+          key={post._id}
+          id={post._id}
+          date={moment(post.date).format("LLL")}
+          image={urlFor(post.image)}
+          headLine={post.headLine}
+          details={post.details}
         />
       ))}
     </div>
@@ -28,7 +42,7 @@ const NewsTab = () => {
 const GalleryTab = () => {
   const navigate = useNavigate();
 
-  const handleNavigate = (id: number) => {
+  const handleNavigate = (id: string) => {
     navigate(`/events/${id}`);
   };
 

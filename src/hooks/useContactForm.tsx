@@ -24,13 +24,11 @@ const useContactForm = ({ formData }: ContactFormData) => {
 
       if (response?.status === 200) {
         toast.success("Message sent successfully");
-        console.log("Email Res: ", response);
       }
     } catch (error) {
       toast.error(
         "Can't send your message at this time. Please try again later"
       );
-      console.log("Email Error: ", error);
     }
   };
 

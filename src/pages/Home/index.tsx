@@ -1,8 +1,8 @@
-import { Fragment } from "react";
+import React from "react";
 import { DOTS, GROUP_SHAPE, LINE_1, LINE_2, GROUP_LINES } from "assets/icons";
 import { ROLE_IMAGE_DESKTOP, ROLE_IMAGE_MOBILE } from "assets/images";
 import { OUR_IMPACT_CARD_CONTENT } from "./content";
-import { RECENT_NEWS } from "./content";
+// import { RECENT_NEWS } from "./content";
 import Footer from "components/widgets/Footer";
 import Image from "components/widgets/Image/Image";
 import RouterLink from "components/Navbar/NavLink/RouterLink";
@@ -10,11 +10,11 @@ import { ABOUT_US } from "routes/ROUTES_CONSTANTS";
 import Layout from "pages/Layout";
 
 // CUSTOM COMPONENTS
-import Tab from "pages/Home/components/Tab";
+import MobileNewTab from "components/common/MobileNewTab";
 import OurImpactFooter from "./components/OurImpactFooter";
 import OurImpactHeader from "./components/ImpactHeader";
-import RecentCard from "./components/RecentCard";
 import Carousel from "components/widgets/Carousel/Carousel";
+import RecentNews from "./components/RecentNews";
 
 const Home = () => {
   return (
@@ -208,30 +208,11 @@ const Home = () => {
 
         {/* MOBILE TAB */}
         <div className="md:hidden lg:hidden">
-          <Tab />
+          <MobileNewTab />
         </div>
 
-        <div className="hidden md:grid md:grid-cols-3 md:gap-4 md:px-10 lg:px-16">
-          {Object.values(RECENT_NEWS)
-            .splice(1, 4)
-            .map((posts, idx) => (
-              <Fragment key={idx}>
-                {posts.map(
-                  ({ id, image, icon, title, content, date, link }) => (
-                    <RecentCard
-                      key={id}
-                      icon={icon}
-                      date={date}
-                      image={image}
-                      title={title}
-                      content={content}
-                      link={link}
-                    />
-                  )
-                )}
-              </Fragment>
-            ))}
-        </div>
+        {/* RECENT NEWS */}
+        <RecentNews />
       </section>
 
       <section>

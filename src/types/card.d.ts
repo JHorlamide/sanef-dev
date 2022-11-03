@@ -8,12 +8,19 @@ export interface CardProps {
   style?: string;
 }
 
-export interface RecentCardProps {
-  id?: number;
-  icon?: string;
-  image: string;
+export interface ICardProps {
+  id: string;
+  image: any | string | undefined;
   date: string;
-  title: string;
-  content: string;
-  link: string;
+  headLine: string;
+  details: string;
+}
+
+export interface RecentCardProps {
+  id: string;
+  image: any | string | undefined;
+  date: string;
+  headLine: string;
+  details: string;
+  imgWidthHeight?: string;
 }

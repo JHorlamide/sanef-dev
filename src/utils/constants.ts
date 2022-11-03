@@ -114,3 +114,6 @@ export const SOCIAL_LINK = [
     link: "https://www.linkedin.com/company/sanef-nigeria-ltd/"
   }
 ];
+
+// QUERIES TO FETCH NEWS/EVENT DATA FROM SANITY
+export const GET_NEWS_QUERIES = "*[_type == 'news']";

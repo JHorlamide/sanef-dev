@@ -1,4 +1,4 @@
-import { Frame6, Frame7, Frame8, RIGHT_ARROW } from "assets/icons";
+import { Frame6, Frame7, Frame8 } from "assets/icons";
 import { CHILDREN, CHILDREN_2, STUDENTS, CAW_BOY } from "assets/images";
 
 export const OUR_IMPACT_CARD_CONTENT = {
@@ -55,8 +55,7 @@ export const OUR_IMPACT_CARD_CONTENT = {
 export const RECENT_NEWS = {
   First: [
     {
-      id: 1,
-      icon: RIGHT_ARROW,
+      id: "1",
       image: CHILDREN,
       date: "Thursday, June 17, 2021",
       title: "Sustaining the Financial Inclusion Drive in Nigeria",
@@ -68,8 +67,7 @@ export const RECENT_NEWS = {
 
   Second: [
     {
-      id: 2,
-      icon: RIGHT_ARROW,
+      id: "2",
       image: CHILDREN_2,
       date: "Thursday, June 17, 2021",
       title:
@@ -82,8 +80,7 @@ export const RECENT_NEWS = {
 
   Third: [
     {
-      id: 3,
-      icon: RIGHT_ARROW,
+      id: "3",
       image: STUDENTS,
       date: "Thursday, June 17, 2021",
       title:
@@ -96,8 +93,7 @@ export const RECENT_NEWS = {
 
   Fourth: [
     {
-      id: 3,
-      icon: RIGHT_ARROW,
+      id: "3",
       image: CAW_BOY,
       date: "Thursday, June 17, 2021",
       title:
