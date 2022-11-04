@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "pages/Layout";
 import Navbar from "components/Navbar/Navbar";
 import { GALLERY } from "../content";
+import Footer from "components/widgets/Footer";
 
 const EventDetails = () => {
   return (
@@ -10,13 +11,13 @@ const EventDetails = () => {
         <Navbar />
       </header>
 
-      <section className="container mx-auto py-5 px-5 md:px-0">
+      <section className="container mx-auto pt-3 md:px-0">
         <p className="text-[12px]">Thursday, June 17, 2022</p>
         <h1 className="text-buttonColor text-[26px] leading-[39px] font-bold">
           Event Name
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-12 pb-10">
           {GALLERY.map((gallery) => (
             <div
               key={gallery.id}
@@ -31,6 +32,10 @@ const EventDetails = () => {
             </div>
           ))}
         </div>
+      </section>
+
+      <section>
+        <Footer />
       </section>
     </Layout>
   );

@@ -11,7 +11,7 @@ const Media = () => {
   return (
     <Layout>
       <section
-        className={`${style.media} bg-media_hero_mobile md:bg-about-hero-desktop 
+        className={`${style.media} bg-media_hero_mobile md:bg-media_hero_desktop 
         bg-center bg-cover bg-no-repeat items-center w-full h-96 lg:h-[400px]`}
       >
         <Navbar />

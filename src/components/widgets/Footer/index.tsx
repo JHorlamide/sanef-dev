@@ -1,26 +1,17 @@
-import React, { ChangeEvent, FormEvent, Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { Logo } from "assets/index";
 import { DESKTOP_LINE } from "assets/icons";
 import { FOOTER_NAVIGATION } from "utils/constants";
-import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
-import CustomInput from "components/widgets/CustomInput/CustomInput";
 import FooterContentOne from "./FooterContentOne";
 import FooterContentTwo from "./FooterContentTwo";
 import FooterCopyright from "./FooterCopyright";
 import FooterMobile from "./FooterMobile";
 import RouterLink from "components/Navbar/NavLink/RouterLink";
+import MailchimpSubscribe from "react-mailchimp-subscribe";
+import NewsLetterForm from "./NewsLetterForm";
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  };
-
-  const handleSubscription = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(email);
-  };
+  const MAILCHIMP_URL = process.env.REACT_APP_MAILCHIMP_URL as string;
 
   return (
     <Fragment>
@@ -31,32 +22,18 @@ const Footer = () => {
             contentClassName="text-white text-md text-center hover:text-buttonColor"
           />
 
-          <form
-            className="flex justify-center items-center space-x-5"
-            onSubmit={handleSubscription}
-          >
-            <CustomInput
-              id=""
-              className="text-xs text-white placeholder:text-white rounded-full bg-transparent border-2 border-white md:pl-[28px] md:py-4 px-72"
-              inputProps={{
-                type: "email",
-                name: "email",
-                placeholder: "Your Email",
-                value: email,
-                onChange: handleChange
-              }}
-            />
-
-            <div className="inset-y-0 right-0 flex items-center">
-              <CustomBtn
-                className={
-                  "text-white font-medium px-8 py-3 rounded-full bg-buttonColor hover:bg-lightGreen"
+          <MailchimpSubscribe
+            url={MAILCHIMP_URL}
+            render={({ subscribe, status, message }) => (
+              <NewsLetterForm
+                status={status}
+                message={message as string | Node}
+                onValidated={(formData: { EMAIL: string }) =>
+                  subscribe(formData)
                 }
-              >
-                Get Started
-              </CustomBtn>
-            </div>
-          </form>
+              />
+            )}
+          />
         </div>
 
         {/* HORIZONTAL LINE */}
@@ -151,11 +128,7 @@ const Footer = () => {
         />
       </section>
 
-      <FooterMobile
-        email={email}
-        handleChange={handleChange}
-        handleSubscription={handleSubscription}
-      />
+      <FooterMobile />
     </Fragment>
   );
 };

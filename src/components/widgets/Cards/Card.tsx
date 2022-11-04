@@ -8,8 +8,7 @@ const CustomCard = ({ id, image, date, headLine, details }: ICardProps) => {
   return (
     <div
       className="flex flex-col justify-center items-start my-10 w-full
-      lg:flex-row lg:items-center lg:space-x-16 lg:pt-10 lg:my-16
-      "
+      lg:flex-row lg:items-center lg:space-x-16 lg:pt-10 lg:my-16"
     >
       <div className="lg:hidden block px-3 w-full h-[210px] md:h-[400px]">
         <img
@@ -19,14 +18,16 @@ const CustomCard = ({ id, image, date, headLine, details }: ICardProps) => {
         />
       </div>
 
-      <img
-        className="hidden lg:block object-cover w-screen lg:w-[484px] lg:h-[270px] lg:rounded-xl"
-        src={image}
-        alt=""
-      />
+      <div className="hidden lg:block w-[484px] h-[270px]">
+        <img
+          className="object-cover w-full h-full rounded-xl"
+          src={image}
+          alt=""
+        />
+      </div>
 
       <div className="space-y-5 mt-8 md:mt-0 ml-6 mb-10 lg:max-w-lg lg:mb-0">
-        <p className="text-md mt-5">{date}</p>
+        <p className="text-[12px] mt-5">{date}</p>
         <h1 className="text-2xl font-bold md:text-xl">{headLine}</h1>
         <p
           className={`${style.clamp} text-xl text-left leading-text-line-height md:text-base`}

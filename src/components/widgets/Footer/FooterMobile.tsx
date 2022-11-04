@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent } from "react";
+import React, { ChangeEvent, FormEvent, Fragment, useState } from "react";
 import { MOBILE_LINE } from "assets/icons";
 import { Logo } from "assets/index";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
@@ -8,18 +8,97 @@ import FooterContentOne from "./FooterContentOne";
 import FooterContentTwo from "./FooterContentTwo";
 import FooterCopyright from "./FooterCopyright";
 import RouterLink from "components/Navbar/NavLink/RouterLink";
+import MailchimpSubscribe from "react-mailchimp-subscribe";
+// import NewsLetterForm from "./NewsLetterForm";
 
-interface FooterMobileProps {
-  email: string;
-  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  handleSubscription: (e: FormEvent<HTMLFormElement>) => void;
-}
+type NewsLetterProps = {
+  status: string | boolean | any;
+  message: string | Node;
+  onValidated: (arg: { EMAIL: string }) => void;
+};
 
-const FooterMobile = ({
-  email,
-  handleChange,
-  handleSubscription
-}: FooterMobileProps) => {
+const NewsLetterForm = ({ status, message, onValidated }: NewsLetterProps) => {
+  const [error, setError] = useState<string | null>("");
+  const [email, setEmail] = useState<string>("");
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null);
+
+    if (!email) {
+      setError("Please enter a valid email address");
+      return null;
+    }
+
+    const isFormValidated = onValidated({ EMAIL: email });
+
+    setEmail("");
+    // On success return true
+    return email && email.indexOf("@") > -1 && isFormValidated;
+  };
+
+  return (
+    <Fragment>
+      {/* SUCCESS SUBSCRIPTION MESSAGE */}
+      <div className="context mx-auto flex justify-center">
+        {status === "success" && (
+          <div
+            className="text-buttonColor font-bold pt-2"
+            dangerouslySetInnerHTML={{ __html: message as string }}
+          />
+        )}
+      </div>
+
+      <div className="mt-4">
+        <form className="relative" onSubmit={handleSubmit}>
+          <CustomInput
+            id=""
+            className="text-xs placeholder:text-white pl-[14px] text-left px-48 py-4
+            rounded-full bg-transparent border-2 border-white"
+            inputProps={{
+              type: "email",
+              name: "email",
+              placeholder: "Your Email",
+              value: email,
+              onChange: handleChange
+            }}
+          />
+
+          <div className="absolute inset-y-0 right-0 flex items-center">
+            <CustomBtn
+              className={
+                "text-white font-medium px-8 py-3 border-r-2 rounded-full bg-buttonColor"
+              }
+            >
+              {status === "sending" ? "Sending..." : "Get Started"}
+            </CustomBtn>
+          </div>
+        </form>
+      </div>
+
+      {/* ERROR MESSAGE */}
+      <div className="container mx-auto flex justify-center pt-3">
+        {error && <div dangerouslySetInnerHTML={{ __html: error }} />}
+
+        {status === "error" ? (
+          <div
+            dangerouslySetInnerHTML={{
+              __html: message as string
+            }}
+          ></div>
+        ) : null}
+      </div>
+    </Fragment>
+  );
+};
+
+const FooterMobile = () => {
+  const MAILCHIMP_URL = process.env.REACT_APP_MAILCHIMP_URL as string;
+
   return (
     <section className="md:hidden lg:hidden bg-footer-image-mobile bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center pt-10">
       <div className="">
@@ -56,31 +135,16 @@ const FooterMobile = ({
         contentClassName="text-white text-xs"
       />
 
-      <div className="mt-4">
-        <form className="relative" onSubmit={handleSubscription}>
-          <CustomInput
-            id=""
-            className="text-xs placeholder:text-white pl-[14px] text-left px-48 py-4 rounded-full bg-transparent border-2 border-white"
-            inputProps={{
-              type: "email",
-              name: "email",
-              placeholder: "Your Email",
-              value: email,
-              onChange: handleChange
-            }}
+      <MailchimpSubscribe
+        url={MAILCHIMP_URL}
+        render={({ subscribe, status, message }) => (
+          <NewsLetterForm
+            status={status}
+            message={message as string | Node}
+            onValidated={(formData: { EMAIL: string }) => subscribe(formData)}
           />
-
-          <div className="absolute inset-y-0 right-0 flex items-center">
-            <CustomBtn
-              className={
-                "text-white font-medium px-8 py-3 border-r-2 rounded-full bg-buttonColor"
-              }
-            >
-              Get Started
-            </CustomBtn>
-          </div>
-        </form>
-      </div>
+        )}
+      />
 
       <div className="mt-10">
         <img src={MOBILE_LINE} alt="horizontal-line" />

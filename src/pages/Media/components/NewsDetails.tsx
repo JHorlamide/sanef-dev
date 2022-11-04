@@ -58,7 +58,7 @@ const NewsDetails = () => {
 
         <img src={LONG_HORIZONTAL_LINE} alt="..." className="mt-8" />
 
-        <div className="mt-6 md:mt-4">
+        {/* <div className="mt-6 md:mt-4">
           <p className="text-[16px]">Olamide Jubril</p>
           <p className="text-[16px]">
             <span className="font-bold">Source:</span>{" "}
@@ -66,7 +66,7 @@ const NewsDetails = () => {
               FINANCIAL TECHNOLOGY LIMITED
             </a>
           </p>
-        </div>
+        </div> */}
 
         <div className="mt-10">
           <section className="flex flex-col justify-center items-center">

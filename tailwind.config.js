@@ -39,8 +39,9 @@ module.exports = {
         "mobile_home_centre_of_excellence": "url('/public/assets/images/hero-img/mobile_home_centre_of_excellence.jpeg')",
         "mobile_home_empowering_the_ecosystem": "url('/public/assets/images/hero-img/mobile_home_empowering_the_ecosystem.jpeg')",
         "mobile_home_enhancing_knowledge": "url('/public/assets/images/hero-img/mobile_home_enhancing_knowledge.jpeg')",
-        "media_hero_mobile": "url('/public/assets/images/hero-img/media_hero_mobile.png')",
-        
+        "media_hero_desktop": "url('/public/assets/images/hero-img/desktop_media.jpg')",
+        "media_hero_mobile": "url('/public/assets/images/hero-img/mobile_media.jpg')",
+
         "about-hero-desktop": "url('/public/assets/images/hero-img/about-hero-bg-desktop.png')",
         "about-hero-mobile": "url('/public/assets/images/hero-img/about-hero-bg-mobile.png')",
         "contact-hero-desktop": "url('/public/assets/images/hero-img/desktop_contact.jpg')",
