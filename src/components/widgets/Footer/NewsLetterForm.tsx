@@ -46,14 +46,12 @@ const NewsLetterForm = ({ status, message, onValidated }: NewsLetterProps) => {
 
       {/* SUBSCRIPTION FORM */}
       <form
-        className="container mx-auto flex flex-col md:flex-row justify-center items-center
-        space-x-0 md:space-x-5 space-y-3 md:space-y-0 px-5 md:px-0"
+        className="flex justify-center items-center space-x-5"
         onSubmit={handleSubmit}
       >
         <CustomInput
-          id="email"
-          className="text-xs text-white placeholder:text-white rounded-full border-2
-          bg-transparent border-white pl-[14px] md:pl-[28px] px-48 py-3 md:py-4 md:px-72 w-full"
+          id=""
+          className="text-xs text-white placeholder:text-white rounded-full bg-transparent border-2 border-white md:pl-[28px] md:py-4 px-72"
           inputProps={{
             type: "email",
             name: "email",
@@ -69,7 +67,7 @@ const NewsLetterForm = ({ status, message, onValidated }: NewsLetterProps) => {
               "text-white font-medium px-8 py-3 rounded-full bg-buttonColor hover:bg-lightGreen"
             }
           >
-            {status === "sending" ? "Sending..." : "Get Started"}
+            {status === "sending" ? "Sending..." : "Get started"}
           </CustomBtn>
         </div>
       </form>
