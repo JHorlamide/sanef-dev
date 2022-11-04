@@ -51,7 +51,8 @@ const NewsLetterForm = ({ status, message, onValidated }: NewsLetterProps) => {
       >
         <CustomInput
           id=""
-          className="text-xs text-white placeholder:text-white rounded-full bg-transparent border-2 border-white md:pl-[28px] md:py-4 px-72"
+          className="text-xs text-white placeholder:text-white rounded-full 
+          bg-transparent border-2 border-white md:pl-[28px] md:py-4 px-72"
           inputProps={{
             type: "email",
             name: "email",
@@ -73,11 +74,17 @@ const NewsLetterForm = ({ status, message, onValidated }: NewsLetterProps) => {
       </form>
 
       {/* ERROR MESSAGE */}
-      <div className="container mx-auto flex justify-center pt-3">
-        {error && <div dangerouslySetInnerHTML={{ __html: error }} />}
+      <div className="container mx-auto flex justify-center pt-1">
+        {error && (
+          <div
+            className="text-red-500 font-bold"
+            dangerouslySetInnerHTML={{ __html: error }}
+          />
+        )}
 
         {status === "error" ? (
           <div
+            className="text-red-500 font-bold"
             dangerouslySetInnerHTML={{
               __html: message as string
             }}
