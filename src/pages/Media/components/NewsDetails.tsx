@@ -49,14 +49,23 @@ const NewsDetails = () => {
         />
       </div>
 
-      <section className="container mx-auto py-5 px-5 md:px-32">
-        <p className="text-[12px] py-6">{moment(data?.date).format("LLL")}</p>
-        <h1 className="text-buttonColor text-[26px] leading-[39px] font-bold">
-          {data?.headLine}
-        </h1>
-        <p className="text-[18px] whitespace-pre-line pt-5">{data?.details}</p>
+      <section className="container mx-auto grid grid-cols-12 items-center relative py-5 px-5 md:px-32">
+        <div className="col-span-12 lg:col-span-12">
+          {/* Article Published Date */}
+          <p className="text-[12px] py-6">{moment(data?.date).format("LLL")}</p>
 
-        <img src={LONG_HORIZONTAL_LINE} alt="..." className="mt-8" />
+          {/* Article Headline */}
+          <h1 className="text-buttonColor text-[26px] leading-[39px] font-bold">
+            {data?.headLine}
+          </h1>
+
+          {/* Article Details */}
+          <p className="text-[18px] text-justify whitespace-pre-line pt-5">
+            {data?.details}
+          </p>
+
+          <img src={LONG_HORIZONTAL_LINE} alt="..." className="mt-8" />
+        </div>
 
         {/* <div className="mt-6 md:mt-4">
           <p className="text-[16px]">Olamide Jubril</p>
@@ -67,16 +76,16 @@ const NewsDetails = () => {
             </a>
           </p>
         </div> */}
+      </section>
 
+      <div className="">
         <div className="mt-10">
           <section className="flex flex-col justify-center items-center">
             <h1 className="text-center text-2xl font-bold">Recent News</h1>
             <hr className="border-b-4 border-buttonColor w-16 mt-2" />
           </section>
         </div>
-      </section>
 
-      <div className="">
         <div className="hidden md:grid md:grid-cols-1 lg:grid-cols-3 md:gap-4 md:px-10 lg:px-16">
           {recentPosts?.map((post: any) => (
             <RecentCard

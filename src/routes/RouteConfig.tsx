@@ -8,8 +8,8 @@ import {
   OUR_PARTNERS,
   VALUE_ADDED_SERVICES,
   BECOME_AGENT,
-  NEWS_DETAILS,
-  EVENT_DETAILS
+  MEDIA_NEWS_DETAILS,
+  MEDIA_EVENT_DETAILS
 } from "./ROUTES_CONSTANTS";
 import Home from "pages/Home";
 import About from "pages/About";
@@ -31,8 +31,8 @@ const RouteConfig = () => {
       <Route path={OUR_PARTNERS} element={<OurPartners />} />
       <Route path={VALUE_ADDED_SERVICES} element={<ValueAddedServices />} />
       <Route path={BECOME_AGENT} element={<BecomeAnAgent />} />
-      <Route path={NEWS_DETAILS} element={<NewsDetails />} />
-      <Route path={EVENT_DETAILS} element={<EventDetails />} />
+      <Route path={MEDIA_NEWS_DETAILS} element={<NewsDetails />} />
+      <Route path={MEDIA_EVENT_DETAILS} element={<EventDetails />} />
     </Routes>
   );
 };

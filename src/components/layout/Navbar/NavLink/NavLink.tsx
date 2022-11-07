@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, matchPath } from "react-router-dom";
 
 interface NavLinkProps {
   path: string;
@@ -18,12 +18,13 @@ const NavLink = ({
   className,
   handleClick
 }: NavLinkProps) => {
-  const location = useLocation();
-  const { pathname } = location;
-  const isActive = pathname === path ? true : false;
+  const { pathname } = useLocation();
+  let isActive = pathname === path ? true : false;
+  const isMatch = matchPath(path, pathname);
 
-  console.log("Pathname: ", pathname);
-  console.log("Path: ", path);
+  console.log({ pathname, path });
+
+  console.log("isMatch: ", isMatch);
 
   return (
     <Link

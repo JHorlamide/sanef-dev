@@ -43,7 +43,7 @@ const GalleryTab = () => {
   const navigate = useNavigate();
 
   const handleNavigate = (id: string) => {
-    navigate(`/media/${id}`);
+    navigate(`/media/gallery/${id}`);
   };
 
   return (

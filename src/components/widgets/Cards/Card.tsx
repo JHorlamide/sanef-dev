@@ -1,8 +1,8 @@
 import React from "react";
 import { ICardProps } from "types/card";
-import RouterLink from "components/layout/Navbar/NavLink/RouterLink";
 import { IoIosArrowForward } from "react-icons/io";
 import style from "./style.module.css";
+import NavLink from "components/layout/Navbar/NavLink/NavLink";
 
 const CustomCard = ({ id, image, date, headLine, details }: ICardProps) => {
   return (
@@ -35,15 +35,25 @@ const CustomCard = ({ id, image, date, headLine, details }: ICardProps) => {
           {details}
         </p>
 
-        <RouterLink
-          className="text-xl text-buttonColor font-semibold flex w-fit md:text-base 
-          hover:text-lightGreen"
-          path={`/news/${id}`}
+        <NavLink
+          path={`/media/news/${id}`}
           title="Continue Reading"
           rightIcon={
             <IoIosArrowForward size={22} className="ml-1 mt-0.5 text-sm" />
           }
+          className="text-xl text-buttonColor font-semibold flex w-fit md:text-base 
+          hover:text-lightGreen"
         />
+
+        {/* <RouterLink
+          className="text-xl text-buttonColor font-semibold flex w-fit md:text-base 
+          hover:text-lightGreen"
+          path={`/media/news/${id}`}
+          title="Continue Reading"
+          rightIcon={
+            <IoIosArrowForward size={22} className="ml-1 mt-0.5 text-sm" />
+          }
+        /> */}
       </div>
     </div>
   );
