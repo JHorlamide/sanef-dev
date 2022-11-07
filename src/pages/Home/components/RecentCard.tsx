@@ -13,7 +13,7 @@ const RecentCard = ({
   imgWidthHeight
 }: RecentCardProps) => {
   return (
-    <div className="flex flex-col justify-center items-start my-10 w-full lg:my-16">
+    <div className="inline-block flex-col align-top justify-center items-start my-10 w-full lg:my-16">
       <div className={`px-3 ${imgWidthHeight}`}>
         <img
           className="object-cover w-full h-full rounded-xl"

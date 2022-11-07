@@ -116,4 +116,4 @@ export const SOCIAL_LINK = [
 ];
 
 // QUERIES TO FETCH NEWS/EVENT DATA FROM SANITY
-export const GET_NEWS_QUERIES = "*[_type == 'news']";
+export const GET_NEWS_QUERIES = "*[_type == 'news'] | order(_createdAt asc)";
