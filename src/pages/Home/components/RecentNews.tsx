@@ -11,7 +11,9 @@ const RecentNews = () => {
 
   if (!data)
     return (
-      <div className="container mx-auto text-[28px] font-bold">Loading...</div>
+      <div className="container mx-auto text-center text-[28px] font-bold py-10">
+        Loading news...
+      </div>
     );
 
   return (
