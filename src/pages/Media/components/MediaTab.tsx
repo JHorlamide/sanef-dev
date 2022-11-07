@@ -18,7 +18,7 @@ const NewsTab = () => {
 
   if (!data)
     return (
-      <div className="container mx-auto text-[28px] text-center font-bold min-h-80">
+      <div className="container mx-auto text-[28px] text-center font-bold h-80">
         Loading News...
       </div>
     );
@@ -43,7 +43,7 @@ const GalleryTab = () => {
   const navigate = useNavigate();
 
   const handleNavigate = (id: string) => {
-    navigate(`/events/${id}`);
+    navigate(`/media/${id}`);
   };
 
   return (
@@ -65,7 +65,9 @@ const GalleryTab = () => {
 
               <div className="absolute text-white space-y-3 bottom-8 left-10">
                 <p className="text-[12px]">{gallery.date}</p>
-                <h1 className="text-[28px] font-bold">{gallery.eventName}</h1>
+                <h1 className="text-[28px] font-bold hover:text-buttonColor">
+                  {gallery.eventName}
+                </h1>
               </div>
             </div>
           ))}

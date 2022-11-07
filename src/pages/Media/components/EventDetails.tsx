@@ -1,8 +1,8 @@
 import React from "react";
 import Layout from "pages/Layout";
-import Navbar from "components/Navbar/Navbar";
+import Navbar from "components/layout/Navbar/Navbar";
 import { GALLERY } from "../content";
-import Footer from "components/widgets/Footer";
+import Footer from "components/layout/Footer";
 
 const EventDetails = () => {
   return (

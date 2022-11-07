@@ -3,9 +3,9 @@ import { DOTS, GROUP_SHAPE, LINE_1, LINE_2, GROUP_LINES } from "assets/icons";
 import { ROLE_IMAGE_DESKTOP, ROLE_IMAGE_MOBILE } from "assets/images";
 import { OUR_IMPACT_CARD_CONTENT } from "./content";
 // import { RECENT_NEWS } from "./content";
-import Footer from "components/widgets/Footer";
+import Footer from "components/layout/Footer";
 import Image from "components/widgets/Image/Image";
-import RouterLink from "components/Navbar/NavLink/RouterLink";
+import RouterLink from "components/layout/Navbar/NavLink/RouterLink";
 import { ABOUT_US } from "routes/ROUTES_CONSTANTS";
 import Layout from "pages/Layout";
 

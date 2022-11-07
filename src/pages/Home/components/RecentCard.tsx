@@ -1,6 +1,6 @@
 import React from "react";
 import { RecentCardProps } from "types/card";
-import RouterLink from "components/Navbar/NavLink/RouterLink";
+import RouterLink from "components/layout/Navbar/NavLink/RouterLink";
 import { IoIosArrowForward } from "react-icons/io";
 import style from "../style.module.css";
 

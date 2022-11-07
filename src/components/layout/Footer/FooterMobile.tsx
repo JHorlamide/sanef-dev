@@ -7,7 +7,7 @@ import { FOOTER_NAVIGATION } from "utils/constants";
 import FooterContentOne from "./FooterContentOne";
 import FooterContentTwo from "./FooterContentTwo";
 import FooterCopyright from "./FooterCopyright";
-import RouterLink from "components/Navbar/NavLink/RouterLink";
+import RouterLink from "components/layout/Navbar/NavLink/RouterLink";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 // import NewsLetterForm from "./NewsLetterForm";
 

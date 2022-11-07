@@ -6,7 +6,7 @@ import FooterContentOne from "./FooterContentOne";
 import FooterContentTwo from "./FooterContentTwo";
 import FooterCopyright from "./FooterCopyright";
 import FooterMobile from "./FooterMobile";
-import RouterLink from "components/Navbar/NavLink/RouterLink";
+import RouterLink from "components/layout/Navbar/NavLink/RouterLink";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import NewsLetterForm from "./NewsLetterForm";
 

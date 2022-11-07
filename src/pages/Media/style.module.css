@@ -9,7 +9,7 @@
   right: 0;
   bottom: -78px;
   height: 10rem;
-  background-color: #f3fcf5;
+  background-color: white;
   transform: skewY(-5deg);
 }
 
@@ -21,7 +21,7 @@
     right: 0;
     bottom: -90px;
     height: 8rem;
-    background-color: #f3fcf5;
+    background-color: white;
     transform: skewY(-10deg);
   }
 }

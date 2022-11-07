@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "components/Navbar/Navbar";
+import Navbar from "components/layout/Navbar/Navbar";
 import Image from "components/widgets/Image/Image";
 import style from "./style.module.css";
 import { DOTS } from "assets/icons";
@@ -10,7 +10,7 @@ import {
   ServicesCardDesktop
 } from "./components/ServicesCard";
 import { SERVICES } from "./content";
-import Footer from "components/widgets/Footer";
+import Footer from "components/layout/Footer";
 import {
   ProductServicesMobile,
   ProductServicesTab

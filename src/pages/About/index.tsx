@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "components/Navbar/Navbar";
+import Navbar from "components/layout/Navbar/Navbar";
 import Image from "components/widgets/Image/Image";
 import { ABOUT_IMAGE_1 } from "assets/images";
 import { GROUP_CIRCLE } from "assets/icons";
@@ -7,7 +7,7 @@ import { CARD_CONTENT } from "./content";
 import CoreValueCard from "./components/CoreValueCard";
 import style from "./style.module.css";
 import TeamTab from "./components/TeamTab";
-import Footer from "components/widgets/Footer";
+import Footer from "components/layout/Footer";
 import Layout from "pages/Layout";
 
 const About = () => {

@@ -1,18 +1,18 @@
 import React from "react";
 import { ICardProps } from "types/card";
-import RouterLink from "components/Navbar/NavLink/RouterLink";
+import RouterLink from "components/layout/Navbar/NavLink/RouterLink";
 import { IoIosArrowForward } from "react-icons/io";
 import style from "./style.module.css";
 
 const CustomCard = ({ id, image, date, headLine, details }: ICardProps) => {
   return (
     <div
-      className="flex flex-col justify-center items-start my-10 w-full
-      lg:flex-row lg:items-center lg:space-x-16 lg:pt-10 lg:my-16"
+      className="flex flex-col lg:flex-row justify-center items-start lg:items-center my-10 
+      w-full space-y-2 lg:space-x-16 lg:my-16"
     >
       <div className="lg:hidden block px-3 w-full h-[210px] md:h-[400px]">
         <img
-          className="object-cover w-full md:h-full rounded-xl"
+          className="object-cover w-full h-full rounded-xl"
           src={image}
           alt=""
         />
@@ -26,7 +26,7 @@ const CustomCard = ({ id, image, date, headLine, details }: ICardProps) => {
         />
       </div>
 
-      <div className="space-y-5 mt-8 md:mt-0 ml-6 mb-10 lg:max-w-lg lg:mb-0">
+      <div className="space-y-5 ml-6 mb-10 lg:max-w-lg lg:mb-0">
         <p className="text-[12px] mt-5">{date}</p>
         <h1 className="text-2xl font-bold md:text-xl">{headLine}</h1>
         <p

@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Navbar from "components/Navbar/Navbar";
+import Navbar from "components/layout/Navbar/Navbar";
 import Layout from "pages/Layout";
 import { LONG_HORIZONTAL_LINE } from "assets/icons";
 import { useData } from "hooks/useFetch";

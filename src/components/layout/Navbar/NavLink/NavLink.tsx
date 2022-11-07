@@ -22,6 +22,9 @@ const NavLink = ({
   const { pathname } = location;
   const isActive = pathname === path ? true : false;
 
+  console.log("Pathname: ", pathname);
+  console.log("Path: ", path);
+
   return (
     <Link
       to={path}

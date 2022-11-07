@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FormEvent, Fragment, useState } from "react";
-import CustomBtn from "../CustomBtn/CustomBtn";
-import CustomInput from "../CustomInput/CustomInput";
+import CustomBtn from "../../widgets/CustomBtn/CustomBtn";
+import CustomInput from "../../widgets/CustomInput/CustomInput";
 
 type NewsLetterProps = {
   status: string | boolean | any;
@@ -52,7 +52,7 @@ const NewsLetterForm = ({ status, message, onValidated }: NewsLetterProps) => {
         <CustomInput
           id=""
           className="text-xs text-white placeholder:text-white rounded-full 
-          bg-transparent border-2 border-white md:pl-[28px] md:py-4 px-72"
+          bg-transparent border-2 border-white md:pl-[32px] md:py-4 w-[350px]"
           inputProps={{
             type: "email",
             name: "email",

@@ -1,5 +1,5 @@
 import React from "react";
-import RouterLink from "components/Navbar/NavLink/RouterLink";
+import RouterLink from "components/layout/Navbar/NavLink/RouterLink";
 
 export interface FooterContentProps {
   parentClassName?: string;

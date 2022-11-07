@@ -7,7 +7,7 @@ import CustomInput from "components/widgets/CustomInput/CustomInput";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomSelect from "components/widgets/CustomInput/CustomSelect";
 import { CHECK_LIST } from "assets/icons";
-import RouterLink from "components/Navbar/NavLink/RouterLink";
+import RouterLink from "components/layout/Navbar/NavLink/RouterLink";
 
 interface FormData {
   firstName: string;

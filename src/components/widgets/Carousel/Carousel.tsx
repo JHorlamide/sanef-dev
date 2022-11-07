@@ -1,6 +1,6 @@
 import React from "react";
 import "tw-elements";
-import Navbar from "components/Navbar/Navbar";
+import Navbar from "components/layout/Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
 import {
   OUR_PARTNERS,

@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "components/Navbar/Navbar";
+import Navbar from "components/layout/Navbar/Navbar";
 import style from "./style.module.css";
-import Footer from "components/widgets/Footer";
+import Footer from "components/layout/Footer";
 import { MobileForm, DesktopForm } from "./components/Form";
 import Image from "components/widgets/Image/Image";
 import { DOTS } from "assets/icons";

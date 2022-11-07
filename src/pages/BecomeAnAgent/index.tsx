@@ -1,10 +1,10 @@
 import React from "react";
 import { DOTS } from "assets/icons";
-import Navbar from "components/Navbar/Navbar";
+import Navbar from "components/layout/Navbar/Navbar";
 import Image from "components/widgets/Image/Image";
 import style from "./style.module.css";
 import AgentTab from "./components/Tab";
-import Footer from "components/widgets/Footer";
+import Footer from "components/layout/Footer";
 import Layout from "pages/Layout";
 
 const BecomeAnAgent = () => {

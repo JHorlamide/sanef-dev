@@ -1,12 +1,12 @@
 import React from "react";
-import Navbar from "components/Navbar/Navbar";
+import Navbar from "components/layout/Navbar/Navbar";
 import style from "./style.module.css";
 import Image from "components/widgets/Image/Image";
 import { DOTS } from "assets/icons";
 import { OUR_PARTNERS_LOGOS } from "./content";
 import PartnersTabs from "./components/PartnersTabs";
 import PartnersAndName from "./components/PartnersAndName";
-import Footer from "components/widgets/Footer";
+import Footer from "components/layout/Footer";
 import Layout from "pages/Layout";
 
 const OurPartners = () => {
