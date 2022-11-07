@@ -41,7 +41,7 @@ const NewsDetails = () => {
       </div>
 
       {/* DESKTOP DISPLAY */}
-      <div className="hidden md:block w-full h-[398px]">
+      <div className="hidden md:block w-full h-[600px] bg-center  bg-auto">
         <img
           src={urlFor(data.image).toString()}
           alt="..."
