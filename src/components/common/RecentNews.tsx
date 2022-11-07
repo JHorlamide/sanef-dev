@@ -1,5 +1,5 @@
 import React from "react";
-import RecentCard from "./RecentCard";
+import RecentCard from "../../pages/Home/components/RecentCard";
 import { urlFor } from "lib/client";
 import moment from "moment";
 import { useData } from "hooks/useFetch";

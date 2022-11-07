@@ -14,7 +14,7 @@ import MobileNewTab from "components/common/MobileNewTab";
 import OurImpactFooter from "./components/OurImpactFooter";
 import OurImpactHeader from "./components/ImpactHeader";
 import Carousel from "components/widgets/Carousel/Carousel";
-import RecentNews from "./components/RecentNews";
+import RecentNews from "../../components/common/RecentNews";
 
 const Home = () => {
   return (

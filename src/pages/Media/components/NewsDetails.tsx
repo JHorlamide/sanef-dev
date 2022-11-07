@@ -7,16 +7,17 @@ import { useData } from "hooks/useFetch";
 import { NewsType } from "types/news";
 import moment from "moment";
 import { urlFor } from "lib/client";
-import RecentCard from "pages/Home/components/RecentCard";
-import { GET_NEWS_QUERIES } from "utils/constants";
+// import RecentCard from "pages/Home/components/RecentCard";
+// import { GET_NEWS_QUERIES } from "utils/constants";
 import MobileNewTab from "components/common/MobileNewTab";
+import RecentNews from "components/common/RecentNews";
 
 const NewsDetails = () => {
   const { id } = useParams();
   const queries = `*[_type == 'news' && _id == '${id}'][0]`;
 
   const { data } = useData<NewsType>(queries);
-  const { data: recentPosts } = useData<NewsType[]>(GET_NEWS_QUERIES);
+  // const { data: recentPosts } = useData<NewsType[]>(GET_NEWS_QUERIES);
 
   if (!data)
     return (
@@ -86,7 +87,10 @@ const NewsDetails = () => {
           </section>
         </div>
 
-        <div className="hidden md:grid md:grid-cols-1 lg:grid-cols-3 md:gap-4 md:px-10 lg:px-16">
+        {/* Recent News */}
+        <RecentNews />
+
+        {/* <div className="hidden md:grid md:grid-cols-1 lg:grid-cols-3 md:gap-4 md:px-10 lg:px-16">
           {recentPosts?.map((post: any) => (
             <RecentCard
               id={post._id}
@@ -98,7 +102,7 @@ const NewsDetails = () => {
               imgWidthHeight={"w-full h-64"}
             />
           ))}
-        </div>
+        </div> */}
       </div>
 
       <MobileNewTab />
