@@ -34,7 +34,7 @@ const RecentCard = ({
         <RouterLink
           className="text-xl text-buttonColor font-semibold flex w-fit md:text-base 
           hover:text-lightGreen"
-          path={`/news/${id}`}
+          path={`/media/news/${id}`}
           title="Continue Reading"
           rightIcon={
             <IoIosArrowForward size={22} className="ml-1 mt-0.5 text-sm" />
