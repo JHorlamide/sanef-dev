@@ -1,4 +1,4 @@
-const IMAGES_PATH = "/assets/images";
+const IMAGES_PATH = "/assets/website/images";
 const HERO_IMAGE_PATH = `${IMAGES_PATH}/hero-img`;
 const BOARD_IMAGE_PATH = `${IMAGES_PATH}/board`;
 const EXECUTIVE_IMAGE_PATH = `${IMAGES_PATH}/executive`;
@@ -6,12 +6,14 @@ const BANK_PARTNERS_IMAGE_PATH = `${IMAGES_PATH}/partners/banks`;
 const SUPER_AGENT_IMAGE_PATH = `${IMAGES_PATH}/partners/super-agent`;
 const REGULATOR_IMAGE_PATH = `${IMAGES_PATH}/partners/regulators`;
 const STRATEGIC_PARTNERS_IMAGE_PATH = `${IMAGES_PATH}/partners/strategic-partners`;
-const GOVT_IMAGE_PATH = "assets/images/partners/govt";
+const GOVT_IMAGE_PATH = `${IMAGES_PATH}/partners/govt`;
 
 export const image1 = `${IMAGES_PATH}/image-1.png`;
 export const image2 = `${IMAGES_PATH}/image-2.png`;
 export const image3 = `${IMAGES_PATH}/image-3.png`;
 export const image4 = `${IMAGES_PATH}/image-4.png`;
+
+export const Logo = "/assets/website/images/logo.png";
 
 export const DEEPENING_FINANCIAL = `${HERO_IMAGE_PATH}/desktop_home_deepening_financial_inclusion.jpeg`;
 export const CENTER_OF_EXCELLENCE = `${HERO_IMAGE_PATH}/desktop_home_centre_of_excellence.jpeg`;

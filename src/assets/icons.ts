@@ -1,4 +1,5 @@
-const SVG_PATH = "/assets/svg";
+const SVG_PATH = "/assets/website/svg";
+const ADMIN_SVG_PATH = "/assets/admin/svg";
 
 export const Frame1 = `${SVG_PATH}/Frame-1.svg`;
 export const Frame2 = `${SVG_PATH}/Frame-2.svg`;
@@ -30,6 +31,7 @@ export const GROUP_LINES = `${SVG_PATH}/Group-Lines.svg`;
 // ARROW ICON
 export const RIGHT_ARROW = `${SVG_PATH}/Right-Arrow.svg`;
 
+// HORIZONTAL LINES
 export const MOBILE_LINE = `${SVG_PATH}/Mobile-Line.svg`;
 export const DESKTOP_LINE = `${SVG_PATH}/Line-Desktop.svg`;
 export const GROUP_CIRCLE = `${SVG_PATH}/group-circle.svg`;
@@ -45,4 +47,8 @@ export const VERTICAL_LINE = `${SVG_PATH}/v-line-contactus.svg`;
 // BECOME AN AGENT
 export const CIRCLE = `${SVG_PATH}/Ellipse.svg`;
 
+// FILL CIRCLE
 export const CHECK_LIST = `${SVG_PATH}/checklist_item.svg`;
+
+/*** ADMIN ASSETS ***/
+export const USER = `${ADMIN_SVG_PATH}/ic_user.svg`;

@@ -9,7 +9,8 @@ import {
   VALUE_ADDED_SERVICES,
   BECOME_AGENT,
   MEDIA_NEWS_DETAILS,
-  MEDIA_EVENT_DETAILS
+  MEDIA_EVENT_DETAILS,
+  DASHBOARD
 } from "./ROUTES_CONSTANTS";
 import Home from "pages/Home";
 import About from "pages/About";
@@ -20,6 +21,7 @@ import ContactUs from "pages/Contact";
 import BecomeAnAgent from "pages/BecomeAnAgent";
 import NewsDetails from "pages/Media/components/NewsDetails";
 import EventDetails from "pages/Media/components/EventDetails";
+import Dashboard from "pages/Dashboard/index";
 
 const RouteConfig = () => {
   return (
@@ -33,6 +35,7 @@ const RouteConfig = () => {
       <Route path={BECOME_AGENT} element={<BecomeAnAgent />} />
       <Route path={MEDIA_NEWS_DETAILS} element={<NewsDetails />} />
       <Route path={MEDIA_EVENT_DETAILS} element={<EventDetails />} />
+      <Route path={DASHBOARD} element={<Dashboard />} />
     </Routes>
   );
 };

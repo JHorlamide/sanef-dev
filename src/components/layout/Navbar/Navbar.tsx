@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import NavLink, { BecomeAgent } from "./NavLink/NavLink";
-import { Logo } from "assets/index";
+import { Logo } from "assets/images";
 import {
   HOME,
   ABOUT_US,

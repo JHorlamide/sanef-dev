@@ -7,9 +7,9 @@ import {
   ABOUT_US,
   VALUE_ADDED_SERVICES
 } from "routes/ROUTES_CONSTANTS";
-import CustomBtn from "../CustomBtn/CustomBtn";
+import CustomBtn from "../../widgets/CustomBtn/CustomBtn";
 import { DOTS } from "assets/icons";
-import Image from "../Image/Image";
+import Image from "../../widgets/Image/Image";
 import "./style.module.css";
 import style from "./style.module.css";
 
@@ -183,7 +183,7 @@ const Carousel = () => {
 
         <Image
           image={DOTS}
-          parentClassName="block md:hidden absolute inset-y-0 right-0 top-[580px]"
+          parentClassName="z-50 block md:hidden absolute inset-y-0 right-0 top-[580px]"
           imageClassName="w-20 h-24 md:w-32 h-fit lg:w-fit lg:h-fit"
         />
       </div>

@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FormEvent, Fragment, useState } from "react";
 import { MOBILE_LINE } from "assets/icons";
-import { Logo } from "assets/index";
+import { Logo } from "assets/images";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { FOOTER_NAVIGATION } from "utils/constants";

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Logo } from "assets/index";
+import { Logo } from "assets/images";
 import { DESKTOP_LINE } from "assets/icons";
 import { FOOTER_NAVIGATION } from "utils/constants";
 import FooterContentOne from "./FooterContentOne";

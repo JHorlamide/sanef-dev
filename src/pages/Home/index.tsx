@@ -13,7 +13,7 @@ import Layout from "pages/Layout";
 import MobileNewTab from "components/common/MobileNewTab";
 import OurImpactFooter from "./components/OurImpactFooter";
 import OurImpactHeader from "./components/ImpactHeader";
-import Carousel from "components/widgets/Carousel/Carousel";
+import Carousel from "components/layout/Carousel/Carousel";
 import RecentNews from "../../components/common/RecentNews";
 
 const Home = () => {

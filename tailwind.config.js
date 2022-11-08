@@ -29,38 +29,38 @@ module.exports = {
 
       backgroundImage: {
         // Desktop Heros
-        "desktop_home_deepening_financial_inclusion": "url('/public/assets/images/hero-img/desktop_home_deepening_financial_inclusion.jpeg')",
-        "desktop_home_centre_of_excellence": "url('/public/assets/images/hero-img/desktop_home_centre_of_excellence.jpeg')",
-        "desktop_home_empowering_the_ecosystem": "url('/public/assets/images/hero-img/desktop_home_empowering_the_ecosystem.jpeg')",
-        "desktop_home_enhancing_knowledge": "url('/public/assets/images/hero-img/desktop_home_enhancing_knowledge.jpeg')",
-        
-        // Mobile Heros
-        "mobile_home_deepening_financial_inclusion": "url('/public/assets/images/hero-img/mobile_home_deepening_financial_inclusion.jpeg')",
-        "mobile_home_centre_of_excellence": "url('/public/assets/images/hero-img/mobile_home_centre_of_excellence.jpeg')",
-        "mobile_home_empowering_the_ecosystem": "url('/public/assets/images/hero-img/mobile_home_empowering_the_ecosystem.jpeg')",
-        "mobile_home_enhancing_knowledge": "url('/public/assets/images/hero-img/mobile_home_enhancing_knowledge.jpeg')",
-        "media_hero_desktop": "url('/public/assets/images/hero-img/desktop_media.jpg')",
-        "media_hero_mobile": "url('/public/assets/images/hero-img/mobile_media.jpg')",
+        "desktop_home_deepening_financial_inclusion": "url('/public/assets/website/images/hero-img/desktop_home_deepening_financial_inclusion.jpeg')",
+        "desktop_home_centre_of_excellence": "url('/public/assets/website/images/hero-img/desktop_home_centre_of_excellence.jpeg')",
+        "desktop_home_empowering_the_ecosystem": "url('/public/assets/website/images/hero-img/desktop_home_empowering_the_ecosystem.jpeg')",
+        "desktop_home_enhancing_knowledge": "url('/public/assets/website/images/hero-img/desktop_home_enhancing_knowledge.jpeg')",
 
-        "about-hero-desktop": "url('/public/assets/images/hero-img/about-hero-bg-desktop.png')",
-        "about-hero-mobile": "url('/public/assets/images/hero-img/about-hero-bg-mobile.png')",
-        "contact-hero-desktop": "url('/public/assets/images/hero-img/desktop_contact.jpg')",
-        "contact-hero-mobile": "url('/public/assets/images/hero-img/mobile_contact.jpg')",
-        "agent-hero-desktop": "url('/public/assets/images/hero-img/desktop_agent.jpeg')",
-        "agent-hero-mobile": "url('/public/assets/images/hero-img/mobile_agent.jpeg')",
-        "footer-image-desktop": "url('/public/assets/images/hero-img/Footer-Image-Desktop.png')",
-        "footer-image-mobile": "url('/public/assets/images/hero-img/Footer-Image-Mobile.png')",
-        "mobile_nav_bg": "url('/public/assets/images/hero-img/Mobile-Background.png')",
+        // Mobile Heros
+        "mobile_home_deepening_financial_inclusion": "url('/public/assets/website/images/hero-img/mobile_home_deepening_financial_inclusion.jpeg')",
+        "mobile_home_centre_of_excellence": "url('/public/assets/website/images/hero-img/mobile_home_centre_of_excellence.jpeg')",
+        "mobile_home_empowering_the_ecosystem": "url('/public/assets/website/images/hero-img/mobile_home_empowering_the_ecosystem.jpeg')",
+        "mobile_home_enhancing_knowledge": "url('/public/assets/website/images/hero-img/mobile_home_enhancing_knowledge.jpeg')",
+        "media_hero_desktop": "url('/public/assets/website/images/hero-img/desktop_media.jpg')",
+        "media_hero_mobile": "url('/public/assets/website/images/hero-img/mobile_media.jpg')",
+
+        "about-hero-desktop": "url('/public/assets/website/images/hero-img/about-hero-bg-desktop.png')",
+        "about-hero-mobile": "url('/public/assets/website/images/hero-img/about-hero-bg-mobile.png')",
+        "contact-hero-desktop": "url('/public/assets/website/images/hero-img/desktop_contact.jpg')",
+        "contact-hero-mobile": "url('/public/assets/website/images/hero-img/mobile_contact.jpg')",
+        "agent-hero-desktop": "url('/public/assets/website/images/hero-img/desktop_agent.jpeg')",
+        "agent-hero-mobile": "url('/public/assets/website/images/hero-img/mobile_agent.jpeg')",
+        "footer-image-desktop": "url('/public/assets/website/images/hero-img/Footer-Image-Desktop.png')",
+        "footer-image-mobile": "url('/public/assets/website/images/hero-img/Footer-Image-Mobile.png')",
+        "mobile_nav_bg": "url('/public/assets/website/images/hero-img/Mobile-Background.png')",
 
         // NEWS
-        "news_desktop_img": "url('/public/assets/images/news/news_details.png')",
-        "news_mobile_img": "url('/public/assets/images/news/news_details_mobile.png')",
+        "news_desktop_img": "url('/public/assets/website/images/news/news_details.png')",
+        "news_mobile_img": "url('/public/assets/website/images/news/news_details_mobile.png')",
 
         // GALLERY
-        "mobile_img_1": "url('/public/assets/images/gallery/gallery_mobile_1.png')",
-        "mobile_img_2": "url('/public/assets/images/gallery/gallery_mobile_2.png')",
-        "mobile_img_3": "url('/public/assets/images/gallery/gallery_mobile_3.png')",
-        "mobile_img_4": "url('/public/assets/images/gallery/gallery_mobile_4.png')",
+        "mobile_img_1": "url('/public/assets/website/images/gallery/gallery_mobile_1.png')",
+        "mobile_img_2": "url('/public/assets/website/images/gallery/gallery_mobile_2.png')",
+        "mobile_img_3": "url('/public/assets/website/images/gallery/gallery_mobile_3.png')",
+        "mobile_img_4": "url('/public/assets/website/images/gallery/gallery_mobile_4.png')",
       },
 
       screens: {

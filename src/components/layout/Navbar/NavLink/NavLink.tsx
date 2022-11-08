@@ -1,5 +1,6 @@
 import React from "react";
-import { Link, useLocation, matchPath } from "react-router-dom";
+// import { Link, useLocation, matchPath } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 interface NavLinkProps {
   path: string;
@@ -20,11 +21,8 @@ const NavLink = ({
 }: NavLinkProps) => {
   const { pathname } = useLocation();
   let isActive = pathname === path ? true : false;
-  const isMatch = matchPath(path, pathname);
-
-  console.log({ pathname, path });
-
-  console.log("isMatch: ", isMatch);
+  // const isMatch = matchPath(path, pathname);
+  // console.log({ pathname, path });
 
   return (
     <Link

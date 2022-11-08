@@ -53,8 +53,8 @@ const GalleryTab = () => {
           {GALLERY.map((gallery) => (
             <div
               key={gallery.id}
-              className="md:block relative bg-gradient-to-t from-gradientBackground to-gray-500 
-              bg w-[353px] h-[353px] md:w-full md:h-[340px] rounded-xl cursor-pointer container mx-auto"
+              className={`md:block relative bg-gradient-to-t from-gradientBackground to-gray-500 
+              bg w-[353px] h-[353px] md:w-full md:h-[340px] rounded-xl cursor-pointer container mx-aut text-white hover:text-buttonColor`}
               onClick={() => handleNavigate(gallery.id)}
             >
               <img
@@ -63,11 +63,9 @@ const GalleryTab = () => {
                 className="absolute object-cover w-full h-full mix-blend-overlay rounded-xl"
               />
 
-              <div className="absolute text-white space-y-3 bottom-8 left-10">
+              <div className="absolute space-y-3 bottom-8 left-10">
                 <p className="text-[12px]">{gallery.date}</p>
-                <h1 className="text-[28px] font-bold hover:text-buttonColor">
-                  {gallery.eventName}
-                </h1>
+                <h1 className={`text-[28px] font-bold`}>{gallery.eventName}</h1>
               </div>
             </div>
           ))}
