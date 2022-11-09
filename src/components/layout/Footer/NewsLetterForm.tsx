@@ -27,6 +27,8 @@ const NewsLetterForm = ({ status, message, onValidated }: NewsLetterProps) => {
 
     const isFormValidated = onValidated({ EMAIL: email });
 
+    console.log(isFormValidated);
+
     setEmail("");
     // On success return true
     return email && email.indexOf("@") > -1 && isFormValidated;
