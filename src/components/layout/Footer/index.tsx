@@ -11,7 +11,7 @@ import MailchimpSubscribe from "react-mailchimp-subscribe";
 import NewsLetterForm from "./NewsLetterForm";
 
 const Footer = () => {
-  const MAILCHIMP_URL = process.env.REACT_APP_MAILCHIMP_URL as string;
+  const MAILCHIMP_URL = String(process.env.REACT_APP_MAILCHIMP_URL);
 
   return (
     <Fragment>

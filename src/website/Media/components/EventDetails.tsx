@@ -14,6 +14,8 @@ const EventDetails = () => {
 
   return (
     <Layout>
+      <GalleryModal isOpen={isOpen} setIsOpen={setIsOpen} />
+
       <header className="bg-gradient-to-r from-lightBlue to-darkBlue align-top pb-2">
         <Navbar />
       </header>
@@ -29,26 +31,18 @@ const EventDetails = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pb-10">
             {GALLERY.map((gallery) => (
-              <>
-                <GalleryModal
-                  isOpen={isOpen}
-                  setIsOpen={setIsOpen}
-                  image={gallery.image}
+              <div
+                key={gallery.id}
+                className="md:block relative bg w-full h-[353px] md:w-full md:h-[340px] rounded-xl
+                container mx-auto cursor-pointer"
+                onClick={handleModalOpen}
+              >
+                <img
+                  src={gallery.image}
+                  alt="..."
+                  className="absolute object-cover w-full h-full mix-blend-overlay rounded-xl"
                 />
-
-                <div
-                  key={gallery.id}
-                  className="md:block relative bg w-full h-[353px] md:w-full md:h-[340px] rounded-xl
-                  container mx-auto cursor-pointer"
-                  onClick={handleModalOpen}
-                >
-                  <img
-                    src={gallery.image}
-                    alt="..."
-                    className="absolute object-cover w-full h-full mix-blend-overlay rounded-xl"
-                  />
-                </div>
-              </>
+              </div>
             ))}
           </div>
         </div>

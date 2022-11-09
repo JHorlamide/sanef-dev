@@ -1,19 +1,27 @@
-import React from "react";
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { CLOSE_ICON } from "assets/icons";
 import { Carousel } from "flowbite-react";
 import { GALLERY } from "../content";
+import ScrollToTop from "utils/scrollToTop";
 
 interface GalleryModalProps {
-  image: string;
   isOpen: boolean;
   setIsOpen: (value: boolean) => void;
 }
 
-const GalleryModal = ({ image, isOpen, setIsOpen }: GalleryModalProps) => {
+const GalleryModal = ({ isOpen, setIsOpen }: GalleryModalProps) => {
+  const handleModalClose = () => {
+    setIsOpen(false);
+
+    setTimeout(() => {
+      ScrollToTop();
+    }, 2000);
+  };
+
   return (
     <Fragment>
+      <ScrollToTop />
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
           as="div"
@@ -45,15 +53,9 @@ const GalleryModal = ({ image, isOpen, setIsOpen }: GalleryModalProps) => {
                 className={"relative flex"}
               >
                 <Dialog.Panel>
-                  {/* <div
-                    className="bg-cover bg-center w-[370px] md:w-[963px] h-[584px] transform 
-                    overflow-hidden rounded-2xl align-middle shadow-xl transition-all"
-                  >
-                    <img src={image} alt="..." className="w-full h-full" />
-                  </div> */}
                   <div
                     className="bg-cover bg-center w-[370px] md:w-[863px] h-[584px] transform 
-                    overflow-hidden rounded-2xl align-middle shadow-xl transition-all"
+                    rounded-2xl align-middle shadow-xl transition-all"
                   >
                     <Carousel>
                       {GALLERY.map(({ image }, idx) => (
@@ -69,10 +71,10 @@ const GalleryModal = ({ image, isOpen, setIsOpen }: GalleryModalProps) => {
                 </Dialog.Panel>
 
                 <img
-                  className="absolute w-10 h-7 inset-y-0 -right-10 top-0 -ml-1 -mt-1 md:ml-5 md:mt-2"
+                  className="absolute w-10 h-7 inset-y-0 -right-10 top-0 -ml-1 -mt-1 md:ml-5 md:mt-0"
                   src={CLOSE_ICON}
                   alt=""
-                  onClick={() => setIsOpen(false)}
+                  onClick={handleModalClose}
                 />
               </Transition.Child>
             </div>
