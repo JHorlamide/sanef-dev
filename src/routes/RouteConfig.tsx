@@ -10,18 +10,24 @@ import {
   BECOME_AGENT,
   MEDIA_NEWS_DETAILS,
   MEDIA_EVENT_DETAILS,
-  DASHBOARD
+  DASHBOARD,
+  LOGIN,
+  FORGOT_PASSWORD,
+  RESET_PASSWORD
 } from "./ROUTES_CONSTANTS";
-import Home from "pages/Home";
-import About from "pages/About";
-import OurPartners from "pages/OurPartners";
-import ValueAddedServices from "pages/ValueAddedServices";
-import Media from "pages/Media";
-import ContactUs from "pages/Contact";
-import BecomeAnAgent from "pages/BecomeAnAgent";
-import NewsDetails from "pages/Media/components/NewsDetails";
-import EventDetails from "pages/Media/components/EventDetails";
-import Dashboard from "pages/Dashboard/index";
+import Home from "website/Home";
+import About from "website/About";
+import OurPartners from "website/OurPartners";
+import ValueAddedServices from "website/ValueAddedServices";
+import Media from "website/Media";
+import ContactUs from "website/Contact";
+import BecomeAnAgent from "website/BecomeAnAgent";
+import NewsDetails from "website/Media/components/NewsDetails";
+import EventDetails from "website/Media/components/EventDetails";
+import Dashboard from "app/pages/Banks/index";
+import Login from "website/Auth/Login";
+import ForgotPassword from "website/Auth/ForgotPassword";
+import ResetPassword from "website/Auth/ResetPassword";
 
 const RouteConfig = () => {
   return (
@@ -36,6 +42,9 @@ const RouteConfig = () => {
       <Route path={MEDIA_NEWS_DETAILS} element={<NewsDetails />} />
       <Route path={MEDIA_EVENT_DETAILS} element={<EventDetails />} />
       <Route path={DASHBOARD} element={<Dashboard />} />
+      <Route path={LOGIN} element={<Login />} />
+      <Route path={FORGOT_PASSWORD} element={<ForgotPassword />} />
+      <Route path={RESET_PASSWORD} element={<ResetPassword />} />
     </Routes>
   );
 };

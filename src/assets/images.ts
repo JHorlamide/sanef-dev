@@ -1,4 +1,6 @@
 const IMAGES_PATH = "/assets/website/images";
+const ADMIN_IMAGE_PATH = "/assets/admin/images";
+
 const HERO_IMAGE_PATH = `${IMAGES_PATH}/hero-img`;
 const BOARD_IMAGE_PATH = `${IMAGES_PATH}/board`;
 const EXECUTIVE_IMAGE_PATH = `${IMAGES_PATH}/executive`;
@@ -156,3 +158,6 @@ export const GALL_IMG_11 = `${IMAGES_PATH}/gallery/gallery_img_11.png`;
 export const GALL_IMG_12 = `${IMAGES_PATH}/gallery/gallery_img_12.png`;
 export const GALL_IMG_13 = `${IMAGES_PATH}/gallery/gallery_img_13.png`;
 export const GALL_IMG_14 = `${IMAGES_PATH}/gallery.gallery_img_14.png`;
+
+// ADMIN ASSETS
+export const LOGIN_LOGO = `${ADMIN_IMAGE_PATH}/login_logo.png`;

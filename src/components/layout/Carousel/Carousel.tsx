@@ -10,8 +10,8 @@ import {
 import CustomBtn from "../../widgets/CustomBtn/CustomBtn";
 import { DOTS } from "assets/icons";
 import Image from "../../widgets/Image/Image";
-import "./style.module.css";
-import style from "./style.module.css";
+import "./Carousel.module.scss";
+import style from "./Carousel.module.scss";
 
 const Carousel = () => {
   const navigate = useNavigate();

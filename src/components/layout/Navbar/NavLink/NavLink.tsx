@@ -1,8 +1,12 @@
 import React from "react";
-// import { Link, useLocation, matchPath } from "react-router-dom";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, NavLink } from "react-router-dom";
+import style from "../Navbar.module.scss";
 
-interface NavLinkProps {
+function classNames(...classes: any) {
+  return classes.filter(Boolean).join(" ");
+}
+
+interface AppNavLinkProps {
   path: string;
   title: string;
   className: string;
@@ -11,18 +15,41 @@ interface NavLinkProps {
   handleClick?: () => void;
 }
 
-const NavLink = ({
+export const TestLink = ({
+  path,
+  title,
+  leftIcon,
+  rightIcon,
+  className
+}: AppNavLinkProps) => {
+  return (
+    <NavLink
+      to={path}
+      className={({ isActive }) =>
+        classNames(`${className}`, isActive ? "text-yellow-500" : "")
+      }
+      style={style}
+    >
+      {!!leftIcon && leftIcon}
+      {title}
+      {!!rightIcon && rightIcon}
+    </NavLink>
+  );
+};
+
+const AppNavLink = ({
   path,
   title,
   leftIcon,
   rightIcon,
   className,
   handleClick
-}: NavLinkProps) => {
+}: AppNavLinkProps) => {
   const { pathname } = useLocation();
   let isActive = pathname === path ? true : false;
   // const isMatch = matchPath(path, pathname);
-  // console.log({ pathname, path });
+
+  // console.log(isMatch?.pattern.end);
 
   return (
     <Link
@@ -42,7 +69,7 @@ export const BecomeAgent = ({
   title,
   className,
   handleClick
-}: NavLinkProps) => {
+}: AppNavLinkProps) => {
   const location = useLocation();
   const { pathname } = location;
   const isActive = pathname === path ? true : false;
@@ -60,4 +87,4 @@ export const BecomeAgent = ({
   );
 };
 
-export default NavLink;
+export default AppNavLink;

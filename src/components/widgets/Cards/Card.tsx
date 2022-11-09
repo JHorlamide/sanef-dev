@@ -1,7 +1,7 @@
 import React from "react";
 import { ICardProps } from "types/card";
 import { IoIosArrowForward } from "react-icons/io";
-import style from "./style.module.css";
+import style from "./Card.module.css";
 import NavLink from "components/layout/Navbar/NavLink/NavLink";
 
 const CustomCard = ({ id, image, date, headLine, details }: ICardProps) => {
