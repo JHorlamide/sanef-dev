@@ -1,0 +1,86 @@
+import React from "react";
+import { Fragment } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import { CLOSE_ICON } from "assets/icons";
+import { Carousel } from "flowbite-react";
+import { GALLERY } from "../content";
+
+interface GalleryModalProps {
+  image: string;
+  isOpen: boolean;
+  setIsOpen: (value: boolean) => void;
+}
+
+const GalleryModal = ({ image, isOpen, setIsOpen }: GalleryModalProps) => {
+  return (
+    <Fragment>
+      <Transition appear show={isOpen} as={Fragment}>
+        <Dialog
+          as="div"
+          className="container relative z-50 mx-auto"
+          onClose={() => setIsOpen(false)}
+        >
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-modalColor bg-opacity-25" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                as={"div"}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+                className={"relative flex"}
+              >
+                <Dialog.Panel>
+                  {/* <div
+                    className="bg-cover bg-center w-[370px] md:w-[963px] h-[584px] transform 
+                    overflow-hidden rounded-2xl align-middle shadow-xl transition-all"
+                  >
+                    <img src={image} alt="..." className="w-full h-full" />
+                  </div> */}
+                  <div
+                    className="bg-cover bg-center w-[370px] md:w-[863px] h-[584px] transform 
+                    overflow-hidden rounded-2xl align-middle shadow-xl transition-all"
+                  >
+                    <Carousel>
+                      {GALLERY.map(({ image }, idx) => (
+                        <img
+                          key={idx}
+                          src={image}
+                          alt="..."
+                          className="object-cover w-full h-full"
+                        />
+                      ))}
+                    </Carousel>
+                  </div>
+                </Dialog.Panel>
+
+                <img
+                  className="absolute w-10 h-7 inset-y-0 -right-10 top-0 -ml-1 -mt-1 md:ml-5 md:mt-2"
+                  src={CLOSE_ICON}
+                  alt=""
+                  onClick={() => setIsOpen(false)}
+                />
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition>
+    </Fragment>
+  );
+};
+
+export default GalleryModal;

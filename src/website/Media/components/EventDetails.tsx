@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "website/Layout";
 import Navbar from "components/layout/Navbar/Navbar";
 import { GALLERY } from "../content";
 import Footer from "components/layout/Footer";
+import GalleryModal from "./GalleryModal";
 
 const EventDetails = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleModalOpen = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+
   return (
     <Layout>
       <header className="bg-gradient-to-r from-lightBlue to-darkBlue align-top pb-2">
@@ -22,17 +29,26 @@ const EventDetails = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pb-10">
             {GALLERY.map((gallery) => (
-              <div
-                key={gallery.id}
-                className="md:block relative bg w-full h-[353px] md:w-full md:h-[340px] rounded-xl
-                container mx-auto"
-              >
-                <img
-                  src={gallery.image}
-                  alt="..."
-                  className="absolute object-cover w-full h-full mix-blend-overlay rounded-xl"
+              <>
+                <GalleryModal
+                  isOpen={isOpen}
+                  setIsOpen={setIsOpen}
+                  image={gallery.image}
                 />
-              </div>
+
+                <div
+                  key={gallery.id}
+                  className="md:block relative bg w-full h-[353px] md:w-full md:h-[340px] rounded-xl
+                  container mx-auto cursor-pointer"
+                  onClick={handleModalOpen}
+                >
+                  <img
+                    src={gallery.image}
+                    alt="..."
+                    className="absolute object-cover w-full h-full mix-blend-overlay rounded-xl"
+                  />
+                </div>
+              </>
             ))}
           </div>
         </div>

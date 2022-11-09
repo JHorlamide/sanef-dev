@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import Image from "components/widgets/Image/Image";
 import { CLOSE_ICON } from "assets/icons";
+import Image from "components/widgets/Image/Image";
 
 interface BoardModalProps {
   image: string;
