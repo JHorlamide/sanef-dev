@@ -54,7 +54,7 @@ const AppNavLink = ({
   return (
     <Link
       to={path}
-      className={`${className} ${isActive ? "text-yellow-500" : "text-white"}`}
+      className={`${className} ${isActive ? "text-yellow-500" : ""}`}
       onClick={handleClick}
     >
       {!!leftIcon && leftIcon}
