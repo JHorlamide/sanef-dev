@@ -13,7 +13,7 @@ import NewsLetterForm from "./NewsLetterForm";
 const Footer = () => {
   const MAILCHIMP_URL = String(process.env.REACT_APP_MAILCHIMP_URL);
 
-  console.log(MAILCHIMP_URL);
+  console.log("Mailchimp Url: ", MAILCHIMP_URL);
 
   return (
     <Fragment>
