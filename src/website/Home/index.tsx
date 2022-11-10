@@ -25,7 +25,8 @@ const Home = () => {
       <section className="relative z-20 px-8 py-0">
         <div className="relative flex flex-col justify-center items-center py-8">
           <h1 className="text-center text-2xl font-bold md:text-3xl lg:text-4xl">
-            Shared Agent Network Facilities Limited (SANEF)
+            {/* Shared Agent Network Facilities Limited (SANEF) */}
+            Shared Agent Network Expansion Facilities Limited (SANEF)
           </h1>
 
           <hr className="border-b-4 border-buttonColor w-16 mt-2" />
@@ -160,19 +161,35 @@ const Home = () => {
         <Image
           image={GROUP_LINES}
           parentClassName="relative md:hidden lg:hidden"
-          imageClassName="absolute w-full inset-y-0 right-20 top-16"
+          imageClassName="absolute w-full inset-y-0 right-20 top-[75px]"
         />
 
         <div className="relative">
-          <Image
+          {/* <Image
             image={ROLE_IMAGE_DESKTOP}
             imageClassName="hidden z-50 md:block md:w-screen md:-mt-16 md:ml-10 lg:w-full lg:-mt-24"
-          />
+          /> */}
+
+          <div className="">
+            <img
+              src={ROLE_IMAGE_DESKTOP}
+              alt=""
+              className="hidden z-50 md:block md:w-screen md:-mt-16 md:ml-10 lg:w-[530px] lg:h-[357.17px] lg:-mt-24"
+            />
+          </div>
 
           <Image
             image={ROLE_IMAGE_MOBILE}
             imageClassName="z-50 w-screen object-fill md:hidden lg:hidden"
           />
+
+          {/* <div className="flex justify-center items-center">
+            <img
+              src={ROLE_IMAGE_MOBILE}
+              alt=""
+              className="z-50 w-screen object-fill md:hidden lg:hidden"
+            />
+          </div> */}
         </div>
 
         <div className="mt-10 flex flex-col justify-center items-center md:space-y-8 md:m-0 md:ml-0 md:justify-start md:items-start">
@@ -183,7 +200,7 @@ const Home = () => {
             <hr className="border-b-4 border-buttonColor w-16 mt-2" />
           </section>
 
-          <p className="text-md text-center mt-5 px-10 md:text-sm md:text-left md:px-0 lg:text-lg">
+          <p className="text-md text-center mt-5 px-10 md:text-sm md:text-left md:px-0 lg:text-lg lg:max-w-xl">
             SANEF collaborates with partners to ensure Agents are present in all
             the 774 Local Government Areas to provide Financial Services to{" "}
             Nigerians by deepening Financial Inclusion.

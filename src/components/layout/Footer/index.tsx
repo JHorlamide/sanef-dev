@@ -13,8 +13,6 @@ import NewsLetterForm from "./NewsLetterForm";
 const Footer = () => {
   const MAILCHIMP_URL = String(process.env.REACT_APP_MAILCHIMP_URL);
 
-  console.log("Mailchimp Url: ", MAILCHIMP_URL);
-
   return (
     <Fragment>
       <section className="z-50 hidden bg-footer-image-desktop bg-cover bg-center bg-no-repeat px-20 md:block">

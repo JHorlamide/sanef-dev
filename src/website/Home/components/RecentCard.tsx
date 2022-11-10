@@ -2,7 +2,7 @@ import React from "react";
 import { RecentCardProps } from "types/card";
 import RouterLink from "components/layout/Navbar/NavLink/RouterLink";
 import { IoIosArrowForward } from "react-icons/io";
-import style from "../Home.module.css";
+import style from "../Home.module.scss";
 
 const RecentCard = ({
   id,
