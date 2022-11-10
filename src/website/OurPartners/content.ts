@@ -306,9 +306,9 @@ export const OUR_PARTNERS_LOGOS = {
   "Government/MDA'S": [
     {
       id: 1,
-      name: "FMHADMSD",
+      name: "Federal Ministry of Humanitarian \nAffairs, Disaster Management \nand Social Development",
       logo: GOVT1
     },
-    { id: 2, name: "LOCAL STATE GOVERNMENT", logo: LGA }
+    { id: 2, name: "Lagos State Government", logo: LGA }
   ]
 };

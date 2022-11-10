@@ -1,11 +1,34 @@
 import React from "react";
 import { Tab } from "@headlessui/react";
-import Image from "components/widgets/Image/Image";
 import { OUR_PARTNERS_LOGOS } from "../content";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
+
+interface PartnerLogoAndNameProp {
+  logo: string;
+  name: string;
+}
+
+const PartnerLogoAndName = ({ logo, name }: PartnerLogoAndNameProp) => {
+  return (
+    <div
+      className="inline-block align-top flex-col space-y-2 justify-center items-center
+      px-3 bg-clip-content"
+    >
+      <div className="container mx-auto bg-white w-[130px] p-6 m-0 shadow-md rounded-full">
+        <img className="w-full m-0" src={logo} alt={name} />
+      </div>
+
+      <div className="">
+        <p className="text-center text-[12px] font-semibold mt-5 whitespace-pre-line">
+          {name}
+        </p>
+      </div>
+    </div>
+  );
+};
 
 const PartnersTabs = () => {
   const queryParams = new URLSearchParams(window.location.search);
@@ -41,44 +64,14 @@ const PartnersTabs = () => {
           {/* Banks */}
           <Tab.Panel className="grid grid-custom gap-y-10 gap-x-14 justify-center">
             {OUR_PARTNERS_LOGOS.Banks.map(({ id, name, logo }) => (
-              <div key={id}>
-                <Image
-                  key={id}
-                  image={logo}
-                  alt={name}
-                  parentClassName="container bg-white rounded-full shadow-md p-6"
-                  imageClassName="w-28 m-0"
-                />
-
-                <p
-                  className="text-center font-[500px] text-[12px] font-semibold 
-                  whitespace-pre-line mt-5"
-                >
-                  {name}
-                </p>
-              </div>
+              <PartnerLogoAndName key={id} logo={logo} name={name} />
             ))}
           </Tab.Panel>
 
           {/* Super Agents */}
           <Tab.Panel className="grid grid-custom gap-y-10 gap-x-14 justify-center">
             {OUR_PARTNERS_LOGOS["Super Agents"].map(({ id, name, logo }) => (
-              <div key={id}>
-                <Image
-                  key={id}
-                  image={logo}
-                  alt={name}
-                  parentClassName="container bg-white rounded-full shadow-md p-6"
-                  imageClassName="w-28 m-0"
-                />
-
-                <p
-                  className="text-center font-[500px] text-[12px] font-semibold 
-                  whitespace-pre-line mt-5"
-                >
-                  {name}
-                </p>
-              </div>
+              <PartnerLogoAndName key={id} logo={logo} name={name} />
             ))}
           </Tab.Panel>
 
@@ -88,22 +81,7 @@ const PartnersTabs = () => {
             justify-center"
           >
             {OUR_PARTNERS_LOGOS.Regulators.map(({ id, name, logo }) => (
-              <div key={id}>
-                <Image
-                  key={id}
-                  image={logo}
-                  alt={name}
-                  parentClassName="container bg-white rounded-full shadow-md p-6"
-                  imageClassName="w-28 m-0"
-                />
-
-                <p
-                  className="text-center font-[500px] text-[12px] font-semibold 
-                  whitespace-pre-line mt-5"
-                >
-                  {name}
-                </p>
-              </div>
+              <PartnerLogoAndName key={id} logo={logo} name={name} />
             ))}
           </Tab.Panel>
 
@@ -111,19 +89,7 @@ const PartnersTabs = () => {
           <Tab.Panel className="grid grid-custom gap-y-10 gap-x-14 justify-center">
             {OUR_PARTNERS_LOGOS["Strategic Partners"].map(
               ({ id, name, logo }) => (
-                <div key={id}>
-                  <Image
-                    key={id}
-                    image={logo}
-                    alt={name}
-                    parentClassName="container bg-white rounded-full shadow-md p-6"
-                    imageClassName="w-28 m-0"
-                  />
-
-                  <p className="text-center font-[500px] text-[12px] font-semibold whitespace-pre-line mt-5">
-                    {name}
-                  </p>
-                </div>
+                <PartnerLogoAndName key={id} logo={logo} name={name} />
               )
             )}
           </Tab.Panel>
@@ -132,22 +98,7 @@ const PartnersTabs = () => {
           <Tab.Panel className="grid grid-custom gap-y-10 gap-x-0 space-x-10 justify-center">
             {OUR_PARTNERS_LOGOS["Government/MDA'S"].map(
               ({ id, name, logo }) => (
-                <div key={id}>
-                  <Image
-                    key={id}
-                    image={logo}
-                    alt={name}
-                    parentClassName="container bg-white rounded-full shadow-md p-6"
-                    imageClassName="w-28 m-0"
-                  />
-
-                  <p
-                    className="text-center font-[500px] text-[12px] font-semibold 
-                    whitespace-pre-line mt-5"
-                  >
-                    {name}
-                  </p>
-                </div>
+                <PartnerLogoAndName key={id} logo={logo} name={name} />
               )
             )}
           </Tab.Panel>

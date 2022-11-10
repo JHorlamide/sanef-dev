@@ -18,7 +18,7 @@ const TeamTab = () => {
               key={idx}
               className={({ selected }) =>
                 classNames(
-                  `text-md font-bold hover:text-lightGreen`,
+                  `text-xl font-bold hover:text-lightGreen`,
                   "focus:outline-none",
                   selected
                     ? "text-buttonColor border-b-4 border-b-buttonColor"
