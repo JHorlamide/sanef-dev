@@ -9,6 +9,12 @@ export const FORGOT_PASSWORD = "/forgot-password";
 export const RESET_PASSWORD = "/reset-password";
 export const MEDIA_NEWS_DETAILS = "/media/news/:id";
 export const MEDIA_EVENT_DETAILS = "/media/gallery/:id";
-export const ROOT_MEDIA = "/media/";
-export const MEDIA = ROOT_MEDIA || MEDIA_NEWS_DETAILS || MEDIA_EVENT_DETAILS;
-export const DASHBOARD = "/dashboard/";
+export const MEDIA = "/media/";
+
+export const BANKS = "/banks/";
+export const SUPER_AGENT = "/super-agents";
+export const REGULATORS = "/regulators";
+export const STRATEGIC_PARTNERS = "/strategic-partners";
+export const GOVERNMENTS = "/governments";
+export const AGENTS = "/agents";
+export const ADMIN_SETTINGS = "/admin-settings";

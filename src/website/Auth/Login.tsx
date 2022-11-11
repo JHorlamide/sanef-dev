@@ -33,7 +33,7 @@ const Login = () => {
     e?.preventDefault();
     if (authData.email && authData.password) {
       console.log(authData);
-      navigate("/dashboard");
+      navigate("/banks");
     }
   };
 

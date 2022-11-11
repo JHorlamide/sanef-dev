@@ -1,43 +1,105 @@
-import React from "react";
-import { Menu } from "@headlessui/react";
+import { Menu, Transition } from "@headlessui/react";
+import { Fragment } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
-const Test = () => {
+export default function Example() {
   return (
-    <Menu>
-      <Menu.Button
-        className={"flex space-x-3 py-2 px-2 rounded-lg bg-white mx-1 -mt-2"}
-      >
-        <p className="">10</p>
-        <IoIosArrowDown size={22} />
-      </Menu.Button>
-      <Menu.Items className={"flex flex-col space-y-3 bg-white rounded-lg"}>
-        <Menu.Item>
-          {({ active }) => (
-            <a
-              className={`${active && "bg-blue-500"}`}
-              href="/account-settings"
-            >
-              Account settings
-            </a>
-          )}
-        </Menu.Item>
-        <Menu.Item>
-          {({ active }) => (
-            <a
-              className={`${active && "bg-blue-500"}`}
-              href="/account-settings"
-            >
-              Documentation
-            </a>
-          )}
-        </Menu.Item>
-        <Menu.Item disabled>
-          <span className="opacity-75">Invite a friend (coming soon!)</span>
-        </Menu.Item>
-      </Menu.Items>
-    </Menu>
-  );
-};
+    <div className="text-right">
+      <Menu as="div" className="relative inline-block text-left">
+        <div className="mx-1.5 -mt-2">
+          <Menu.Button
+            className="inline-flex w-full justify-center rounded-lg 
+            bg-white text-black text-sm px-[7px] py-2 font-medium"
+          >
+            10
+            <IoIosArrowDown
+              className="ml-0.5 -mr-1 h-5 w-5 text-black"
+              aria-hidden="true"
+            />
+          </Menu.Button>
+        </div>
 
-export default Test;
+        <Transition
+          as={Fragment}
+          enter="transition ease-out duration-100"
+          enterFrom="transform opacity-0 scale-95"
+          enterTo="transform opacity-100 scale-100"
+          leave="transition ease-in duration-75"
+          leaveFrom="transform opacity-100 scale-100"
+          leaveTo="transform opacity-0 scale-95"
+        >
+          <Menu.Items
+            className="absolute left-5 mt-2 w-16 origin-top-right divide-y 
+           divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black 
+            ring-opacity-5 focus:outline-none"
+          >
+            <div className="px-1 py-1 ">
+              <Menu.Item>
+                {({ active }) => (
+                  <button
+                    className={`${
+                      active ? "bg-buttonColor text-white" : "text-gray-900"
+                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                  >
+                    1
+                  </button>
+                )}
+              </Menu.Item>
+
+              <Menu.Item>
+                {({ active }) => (
+                  <button
+                    className={`${
+                      active ? "bg-buttonColor text-white" : "text-gray-900"
+                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                  >
+                    2
+                  </button>
+                )}
+              </Menu.Item>
+            </div>
+
+            <div className="px-1 py-1">
+              <Menu.Item>
+                {({ active }) => (
+                  <button
+                    className={`${
+                      active ? "bg-buttonColor text-white" : "text-gray-900"
+                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                  >
+                    3
+                  </button>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <button
+                    className={`${
+                      active ? "bg-buttonColor text-white" : "text-gray-900"
+                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                  >
+                    4
+                  </button>
+                )}
+              </Menu.Item>
+            </div>
+
+            <div className="px-1 py-1">
+              <Menu.Item>
+                {({ active }) => (
+                  <button
+                    className={`${
+                      active ? "bg-buttonColor text-white" : "text-gray-900"
+                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                  >
+                    5
+                  </button>
+                )}
+              </Menu.Item>
+            </div>
+          </Menu.Items>
+        </Transition>
+      </Menu>
+    </div>
+  );
+}

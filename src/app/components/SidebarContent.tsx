@@ -1,5 +1,6 @@
 import React from "react";
-import NavLink from "components/layout/Navbar/NavLink/NavLink";
+import { NavLink } from "react-router-dom";
+// import NavLink from "components/layout/Navbar/NavLink/NavLink";
 import { LOGIN_LOGO } from "assets/images";
 import { USER } from "assets/icons";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
@@ -9,6 +10,12 @@ interface LinkItemProp {
   link: string;
 }
 
+interface SidebarLinkProps {
+  path: string;
+  title: string;
+  className: string;
+}
+
 const LinkItems: Array<LinkItemProp> = [
   {
     name: "Banks",
@@ -16,7 +23,7 @@ const LinkItems: Array<LinkItemProp> = [
   },
   {
     name: "Super Agents",
-    link: "/super-agent"
+    link: "/super-agents"
   },
   {
     name: "Regulators",
@@ -28,13 +35,30 @@ const LinkItems: Array<LinkItemProp> = [
   },
   {
     name: "Government/MDA's",
-    link: "/government"
+    link: "/governments"
   },
   {
     name: "Agents",
     link: "/agents"
   }
 ];
+
+function classNames(...classes: any) {
+  return classes.filter(Boolean).join(" ");
+}
+
+const SidebarLink = ({ path, title, className }: SidebarLinkProps) => {
+  return (
+    <NavLink
+      to={path}
+      className={({ isActive }) =>
+        classNames(`${className}`, isActive ? "text-black" : "text-gray-500")
+      }
+    >
+      {title}
+    </NavLink>
+  );
+};
 
 const SidebarUserAuth = () => {
   return (
@@ -47,6 +71,7 @@ const SidebarUserAuth = () => {
         <p className="">
           Welcome back, <span className="font-bold">Ihechukwu Ibeji</span>
         </p>
+
         <CustomBtn className="font-bold text-buttonColor text-start">
           Logout
         </CustomBtn>
@@ -81,7 +106,6 @@ const SidebarContent = () => {
         <img src={LOGIN_LOGO} alt="..." className="w-full h-full" />
       </div>
 
-      {/* Horizontal Rule */}
       <HorizontalRule />
 
       {/* Sidebar User Banner */}
@@ -90,28 +114,26 @@ const SidebarContent = () => {
       {/* Sidebar Links */}
       <div className="px-10 py-8 flex flex-col space-y-5">
         {LinkItems.map((item, idx) => (
-          <NavLink
+          <SidebarLink
             key={idx}
             path={item.link}
             title={item.name}
-            className="font-semibold text-[16px] text-gray-500 hover:text-buttonColor"
+            className="font-semibold text-[16px] hover:text-buttonColor"
           />
         ))}
       </div>
 
-      {/* Horizontal Rule */}
       <HorizontalRule />
 
-      {/* Sidebar Links */}
+      {/* Settings Links */}
       <div className="px-10 py-8 flex flex-col space-y-5">
-        <NavLink
-          path={"/admin-setting"}
+        <SidebarLink
+          path={"/admin-settings"}
           title={"Admin Settings"}
           className="font-semibold text-[16px] text-gray-500 hover:text-buttonColor"
         />
       </div>
 
-      {/* SidebarFooter */}
       <SidebarFooter />
     </div>
   );

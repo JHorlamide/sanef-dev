@@ -10,10 +10,16 @@ import {
   BECOME_AGENT,
   MEDIA_NEWS_DETAILS,
   MEDIA_EVENT_DETAILS,
-  DASHBOARD,
+  BANKS,
   LOGIN,
   FORGOT_PASSWORD,
-  RESET_PASSWORD
+  RESET_PASSWORD,
+  REGULATORS,
+  SUPER_AGENT,
+  GOVERNMENTS,
+  AGENTS,
+  STRATEGIC_PARTNERS,
+  ADMIN_SETTINGS
 } from "./ROUTES_CONSTANTS";
 import Home from "website/Home";
 import About from "website/About";
@@ -24,10 +30,18 @@ import ContactUs from "website/Contact";
 import BecomeAnAgent from "website/BecomeAnAgent";
 import NewsDetails from "website/Media/components/NewsDetails";
 import EventDetails from "website/Media/components/EventDetails";
-import Dashboard from "app/pages/Banks/index";
 import Login from "website/Auth/Login";
 import ForgotPassword from "website/Auth/ForgotPassword";
 import ResetPassword from "website/Auth/ResetPassword";
+
+// Dashboard
+import Banks from "app/pages/Banks/index";
+import Regulators from "app/pages/Regulators/index";
+import SuperAgents from "app/pages/SuperAgents/index";
+import Agents from "app/pages/Agents/index";
+import StrategicPartners from "app/pages/StrategicPartners/index";
+import Governments from "app/pages/Governments/index";
+import AdminSettings from "app/pages/AdminSettings";
 
 const RouteConfig = () => {
   return (
@@ -41,10 +55,18 @@ const RouteConfig = () => {
       <Route path={BECOME_AGENT} element={<BecomeAnAgent />} />
       <Route path={MEDIA_NEWS_DETAILS} element={<NewsDetails />} />
       <Route path={MEDIA_EVENT_DETAILS} element={<EventDetails />} />
-      <Route path={DASHBOARD} element={<Dashboard />} />
       <Route path={LOGIN} element={<Login />} />
       <Route path={FORGOT_PASSWORD} element={<ForgotPassword />} />
       <Route path={RESET_PASSWORD} element={<ResetPassword />} />
+
+      {/* Dashboard Links */}
+      <Route path={BANKS} element={<Banks />} />
+      <Route path={AGENTS} element={<Agents />} />
+      <Route path={REGULATORS} element={<Regulators />} />
+      <Route path={SUPER_AGENT} element={<SuperAgents />} />
+      <Route path={GOVERNMENTS} element={<Governments />} />
+      <Route path={STRATEGIC_PARTNERS} element={<StrategicPartners />} />
+      <Route path={ADMIN_SETTINGS} element={<AdminSettings />} />
     </Routes>
   );
 };

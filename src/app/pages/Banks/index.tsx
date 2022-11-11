@@ -12,7 +12,6 @@ const index = () => {
         <p className="text-[14px]">Manage the entries on the Banks list</p>
       </DashboardHeader>
 
-      {/* h-5/6 => height: 83.333333% */}
       <div className="bg-gray-100 w-full h-[85.333333%] pt-8 pl-10 pr-10 space-y-8">
         <TableHeader showFilter={false} />
         <div className="">

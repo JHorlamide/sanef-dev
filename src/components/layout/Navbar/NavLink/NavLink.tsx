@@ -1,6 +1,5 @@
 import React from "react";
-import { Link, useLocation, NavLink } from "react-router-dom";
-import style from "../Navbar.module.scss";
+import { NavLink } from "react-router-dom";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -12,10 +11,9 @@ interface AppNavLinkProps {
   className: string;
   leftIcon?: React.ReactNode | string;
   rightIcon?: React.ReactNode | string;
-  handleClick?: () => void;
 }
 
-export const TestLink = ({
+const AppNavLink = ({
   path,
   title,
   leftIcon,
@@ -28,7 +26,6 @@ export const TestLink = ({
       className={({ isActive }) =>
         classNames(`${className}`, isActive ? "text-yellow-500" : "")
       }
-      style={style}
     >
       {!!leftIcon && leftIcon}
       {title}
@@ -37,53 +34,19 @@ export const TestLink = ({
   );
 };
 
-const AppNavLink = ({
-  path,
-  title,
-  leftIcon,
-  rightIcon,
-  className,
-  handleClick
-}: AppNavLinkProps) => {
-  const { pathname } = useLocation();
-  let isActive = pathname === path ? true : false;
-  // const isMatch = matchPath(path, pathname);
-
-  // console.log(isMatch?.pattern.end);
-
+export const BecomeAgent = ({ path, title, className }: AppNavLinkProps) => {
   return (
-    <Link
+    <NavLink
       to={path}
-      className={`${className} ${isActive ? "text-yellow-500" : ""}`}
-      onClick={handleClick}
-    >
-      {!!leftIcon && leftIcon}
-      {title}
-      {!!rightIcon && rightIcon}
-    </Link>
-  );
-};
-
-export const BecomeAgent = ({
-  path,
-  title,
-  className,
-  handleClick
-}: AppNavLinkProps) => {
-  const location = useLocation();
-  const { pathname } = location;
-  const isActive = pathname === path ? true : false;
-
-  return (
-    <Link
-      to={path}
-      className={`${className} ${
-        isActive ? "text-white bg-yellow-500 border-yellow-500" : "text-black"
-      }`}
-      onClick={handleClick}
+      className={({ isActive }) =>
+        classNames(
+          `${className}`,
+          isActive ? "text-white bg-yellow-500 border-yellow-500" : "text-black"
+        )
+      }
     >
       {title}
-    </Link>
+    </NavLink>
   );
 };
 
