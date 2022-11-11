@@ -14,7 +14,7 @@ const Search = () => {
       <CustomInput
         id="password"
         className="rounded-full border border-gray-300 outline-buttonColor 
-        focus:border-buttonColor focus:ring-buttonColor py-2 px-8"
+        focus:border-buttonColor focus:ring-buttonColor py-2 px-10"
         inputProps={{
           type: "text",
           name: "password",

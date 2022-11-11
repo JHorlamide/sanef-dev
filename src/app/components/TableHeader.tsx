@@ -1,13 +1,17 @@
 import React from "react";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
-import Search from "app/pages/Banks/components/Search";
+import Search from "app/components/Search";
+import Filter from "./Filter";
 import { DOWNLOAD_ICON } from "assets/icons";
 
-const TableHeader = () => {
+const TableHeader = ({ showFilter }: { showFilter: boolean }) => {
   return (
     <div className="flex justify-between">
-      <div className="">
+      {/* Filter & Search Component */}
+      <div className="flex space-x-2">
         <Search />
+
+        {showFilter && <Filter />}
       </div>
 
       {/* Download & New Bank Buttons */}

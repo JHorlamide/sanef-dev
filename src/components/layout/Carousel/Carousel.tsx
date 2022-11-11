@@ -138,6 +138,7 @@ const Carousel = () => {
           <div
             className="carousel-indicators mt-3 md:mt-0 flex justify-start items-start
             md:justify-end lg:items-end"
+            id="carousel_indicator_container"
           >
             <button
               id={`${style.carousel_indicator_button}`}
@@ -147,6 +148,7 @@ const Carousel = () => {
               aria-current="true"
               aria-label="Slide 1"
               className="active"
+              data-role="slide"
             ></button>
 
             <button
@@ -155,6 +157,7 @@ const Carousel = () => {
               data-bs-target="#carouselExampleCaptions"
               data-bs-slide-to="1"
               aria-label="Slide 2"
+              data-role="slide"
             ></button>
 
             <button
@@ -163,6 +166,7 @@ const Carousel = () => {
               data-bs-target="#carouselExampleCaptions"
               data-bs-slide-to="2"
               aria-label="Slide 3"
+              data-role="slide"
             ></button>
 
             <button
@@ -171,6 +175,7 @@ const Carousel = () => {
               data-bs-target="#carouselExampleCaptions"
               data-bs-slide-to="3"
               aria-label="Slide 4"
+              data-role="slide"
             ></button>
           </div>
 

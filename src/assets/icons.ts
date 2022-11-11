@@ -52,5 +52,11 @@ export const CHECK_LIST = `${SVG_PATH}/checklist_item.svg`;
 
 /*** ADMIN ASSETS ***/
 export const USER = `${ADMIN_SVG_PATH}/ic_user.svg`;
+
+// ICONS
 export const SEARCH_ICON = `${ADMIN_SVG_PATH}/ic_search.svg`;
 export const DOWNLOAD_ICON = `${ADMIN_SVG_PATH}/ic_download.svg`;
+export const DELETE_ICON = `${ADMIN_SVG_PATH}/ic_delete.svg`;
+export const EDIT_ICON = `${ADMIN_SVG_PATH}/ic_edit.svg`;
+export const FILTER_ICON = `${ADMIN_SVG_PATH}/filter.svg`;
+export const FILTER_ICON2 = `${ADMIN_SVG_PATH}/filter2.svg`;

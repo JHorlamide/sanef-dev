@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
-import NavLink, { BecomeAgent } from "./NavLink/NavLink";
+import NavLink from "./NavLink/NavLink";
+import { BecomeAgent, TestLink } from "./NavLink/NavLink";
 import { Logo } from "assets/images";
 import {
   HOME,
@@ -43,31 +44,31 @@ const Navbar = () => {
           {/* NAV LINK CONTAINER */}
           <div className="hidden justify-between items-center space-x-6 lg:flex lg:w-auto -mt-14 lg:mt-0">
             <div className="flex flex-col mt-4 text-[14px] font-bold lg:flex-row lg:space-x-4 lg:mt-0">
-              <NavLink
+              <TestLink
                 path={ABOUT_US}
                 title={"About Us"}
                 className={`text-white hover:text-buttonColor whitespace-nowrap block py-2 pr-4 pl-3`}
               />
 
-              <NavLink
+              <TestLink
                 path={OUR_PARTNERS}
                 title={"Our Partners"}
                 className={`text-white hover:text-buttonColor whitespace-nowrap block py-2 pr-4 pl-3`}
               />
 
-              <NavLink
+              <TestLink
                 path={VALUE_ADDED_SERVICES}
                 title={"Value Added Services"}
                 className={`text-white hover:text-buttonColor whitespace-nowrap block py-2 pr-4 pl-3`}
               />
 
-              <NavLink
+              <TestLink
                 path={MEDIA}
                 title={"Media"}
                 className={`text-white hover:text-buttonColor whitespace-nowrap block py-2 pr-4 pl-3`}
               />
 
-              <NavLink
+              <TestLink
                 path={CONTACT_US}
                 title={"Contact"}
                 className={`text-white hover:text-buttonColor whitespace-nowrap block py-2 pr-4 pl-3`}
