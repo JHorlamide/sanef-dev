@@ -38,13 +38,13 @@ export const CARD_CONTENT = [
     id: 2,
     image: Frame2,
     heading: "Accountability",
-    content: `We deliver on promises, accept responsibilities and strive for transparency`
+    content: `We deliver on promises, accept responsibilities and strive for transparency.`
   },
   {
     id: 3,
     image: Frame3,
     heading: "Teamwork",
-    content: `We are individuals, who work together towards a common goal`
+    content: `We are individuals, who work together towards a common goal.`
   },
   {
     id: 4,

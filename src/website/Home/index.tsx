@@ -36,7 +36,7 @@ const Home = () => {
             lg:leading-text-line-height"
           >
             Incorporated in 2019, the Shared Agent Network Expansion Facilities
-            (SANEF Limited) is an initiative of the Central Bank of Nigeria
+            Limited (SANEF) is an initiative of the Central Bank of Nigeria
             (CBN), supported by the Deposit Money Banks (DMBs), Nigeria
             Inter-Bank Settlement Systems (NIBSS) and Licensed Super-Agents.
           </p>

@@ -21,7 +21,7 @@ const About = () => {
 
         <div className="">
           <h1 className="text-white text-4xl text-center max-w-lg mx-auto my-10 font-extrabold lg:mt-5">
-            About Sanef
+            About SANEF
           </h1>
         </div>
       </section>
@@ -32,7 +32,7 @@ const About = () => {
       />
 
       {/* VISION & MISSION */}
-      <section className="relative z-0 md:mt-10 px-32">
+      <section className="relative z-0 md:mt-10 px-5 md:px-32">
         <div className="lg:w-1/2 md:-mt-10 lg:-mt-0 px-5 md:px-0">
           <p className="text-lg text-left md:text-md lg:text-md md:leading-text-line-height">
             SANEF serves as an enabler in the Financial Inclusion ecosystem in
