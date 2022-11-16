@@ -60,19 +60,19 @@ const BankListTable = () => {
                 Apple MacBook Pro 17"
               </Table.Cell>
 
-              <Table.Cell className="w-[700px]">Sliver</Table.Cell>
+              <Table.Cell className="w-[600px]">Sliver</Table.Cell>
 
               <Table.Cell className="flex space-x-6">
                 <CustomBtn
                   rightIcon={
-                    <img src={EDIT_ICON} alt="edit icon" className="w-6" />
+                    <img src={EDIT_ICON} alt="edit icon" className="w-4" />
                   }
                   onClick={() => navigate(`/banks/edit/${idx}`)}
                 />
 
                 <CustomBtn
                   rightIcon={
-                    <img src={DELETE_ICON} alt="edit icon" className="w-6" />
+                    <img src={DELETE_ICON} alt="edit icon" className="w-4" />
                   }
                   onClick={openModal}
                 />
