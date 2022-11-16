@@ -6,7 +6,7 @@ import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import Pagination, { TableRecord } from "app/components/Pagination";
 import DeleteModal from "app/components/DeleteModal";
 
-const BankListTable = () => {
+const SuperAgentList = () => {
   const navigate = useNavigate();
   let [isOpen, setIsOpen] = useState(false);
 
@@ -17,7 +17,6 @@ const BankListTable = () => {
   function openModal() {
     setIsOpen(true);
   }
-
   return (
     <Fragment>
       <DeleteModal
@@ -28,7 +27,7 @@ const BankListTable = () => {
       />
 
       <Table hoverable={true}>
-        <Table.Head className="bg-white text-[12px] w-full capitalize space-x-3 border-b-2">
+        <Table.Head className="bg-white text-[12px] capitalize border-b-2">
           <Table.HeadCell className="font-light">
             Logo
             <CustomBtn
@@ -40,7 +39,7 @@ const BankListTable = () => {
           </Table.HeadCell>
 
           <Table.HeadCell className="font-light">
-            Name
+            Company Name
             <CustomBtn
               rightIcon={
                 <img src={FILTER_ICON} alt="filter icon" className="w-1.5" />
@@ -48,6 +47,35 @@ const BankListTable = () => {
               className="ml-2"
             />
           </Table.HeadCell>
+          <Table.HeadCell className="font-light">
+            Contact Person
+            <CustomBtn
+              rightIcon={
+                <img src={FILTER_ICON} alt="filter icon" className="w-1.5" />
+              }
+              className="ml-2"
+            />
+          </Table.HeadCell>
+          <Table.HeadCell className="font-light">
+            Designation
+            <CustomBtn
+              rightIcon={
+                <img src={FILTER_ICON} alt="filter icon" className="w-1.5" />
+              }
+              className="ml-2"
+            />
+          </Table.HeadCell>
+
+          <Table.HeadCell className="font-light">
+            Email
+            <CustomBtn
+              rightIcon={
+                <img src={FILTER_ICON} alt="filter icon" className="w-1.5" />
+              }
+              className="ml-2"
+            />
+          </Table.HeadCell>
+
           <Table.HeadCell>
             <span className="sr-only">Edit</span>
           </Table.HeadCell>
@@ -60,19 +88,22 @@ const BankListTable = () => {
                 Apple MacBook Pro 17"
               </Table.Cell>
 
-              <Table.Cell className="w-[700px]">Sliver</Table.Cell>
+              <Table.Cell className="">Sliver</Table.Cell>
+              <Table.Cell className="">Sliver</Table.Cell>
+              <Table.Cell className="">Sliver</Table.Cell>
+              <Table.Cell className="">Sliver</Table.Cell>
 
               <Table.Cell className="flex space-x-6">
                 <CustomBtn
                   rightIcon={
-                    <img src={EDIT_ICON} alt="edit icon" className="w-6" />
+                    <img src={EDIT_ICON} alt="edit icon" className="w-4" />
                   }
-                  onClick={() => navigate(`/banks/edit/${idx}`)}
+                  onClick={() => navigate(`/super-agent/edit/${idx}`)}
                 />
 
                 <CustomBtn
                   rightIcon={
-                    <img src={DELETE_ICON} alt="edit icon" className="w-6" />
+                    <img src={DELETE_ICON} alt="edit icon" className="w-4" />
                   }
                   onClick={openModal}
                 />
@@ -81,7 +112,6 @@ const BankListTable = () => {
           ))}
         </Table.Body>
       </Table>
-
       <div className="flex justify-between mt-8">
         <TableRecord />
         <Pagination />
@@ -90,4 +120,4 @@ const BankListTable = () => {
   );
 };
 
-export default BankListTable;
+export default SuperAgentList;

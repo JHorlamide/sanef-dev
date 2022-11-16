@@ -8,6 +8,7 @@ import moment from "moment";
 import { urlFor } from "lib/client";
 import { NewsType } from "types/news";
 import { GET_NEWS_QUERIES } from "utils/constants";
+import { Spinner } from "flowbite-react";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -19,7 +20,12 @@ const NewsTab = () => {
   if (!data)
     return (
       <div className="container mx-auto text-[28px] text-center font-bold h-80">
-        Loading News...
+        <Spinner
+          color="success"
+          aria-label="spinner"
+          className="text-buttonColor"
+          size={"xl"}
+        />
       </div>
     );
 

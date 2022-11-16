@@ -19,7 +19,10 @@ import {
   GOVERNMENTS,
   AGENTS,
   STRATEGIC_PARTNERS,
-  ADMIN_SETTINGS
+  ADMIN_SETTINGS,
+  ADD_BANK,
+  EDIT_BANK,
+  ADD_SUPER_AGENT
 } from "./ROUTES_CONSTANTS";
 import Home from "website/Home";
 import About from "website/About";
@@ -35,13 +38,20 @@ import ForgotPassword from "website/Auth/ForgotPassword";
 import ResetPassword from "website/Auth/ResetPassword";
 
 // Dashboard
-import Banks from "app/pages/Banks/index";
 import Regulators from "app/pages/Regulators/index";
-import SuperAgents from "app/pages/SuperAgents/index";
 import Agents from "app/pages/Agents/index";
 import StrategicPartners from "app/pages/StrategicPartners/index";
 import Governments from "app/pages/Governments/index";
 import AdminSettings from "app/pages/AdminSettings";
+
+// BANKS
+import Banks from "app/pages/Banks/index";
+import CreateBank from "app/pages/Banks/components/AddBank";
+import EditBank from "app/pages/Banks/components/EditBank";
+
+// SUPER AGENTS
+import SuperAgents from "app/pages/SuperAgents/index";
+import AddSuperAgent from "app/pages/SuperAgents/components/AddSuperAgent";
 
 const RouteConfig = () => {
   return (
@@ -67,6 +77,13 @@ const RouteConfig = () => {
       <Route path={GOVERNMENTS} element={<Governments />} />
       <Route path={STRATEGIC_PARTNERS} element={<StrategicPartners />} />
       <Route path={ADMIN_SETTINGS} element={<AdminSettings />} />
+
+      {/* Banks */}
+      <Route path={ADD_BANK} element={<CreateBank />} />
+      <Route path={EDIT_BANK} element={<EditBank />} />
+
+      {/* Super Agents */}
+      <Route path={ADD_SUPER_AGENT} element={<AddSuperAgent />} />
     </Routes>
   );
 };

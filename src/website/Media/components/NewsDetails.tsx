@@ -9,6 +9,7 @@ import moment from "moment";
 import { urlFor } from "lib/client";
 import MobileNewTab from "components/common/MobileNewTab";
 import RecentNews from "components/common/RecentNews";
+import { Spinner } from "flowbite-react";
 
 const NewsDetails = () => {
   const { id } = useParams();
@@ -19,7 +20,12 @@ const NewsDetails = () => {
   if (!data)
     return (
       <div className="container mx-auto text-[28px] text-center font-bold mt-10">
-        Loading...
+        <Spinner
+          color="success"
+          aria-label="spinner"
+          className="text-buttonColor"
+          size={"xl"}
+        />
       </div>
     );
 

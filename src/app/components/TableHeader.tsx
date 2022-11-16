@@ -1,10 +1,18 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import Search from "app/components/Search";
 import Filter from "./Filter";
 import { DOWNLOAD_ICON } from "assets/icons";
 
-const TableHeader = ({ showFilter }: { showFilter: boolean }) => {
+interface TableHeaderProps {
+  buttonText: string;
+  path: string;
+  showFilter: boolean;
+}
+
+const TableHeader = ({ showFilter, buttonText, path }: TableHeaderProps) => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex justify-between">
       {/* Filter & Search Component */}
@@ -29,8 +37,11 @@ const TableHeader = ({ showFilter }: { showFilter: boolean }) => {
           Download CSV
         </CustomBtn>
 
-        <CustomBtn className="font-medium py-2 px-8 bg-buttonColor rounded-full text-white">
-          New Bank
+        <CustomBtn
+          className="font-medium py-2 px-8 bg-buttonColor rounded-full text-white"
+          onClick={() => navigate(path)}
+        >
+          {buttonText}
         </CustomBtn>
       </div>
     </div>

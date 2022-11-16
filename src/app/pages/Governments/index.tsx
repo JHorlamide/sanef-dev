@@ -1,6 +1,6 @@
 import React from "react";
 import DashboardLayout from "../../DashboardLayout";
-import DashboardHeader from "app/components/DashboardHeader";
+import DashboardHeader from "app/components/Layout";
 
 const index = () => {
   return (

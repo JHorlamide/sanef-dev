@@ -60,3 +60,7 @@ export const DELETE_ICON = `${ADMIN_SVG_PATH}/ic_delete.svg`;
 export const EDIT_ICON = `${ADMIN_SVG_PATH}/ic_edit.svg`;
 export const FILTER_ICON = `${ADMIN_SVG_PATH}/filter.svg`;
 export const FILTER_ICON2 = `${ADMIN_SVG_PATH}/filter2.svg`;
+
+// Admin
+export const IMG_PLACEHOLDER = `${ADMIN_SVG_PATH}/img_placeholder.svg`;
+export const SMALL_VERTICAL_LINE = `${ADMIN_SVG_PATH}/img_vertical_line.svg`;
