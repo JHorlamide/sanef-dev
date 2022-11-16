@@ -1,5 +1,4 @@
 import { Frame6, Frame7, Frame8 } from "assets/icons";
-import { CHILDREN, CHILDREN_2, STUDENTS, CAW_BOY } from "assets/images";
 
 export const OUR_IMPACT_CARD_CONTENT = {
   FIRST_ITEM: [
@@ -48,59 +47,6 @@ export const OUR_IMPACT_CARD_CONTENT = {
       id: 1,
       headingText: "774",
       content: `Agent presence In All \n local government areas`
-    }
-  ]
-};
-
-export const RECENT_NEWS = {
-  First: [
-    {
-      id: "1",
-      image: CHILDREN,
-      date: "Thursday, June 17, 2021",
-      title: "Sustaining the Financial Inclusion Drive in Nigeria",
-      content:
-        "Uniquely brand high-quality human capital whereas economically sound niche markets. Compellingly unleash",
-      link: "/continue/1"
-    }
-  ],
-
-  Second: [
-    {
-      id: "2",
-      image: CHILDREN_2,
-      date: "Thursday, June 17, 2021",
-      title:
-        "SANEF Holds South-west Financial Services Agent Forum In Ibadan, Oyo State; Deepens Financial Inclusion",
-      content:
-        "Uniquely brand high-quality human capital whereas economically sound niche markets. Compellingly unleash",
-      link: "/continue/1"
-    }
-  ],
-
-  Third: [
-    {
-      id: "3",
-      image: STUDENTS,
-      date: "Thursday, June 17, 2021",
-      title:
-        "The Central Bank of Nigeria (CBN) in Partnership with SANEF Holds Consumer Awareness/Financial Literacy Workshop",
-      content:
-        "Uniquely brand high-quality human capital whereas economically sound niche markets. Compellingly unleash",
-      link: "/continue/1"
-    }
-  ],
-
-  Fourth: [
-    {
-      id: "3",
-      image: CAW_BOY,
-      date: "Thursday, June 17, 2021",
-      title:
-        "The Central Bank of Nigeria (CBN) in Partnership with SANEF Holds Consumer Awareness/Financial Literacy Workshop",
-      content:
-        "Uniquely brand high-quality human capital whereas economically sound niche markets. Compellingly unleash",
-      link: "/continue/1"
     }
   ]
 };

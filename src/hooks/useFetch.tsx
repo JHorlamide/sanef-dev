@@ -15,20 +15,3 @@ export const useData = <T extends unknown>(fetchQuery: string) => {
 
   return { data: state };
 };
-
-// const useFetch = <T extends unknown>(fetchQuery: string) => {
-//   const [state, setState] = useState<T>();
-
-//   useEffect(() => {
-//     const fetchNews = async () => {
-//       const newsData = await client.fetch(fetchQuery);
-//       setState(newsData);
-//     };
-
-//     fetchNews();
-//   }, [fetchQuery]);
-
-//   return { date: state };
-// };
-
-// export default useFetch;

@@ -138,26 +138,26 @@ export const NEW_DETAILS_IMG = `${IMAGES_PATH}/news/news_details.png`;
 export const NEW_DETAILS_IMG_MOBILE = `${IMAGES_PATH}/news/news_details_mobile.png`;
 
 // GALLARY MOBILE
-export const GALLERY_IMAGE_1 = `${IMAGES_PATH}/gallery/gallery_mobile_1.png`;
-export const GALLERY_IMAGE_2 = `${IMAGES_PATH}/gallery/gallery_mobile_2.png`;
-export const GALLERY_IMAGE_3 = `${IMAGES_PATH}/gallery/gallery_mobile_3.png`;
-export const GALLERY_IMAGE_4 = `${IMAGES_PATH}/gallery/gallery_mobile_4.png`;
+// export const GALLERY_IMAGE_1 = `${IMAGES_PATH}/gallery/gallery_mobile_1.png`;
+// export const GALLERY_IMAGE_2 = `${IMAGES_PATH}/gallery/gallery_mobile_2.png`;
+// export const GALLERY_IMAGE_3 = `${IMAGES_PATH}/gallery/gallery_mobile_3.png`;
+// export const GALLERY_IMAGE_4 = `${IMAGES_PATH}/gallery/gallery_mobile_4.png`;
 
 // GALLERY DESKTOP
-export const GALL_IMG_1 = `${IMAGES_PATH}/gallery/gallery_img_1.png`;
-export const GALL_IMG_2 = `${IMAGES_PATH}/gallery/gallery_img_2.png`;
-export const GALL_IMG_3 = `${IMAGES_PATH}/gallery/gallert_img_3.png`;
-export const GALL_IMG_4 = `${IMAGES_PATH}/gallery/gallery_img_4.png`;
-export const GALL_IMG_5 = `${IMAGES_PATH}/gallery/gallery_img_5.png`;
-export const GALL_IMG_6 = `${IMAGES_PATH}/gallery/gallery_img_6.png`;
-export const GALL_IMG_7 = `${IMAGES_PATH}/gallery/gallery_img_7.png`;
-export const GALL_IMG_8 = `${IMAGES_PATH}/gallery/gallery_img_8.png`;
-export const GALL_IMG_9 = `${IMAGES_PATH}/gallery/gallery_img_9.png`;
-export const GALL_IMG_10 = `${IMAGES_PATH}/gallery/gallery_img_10.png`;
-export const GALL_IMG_11 = `${IMAGES_PATH}/gallery/gallery_img_11.png`;
-export const GALL_IMG_12 = `${IMAGES_PATH}/gallery/gallery_img_12.png`;
-export const GALL_IMG_13 = `${IMAGES_PATH}/gallery/gallery_img_13.png`;
-export const GALL_IMG_14 = `${IMAGES_PATH}/gallery.gallery_img_14.png`;
+// export const GALL_IMG_1 = `${IMAGES_PATH}/gallery/gallery_img_1.png`;
+// export const GALL_IMG_2 = `${IMAGES_PATH}/gallery/gallery_img_2.png`;
+// export const GALL_IMG_3 = `${IMAGES_PATH}/gallery/gallert_img_3.png`;
+// export const GALL_IMG_4 = `${IMAGES_PATH}/gallery/gallery_img_4.png`;
+// export const GALL_IMG_5 = `${IMAGES_PATH}/gallery/gallery_img_5.png`;
+// export const GALL_IMG_6 = `${IMAGES_PATH}/gallery/gallery_img_6.png`;
+// export const GALL_IMG_7 = `${IMAGES_PATH}/gallery/gallery_img_7.png`;
+// export const GALL_IMG_8 = `${IMAGES_PATH}/gallery/gallery_img_8.png`;
+// export const GALL_IMG_9 = `${IMAGES_PATH}/gallery/gallery_img_9.png`;
+// export const GALL_IMG_10 = `${IMAGES_PATH}/gallery/gallery_img_10.png`;
+// export const GALL_IMG_11 = `${IMAGES_PATH}/gallery/gallery_img_11.png`;
+// export const GALL_IMG_12 = `${IMAGES_PATH}/gallery/gallery_img_12.png`;
+// export const GALL_IMG_13 = `${IMAGES_PATH}/gallery/gallery_img_13.png`;
+// export const GALL_IMG_14 = `${IMAGES_PATH}/gallery.gallery_img_14.png`;
 
 // ADMIN ASSETS
 export const LOGIN_LOGO = `${ADMIN_IMAGE_PATH}/login_logo.png`;

@@ -9,3 +9,14 @@ export type NewsType = {
   _type: string;
   _updatedAt: string;
 };
+
+export type EventsType = {
+  _id: string;
+  date: string;
+  image: Array<any>;
+  eventName: string;
+  _rev: string;
+  _type: string;
+  _createdAt: string;
+  _updatedAt: string;
+};

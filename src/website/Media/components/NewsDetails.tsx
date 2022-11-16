@@ -17,7 +17,7 @@ const NewsDetails = () => {
 
   const { data } = useData<NewsType>(queries);
 
-  if (!data)
+  if (!data) {
     return (
       <div className="container mx-auto text-[28px] text-center font-bold mt-10">
         <Spinner
@@ -28,6 +28,7 @@ const NewsDetails = () => {
         />
       </div>
     );
+  }
 
   return (
     <Layout>

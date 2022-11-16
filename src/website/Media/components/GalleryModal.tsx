@@ -2,15 +2,17 @@ import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { CLOSE_ICON } from "assets/icons";
 import { Carousel } from "flowbite-react";
-import { GALLERY } from "../content";
+// import { GALLERY } from "../content";
 import ScrollToTop from "utils/scrollToTop";
+import { urlFor } from "lib/client";
 
 interface GalleryModalProps {
   isOpen: boolean;
+  images: Array<string>;
   setIsOpen: (value: boolean) => void;
 }
 
-const GalleryModal = ({ isOpen, setIsOpen }: GalleryModalProps) => {
+const GalleryModal = ({ isOpen, setIsOpen, images }: GalleryModalProps) => {
   const handleModalClose = () => {
     setIsOpen(false);
 
@@ -58,10 +60,10 @@ const GalleryModal = ({ isOpen, setIsOpen }: GalleryModalProps) => {
                     rounded-2xl align-middle shadow-xl transition-all"
                   >
                     <Carousel>
-                      {GALLERY.map(({ image }, idx) => (
+                      {images.map((imgSrc, idx) => (
                         <img
                           key={idx}
-                          src={image}
+                          src={urlFor(imgSrc).toString()}
                           alt="..."
                           className="object-cover w-full h-full"
                         />

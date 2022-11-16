@@ -1,5 +1,4 @@
 import { Tab } from "@headlessui/react";
-// import { RECENT_NEWS } from "pages/Home/content";
 import CustomCard from "components/widgets/Cards/Card";
 import { useData } from "hooks/useFetch";
 import { GET_NEWS_QUERIES } from "utils/constants";
