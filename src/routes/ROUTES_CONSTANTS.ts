@@ -27,3 +27,7 @@ export const EDIT_BANK = "/banks/edit/:id";
 // Super Agent Routes
 export const ADD_SUPER_AGENT = "/super-agent/add";
 export const EDIT_SUPER_AGENT = "/super-agent/edit/:id";
+
+// Regulator Routes
+export const ADD_REGULATOR = "/regulators/add";
+export const EDIT_REGULATOR = "/regulators/edit/:id";

@@ -6,7 +6,7 @@ import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import Pagination, { TableRecord } from "app/components/Pagination";
 import DeleteModal from "app/components/DeleteModal";
 
-const SuperAgentList = () => {
+const RegulatorsListTable = () => {
   const navigate = useNavigate();
   let [isOpen, setIsOpen] = useState(false);
 
@@ -17,17 +17,18 @@ const SuperAgentList = () => {
   function openModal() {
     setIsOpen(true);
   }
+
   return (
     <Fragment>
       <DeleteModal
         isOpen={isOpen}
         closeModal={closeModal}
-        modalHeading={"Delete Super Agent"}
-        subText={"Super Agent E-tranzact will be deleted."}
+        modalHeading={"Delete Bank"}
+        subText={"Central Bank for Nigeria (CBN) will be deleted."}
       />
 
       <Table hoverable={true}>
-        <Table.Head className="bg-white text-[12px] capitalize border-b-2">
+        <Table.Head className="bg-white text-[12px] w-full capitalize space-x-3 border-b-2">
           <Table.HeadCell className="font-light">
             Logo
             <CustomBtn
@@ -39,7 +40,7 @@ const SuperAgentList = () => {
           </Table.HeadCell>
 
           <Table.HeadCell className="font-light">
-            Company Name
+            Name
             <CustomBtn
               rightIcon={
                 <img src={FILTER_ICON} alt="filter icon" className="w-1.5" />
@@ -47,35 +48,6 @@ const SuperAgentList = () => {
               className="ml-2"
             />
           </Table.HeadCell>
-          <Table.HeadCell className="font-light">
-            Contact Person
-            <CustomBtn
-              rightIcon={
-                <img src={FILTER_ICON} alt="filter icon" className="w-1.5" />
-              }
-              className="ml-2"
-            />
-          </Table.HeadCell>
-          <Table.HeadCell className="font-light">
-            Designation
-            <CustomBtn
-              rightIcon={
-                <img src={FILTER_ICON} alt="filter icon" className="w-1.5" />
-              }
-              className="ml-2"
-            />
-          </Table.HeadCell>
-
-          <Table.HeadCell className="font-light">
-            Email
-            <CustomBtn
-              rightIcon={
-                <img src={FILTER_ICON} alt="filter icon" className="w-1.5" />
-              }
-              className="ml-2"
-            />
-          </Table.HeadCell>
-
           <Table.HeadCell>
             <span className="sr-only">Edit</span>
           </Table.HeadCell>
@@ -88,17 +60,14 @@ const SuperAgentList = () => {
                 Apple MacBook Pro 17"
               </Table.Cell>
 
-              <Table.Cell className="">Sliver</Table.Cell>
-              <Table.Cell className="">Sliver</Table.Cell>
-              <Table.Cell className="">Sliver</Table.Cell>
-              <Table.Cell className="">Sliver</Table.Cell>
+              <Table.Cell className="w-[600px]">Sliver</Table.Cell>
 
               <Table.Cell className="flex space-x-6">
                 <CustomBtn
                   rightIcon={
                     <img src={EDIT_ICON} alt="edit icon" className="w-4" />
                   }
-                  onClick={() => navigate(`/super-agent/edit/${idx}`)}
+                  onClick={() => navigate(`/regulators/edit/${idx}`)}
                 />
 
                 <CustomBtn
@@ -112,6 +81,7 @@ const SuperAgentList = () => {
           ))}
         </Table.Body>
       </Table>
+
       <div className="flex justify-between mt-8">
         <TableRecord />
         <Pagination />
@@ -120,4 +90,4 @@ const SuperAgentList = () => {
   );
 };
 
-export default SuperAgentList;
+export default RegulatorsListTable;

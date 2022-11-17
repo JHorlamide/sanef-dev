@@ -88,16 +88,16 @@ const HorizontalRule = () => {
   );
 };
 
-const SidebarFooter = () => {
-  return (
-    <div className="container mx-auto flex justify-center items-center mt-32">
-      <p className="text-gray-400 text-[12px] text-justify">
-        © 2022. Shared Agent Network Expansion Facilities. <br /> All right
-        reserved
-      </p>
-    </div>
-  );
-};
+// const SidebarFooter = () => {
+//   return (
+//     <div className="flex justify-center items-center absolute bottom-0 left-10">
+//       <p className="text-gray-400 text-[12px] text-justify">
+//         © 2022. Shared Agent Network Expansion Facilities. <br /> All right
+//         reserved
+//       </p>
+//     </div>
+//   );
+// };
 
 const SidebarContent = () => {
   return (
@@ -134,7 +134,12 @@ const SidebarContent = () => {
         />
       </div>
 
-      <SidebarFooter />
+      <div className="absolute left-10 bottom-5">
+        <p className="text-gray-400 text-[12px] text-justify">
+          © 2022. Shared Agent Network Expansion Facilities. <br /> All right
+          reserved
+        </p>
+      </div>
     </div>
   );
 };

@@ -22,7 +22,10 @@ import {
   ADMIN_SETTINGS,
   ADD_BANK,
   EDIT_BANK,
-  ADD_SUPER_AGENT
+  ADD_SUPER_AGENT,
+  EDIT_SUPER_AGENT,
+  ADD_REGULATOR,
+  EDIT_REGULATOR
 } from "./ROUTES_CONSTANTS";
 import Home from "website/Home";
 import About from "website/About";
@@ -38,7 +41,6 @@ import ForgotPassword from "website/Auth/ForgotPassword";
 import ResetPassword from "website/Auth/ResetPassword";
 
 // Dashboard
-import Regulators from "app/pages/Regulators/index";
 import Agents from "app/pages/Agents/index";
 import StrategicPartners from "app/pages/StrategicPartners/index";
 import Governments from "app/pages/Governments/index";
@@ -52,6 +54,12 @@ import EditBank from "app/pages/Banks/components/EditBank";
 // SUPER AGENTS
 import SuperAgents from "app/pages/SuperAgents/index";
 import AddSuperAgent from "app/pages/SuperAgents/components/AddSuperAgent";
+import EditSuperAgent from "app/pages/SuperAgents/components/EditSuperAgent";
+
+// REGULATORS
+import Regulators from "app/pages/Regulators/index";
+import AddRegulator from "app/pages/Regulators/components/AddRegulator";
+import EditRegulator from "app/pages/Regulators/components/EditRegulators";
 
 const RouteConfig = () => {
   return (
@@ -70,20 +78,32 @@ const RouteConfig = () => {
       <Route path={RESET_PASSWORD} element={<ResetPassword />} />
 
       {/* Dashboard Links */}
-      <Route path={BANKS} element={<Banks />} />
-      <Route path={AGENTS} element={<Agents />} />
-      <Route path={REGULATORS} element={<Regulators />} />
-      <Route path={SUPER_AGENT} element={<SuperAgents />} />
-      <Route path={GOVERNMENTS} element={<Governments />} />
-      <Route path={STRATEGIC_PARTNERS} element={<StrategicPartners />} />
-      <Route path={ADMIN_SETTINGS} element={<AdminSettings />} />
-
       {/* Banks */}
+      <Route path={BANKS} element={<Banks />} />
       <Route path={ADD_BANK} element={<CreateBank />} />
       <Route path={EDIT_BANK} element={<EditBank />} />
 
+      {/* Agents */}
+      <Route path={AGENTS} element={<Agents />} />
+
+      {/* Strategic Partners */}
+      <Route path={STRATEGIC_PARTNERS} element={<StrategicPartners />} />
+
+      {/* Admin Settings */}
+      <Route path={ADMIN_SETTINGS} element={<AdminSettings />} />
+
+      {/* Governments */}
+      <Route path={GOVERNMENTS} element={<Governments />} />
+
       {/* Super Agents */}
+      <Route path={SUPER_AGENT} element={<SuperAgents />} />
       <Route path={ADD_SUPER_AGENT} element={<AddSuperAgent />} />
+      <Route path={EDIT_SUPER_AGENT} element={<EditSuperAgent />} />
+
+      {/* Regulators */}
+      <Route path={REGULATORS} element={<Regulators />} />
+      <Route path={ADD_REGULATOR} element={<AddRegulator />} />
+      <Route path={EDIT_REGULATOR} element={<EditRegulator />} />
     </Routes>
   );
 };

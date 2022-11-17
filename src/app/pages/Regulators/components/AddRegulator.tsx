@@ -1,14 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import BankHeader from "./BankHeader";
+import RegulatorHeader from "./RegulatorHeader";
 import { IMG_PLACEHOLDER } from "assets/icons";
 import DashboardLayout from "../../../DashboardLayout";
 import { DashboardMainView } from "app/components/Layout";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { BANKS } from "routes/ROUTES_CONSTANTS";
-import useBankForm from "../useBankForm";
+import useBankForm from "app/pages/Banks/useBankForm";
 
-const EditBank = () => {
+const AddRegulator = () => {
   const navigate = useNavigate();
   const {
     bankLogo,
@@ -21,31 +21,14 @@ const EditBank = () => {
     handleFileChange,
     handleBankNameChange
   } = useBankForm({});
-
   return (
     <DashboardLayout>
-      <BankHeader />
+      <RegulatorHeader />
 
       <DashboardMainView className="pl-10 pt-10">
         <div className="bg-white w-[690px] h-[451px] border rounded-lg py-6 flex flex-col space-y-10">
           <div className="space-y-4">
-            <div className="flex justify-between px-5">
-              <h1 className="text-[18px] font-bold">Bank Details</h1>
-
-              <div className="flex justify-center">
-                <p className="mr-3 font-medium">Active</p>
-                <div className="form-check form-switch">
-                  <input
-                    className="form-check-input appearance-none w-11 -ml-10 rounded-full float-left 
-                    h-5 align-top bg-buttonColor bg-no-repeat bg-contain focus:outline-none 
-                    outline-buttonColor cursor-pointer shadow-sm border-buttonColor focus:outline-buttonColor"
-                    type="checkbox"
-                    role="switch"
-                    id="flexSwitchCheckDefault"
-                  />
-                </div>
-              </div>
-            </div>
+            <h1 className="text-[18px] font-bold pl-10">New Regulator</h1>
             <hr className="border w-full" />
           </div>
 
@@ -145,4 +128,4 @@ const EditBank = () => {
   );
 };
 
-export default EditBank;
+export default AddRegulator;

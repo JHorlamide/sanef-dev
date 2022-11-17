@@ -2,13 +2,24 @@ import React, { useState, useEffect } from "react";
 
 type CompanyLogoType = File | undefined;
 
-type CompanyDataType = {
+export type CompanyDataType = {
   email: string;
   companyName: string;
   companyAddress: string;
   companyContactPerson: string;
   designation: string;
   phoneNumber: string;
+
+  // For Update Data
+  serial?: string;
+  sid?: string;
+  submittedTime?: string;
+  completedTime?: string;
+  modifiedTime?: string;
+  draft?: string;
+  ipAddress?: string;
+  uid?: string;
+  username?: string;
 };
 
 interface useBankFormProps {
@@ -26,7 +37,17 @@ const useSuperAgentForm = ({
     companyContactPerson: "",
     designation: "",
     email: "",
-    phoneNumber: ""
+    phoneNumber: "",
+
+    serial: "",
+    sid: "",
+    submittedTime: "",
+    completedTime: "",
+    modifiedTime: "",
+    draft: "",
+    ipAddress: "",
+    uid: "",
+    username: ""
   });
   const [companyLogo, setCompanyLogo] = useState<CompanyLogoType>(company_logo);
   const [errorMessage, setErrorMessage] = useState<string>("");

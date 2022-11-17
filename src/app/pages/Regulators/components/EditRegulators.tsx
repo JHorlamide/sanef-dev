@@ -1,14 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import BankHeader from "./BankHeader";
+import RegulatorHeader from "./RegulatorHeader";
 import { IMG_PLACEHOLDER } from "assets/icons";
 import DashboardLayout from "../../../DashboardLayout";
 import { DashboardMainView } from "app/components/Layout";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { BANKS } from "routes/ROUTES_CONSTANTS";
-import useBankForm from "../useBankForm";
+import useBankForm from "app/pages/Banks/useBankForm";
 
-const EditBank = () => {
+const EditRegulators = () => {
   const navigate = useNavigate();
   const {
     bankLogo,
@@ -24,13 +24,13 @@ const EditBank = () => {
 
   return (
     <DashboardLayout>
-      <BankHeader />
+      <RegulatorHeader />
 
-      <DashboardMainView className="pl-10 pt-10">
+      <DashboardMainView className="pl-10 pt-10 h-screen">
         <div className="bg-white w-[690px] h-[451px] border rounded-lg py-6 flex flex-col space-y-10">
           <div className="space-y-4">
             <div className="flex justify-between px-5">
-              <h1 className="text-[18px] font-bold">Bank Details</h1>
+              <h1 className="text-[18px] font-bold">Regulator Details</h1>
 
               <div className="flex justify-center">
                 <p className="mr-3 font-medium">Active</p>
@@ -145,4 +145,4 @@ const EditBank = () => {
   );
 };
 
-export default EditBank;
+export default EditRegulators;

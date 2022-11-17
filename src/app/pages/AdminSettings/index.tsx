@@ -5,12 +5,10 @@ import DashboardHeader from "app/components/Layout";
 const index = () => {
   return (
     <DashboardLayout>
-      <DashboardHeader>
-        <h1 className="text-[32px] font-bold">Admin Settings</h1>
-        <p className="text-[14px]">
-          Manage your admin details and update your password
-        </p>
-      </DashboardHeader>
+      <DashboardHeader
+        heading="Admin Settings"
+        subHeading=" Manage your admin details and update your password"
+      />
 
       <div className="bg-gray-100 w-full h-[85.333333%] pt-8 pl-10 pr-10 space-y-8"></div>
     </DashboardLayout>

@@ -5,12 +5,15 @@ import DashboardHeader from "app/components/Layout";
 const index = () => {
   return (
     <DashboardLayout>
-      <DashboardHeader>
-        <h1 className="text-[32px] font-bold">Governments</h1>
+      <DashboardHeader
+        heading="Governments"
+        subHeading="Manage the entries on the Governments list"
+      />
+      {/* <h1 className="text-[32px] font-bold">Governments</h1>
         <p className="text-[14px]">
           Manage the entries on the Governments list
         </p>
-      </DashboardHeader>
+      </DashboardHeader> */}
 
       <div className="bg-gray-100 w-full h-[85.333333%] pt-8 pl-10 pr-10 space-y-8"></div>
     </DashboardLayout>
