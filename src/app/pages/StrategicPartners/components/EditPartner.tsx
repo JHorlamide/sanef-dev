@@ -125,7 +125,7 @@ const EditPartner = () => {
 
             <div className="flex space-x-16">
               <CustomBtn
-                className="bg-buttonColor px-20 py-3 rounded-full text-white font-semibold"
+                className="bg-buttonColor px-20 py-3 rounded-full text-white font-semibold hover:bg-lightGreen"
                 type="submit"
                 onKeyDown={handlePress}
               >
@@ -133,7 +133,7 @@ const EditPartner = () => {
               </CustomBtn>
 
               <CustomBtn
-                className="text-buttonColor font-semibold"
+                className="text-buttonColor font-semibold hover:text-lightGreen"
                 type="button"
                 onClick={() => navigate(STRATEGIC_PARTNERS)}
               >

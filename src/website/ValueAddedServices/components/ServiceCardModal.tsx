@@ -50,7 +50,7 @@ const ServiceCardModal = ({
               >
                 <Dialog.Panel
                   className="w-[370px] overflow-hidden md:w-[900px] lg:w-[965px] h-fit
-                   transform rounded-2xl bg-white px-12 md:px-10 py-6 text-left 
+                  rounded-2xl bg-white px-12 md:px-10 py-6 text-left transform 
                    align-middle shadow-xl transition-all"
                 >
                   <div className="flex flex-col justify-center items-center md:flex-row md:items-start">

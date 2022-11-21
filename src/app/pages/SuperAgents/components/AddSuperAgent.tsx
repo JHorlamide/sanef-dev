@@ -213,7 +213,7 @@ const AddSuperAgent = () => {
 
             <div className="flex space-x-16">
               <CustomBtn
-                className="bg-buttonColor px-20 py-3 rounded-full text-white font-semibold"
+                className="bg-buttonColor px-20 py-3 rounded-full text-white font-semibold hover:bg-lightGreen"
                 type="submit"
                 onKeyDown={handlePress}
               >

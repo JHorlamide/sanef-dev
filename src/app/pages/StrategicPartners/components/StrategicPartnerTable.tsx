@@ -23,6 +23,7 @@ const StrategicPartnerTable = () => {
       <DeleteModal
         isOpen={isOpen}
         closeModal={closeModal}
+        actionText={"Delete"}
         modalHeading={"Delete Strategic Partner"}
         subText={"CitiBank will be delete"}
       />

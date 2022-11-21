@@ -69,7 +69,7 @@ const GalleryTab = () => {
 
   return (
     <Fragment>
-      <div className="container mx-auto pb-10">
+      <div className="container mx-auto pb-10 px-5">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {data.map((gallery) => (
             <div

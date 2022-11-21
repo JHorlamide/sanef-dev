@@ -23,6 +23,7 @@ const BankListTable = () => {
       <DeleteModal
         isOpen={isOpen}
         closeModal={closeModal}
+        actionText={"Delete"}
         modalHeading={"Delete Bank"}
         subText={"CitiBank will be delete"}
       />

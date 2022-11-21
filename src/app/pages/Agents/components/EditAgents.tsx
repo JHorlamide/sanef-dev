@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import AgentsHeader from "./AgentsHeader";
-import { IMG_PLACEHOLDER } from "assets/icons";
 import DashboardLayout from "../../../DashboardLayout";
 import { DashboardMainView } from "app/components/Layout";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
@@ -182,14 +181,14 @@ const EditAgents = () => {
   const navigate = useNavigate();
   const {
     companyData,
-    companyLogo,
-    errorMessage,
-    previewLogo,
-    hiddenFileInput,
+    // companyLogo,
+    // errorMessage,
+    // previewLogo,
+    // hiddenFileInput,
     handleSubmit,
-    handleFileChange,
+    // handleFileChange,
     handlePress,
-    openFileInput,
+    // openFileInput,
     handleCompanyDataChange
   } = useSuperAgentForm({});
   return (
@@ -200,7 +199,7 @@ const EditAgents = () => {
         <div className="bg-white w-[690px] border rounded-lg py-6 flex flex-col space-y-10">
           <div className="space-y-4">
             <div className="flex justify-between px-5">
-              <h1 className="text-[18px] font-bold pl-10">New Super Agent</h1>
+              <h1 className="text-[18px] font-bold pl-10">Agent Details</h1>
 
               <div className="flex justify-center">
                 <p className="mr-3 font-medium">Active</p>
@@ -223,78 +222,47 @@ const EditAgents = () => {
             className="container mx-auto px-8 pb-8 space-y-10"
             onSubmit={handleSubmit}
           >
-            <div className="flex space-x-10">
-              {/* Image Placeholder */}
-              <div
-                className="bg-white rounded-full w-[180px] h-[180px] shadow-lg 
-                p-8 justify-center items-center"
-              >
-                <img
-                  src={previewLogo ? previewLogo : IMG_PLACEHOLDER}
-                  alt="placeholder"
-                  className="w-full h-full"
-                />
-              </div>
-
-              {/* Form Input */}
-              <div className="w-[390px] space-y-12">
-                <div className="space-y-3">
-                  <label htmlFor="companyName">Company Name</label>
-                  <CustomInput
-                    id="companyName"
-                    className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                    focus:ring-buttonColor
-                    py-3 w-full mt-8"
-                    inputProps={{
-                      type: "text",
-                      name: "companyName",
-                      value: companyData.companyName,
-                      onChange: handleCompanyDataChange
-                    }}
-                  />
-                </div>
-
-                <div className="flex flex-col">
-                  {errorMessage && (
-                    <p className="text-red-500 text-sm text-center">
-                      {errorMessage}
-                    </p>
-                  )}
-
-                  <div className="flex">
-                    <CustomBtn
-                      className="text-buttonColor text-start font-semibold text-md mb-2 w-full outline-none"
-                      onClick={openFileInput}
-                      type="button"
-                    >
-                      Upload logo
-                    </CustomBtn>
-
-                    <p className="w-full text-md text-start whitespace-normal font-semibold text-gray-800">
-                      {companyLogo?.name}
-                    </p>
+            <div className="flex flex-col space-y-5">
+              {/* First name & Surname */}
+              <div className="flex space-x-6">
+                <div className="w-[390px]">
+                  <div className="space-y-3">
+                    <label htmlFor="firstName">First name</label>
+                    <CustomInput
+                      id="firstName"
+                      className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
+                    focus:ring-buttonColor py-3 w-full mt-8"
+                      inputProps={{
+                        type: "text",
+                        name: "firstName",
+                        value: companyData.companyName,
+                        onChange: handleCompanyDataChange
+                      }}
+                    />
                   </div>
+                </div>
 
-                  <CustomInput
-                    id="bankLogo"
-                    className="hidden border-none text-buttonColor font-semibold text-md"
-                    inputProps={{
-                      type: "file",
-                      placeholder: "Upload logo",
-                      name: "bankLogo",
-                      onChange: handleFileChange,
-                      ref: hiddenFileInput
-                    }}
-                  />
-
-                  <small>Formats accepted: PNG, JPG, GIF. Maximum 5MB.</small>
+                <div className="w-[390px]">
+                  <div className="space-y-3">
+                    <label htmlFor="surname">Surname</label>
+                    <CustomInput
+                      id="surname"
+                      className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
+                    focus:ring-buttonColor py-3 w-full mt-8"
+                      inputProps={{
+                        type: "text",
+                        name: "surname",
+                        value: companyData.companyName,
+                        onChange: handleCompanyDataChange
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="flex flex-col space-y-4">
+              {/* Business name */}
               <div className="space-y-3 w-full">
-                <label htmlFor="companyAddress">Company Address</label>
+                <label htmlFor="companyAddress">Business name</label>
                 <CustomInput
                   id="companyAddress"
                   className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
@@ -309,85 +277,181 @@ const EditAgents = () => {
                 />
               </div>
 
-              {/* Contact Person & Designation */}
-              <div className="flex space-x-3">
-                <div className="space-y-3 w-80 grow">
-                  <label htmlFor="companyContactPerson">Contact Person</label>
-                  <CustomInput
-                    id="companyContactPerson"
-                    className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                    focus:ring-buttonColor
-                    py-3 mt-8 w-full"
-                    inputProps={{
-                      type: "text",
-                      name: "companyContactPerson",
-                      value: companyData.companyContactPerson,
-                      onChange: handleCompanyDataChange
-                    }}
-                  />
+              {/* Email & Gender */}
+              <div className="flex space-x-6">
+                {/* Form Input */}
+                <div className="w-[390px] space-y-12">
+                  <div className="space-y-3">
+                    <label htmlFor="email">Email</label>
+                    <CustomInput
+                      id="email"
+                      className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
+                      focus:ring-buttonColor py-3 w-full mt-8"
+                      inputProps={{
+                        type: "text",
+                        name: "email",
+                        value: companyData.companyName,
+                        onChange: handleCompanyDataChange
+                      }}
+                    />
+                  </div>
                 </div>
 
-                <div className="space-y-3 w-52">
-                  <label htmlFor="designation">Designation</label>
-                  <CustomSelect
-                    id="designation"
-                    className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
-                    focus:ring-buttonColor py-3 w-full"
-                    selectProps={{
-                      name: "designation",
-                      value: companyData.designation,
-                      onChange: handleCompanyDataChange
-                    }}
-                    selectOptions={[
-                      { value: "account", name: "Accounting" },
-                      { value: "finance", name: "Finance" },
-                      { value: "human resource", name: "Human Resource" },
-                      { value: "management", name: "Management" }
-                    ]}
-                    selectPlaceholder="Select a designation"
-                  />
+                {/* Form Input */}
+                <div className="w-[390px] space-y-12">
+                  <div className="space-y-3">
+                    <label htmlFor="surname">Gender</label>
+                    <CustomSelect
+                      id="designation"
+                      className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
+                      focus:ring-buttonColor py-3 w-full"
+                      selectProps={{
+                        name: "designation",
+                        value: companyData.designation,
+                        onChange: handleCompanyDataChange
+                      }}
+                      selectOptions={[
+                        { value: "male", name: "Male" },
+                        { value: "female", name: "Female" }
+                      ]}
+                      selectPlaceholder="Select gender"
+                    />
+                  </div>
                 </div>
               </div>
 
-              {/* Email Address */}
+              {/* Phone Number */}
+              <div className="flex space-x-6">
+                <div className="space-y-3 w-full">
+                  <label className="" htmlFor="phoneNumber">
+                    Preferred Phone Number
+                  </label>
+
+                  <div>
+                    <p className="z-50 absolute bg-gray-200 py-[9px] px-6 rounded-full ml-1 mt-1">
+                      +234
+                    </p>
+
+                    <CustomInput
+                      id="phoneNumber"
+                      className="relative rounded-full border border-gray-300 outline-buttonColor
+                      focus:border-buttonColor focus:ring-buttonColor py-3 w-full px-24"
+                      inputProps={{
+                        type: "text",
+                        name: "phoneNumber",
+                        value: companyData.phoneNumber,
+                        onChange: handleCompanyDataChange
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-3 w-full">
+                  <label className="" htmlFor="phoneNumber">
+                    Alternate Phone Number
+                  </label>
+
+                  <div>
+                    <p className="z-50 absolute bg-gray-200 py-[9px] px-6 rounded-full ml-1 mt-1">
+                      +234
+                    </p>
+
+                    <CustomInput
+                      id="phoneNumber"
+                      className="relative rounded-full border border-gray-300 outline-buttonColor
+                      focus:border-buttonColor focus:ring-buttonColor py-3 w-full px-24"
+                      inputProps={{
+                        type: "text",
+                        name: "phoneNumber",
+                        value: companyData.phoneNumber,
+                        onChange: handleCompanyDataChange
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* State & LGA */}
+              <div className="flex space-x-6">
+                <div className="w-[390px] space-y-12">
+                  <div className="space-y-3">
+                    <label htmlFor="state">State</label>
+                    <CustomSelect
+                      id="state"
+                      className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
+                      focus:ring-buttonColor py-3 w-full"
+                      selectProps={{
+                        name: "state",
+                        value: companyData.designation,
+                        onChange: handleCompanyDataChange
+                      }}
+                      selectOptions={[
+                        { value: "male", name: "Male" },
+                        { value: "female", name: "Female" }
+                      ]}
+                      selectPlaceholder="Select gender"
+                    />
+                  </div>
+                </div>
+
+                <div className="w-[390px] space-y-12">
+                  <div className="space-y-3">
+                    <label htmlFor="lga">LGA</label>
+                    <CustomSelect
+                      id="lga"
+                      className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
+                      focus:ring-buttonColor py-3 w-full"
+                      selectProps={{
+                        name: "designation",
+                        value: companyData.designation,
+                        onChange: handleCompanyDataChange
+                      }}
+                      selectOptions={[
+                        { value: "male", name: "Male" },
+                        { value: "female", name: "Female" }
+                      ]}
+                      selectPlaceholder="Select gender"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Proposed Agency Service/Business Address */}
               <div className="space-y-3 w-full">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="proposedAgency">
+                  Proposed Agency Service/Business Address
+                </label>
                 <CustomInput
-                  id="email"
+                  id="proposedAgency"
                   className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                  focus:ring-buttonColor py-3 w-full mt-8"
+                    focus:ring-buttonColor
+                    py-3 w-full mt-8"
                   inputProps={{
-                    type: "email",
-                    name: "email",
-                    value: companyData.email,
+                    type: "text",
+                    name: "proposedAgency",
+                    value: companyData.companyAddress,
                     onChange: handleCompanyDataChange
                   }}
                 />
               </div>
 
-              {/* Phone Number */}
+              {/* Choice of Super Agent */}
               <div className="space-y-3 w-full">
-                <label className="" htmlFor="phoneNumber">
-                  Phone Number
+                <label htmlFor="choiceOfSuperAgent">
+                  Choice of Super Agent
                 </label>
-
-                <div>
-                  <p className="z-50 absolute bg-gray-200 py-[9px] px-6 rounded-full ml-1 mt-1">
-                    +234
-                  </p>
-
-                  <CustomInput
-                    id="phoneNumber"
-                    className="relative rounded-full border border-gray-300 outline-buttonColor
-                    focus:border-buttonColor focus:ring-buttonColor py-3 w-full px-24"
-                    inputProps={{
-                      type: "text",
-                      name: "phoneNumber",
-                      value: companyData.phoneNumber,
-                      onChange: handleCompanyDataChange
-                    }}
-                  />
-                </div>
+                <CustomInput
+                  id="choiceOfSuperAgent"
+                  className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
+                    focus:ring-buttonColor
+                    py-3 w-full mt-8"
+                  inputProps={{
+                    type: "text",
+                    name: "choiceOfSuperAgent",
+                    value: companyData.companyAddress,
+                    onChange: handleCompanyDataChange
+                  }}
+                />
               </div>
             </div>
 
@@ -401,7 +465,7 @@ const EditAgents = () => {
 
             <div className="flex space-x-16">
               <CustomBtn
-                className="bg-buttonColor px-20 py-3 rounded-full text-white font-semibold"
+                className="bg-buttonColor px-20 py-3 rounded-full text-white font-semibold hover:bg-lightGreen"
                 type="submit"
                 onKeyDown={handlePress}
               >
@@ -409,7 +473,7 @@ const EditAgents = () => {
               </CustomBtn>
 
               <CustomBtn
-                className="text-buttonColor font-semibold"
+                className="text-buttonColor font-semibold hover:text-lightGreen"
                 type="button"
                 onClick={() => navigate(SUPER_AGENT)}
               >

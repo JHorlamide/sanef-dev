@@ -25,7 +25,8 @@ const TableHeader = ({ showFilter, buttonText, path }: TableHeaderProps) => {
       {/* Download & New Bank Buttons */}
       <div className="flex space-x-2">
         <CustomBtn
-          className="font-medium py-2 px-5 bg-white rounded-full text-buttonColor flex"
+          className="font-medium py-2 px-5 bg-white rounded-full text-buttonColor flex transition 
+          ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 duration-300"
           leftIcon={
             <img
               src={DOWNLOAD_ICON}
@@ -38,7 +39,7 @@ const TableHeader = ({ showFilter, buttonText, path }: TableHeaderProps) => {
         </CustomBtn>
 
         <CustomBtn
-          className="font-medium py-2 px-8 bg-buttonColor rounded-full text-white"
+          className="font-medium py-2 px-8 bg-buttonColor rounded-full text-white hover:bg-lightGreen"
           onClick={() => navigate(path)}
         >
           {buttonText}

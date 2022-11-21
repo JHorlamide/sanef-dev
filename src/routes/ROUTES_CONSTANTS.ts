@@ -11,9 +11,6 @@ export const MEDIA_NEWS_DETAILS = "/media/news/:id";
 export const MEDIA_EVENT_DETAILS = "/media/gallery/:id";
 export const MEDIA = "/media/";
 
-// Admin Settings
-export const ADMIN_SETTINGS = "/admin-settings";
-
 // Banks Routes
 export const BANKS = "/banks/";
 export const ADD_BANK = "/banks/add";
@@ -43,3 +40,6 @@ export const EDIT_GOVERNMENT = "/governments/edit/:id";
 export const AGENTS = "/agents";
 export const ADD_AGENT = "/agents/add";
 export const EDIT_AGENT = "/agents/edit/:id";
+
+// Admin Settings
+export const ADMIN_SETTINGS = "/admin-settings";

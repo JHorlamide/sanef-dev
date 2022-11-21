@@ -8,13 +8,15 @@ interface DeleteModalProps {
   closeModal: () => void;
   modalHeading: string;
   subText: string;
+  actionText: string;
 }
 
 const DeleteModal = ({
   isOpen,
   closeModal,
   modalHeading,
-  subText
+  subText,
+  actionText
 }: DeleteModalProps) => {
   const handleDelete = () => {
     console.log("Bank Deleted");
@@ -65,10 +67,10 @@ const DeleteModal = ({
                   <div className="mt-10 flex items-center space-x-8">
                     <CustomBtn
                       type="button"
-                      className="inline-flex py-3 rounded-full px-12 bg-buttonColor text-white"
+                      className="inline-flex py-3 rounded-full px-12 bg-buttonColor text-white hover:bg-lightGreen"
                       onClick={handleDelete}
                     >
-                      Delete
+                      {actionText}
                     </CustomBtn>
 
                     <CustomBtn

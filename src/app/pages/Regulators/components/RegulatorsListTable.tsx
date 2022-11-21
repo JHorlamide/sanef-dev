@@ -23,6 +23,7 @@ const RegulatorsListTable = () => {
       <DeleteModal
         isOpen={isOpen}
         closeModal={closeModal}
+        actionText={"Delete"}
         modalHeading={"Delete Bank"}
         subText={"Central Bank for Nigeria (CBN) will be deleted."}
       />

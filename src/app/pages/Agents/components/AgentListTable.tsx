@@ -58,6 +58,7 @@ const AgentListTable = () => {
       <DeleteModal
         isOpen={isOpen}
         closeModal={closeModal}
+        actionText={"Delete"}
         modalHeading={"Delete Agent"}
         subText={"Super Agent E-tranzact will be deleted."}
       />

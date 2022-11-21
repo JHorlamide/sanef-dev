@@ -22,6 +22,7 @@ const GovernmentListTable = () => {
       <DeleteModal
         isOpen={isOpen}
         closeModal={closeModal}
+        actionText={"Delete"}
         modalHeading={"Delete Government/MDA"}
         subText={"CitiBank will be delete"}
       />

@@ -23,6 +23,7 @@ const SuperAgentList = () => {
       <DeleteModal
         isOpen={isOpen}
         closeModal={closeModal}
+        actionText={"Delete"}
         modalHeading={"Delete Super Agent"}
         subText={"Super Agent E-tranzact will be deleted."}
       />

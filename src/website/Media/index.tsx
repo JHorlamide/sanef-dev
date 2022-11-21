@@ -20,7 +20,7 @@ const Media = () => {
           <div className="">
             <h1
               className="text-white text-4xl text-center max-w-lg mx-auto my-10 font-extrabold
-            lg:mt-5"
+              lg:mt-5"
             >
               Media
             </h1>
@@ -31,7 +31,7 @@ const Media = () => {
           <Image
             image={DOTS}
             parentClassName="absolute inset-y-0 -right-1 top-42 md:right-16 md:-top-32
-          lg:right-20 lg:-top-40"
+            lg:right-20 lg:-top-40"
             imageClassName="w-24 h-24 md:h-fit lg:h-fit"
           />
         </div>
