@@ -13,7 +13,7 @@ const index = () => {
     <DashboardLayout>
       <SuperAgentHeader />
 
-      <DashboardMainView className="pt-8 pl-10 pr-10 space-y-8 h-screen">
+      <DashboardMainView className="h-screen">
         <Analytics />
 
         <img src={LONG_HORIZONTAL_LINE} alt="" className="w-full" />

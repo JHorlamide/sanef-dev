@@ -12,7 +12,13 @@ export const DashboardMainView = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  return <div className={`bg-gray-100 w-full ${className}`}>{children}</div>;
+  return (
+    <div
+      className={`bg-gray-100 pt-8 pl-10 pr-10 space-y-8 w-full ${className}`}
+    >
+      {children}
+    </div>
+  );
 };
 
 const DashboardHeader = ({ heading, subHeading }: DashboardHeaderProps) => {

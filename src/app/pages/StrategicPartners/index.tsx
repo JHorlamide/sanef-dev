@@ -1,21 +1,25 @@
 import React from "react";
 import DashboardLayout from "../../DashboardLayout";
-import DashboardHeader from "app/components/Layout";
+import StrategicPartnerHeader from "./components/StrategicPartnerHeader";
+import { DashboardMainView } from "../../components/Layout";
+import TableHeader from "app/components/TableHeader";
+import { ADD_STRATEGIC_PARTNERS } from "routes/ROUTES_CONSTANTS";
+import StrategicPartnerTable from "./components/StrategicPartnerTable";
 
 const index = () => {
   return (
     <DashboardLayout>
-      <DashboardHeader
-        heading="Strategic Partners"
-        subHeading="Manage the entries on the Strategic Partners list"
-      />
-      {/* <h1 className="text-[32px] font-bold">Strategic Partners</h1>
-        <p className="text-[14px]">
-          Manage the entries on the Strategic Partners list
-        </p>
-      </DashboardHeader> */}
+      <StrategicPartnerHeader />
 
-      <div className="bg-gray-100 w-full h-[85.333333%] pt-8 pl-10 pr-10 space-y-8"></div>
+      <DashboardMainView className="h-screen">
+        <TableHeader
+          showFilter={false}
+          buttonText={"New Partner"}
+          path={ADD_STRATEGIC_PARTNERS}
+        />
+
+        <StrategicPartnerTable />
+      </DashboardMainView>
     </DashboardLayout>
   );
 };

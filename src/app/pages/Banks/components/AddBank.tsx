@@ -26,7 +26,7 @@ const AddBank = () => {
     <DashboardLayout>
       <BankHeader />
 
-      <DashboardMainView className="pl-10 pt-10">
+      <DashboardMainView className="pl-10 pt-10 h-screen">
         <div className="bg-white w-[690px] h-[451px] border rounded-lg py-6 flex flex-col space-y-10">
           <div className="space-y-4">
             <h1 className="text-[18px] font-bold pl-10">New Bank</h1>

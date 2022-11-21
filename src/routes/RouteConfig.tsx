@@ -25,7 +25,13 @@ import {
   ADD_SUPER_AGENT,
   EDIT_SUPER_AGENT,
   ADD_REGULATOR,
-  EDIT_REGULATOR
+  EDIT_REGULATOR,
+  ADD_STRATEGIC_PARTNERS,
+  EDIT_STRATEGIC_PARTNERS,
+  ADD_GOVERNMENT,
+  EDIT_GOVERNMENT,
+  ADD_AGENT,
+  EDIT_AGENT
 } from "./ROUTES_CONSTANTS";
 import Home from "website/Home";
 import About from "website/About";
@@ -41,9 +47,6 @@ import ForgotPassword from "website/Auth/ForgotPassword";
 import ResetPassword from "website/Auth/ResetPassword";
 
 // Dashboard
-import Agents from "app/pages/Agents/index";
-import StrategicPartners from "app/pages/StrategicPartners/index";
-import Governments from "app/pages/Governments/index";
 import AdminSettings from "app/pages/AdminSettings";
 
 // BANKS
@@ -60,6 +63,21 @@ import EditSuperAgent from "app/pages/SuperAgents/components/EditSuperAgent";
 import Regulators from "app/pages/Regulators/index";
 import AddRegulator from "app/pages/Regulators/components/AddRegulator";
 import EditRegulator from "app/pages/Regulators/components/EditRegulators";
+
+// STRATEGIC PARTNER
+import StrategicPartners from "app/pages/StrategicPartners/index";
+import AddPartner from "app/pages/StrategicPartners/components/AddPartner";
+import EditPartner from "app/pages/StrategicPartners/components/EditPartner";
+
+// GOVERNMENT/MDA
+import Governments from "app/pages/Governments/index";
+import AddGovernment from "app/pages/Governments/components/AddGovernment";
+import EditGovernment from "app/pages/Governments/components/EditGovernment";
+
+// AGENTS
+import Agents from "app/pages/Agents/index";
+import AddAgents from "app/pages/Agents/components/AddAgents";
+import EditAgents from "app/pages/Agents/components/EditAgents";
 
 const RouteConfig = () => {
   return (
@@ -85,15 +103,21 @@ const RouteConfig = () => {
 
       {/* Agents */}
       <Route path={AGENTS} element={<Agents />} />
+      <Route path={ADD_AGENT} element={<AddAgents />} />
+      <Route path={EDIT_AGENT} element={<EditAgents />} />
 
       {/* Strategic Partners */}
       <Route path={STRATEGIC_PARTNERS} element={<StrategicPartners />} />
+      <Route path={ADD_STRATEGIC_PARTNERS} element={<AddPartner />} />
+      <Route path={EDIT_STRATEGIC_PARTNERS} element={<EditPartner />} />
 
       {/* Admin Settings */}
       <Route path={ADMIN_SETTINGS} element={<AdminSettings />} />
 
       {/* Governments */}
       <Route path={GOVERNMENTS} element={<Governments />} />
+      <Route path={ADD_GOVERNMENT} element={<AddGovernment />} />
+      <Route path={EDIT_GOVERNMENT} element={<EditGovernment />} />
 
       {/* Super Agents */}
       <Route path={SUPER_AGENT} element={<SuperAgents />} />

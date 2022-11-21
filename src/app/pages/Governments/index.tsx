@@ -1,21 +1,25 @@
 import React from "react";
 import DashboardLayout from "../../DashboardLayout";
-import DashboardHeader from "app/components/Layout";
+import GovernmentHeader from "./components/GovernmentHeader";
+import { DashboardMainView } from "app/components/Layout";
+import TableHeader from "app/components/TableHeader";
+import { ADD_GOVERNMENT } from "routes/ROUTES_CONSTANTS";
+import GovernmentListTable from "./components/GovernmentListTable";
 
 const index = () => {
   return (
     <DashboardLayout>
-      <DashboardHeader
-        heading="Governments"
-        subHeading="Manage the entries on the Governments list"
-      />
-      {/* <h1 className="text-[32px] font-bold">Governments</h1>
-        <p className="text-[14px]">
-          Manage the entries on the Governments list
-        </p>
-      </DashboardHeader> */}
+      <GovernmentHeader />
 
-      <div className="bg-gray-100 w-full h-[85.333333%] pt-8 pl-10 pr-10 space-y-8"></div>
+      <DashboardMainView className="h-screen">
+        <TableHeader
+          showFilter={false}
+          buttonText={"New Government/MDA"}
+          path={ADD_GOVERNMENT}
+        />
+
+        <GovernmentListTable />
+      </DashboardMainView>
     </DashboardLayout>
   );
 };

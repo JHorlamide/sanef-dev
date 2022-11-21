@@ -11,7 +11,7 @@ const index = () => {
     <DashboardLayout>
       <BankHeader />
 
-      <DashboardMainView className="pt-8 pl-10 pr-10 h-screen space-y-8">
+      <DashboardMainView className="h-screen">
         <TableHeader
           showFilter={false}
           buttonText={"New Bank"}
