@@ -5,20 +5,27 @@ import moment from "moment";
 import { useData } from "hooks/useFetch";
 import { NewsType } from "types/news";
 import { GET_NEWS_QUERIES } from "utils/constants";
+import { Spinner } from "flowbite-react";
 
 const RecentNews = () => {
   const { data } = useData<NewsType[]>(GET_NEWS_QUERIES);
 
-  if (!data)
+  if (!data) {
     return (
-      <div className="container mx-auto text-center text-[28px] font-bold py-10">
-        Loading news...
+      <div className="hidden md:block container mx-auto mt-16 text-[28px] text-center font-bold h-80">
+        <Spinner
+          color="success"
+          aria-label="spinner"
+          className="text-buttonColor"
+          size={"xl"}
+        />
       </div>
     );
+  }
 
   return (
     <div className="hidden md:grid md:grid-cols-1 lg:grid-cols-3 md:gap-4 md:px-10 lg:px-16">
-      {data.map((post: any) => (
+      {data.slice(0, 4).map((post: any) => (
         <RecentCard
           id={post._id}
           key={post._id}

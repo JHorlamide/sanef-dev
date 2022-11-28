@@ -1,5 +1,5 @@
 import React from "react";
-import Spinner from "../Spinner";
+import { Spinner } from "flowbite-react";
 
 interface SelectOptionType {
   label?: string;
@@ -35,7 +35,12 @@ const CustomSelect = ({
 
       {selectLoading ? (
         <option disabled>
-          <Spinner />
+          <Spinner
+            color="success"
+            aria-label="spinner"
+            className="text-buttonColor"
+            size={"md"}
+          />
         </option>
       ) : (
         selectOptions?.map((option) => (

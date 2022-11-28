@@ -5,6 +5,7 @@ import { GET_NEWS_QUERIES } from "utils/constants";
 import { NewsType } from "types/news";
 import moment from "moment";
 import { urlFor } from "lib/client";
+import { Spinner } from "flowbite-react";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -12,11 +13,18 @@ function classNames(...classes: any) {
 
 export default function MobileNewTab() {
   const { data } = useData<NewsType[]>(GET_NEWS_QUERIES);
-
-  if (!data)
+  if (!data) {
     return (
-      <div className="container mx-auto text-[28px] font-bold">Loading...</div>
+      <div className="block md:hidden container mx-auto mt-20 text-[28px] text-center font-bold h-80">
+        <Spinner
+          color="success"
+          aria-label="spinner"
+          className="text-buttonColor"
+          size={"xl"}
+        />
+      </div>
     );
+  }
 
   return (
     <div className="md:hidden w-full max-w-md px-2 sm:px-0 mb-10">

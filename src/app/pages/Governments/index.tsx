@@ -1,5 +1,5 @@
 import React from "react";
-import DashboardLayout from "../../DashboardLayout";
+import DashboardLayout from "../../components/DashboardLayout";
 import GovernmentHeader from "./components/GovernmentHeader";
 import { DashboardMainView } from "app/components/Layout";
 import TableHeader from "app/components/TableHeader";

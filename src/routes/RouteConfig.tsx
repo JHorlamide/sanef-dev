@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import {
   HOME,
@@ -45,6 +44,7 @@ import EventDetails from "website/Media/components/EventDetails";
 import Login from "website/Auth/Login";
 import ForgotPassword from "website/Auth/ForgotPassword";
 import ResetPassword from "website/Auth/ResetPassword";
+// import AuthLayoutAuth from "app/components/AuthLayout";
 
 // Dashboard
 import AdminSettings from "app/pages/AdminSettings";
@@ -82,6 +82,7 @@ import EditAgents from "app/pages/Agents/components/EditAgents";
 const RouteConfig = () => {
   return (
     <Routes>
+      {/* Public Routes */}
       <Route path={HOME} element={<Home />} />
       <Route path={MEDIA} element={<Media />} />
       <Route path={CONTACT_US} element={<ContactUs />} />
@@ -95,7 +96,8 @@ const RouteConfig = () => {
       <Route path={FORGOT_PASSWORD} element={<ForgotPassword />} />
       <Route path={RESET_PASSWORD} element={<ResetPassword />} />
 
-      {/* Dashboard Links */}
+      {/* Protected Routes */}
+      {/* <Route element={<AuthLayoutAuth />}> */}
       {/* Banks */}
       <Route path={BANKS} element={<Banks />} />
       <Route path={ADD_BANK} element={<CreateBank />} />
@@ -128,6 +130,7 @@ const RouteConfig = () => {
       <Route path={REGULATORS} element={<Regulators />} />
       <Route path={ADD_REGULATOR} element={<AddRegulator />} />
       <Route path={EDIT_REGULATOR} element={<EditRegulator />} />
+      {/* </Route> */}
     </Routes>
   );
 };

@@ -1,4 +1,4 @@
-import DashboardLayout from "../../DashboardLayout";
+import DashboardLayout from "../../components/DashboardLayout";
 import { DashboardMainView } from "app/components/Layout";
 import AdminHeader from "./Header";
 import Setting from "./Settings";

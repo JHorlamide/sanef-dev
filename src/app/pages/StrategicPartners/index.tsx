@@ -1,5 +1,5 @@
 import React from "react";
-import DashboardLayout from "../../DashboardLayout";
+import DashboardLayout from "../../components/DashboardLayout";
 import StrategicPartnerHeader from "./components/StrategicPartnerHeader";
 import { DashboardMainView } from "../../components/Layout";
 import TableHeader from "app/components/TableHeader";

@@ -1,9 +1,19 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+
 import { LOGIN_LOGO } from "assets/images";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import NavLink from "components/layout/Navbar/NavLink/NavLink";
 import { useNavigate } from "react-router-dom";
+import {
+  setUser,
+  setToken,
+  setCredential,
+  setRefreshToken
+} from "redux/features/authSlice";
+import { useLoginUserMutation } from "redux/api/loginApiSlice";
+import toast from "react-hot-toast";
 
 type SignFormType = {
   email: string;
@@ -12,11 +22,15 @@ type SignFormType = {
 
 const Login = () => {
   const navigate = useNavigate();
+
   const [showPassword, setShowPassword] = useState(false);
   const [authData, setAuthData] = useState<SignFormType>({
     email: "",
     password: ""
   });
+
+  const [login, { isLoading }] = useLoginUserMutation();
+  const dispatch = useDispatch();
 
   const togglePasswordShow = () => {
     setShowPassword((prevState) => !prevState);
@@ -29,11 +43,41 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = (e?: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e?: React.FormEvent<HTMLFormElement>) => {
     e?.preventDefault();
-    if (authData.email && authData.password) {
-      console.log(authData);
-      navigate("/banks");
+
+    try {
+      const res = await login({
+        email: authData.email,
+        password: authData.password
+      }).unwrap();
+
+      if (res.status === "Success") {
+        dispatch(setCredential({ ...res.data }));
+        dispatch(setUser(res.data.user));
+        dispatch(setToken(res.data.accessToken));
+        dispatch(setRefreshToken(res.data.refreshToken));
+
+        toast.success(res.message);
+
+        navigate("/banks");
+
+        localStorage.setItem("sanefToken", res.data.accessToken);
+        localStorage.setItem("refreshToken", res.data.refreshToken);
+
+        setAuthData({
+          email: "",
+          password: ""
+        });
+
+        return;
+      }
+    } catch (error: any) {
+      if (error.status === "FETCH_ERROR") {
+        return toast.error("Server error: Server seems to be down");
+      }
+
+      toast.error(error.data.message);
     }
   };
 
@@ -118,6 +162,7 @@ const Login = () => {
               className="text-white font-semibold bg-buttonColor rounded-full py-3 px-5 w-[431px]
              hover:bg-lightGreen"
               onKeyPress={handlePress}
+              isloading={isLoading}
             >
               Login
             </CustomBtn>

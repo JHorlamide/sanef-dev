@@ -1,9 +1,11 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-// import NavLink from "components/layout/Navbar/NavLink/NavLink";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+
 import { LOGIN_LOGO } from "assets/images";
 import { USER } from "assets/icons";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
+import { selectCurrentUser, logoutUser } from "redux/features/authSlice";
 
 interface LinkItemProp {
   name: string;
@@ -14,6 +16,11 @@ interface SidebarLinkProps {
   path: string;
   title: string;
   className: string;
+}
+
+interface SidebarUserAuthProps {
+  name: string | undefined;
+  logOut: () => void;
 }
 
 const LinkItems: Array<LinkItemProp> = [
@@ -60,7 +67,7 @@ const SidebarLink = ({ path, title, className }: SidebarLinkProps) => {
   );
 };
 
-const SidebarUserAuth = () => {
+const SidebarUserAuth = ({ name, logOut }: SidebarUserAuthProps) => {
   return (
     <div className="flex justify-center items-center space-x-3 mt-5">
       <div className="">
@@ -69,10 +76,13 @@ const SidebarUserAuth = () => {
 
       <div className="flex flex-col justify-start">
         <p className="">
-          Welcome back, <span className="font-bold">Ihechukwu Ibeji</span>
+          Welcome back, <span className="font-bold">{name}</span>
         </p>
 
-        <CustomBtn className="font-bold text-buttonColor text-start">
+        <CustomBtn
+          className="font-bold text-buttonColor text-start"
+          onClick={() => logOut()}
+        >
           Logout
         </CustomBtn>
       </div>
@@ -100,6 +110,16 @@ const HorizontalRule = () => {
 // };
 
 const SidebarContent = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const user = useSelector(selectCurrentUser);
+
+  const logOut = () => {
+    dispatch(logoutUser());
+    navigate("/login");
+  };
+
   return (
     <div className="container mx-auto flex flex-col">
       <div className="mx-5 w-[114px] h-[96px] my-2">
@@ -109,7 +129,7 @@ const SidebarContent = () => {
       <HorizontalRule />
 
       {/* Sidebar User Banner */}
-      <SidebarUserAuth />
+      <SidebarUserAuth name={user?.name} logOut={logOut} />
 
       {/* Sidebar Links */}
       <div className="px-10 py-8 flex flex-col space-y-5">

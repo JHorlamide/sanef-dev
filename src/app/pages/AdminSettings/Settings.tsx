@@ -68,7 +68,7 @@ const Settings = () => {
                     <CustomInput
                       id="lastName"
                       className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                    focus:ring-buttonColor py-3 w-full mt-8"
+                      focus:ring-buttonColor py-3 w-full mt-8"
                       inputProps={{
                         type: "text",
                         name: "lastName",
@@ -86,9 +86,9 @@ const Settings = () => {
                 <CustomInput
                   id="email"
                   className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                focus:ring-buttonColor py-3 w-full mt-8"
+                  focus:ring-buttonColor py-3 w-full mt-8"
                   inputProps={{
-                    type: "text",
+                    type: "email",
                     name: "email",
                     value: companyData.companyAddress,
                     onChange: handleCompanyDataChange

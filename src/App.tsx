@@ -1,15 +1,15 @@
-import { BrowserRouter } from "react-router-dom";
+import React from "react";
 import RouteConfig from "routes/RouteConfig";
 import ScrollToTop from "utils/scrollToTop";
 import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
-    <BrowserRouter>
+    <React.Fragment>
       <ScrollToTop />
       <Toaster toastOptions={{ duration: 4000 }} />
       <RouteConfig />
-    </BrowserRouter>
+    </React.Fragment>
   );
 }
 

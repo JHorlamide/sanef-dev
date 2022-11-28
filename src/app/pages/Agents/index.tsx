@@ -1,5 +1,5 @@
 import React from "react";
-import DashboardLayout from "../../DashboardLayout";
+import DashboardLayout from "../../components/DashboardLayout";
 import AgentsHeader from "./components/AgentsHeader";
 import { DashboardMainView } from "app/components/Layout";
 import Analytics from "./components/Analytics";

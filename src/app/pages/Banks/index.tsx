@@ -1,5 +1,5 @@
 import React from "react";
-import DashboardLayout from "../../DashboardLayout";
+import DashboardLayout from "../../components/DashboardLayout";
 import TableHeader from "app/components/TableHeader";
 import BankListTable from "./components/BankListTable";
 import { DashboardMainView } from "app/components/Layout";

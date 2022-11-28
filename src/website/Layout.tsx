@@ -1,7 +1,11 @@
 import React from "react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  return <div className="max-w-full">{children}</div>;
+  return (
+    <React.Fragment>
+      <div className="max-w-full">{children}</div>
+    </React.Fragment>
+  );
 };
 
 export default Layout;

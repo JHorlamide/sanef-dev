@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import AgentsHeader from "./AgentsHeader";
-import DashboardLayout from "../../../DashboardLayout";
+import DashboardLayout from "../../../components/DashboardLayout";
 import { DashboardMainView } from "app/components/Layout";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
