@@ -1,23 +1,59 @@
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
-import Search from "app/components/Search";
+// import Search from "app/components/Search";
 import Filter from "./Filter";
-import { DOWNLOAD_ICON } from "assets/icons";
+import { DOWNLOAD_ICON, SEARCH_ICON } from "assets/icons";
+import CustomInput from "components/widgets/CustomInput/CustomInput";
 
 interface TableHeaderProps {
   buttonText: string;
   path: string;
-  showFilter: boolean;
+  showFilter?: boolean;
+  filterList?: Array<any>;
+  filterFunction: (filter: any) => void;
 }
 
-const TableHeader = ({ showFilter, buttonText, path }: TableHeaderProps) => {
+const TableHeader = ({
+  showFilter,
+  buttonText,
+  path,
+  filterFunction,
+  filterList
+}: TableHeaderProps) => {
   const navigate = useNavigate();
+  const [searchValue, setSearchValue] = useState<string>("");
+
+  const handleSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+  };
+
+  useEffect(() => {
+    filterFunction(searchValue);
+  }, [searchValue]);
 
   return (
     <div className="flex justify-between">
       {/* Filter & Search Component */}
       <div className="flex space-x-2">
-        <Search />
+        <div className="relative flex flex-col space-y-2">
+          <CustomInput
+            id="password"
+            className="rounded-full border border-gray-300 outline-buttonColor 
+            focus:border-buttonColor focus:ring-buttonColor py-2 px-10"
+            inputProps={{
+              type: "text",
+              name: "password",
+              value: searchValue,
+              placeholder: "Search",
+              onChange: handleSearchInput
+            }}
+          />
+
+          <div className="absolute inset-y-0 top-1 left-3">
+            <img src={SEARCH_ICON} alt="" />
+          </div>
+        </div>
 
         {showFilter && <Filter />}
       </div>

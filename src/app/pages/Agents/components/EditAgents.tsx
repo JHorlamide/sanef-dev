@@ -1,25 +1,14 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import AgentsHeader from "./AgentsHeader";
 import DashboardLayout from "../../../components/DashboardLayout";
 import { DashboardMainView } from "app/components/Layout";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { SUPER_AGENT } from "routes/ROUTES_CONSTANTS";
-import useSuperAgentForm, {
-  CompanyDataType
-} from "../../SuperAgents/useSuperAgentForm";
 import CustomSelect from "components/widgets/CustomInput/CustomSelect";
+import useEditAgentForm from "../useEditAgentForm";
 
-type SubUpdateFormProps = {
-  companyData: CompanyDataType;
-  handleCompanyDataChange: (e: React.ChangeEvent<HTMLFormElement>) => void;
-};
-
-const SubUpdateForm = ({
-  companyData,
-  handleCompanyDataChange
-}: SubUpdateFormProps) => {
+const SubUpdateForm = () => {
   return (
     <section className="space-y-4">
       <div className="flex space-x-3">
@@ -33,8 +22,7 @@ const SubUpdateForm = ({
             inputProps={{
               type: "text",
               name: "serial",
-              value: companyData.email,
-              onChange: handleCompanyDataChange
+              onChange: () => console.log("")
             }}
           />
         </div>
@@ -49,8 +37,7 @@ const SubUpdateForm = ({
             inputProps={{
               type: "text",
               name: "sid",
-              value: companyData.email,
-              onChange: handleCompanyDataChange
+              onChange: () => console.log("")
             }}
           />
         </div>
@@ -67,8 +54,7 @@ const SubUpdateForm = ({
             inputProps={{
               type: "text",
               name: "submittedTime",
-              value: companyData.email,
-              onChange: handleCompanyDataChange
+              onChange: () => console.log("")
             }}
           />
         </div>
@@ -83,8 +69,7 @@ const SubUpdateForm = ({
             inputProps={{
               type: "text",
               name: "completedTime",
-              value: companyData.email,
-              onChange: handleCompanyDataChange
+              onChange: () => console.log("")
             }}
           />
         </div>
@@ -99,8 +84,7 @@ const SubUpdateForm = ({
             inputProps={{
               type: "text",
               name: "modifiedTime",
-              value: companyData.email,
-              onChange: handleCompanyDataChange
+              onChange: () => console.log("")
             }}
           />
         </div>
@@ -117,8 +101,7 @@ const SubUpdateForm = ({
             inputProps={{
               type: "text",
               name: "draft",
-              value: companyData.draft,
-              onChange: handleCompanyDataChange
+              onChange: () => console.log("")
             }}
           />
         </div>
@@ -133,8 +116,7 @@ const SubUpdateForm = ({
             inputProps={{
               type: "text",
               name: "ipAddress",
-              value: companyData.ipAddress,
-              onChange: handleCompanyDataChange
+              onChange: () => console.log("")
             }}
           />
         </div>
@@ -151,8 +133,7 @@ const SubUpdateForm = ({
             inputProps={{
               type: "text",
               name: "uid",
-              value: companyData.uid,
-              onChange: handleCompanyDataChange
+              onChange: () => console.log("")
             }}
           />
         </div>
@@ -167,8 +148,7 @@ const SubUpdateForm = ({
             inputProps={{
               type: "text",
               name: "username",
-              value: companyData.username,
-              onChange: handleCompanyDataChange
+              onChange: () => console.log("")
             }}
           />
         </div>
@@ -178,19 +158,10 @@ const SubUpdateForm = ({
 };
 
 const EditAgents = () => {
+  const { id } = useParams();
   const navigate = useNavigate();
-  const {
-    companyData,
-    // companyLogo,
-    // errorMessage,
-    // previewLogo,
-    // hiddenFileInput,
-    handleSubmit,
-    // handleFileChange,
-    handlePress,
-    // openFileInput,
-    handleCompanyDataChange
-  } = useSuperAgentForm({});
+  const { agentData, handleSubmit, handlePress, handleAgentDataChange } =
+    useEditAgentForm(id);
   return (
     <DashboardLayout>
       <AgentsHeader />
@@ -235,8 +206,8 @@ const EditAgents = () => {
                       inputProps={{
                         type: "text",
                         name: "firstName",
-                        value: companyData.companyName,
-                        onChange: handleCompanyDataChange
+                        value: agentData.firstName,
+                        onChange: handleAgentDataChange
                       }}
                     />
                   </div>
@@ -248,12 +219,12 @@ const EditAgents = () => {
                     <CustomInput
                       id="surname"
                       className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                    focus:ring-buttonColor py-3 w-full mt-8"
+                      focus:ring-buttonColor py-3 w-full mt-8"
                       inputProps={{
                         type: "text",
                         name: "surname",
-                        value: companyData.companyName,
-                        onChange: handleCompanyDataChange
+                        value: agentData.surname,
+                        onChange: handleAgentDataChange
                       }}
                     />
                   </div>
@@ -262,17 +233,17 @@ const EditAgents = () => {
 
               {/* Business name */}
               <div className="space-y-3 w-full">
-                <label htmlFor="companyAddress">Business name</label>
+                <label htmlFor="businessName">Business name</label>
                 <CustomInput
-                  id="companyAddress"
+                  id="businessName"
                   className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
                     focus:ring-buttonColor
                     py-3 w-full mt-8"
                   inputProps={{
                     type: "text",
-                    name: "companyAddress",
-                    value: companyData.companyAddress,
-                    onChange: handleCompanyDataChange
+                    name: "businessName",
+                    value: agentData.businessName,
+                    onChange: handleAgentDataChange
                   }}
                 />
               </div>
@@ -290,8 +261,8 @@ const EditAgents = () => {
                       inputProps={{
                         type: "text",
                         name: "email",
-                        value: companyData.companyName,
-                        onChange: handleCompanyDataChange
+                        value: agentData.email,
+                        onChange: handleAgentDataChange
                       }}
                     />
                   </div>
@@ -300,15 +271,15 @@ const EditAgents = () => {
                 {/* Form Input */}
                 <div className="w-[390px] space-y-12">
                   <div className="space-y-3">
-                    <label htmlFor="surname">Gender</label>
+                    <label htmlFor="gender">Gender</label>
                     <CustomSelect
-                      id="designation"
+                      id="gender"
                       className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
                       focus:ring-buttonColor py-3 w-full"
                       selectProps={{
-                        name: "designation",
-                        value: companyData.designation,
-                        onChange: handleCompanyDataChange
+                        name: "gender",
+                        value: agentData.gender,
+                        onChange: handleAgentDataChange
                       }}
                       selectOptions={[
                         { value: "male", name: "Male" },
@@ -323,7 +294,7 @@ const EditAgents = () => {
               {/* Phone Number */}
               <div className="flex space-x-6">
                 <div className="space-y-3 w-full">
-                  <label className="" htmlFor="phoneNumber">
+                  <label className="" htmlFor="preferredPhoneNumber">
                     Preferred Phone Number
                   </label>
 
@@ -333,21 +304,21 @@ const EditAgents = () => {
                     </p>
 
                     <CustomInput
-                      id="phoneNumber"
+                      id="preferredPhoneNumber"
                       className="relative rounded-full border border-gray-300 outline-buttonColor
                       focus:border-buttonColor focus:ring-buttonColor py-3 w-full px-24"
                       inputProps={{
                         type: "text",
-                        name: "phoneNumber",
-                        value: companyData.phoneNumber,
-                        onChange: handleCompanyDataChange
+                        name: "preferredPhoneNumber",
+                        value: agentData.preferredPhoneNumber,
+                        onChange: handleAgentDataChange
                       }}
                     />
                   </div>
                 </div>
 
                 <div className="space-y-3 w-full">
-                  <label className="" htmlFor="phoneNumber">
+                  <label className="" htmlFor="alternativePhoneNumber">
                     Alternate Phone Number
                   </label>
 
@@ -357,14 +328,14 @@ const EditAgents = () => {
                     </p>
 
                     <CustomInput
-                      id="phoneNumber"
+                      id="alternativePhoneNumber"
                       className="relative rounded-full border border-gray-300 outline-buttonColor
                       focus:border-buttonColor focus:ring-buttonColor py-3 w-full px-24"
                       inputProps={{
                         type: "text",
-                        name: "phoneNumber",
-                        value: companyData.phoneNumber,
-                        onChange: handleCompanyDataChange
+                        name: "alternativePhoneNumber",
+                        value: agentData.alternativePhoneNumber,
+                        onChange: handleAgentDataChange
                       }}
                     />
                   </div>
@@ -382,8 +353,8 @@ const EditAgents = () => {
                       focus:ring-buttonColor py-3 w-full"
                       selectProps={{
                         name: "state",
-                        value: companyData.designation,
-                        onChange: handleCompanyDataChange
+                        value: agentData.state,
+                        onChange: handleAgentDataChange
                       }}
                       selectOptions={[
                         { value: "male", name: "Male" },
@@ -396,19 +367,19 @@ const EditAgents = () => {
 
                 <div className="w-[390px] space-y-12">
                   <div className="space-y-3">
-                    <label htmlFor="lga">LGA</label>
+                    <label htmlFor="LGA">LGA</label>
                     <CustomSelect
-                      id="lga"
+                      id="LGA"
                       className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
                       focus:ring-buttonColor py-3 w-full"
                       selectProps={{
-                        name: "designation",
-                        value: companyData.designation,
-                        onChange: handleCompanyDataChange
+                        name: "LGA",
+                        value: agentData.LGA,
+                        onChange: handleAgentDataChange
                       }}
                       selectOptions={[
-                        { value: "male", name: "Male" },
-                        { value: "female", name: "Female" }
+                        { value: "Lagos", name: "Lagos" },
+                        { value: "Abuja", name: "Abuja" }
                       ]}
                       selectPlaceholder="Select gender"
                     />
@@ -418,19 +389,19 @@ const EditAgents = () => {
 
               {/* Proposed Agency Service/Business Address */}
               <div className="space-y-3 w-full">
-                <label htmlFor="proposedAgency">
+                <label htmlFor="proposedAgentService">
                   Proposed Agency Service/Business Address
                 </label>
                 <CustomInput
-                  id="proposedAgency"
+                  id="proposedAgentService"
                   className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
                     focus:ring-buttonColor
                     py-3 w-full mt-8"
                   inputProps={{
                     type: "text",
-                    name: "proposedAgency",
-                    value: companyData.companyAddress,
-                    onChange: handleCompanyDataChange
+                    name: "proposedAgentService",
+                    value: agentData.proposedAgentService,
+                    onChange: handleAgentDataChange
                   }}
                 />
               </div>
@@ -448,8 +419,8 @@ const EditAgents = () => {
                   inputProps={{
                     type: "text",
                     name: "choiceOfSuperAgent",
-                    value: companyData.companyAddress,
-                    onChange: handleCompanyDataChange
+                    value: agentData.choiceOfSuperAgent,
+                    onChange: handleAgentDataChange
                   }}
                 />
               </div>
@@ -459,8 +430,8 @@ const EditAgents = () => {
 
             {/* SubUpdateForm */}
             <SubUpdateForm
-              companyData={companyData}
-              handleCompanyDataChange={handleCompanyDataChange}
+            // companyData={companyData}
+            // handleCompanyDataChange={handleCompanyDataChange}
             />
 
             <div className="flex space-x-16">

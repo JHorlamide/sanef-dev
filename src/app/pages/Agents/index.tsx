@@ -1,35 +1,66 @@
-import React from "react";
+import { useState } from "react";
 import DashboardLayout from "../../components/DashboardLayout";
 import AgentsHeader from "./components/AgentsHeader";
 import { DashboardMainView } from "app/components/Layout";
 import Analytics from "./components/Analytics";
-import TableHeader from "app/components/TableHeader";
 import { LONG_HORIZONTAL_LINE } from "assets/icons";
-// import AgentListTable from "./components/AgentListTable";
-import TestTable from "./components/TestTable";
-
+import TestTable from "./components/AgentTable";
 import { ADD_AGENT } from "routes/ROUTES_CONSTANTS";
+import useAgents from "hooks/useAgents";
+import AgentTableHeader from "./components/AgentTableHeader";
+import Pagination, { TableRecord } from "app/components/Pagination";
 
-const index = () => {
+const Agent = () => {
+  const [pageNumber, setPageNumber] = useState(0);
+  const [agentPerPage, setAgentPerPage] = useState(20);
+  const {
+    loading,
+    error,
+    totalPages,
+    totalAgents,
+    filteredAgents,
+    setSearchTerm,
+    deleteAgent
+  } = useAgents(pageNumber, agentPerPage);
+
   return (
     <DashboardLayout>
       <AgentsHeader />
 
       <DashboardMainView className="h-screen">
-        <Analytics />
+        <Analytics totalAgents={totalAgents} />
 
         <img src={LONG_HORIZONTAL_LINE} alt="" className="w-full" />
 
-        <TableHeader
-          showFilter={true}
+        <AgentTableHeader
           buttonText={"New Super Agent"}
           path={ADD_AGENT}
+          setSearchTerm={setSearchTerm}
+          agents={filteredAgents}
         />
 
-        <TestTable />
+        <TestTable
+          filterAgents={filteredAgents}
+          loading={loading}
+          error={error}
+          removeAgent={deleteAgent}
+        />
+
+        <div className="flex justify-between mt-8">
+          <TableRecord
+            recordPerPage={agentPerPage}
+            setRecordPerPate={setAgentPerPage}
+          />
+
+          <Pagination
+            setPageNumber={setPageNumber}
+            pageNumber={pageNumber}
+            totalPage={totalPages}
+          />
+        </div>
       </DashboardMainView>
     </DashboardLayout>
   );
 };
 
-export default index;
+export default Agent;

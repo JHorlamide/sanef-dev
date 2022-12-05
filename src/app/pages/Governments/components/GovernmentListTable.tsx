@@ -1,22 +1,39 @@
 import { Fragment, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Table } from "flowbite-react";
+import { Spinner, Table } from "flowbite-react";
 import { DELETE_ICON, EDIT_ICON, FILTER_ICON } from "assets/icons";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
-import Pagination, { TableRecord } from "app/components/Pagination";
 import DeleteModal from "app/components/DeleteModal";
+import { IGovernment } from "types/government";
 
-const GovernmentListTable = () => {
+export interface GovernmentListTableListProps {
+  filteredGovernments: IGovernment[];
+  loading: boolean;
+  error: string;
+  removeGovernment: (governmentId: string | undefined) => void;
+}
+
+const GovernmentListTable = ({
+  loading,
+  error,
+  filteredGovernments,
+  removeGovernment
+}: GovernmentListTableListProps) => {
   const navigate = useNavigate();
   let [isOpen, setIsOpen] = useState(false);
+  const [governmentId, setGovernmentId] = useState<string | undefined>("");
+  const [governmentName, setGovernmentName] = useState("");
 
   function closeModal() {
     setIsOpen(false);
   }
 
-  function openModal() {
+  function openModal(id: string | undefined, name: string) {
+    setGovernmentId(id);
+    setGovernmentName(name);
     setIsOpen(true);
   }
+
   return (
     <Fragment>
       <DeleteModal
@@ -24,7 +41,8 @@ const GovernmentListTable = () => {
         closeModal={closeModal}
         actionText={"Delete"}
         modalHeading={"Delete Government/MDA"}
-        subText={"CitiBank will be delete"}
+        subText={`${governmentName} will be delete`}
+        deleteAction={() => removeGovernment(governmentId)}
       />
 
       <Table hoverable={true}>
@@ -54,38 +72,58 @@ const GovernmentListTable = () => {
         </Table.Head>
 
         <Table.Body className="divide-y">
-          {[1, 2, 3].map((item, idx) => (
-            <Table.Row key={idx} className="bg-white">
+          {loading && (
+            <div className="container mx-auto my-8">
+              <Spinner
+                color="success"
+                aria-label="spinner"
+                className="text-buttonColor"
+                size={"xl"}
+              />
+            </div>
+          )}
+
+          {error && (
+            <div className="container mx-auto my-10">
+              <h1 className="text-start text-md">
+                Can't load banks at the moment. Please try again later
+              </h1>
+            </div>
+          )}
+
+          {filteredGovernments.map((government) => (
+            <Table.Row key={government._id} className="bg-white">
               <Table.Cell className="whitespace-nowrap font-medium text-gray-900">
-                Apple MacBook Pro 17"
+                <img
+                  src={government.logo?.imageUrl}
+                  alt={government.logo?.key}
+                  className="w-[39.52px] h-[40px]"
+                />
               </Table.Cell>
 
-              <Table.Cell className="w-[600px]">Sliver</Table.Cell>
+              <Table.Cell className="w-[600px]">{government.name}</Table.Cell>
 
               <Table.Cell className="flex space-x-6">
                 <CustomBtn
                   rightIcon={
                     <img src={EDIT_ICON} alt="edit icon" className="w-4" />
                   }
-                  onClick={() => navigate(`/governments/edit/${idx}`)}
+                  onClick={() =>
+                    navigate(`/governments/edit/${government._id}`)
+                  }
                 />
 
                 <CustomBtn
                   rightIcon={
                     <img src={DELETE_ICON} alt="edit icon" className="w-4" />
                   }
-                  onClick={openModal}
+                  onClick={() => openModal(government._id, government.name)}
                 />
               </Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
       </Table>
-
-      <div className="flex justify-between mt-8">
-        <TableRecord />
-        <Pagination />
-      </div>
     </Fragment>
   );
 };

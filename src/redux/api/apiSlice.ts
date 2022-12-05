@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { setCredential, logoutUser } from "../features/authSlice";
 import { RootState } from "../store";
+import toast from "react-hot-toast";
 
 const baseQuery = fetchBaseQuery({
   baseUrl: process.env.REACT_APP_BASE_URL,
@@ -41,8 +42,6 @@ const baseQueryWithReAuth = async (args: any, api: any, extraOptions: any) => {
       extraOptions
     );
 
-    console.log("refreshTokenResult", { refreshTokenResult });
-
     if (refreshTokenResult.data) {
       const user = (api.getState() as RootState).auth.user;
 
@@ -51,9 +50,12 @@ const baseQueryWithReAuth = async (args: any, api: any, extraOptions: any) => {
 
       // Retry the original query with new accessToken
       result = await baseQuery(args, api, extraOptions);
-    } else {
-      api.dispatch(logoutUser());
+      return result;
     }
+
+    api.dispatch(logoutUser());
+    toast.error("Session expired");
+    window.location.replace("/login");
   }
 
   return result;

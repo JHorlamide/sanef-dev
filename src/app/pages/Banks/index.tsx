@@ -1,27 +1,58 @@
-import React from "react";
+import { useState } from "react";
 import DashboardLayout from "../../components/DashboardLayout";
-import TableHeader from "app/components/TableHeader";
 import BankListTable from "./components/BankListTable";
 import { DashboardMainView } from "app/components/Layout";
 import { ADD_BANK } from "routes/ROUTES_CONSTANTS";
 import BankHeader from "./components/BankHeader";
+import useBank from "hooks/useBank";
+import BankTableHeader from "./components/BankTableHeader";
+import Pagination, { TableRecord } from "app/components/Pagination";
 
-const index = () => {
+const BankManager = () => {
+  const [pageNumber, setPageNumber] = useState(0);
+  const [bankPerPage, setBankPerPage] = useState(20);
+  const {
+    loading,
+    error,
+    filteredBanks,
+    totalPages,
+    removeBank,
+    setSearchTerm
+  } = useBank(pageNumber, bankPerPage);
+
   return (
     <DashboardLayout>
       <BankHeader />
 
       <DashboardMainView className="h-screen">
-        <TableHeader
-          showFilter={false}
+        <BankTableHeader
           buttonText={"New Bank"}
           path={ADD_BANK}
+          setSearchTerm={setSearchTerm}
+          bankList={filteredBanks}
         />
 
-        <BankListTable />
+        <BankListTable
+          banks={filteredBanks}
+          loading={loading}
+          error={error}
+          removeBank={removeBank}
+        />
+
+        <div className="flex justify-between mt-8">
+          <TableRecord
+            recordPerPage={bankPerPage}
+            setRecordPerPate={setBankPerPage}
+          />
+          <Pagination
+            setPageNumber={setPageNumber}
+            pageNumber={pageNumber}
+            totalPage={totalPages}
+          />
+        </div>
       </DashboardMainView>
     </DashboardLayout>
   );
 };
 
-export default index;
+export default BankManager;

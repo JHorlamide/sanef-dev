@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
 
 import { LOGIN_LOGO } from "assets/images";
 import { USER } from "assets/icons";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
-import { selectCurrentUser, logoutUser } from "redux/features/authSlice";
+import AuthContext from "context/AuthProvider";
+import { AuthContextType } from "context/AuthProvider";
 
 interface LinkItemProp {
   name: string;
@@ -110,26 +110,32 @@ const HorizontalRule = () => {
 // };
 
 const SidebarContent = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const user = useSelector(selectCurrentUser);
+  const { authUser, logOutUser } = React.useContext(
+    AuthContext
+  ) as AuthContextType;
 
   const logOut = () => {
-    dispatch(logoutUser());
+    logOutUser();
+    localStorage.removeItem("sanefToken");
+    localStorage.removeItem("refreshToken");
     navigate("/login");
   };
 
   return (
     <div className="container mx-auto flex flex-col">
-      <div className="mx-5 w-[114px] h-[96px] my-2">
+      <div className="mx-5 w-[101px] h-[96px] my-2">
         <img src={LOGIN_LOGO} alt="..." className="w-full h-full" />
       </div>
 
       <HorizontalRule />
 
       {/* Sidebar User Banner */}
-      <SidebarUserAuth name={user?.name} logOut={logOut} />
+      <SidebarUserAuth
+        name={`${authUser?.user.firstName} ${authUser?.user.lastName}`}
+        logOut={logOut}
+      />
 
       {/* Sidebar Links */}
       <div className="px-10 py-8 flex flex-col space-y-5">

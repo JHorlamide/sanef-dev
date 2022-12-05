@@ -156,10 +156,10 @@ const AddSuperAgent = () => {
                       onChange: handleCompanyDataChange
                     }}
                     selectOptions={[
-                      { value: "account", name: "Accounting" },
-                      { value: "finance", name: "Finance" },
-                      { value: "human resource", name: "Human Resource" },
-                      { value: "management", name: "Management" }
+                      { value: "Account", name: "Accounting" },
+                      { value: "Finance", name: "Finance" },
+                      { value: "Human Resource", name: "Human Resource" },
+                      { value: "Management", name: "Management" }
                     ]}
                     selectPlaceholder="Select a designation"
                   />
@@ -203,6 +203,7 @@ const AddSuperAgent = () => {
                       type: "text",
                       name: "phoneNumber",
                       value: companyData.phoneNumber,
+                      placeholder: "e.g 8068909058",
                       onChange: handleCompanyDataChange
                     }}
                   />

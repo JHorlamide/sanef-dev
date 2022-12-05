@@ -1,5 +1,5 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import SuperAgentHeader from "./SuperAgentHeader";
 import { IMG_PLACEHOLDER } from "assets/icons";
 import DashboardLayout from "../../../components/DashboardLayout";
@@ -7,12 +7,28 @@ import { DashboardMainView } from "app/components/Layout";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { SUPER_AGENT } from "routes/ROUTES_CONSTANTS";
-import useSuperAgentForm from "../useSuperAgentForm";
 import CustomSelect from "components/widgets/CustomInput/CustomSelect";
 import { CompanyDataType } from "../useSuperAgentForm";
+import toast from "react-hot-toast";
+import { uploadImage } from "api/upload";
+import { IUpdateSuperAgentRequest } from "types/superAgent";
+import useSuperAgent from "hooks/useSuperAgent";
+import { getSuperAgentDetails } from "api/superAgents";
+
+interface UpdateSuperAgent extends CompanyDataType {
+  serial: string;
+  sid: string;
+  submittedTime: string;
+  completedTime: string;
+  modifiedTime: string;
+  draft: string;
+  ipAddress: string;
+  uid: string;
+  username: string;
+}
 
 type SubUpdateFormProps = {
-  companyData: CompanyDataType;
+  companyData: UpdateSuperAgent;
   handleCompanyDataChange: (e: React.ChangeEvent<HTMLFormElement>) => void;
 };
 
@@ -33,7 +49,7 @@ const SubUpdateForm = ({
             inputProps={{
               type: "text",
               name: "serial",
-              value: companyData.email,
+              value: companyData.serial,
               onChange: handleCompanyDataChange
             }}
           />
@@ -49,7 +65,7 @@ const SubUpdateForm = ({
             inputProps={{
               type: "text",
               name: "sid",
-              value: companyData.email,
+              value: companyData.sid,
               onChange: handleCompanyDataChange
             }}
           />
@@ -67,7 +83,7 @@ const SubUpdateForm = ({
             inputProps={{
               type: "text",
               name: "submittedTime",
-              value: companyData.email,
+              value: companyData.submittedTime,
               onChange: handleCompanyDataChange
             }}
           />
@@ -83,7 +99,7 @@ const SubUpdateForm = ({
             inputProps={{
               type: "text",
               name: "completedTime",
-              value: companyData.email,
+              value: companyData.completedTime,
               onChange: handleCompanyDataChange
             }}
           />
@@ -99,7 +115,7 @@ const SubUpdateForm = ({
             inputProps={{
               type: "text",
               name: "modifiedTime",
-              value: companyData.email,
+              value: companyData.modifiedTime,
               onChange: handleCompanyDataChange
             }}
           />
@@ -179,18 +195,161 @@ const SubUpdateForm = ({
 
 const EditSuperAgent = () => {
   const navigate = useNavigate();
-  const {
-    companyData,
-    companyLogo,
-    errorMessage,
-    previewLogo,
-    hiddenFileInput,
-    handleSubmit,
-    handleFileChange,
-    handlePress,
-    openFileInput,
-    handleCompanyDataChange
-  } = useSuperAgentForm({});
+  const { updateSuperAgentDetails } = useSuperAgent();
+  const [companyData, setCompanyData] = useState<UpdateSuperAgent>({
+    companyName: "",
+    companyAddress: "",
+    companyContactPerson: "",
+    designation: "",
+    email: "",
+    phoneNumber: "",
+
+    serial: "",
+    sid: "",
+    submittedTime: "",
+    completedTime: "",
+    modifiedTime: "",
+    draft: "",
+    ipAddress: "",
+    uid: "",
+    username: ""
+  });
+  const { id } = useParams();
+  const [imageUploadId, setImageUploadId] = useState("");
+  const [companyLogo, setCompanyLogo] = useState<string | any>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [previewLogo, setPreviewLogo] = useState<string>("");
+  const hiddenFileInput = React.useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    getSuperAgentDetails(id)
+      .then((response) => {
+        setCompanyLogo(response.data.logo.imageUrl);
+        setImageUploadId(response.data.logo._id);
+        setCompanyData({
+          ...companyData,
+          companyAddress: response.data.companyAddress,
+          companyContactPerson: response.data.contactPerson,
+          email: response.data.email,
+          companyName: response.data.companyName,
+          designation: response.data.designation,
+          phoneNumber: response.data.phoneNumber?.slice(4)
+        });
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
+
+  useEffect(() => {
+    if (!companyLogo) {
+      setPreviewLogo("");
+      return;
+    }
+
+    if (typeof companyLogo === "string") {
+      setPreviewLogo("");
+      return;
+    }
+
+    const objectUrl = URL.createObjectURL(companyLogo);
+    setPreviewLogo(objectUrl);
+
+    return () => URL.revokeObjectURL(objectUrl);
+  }, [companyLogo]);
+
+  const openFileInput = () => {
+    hiddenFileInput.current?.click();
+  };
+
+  const handleCompanyDataChange = (e: React.ChangeEvent<HTMLFormElement>) => {
+    setCompanyData({
+      ...companyData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const isValidFileUploaded = (file: File) => {
+    const validExtensions = ["png", "jpeg", "jpg"];
+    const fileExtension = file.type.split("/")[1];
+    return validExtensions.includes(fileExtension);
+  };
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLFormElement>) => {
+    const { files } = e.currentTarget;
+
+    if (!files || !files[0]) {
+      setErrorMessage("No file selected");
+      return;
+    }
+
+    if (isValidFileUploaded(files[0])) {
+      setCompanyLogo(files[0]);
+      const formData = new FormData();
+      formData.append("image", files[0] as File);
+      const response = await uploadImage(formData);
+
+      if (response.status === "Success") {
+        setImageUploadId(response.data._id);
+        toast.success("Image Uploaded Successfully");
+        return;
+      }
+
+      toast.error(response.data.message);
+      setErrorMessage("");
+      setErrorMessage("");
+      return;
+    }
+
+    setErrorMessage("File not accepted");
+  };
+
+  const validateSelectedFileSize = () => {
+    const MAX_FILE_SIZE = 5120; // 5MB
+
+    if (!companyLogo) {
+      setErrorMessage("Please choose a file");
+      return;
+    }
+
+    const fileSizeKiloBytes = Number(companyLogo.size / 1024);
+
+    if (fileSizeKiloBytes > MAX_FILE_SIZE) {
+      setErrorMessage("File size is greater than maximum limit");
+      return;
+    }
+
+    setErrorMessage("");
+  };
+
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement> | React.KeyboardEvent<HTMLButtonElement>
+  ) => {
+    e.preventDefault();
+    validateSelectedFileSize();
+
+    const superAgentObj: IUpdateSuperAgentRequest = {
+      id: id,
+      logo: imageUploadId,
+      email: companyData.email,
+      companyName: companyData.companyName,
+      designation: companyData.designation,
+      phoneNumber: `+234${companyData.phoneNumber}`,
+      companyAddress: companyData.companyAddress,
+      contactPerson: companyData.companyContactPerson
+    };
+
+    updateSuperAgentDetails(superAgentObj);
+  };
+
+  const handlePress = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    if (e.key === "enter") {
+      handleSubmit(e);
+    }
+  };
 
   return (
     <DashboardLayout>
@@ -229,11 +388,25 @@ const EditSuperAgent = () => {
                 className="bg-white rounded-full w-[180px] h-[180px] shadow-lg 
                 p-8 justify-center items-center"
               >
-                <img
-                  src={previewLogo ? previewLogo : IMG_PLACEHOLDER}
-                  alt="placeholder"
-                  className="w-full h-full"
-                />
+                {previewLogo ? (
+                  <img
+                    src={previewLogo}
+                    alt="placeholder"
+                    className="w-full h-full"
+                  />
+                ) : companyLogo ? (
+                  <img
+                    src={companyLogo}
+                    alt="bankLogo"
+                    className="w-full h-full"
+                  />
+                ) : (
+                  <img
+                    src={IMG_PLACEHOLDER}
+                    alt="placeholder"
+                    className="w-full h-full"
+                  />
+                )}
               </div>
 
               {/* Form Input */}
@@ -339,10 +512,10 @@ const EditSuperAgent = () => {
                       onChange: handleCompanyDataChange
                     }}
                     selectOptions={[
-                      { value: "account", name: "Accounting" },
-                      { value: "finance", name: "Finance" },
-                      { value: "human resource", name: "Human Resource" },
-                      { value: "management", name: "Management" }
+                      { value: "Account", name: "Accounting" },
+                      { value: "Finance", name: "Finance" },
+                      { value: "Human Resource", name: "Human Resource" },
+                      { value: "Management", name: "Management" }
                     ]}
                     selectPlaceholder="Select a designation"
                   />

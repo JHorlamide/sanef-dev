@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import RegulatorHeader from "./RegulatorHeader";
 import { IMG_PLACEHOLDER } from "assets/icons";
 import DashboardLayout from "../../../components/DashboardLayout";
@@ -6,21 +7,136 @@ import { DashboardMainView } from "app/components/Layout";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { BANKS } from "routes/ROUTES_CONSTANTS";
-import useBankForm from "app/pages/Banks/useBankForm";
+import toast from "react-hot-toast";
+import { getRegulatorDetails } from "api/regulator";
+import { uploadImage } from "api/upload";
+import { IUpdateRegulatorRequest } from "types/regulator";
+import useRegulator from "hooks/useRegulator";
 
 const EditRegulators = () => {
   const navigate = useNavigate();
-  const {
-    bankLogo,
-    previewLogo,
-    errorMessage,
-    hiddenFileInput,
-    handlePress,
-    handleSubmit,
-    openFileInput,
-    handleFileChange,
-    handleBankNameChange
-  } = useBankForm({});
+  const { id } = useParams();
+  const { updateRegulatorDetails } = useRegulator();
+  const [imageUploadId, setImageUploadId] = useState("");
+  const [regulatorName, setRegulatorName] = useState<string | undefined>("");
+  const [regulatorLogo, setRegulatorLogo] = useState<string | any>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [previewLogo, setPreviewLogo] = useState<string>("");
+
+  const hiddenFileInput = React.useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    getRegulatorDetails(id)
+      .then((response) => {
+        setRegulatorName(response.data.name);
+        setRegulatorLogo(response.data.logo.imageUrl);
+        setImageUploadId(response.data.logo._id);
+      })
+      .catch((error) => {
+        console.log("Error getting regulator details", error.message);
+      });
+  }, [id]);
+
+  useEffect(() => {
+    if (!regulatorLogo) {
+      setPreviewLogo("");
+      return;
+    }
+
+    if (typeof regulatorLogo === "string") {
+      setPreviewLogo("");
+      return;
+    }
+
+    const objectUrl = URL.createObjectURL(regulatorLogo);
+    setPreviewLogo(objectUrl);
+
+    return () => URL.revokeObjectURL(objectUrl);
+  }, [regulatorLogo]);
+
+  const openFileInput = () => {
+    hiddenFileInput.current?.click();
+  };
+
+  const handleBankNameChange = (e: React.ChangeEvent<HTMLFormElement>) => {
+    setRegulatorName(e.target.value);
+  };
+
+  const isValidFileUploaded = (file: File) => {
+    const validExtensions = ["png", "jpeg", "jpg"];
+    const fileExtension = file.type.split("/")[1];
+    return validExtensions.includes(fileExtension);
+  };
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLFormElement>) => {
+    const { files } = e.currentTarget;
+
+    if (!files || !files[0]) {
+      setErrorMessage("No file selected");
+      return;
+    }
+
+    if (isValidFileUploaded(files[0])) {
+      setRegulatorLogo(files[0]);
+
+      const formData = new FormData();
+      formData.append("image", files[0]);
+      const response = await uploadImage(formData);
+
+      if (response.status === "Success") {
+        setImageUploadId(response.data._id);
+        toast.success("Image Uploaded Successfully");
+        return;
+      }
+
+      toast.error(response.data.message);
+      setErrorMessage("");
+      return;
+    }
+
+    setErrorMessage("File not accepted");
+  };
+
+  const validateSelectedFileSize = () => {
+    const MAX_FILE_SIZE = 5120; // 5MB
+
+    if (!regulatorLogo) {
+      setErrorMessage("Please choose a file");
+      return;
+    }
+
+    const fileSizeKiloBytes = Number(regulatorLogo.size / 1024);
+
+    if (fileSizeKiloBytes > MAX_FILE_SIZE) {
+      setErrorMessage("File size is greater than maximum limit");
+      return;
+    }
+
+    setErrorMessage("");
+  };
+
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement> | React.KeyboardEvent<HTMLButtonElement>
+  ) => {
+    e.preventDefault();
+    validateSelectedFileSize();
+
+    const updateObj: IUpdateRegulatorRequest = {
+      id: id as string,
+      name: regulatorName as string,
+      logo: imageUploadId
+    };
+
+    updateRegulatorDetails(updateObj);
+  };
+
+  const handlePress = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    if (e.key === "enter") {
+      handleSubmit(e);
+    }
+  };
 
   return (
     <DashboardLayout>
@@ -59,11 +175,25 @@ const EditRegulators = () => {
                 className="bg-white rounded-full w-[180px] h-[180px] shadow-lg 
                 p-8 justify-center items-center"
               >
-                <img
-                  src={previewLogo ? previewLogo : IMG_PLACEHOLDER}
-                  alt="placeholder"
-                  className="w-full h-full"
-                />
+                {previewLogo ? (
+                  <img
+                    src={previewLogo}
+                    alt="placeholder"
+                    className="w-full h-full"
+                  />
+                ) : regulatorLogo ? (
+                  <img
+                    src={regulatorLogo}
+                    alt="regulatorLogo"
+                    className="w-full h-full"
+                  />
+                ) : (
+                  <img
+                    src={IMG_PLACEHOLDER}
+                    alt="placeholder"
+                    className="w-full h-full"
+                  />
+                )}
               </div>
 
               {/* Form Input */}
@@ -71,13 +201,14 @@ const EditRegulators = () => {
                 <div className="space-y-3">
                   <label htmlFor="bankName">Name</label>
                   <CustomInput
-                    id="bankName"
+                    id="regulatorName"
                     className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
                     focus:ring-buttonColor
                     py-3 w-full mt-8"
                     inputProps={{
                       type: "text",
-                      name: "bankName",
+                      name: "regulatorName",
+                      value: regulatorName,
                       onChange: handleBankNameChange
                     }}
                   />
@@ -100,17 +231,17 @@ const EditRegulators = () => {
                     </CustomBtn>
 
                     <p className="w-full text-md text-start whitespace-normal font-semibold text-gray-800">
-                      {bankLogo?.name}
+                      {regulatorLogo?.name}
                     </p>
                   </div>
 
                   <CustomInput
-                    id="bankLogo"
+                    id="regulatorLogo"
                     className="hidden border-none text-buttonColor font-semibold text-md"
                     inputProps={{
                       type: "file",
                       placeholder: "Upload logo",
-                      name: "bankLogo",
+                      name: "regulatorLogo",
                       onChange: handleFileChange,
                       ref: hiddenFileInput
                     }}

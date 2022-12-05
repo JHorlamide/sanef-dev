@@ -21,8 +21,9 @@ const Filter = () => {
           onChange: handleChange
         }}
         selectOptions={[
-          { value: "male", name: "Male" },
-          { value: "female", name: "Female" }
+          { value: "Company Name", name: "Company Name" },
+          { value: "Email", name: "Email" },
+          { value: "Contact Person", name: "Contact Person" }
         ]}
         selectPlaceholder="Filter"
       />

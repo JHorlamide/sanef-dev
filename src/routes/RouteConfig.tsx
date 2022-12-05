@@ -44,7 +44,9 @@ import EventDetails from "website/Media/components/EventDetails";
 import Login from "website/Auth/Login";
 import ForgotPassword from "website/Auth/ForgotPassword";
 import ResetPassword from "website/Auth/ResetPassword";
-// import AuthLayoutAuth from "app/components/AuthLayout";
+import AuthLayoutAuth from "app/components/AuthLayout";
+import PersistLogin from "app/components/PersistLogin";
+import NotFound from "website/NotFound";
 
 // Dashboard
 import AdminSettings from "app/pages/AdminSettings";
@@ -97,40 +99,45 @@ const RouteConfig = () => {
       <Route path={RESET_PASSWORD} element={<ResetPassword />} />
 
       {/* Protected Routes */}
-      {/* <Route element={<AuthLayoutAuth />}> */}
-      {/* Banks */}
-      <Route path={BANKS} element={<Banks />} />
-      <Route path={ADD_BANK} element={<CreateBank />} />
-      <Route path={EDIT_BANK} element={<EditBank />} />
+      <Route element={<PersistLogin />}>
+        <Route element={<AuthLayoutAuth />}>
+          {/* Banks */}
+          <Route path={BANKS} element={<Banks />} />
+          <Route path={ADD_BANK} element={<CreateBank />} />
+          <Route path={EDIT_BANK} element={<EditBank />} />
 
-      {/* Agents */}
-      <Route path={AGENTS} element={<Agents />} />
-      <Route path={ADD_AGENT} element={<AddAgents />} />
-      <Route path={EDIT_AGENT} element={<EditAgents />} />
+          {/* Agents */}
+          <Route path={AGENTS} element={<Agents />} />
+          <Route path={ADD_AGENT} element={<AddAgents />} />
+          <Route path={EDIT_AGENT} element={<EditAgents />} />
 
-      {/* Strategic Partners */}
-      <Route path={STRATEGIC_PARTNERS} element={<StrategicPartners />} />
-      <Route path={ADD_STRATEGIC_PARTNERS} element={<AddPartner />} />
-      <Route path={EDIT_STRATEGIC_PARTNERS} element={<EditPartner />} />
+          {/* Strategic Partners */}
+          <Route path={STRATEGIC_PARTNERS} element={<StrategicPartners />} />
+          <Route path={ADD_STRATEGIC_PARTNERS} element={<AddPartner />} />
+          <Route path={EDIT_STRATEGIC_PARTNERS} element={<EditPartner />} />
 
-      {/* Admin Settings */}
-      <Route path={ADMIN_SETTINGS} element={<AdminSettings />} />
+          {/* Admin Settings */}
+          <Route path={ADMIN_SETTINGS} element={<AdminSettings />} />
 
-      {/* Governments */}
-      <Route path={GOVERNMENTS} element={<Governments />} />
-      <Route path={ADD_GOVERNMENT} element={<AddGovernment />} />
-      <Route path={EDIT_GOVERNMENT} element={<EditGovernment />} />
+          {/* Governments */}
+          <Route path={GOVERNMENTS} element={<Governments />} />
+          <Route path={ADD_GOVERNMENT} element={<AddGovernment />} />
+          <Route path={EDIT_GOVERNMENT} element={<EditGovernment />} />
 
-      {/* Super Agents */}
-      <Route path={SUPER_AGENT} element={<SuperAgents />} />
-      <Route path={ADD_SUPER_AGENT} element={<AddSuperAgent />} />
-      <Route path={EDIT_SUPER_AGENT} element={<EditSuperAgent />} />
+          {/* Super Agents */}
+          <Route path={SUPER_AGENT} element={<SuperAgents />} />
+          <Route path={ADD_SUPER_AGENT} element={<AddSuperAgent />} />
+          <Route path={EDIT_SUPER_AGENT} element={<EditSuperAgent />} />
 
-      {/* Regulators */}
-      <Route path={REGULATORS} element={<Regulators />} />
-      <Route path={ADD_REGULATOR} element={<AddRegulator />} />
-      <Route path={EDIT_REGULATOR} element={<EditRegulator />} />
-      {/* </Route> */}
+          {/* Regulators */}
+          <Route path={REGULATORS} element={<Regulators />} />
+          <Route path={ADD_REGULATOR} element={<AddRegulator />} />
+          <Route path={EDIT_REGULATOR} element={<EditRegulator />} />
+        </Route>
+      </Route>
+
+      {/* Catch All */}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

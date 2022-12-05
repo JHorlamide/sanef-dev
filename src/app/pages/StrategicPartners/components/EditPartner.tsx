@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import StrategicPartnerHeader from "./StrategicPartnerHeader";
 import { IMG_PLACEHOLDER } from "assets/icons";
 import DashboardLayout from "../../../components/DashboardLayout";
@@ -6,21 +7,136 @@ import { DashboardMainView } from "app/components/Layout";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { STRATEGIC_PARTNERS } from "routes/ROUTES_CONSTANTS";
-import useBankForm from "app/pages/Banks/useBankForm";
+import useStrategicPartner from "hooks/useStrategicPartner";
+import { getPartnerDetails } from "api/strategicPartner";
+import { uploadImage } from "api/upload";
+import toast from "react-hot-toast";
+import { IUpdateRequest } from "types/strategicPartner";
 
 const EditPartner = () => {
   const navigate = useNavigate();
-  const {
-    bankLogo,
-    previewLogo,
-    errorMessage,
-    hiddenFileInput,
-    handlePress,
-    handleSubmit,
-    openFileInput,
-    handleFileChange,
-    handleBankNameChange
-  } = useBankForm({});
+  const { id } = useParams();
+  const { updateDetails } = useStrategicPartner();
+  const [imageUploadId, setImageUploadId] = useState("");
+  const [partnerName, setPartnerName] = useState<string | undefined>("");
+  const [partnerLogo, setPartnerLogo] = useState<string | any>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [previewLogo, setPreviewLogo] = useState<string>("");
+
+  const hiddenFileInput = React.useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    getPartnerDetails(id)
+      .then((response) => {
+        setPartnerName(response.data.name);
+        setPartnerLogo(response.data.logo.imageUrl);
+        setImageUploadId(response.data.logo._id);
+      })
+      .catch((error) => {
+        console.log("Error getting regulator details", error.message);
+      });
+  }, [id]);
+
+  useEffect(() => {
+    if (!partnerLogo) {
+      setPreviewLogo("");
+      return;
+    }
+
+    if (typeof partnerLogo === "string") {
+      setPreviewLogo("");
+      return;
+    }
+
+    const objectUrl = URL.createObjectURL(partnerLogo);
+    setPreviewLogo(objectUrl);
+
+    return () => URL.revokeObjectURL(objectUrl);
+  }, [partnerLogo]);
+
+  const openFileInput = () => {
+    hiddenFileInput.current?.click();
+  };
+
+  const handleBankNameChange = (e: React.ChangeEvent<HTMLFormElement>) => {
+    setPartnerName(e.target.value);
+  };
+
+  const isValidFileUploaded = (file: File) => {
+    const validExtensions = ["png", "jpeg", "jpg"];
+    const fileExtension = file.type.split("/")[1];
+    return validExtensions.includes(fileExtension);
+  };
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLFormElement>) => {
+    const { files } = e.currentTarget;
+
+    if (!files || !files[0]) {
+      setErrorMessage("No file selected");
+      return;
+    }
+
+    if (isValidFileUploaded(files[0])) {
+      setPartnerLogo(files[0]);
+
+      const formData = new FormData();
+      formData.append("image", files[0]);
+      const response = await uploadImage(formData);
+
+      if (response.status === "Success") {
+        setImageUploadId(response.data._id);
+        toast.success("Image Uploaded Successfully");
+        return;
+      }
+
+      toast.error(response.data.message);
+      setErrorMessage("");
+      return;
+    }
+
+    setErrorMessage("File not accepted");
+  };
+
+  const validateSelectedFileSize = () => {
+    const MAX_FILE_SIZE = 5120; // 5MB
+
+    if (!partnerLogo) {
+      setErrorMessage("Please choose a file");
+      return;
+    }
+
+    const fileSizeKiloBytes = Number(partnerLogo.size / 1024);
+
+    if (fileSizeKiloBytes > MAX_FILE_SIZE) {
+      setErrorMessage("File size is greater than maximum limit");
+      return;
+    }
+
+    setErrorMessage("");
+  };
+
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement> | React.KeyboardEvent<HTMLButtonElement>
+  ) => {
+    e.preventDefault();
+    validateSelectedFileSize();
+
+    const updateObj: IUpdateRequest = {
+      id: id as string,
+      name: partnerName as string,
+      logo: imageUploadId
+    };
+
+    updateDetails(updateObj);
+  };
+
+  const handlePress = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    if (e.key === "enter") {
+      handleSubmit(e);
+    }
+  };
 
   return (
     <DashboardLayout>
@@ -61,25 +177,40 @@ const EditPartner = () => {
                 className="bg-white rounded-full w-[180px] h-[180px] shadow-lg 
                 p-8 justify-center items-center"
               >
-                <img
-                  src={previewLogo ? previewLogo : IMG_PLACEHOLDER}
-                  alt="placeholder"
-                  className="w-full h-full"
-                />
+                {previewLogo ? (
+                  <img
+                    src={previewLogo}
+                    alt="placeholder"
+                    className="w-full h-full"
+                  />
+                ) : partnerLogo ? (
+                  <img
+                    src={partnerLogo}
+                    alt="regulatorLogo"
+                    className="w-full h-full"
+                  />
+                ) : (
+                  <img
+                    src={IMG_PLACEHOLDER}
+                    alt="placeholder"
+                    className="w-full h-full"
+                  />
+                )}
               </div>
 
               {/* Form Input */}
               <div className="w-[390px] space-y-12">
                 <div className="space-y-3">
-                  <label htmlFor="bankName">Name</label>
+                  <label htmlFor="partnerName">Name</label>
                   <CustomInput
-                    id="bankName"
+                    id="partnerName"
                     className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
                     focus:ring-buttonColor
                     py-3 w-full mt-8"
                     inputProps={{
                       type: "text",
-                      name: "bankName",
+                      name: "partnerName",
+                      value: partnerName,
                       onChange: handleBankNameChange
                     }}
                   />
@@ -102,17 +233,17 @@ const EditPartner = () => {
                     </CustomBtn>
 
                     <p className="w-full text-md text-start whitespace-normal font-semibold text-gray-800">
-                      {bankLogo?.name}
+                      {partnerLogo?.name}
                     </p>
                   </div>
 
                   <CustomInput
-                    id="bankLogo"
+                    id="partnerLogo"
                     className="hidden border-none text-buttonColor font-semibold text-md"
                     inputProps={{
                       type: "file",
                       placeholder: "Upload logo",
-                      name: "bankLogo",
+                      name: "partnerLogo",
                       onChange: handleFileChange,
                       ref: hiddenFileInput
                     }}

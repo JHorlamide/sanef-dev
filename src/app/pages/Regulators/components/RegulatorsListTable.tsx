@@ -1,20 +1,36 @@
 import { Fragment, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Table } from "flowbite-react";
+import { Spinner, Table } from "flowbite-react";
 import { DELETE_ICON, EDIT_ICON, FILTER_ICON } from "assets/icons";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
-import Pagination, { TableRecord } from "app/components/Pagination";
 import DeleteModal from "app/components/DeleteModal";
+import { IRegulator } from "types/regulator";
 
-const RegulatorsListTable = () => {
+export interface RegulatorListProps {
+  filteredRegulators: IRegulator[];
+  loading: boolean;
+  error: string;
+  removeRegulator: (regulatorId: string) => void;
+}
+
+const RegulatorsListTable = ({
+  filteredRegulators,
+  loading,
+  error,
+  removeRegulator
+}: RegulatorListProps) => {
   const navigate = useNavigate();
   let [isOpen, setIsOpen] = useState(false);
+  const [regulatorId, setRegulatorId] = useState("");
+  const [regulatorName, setRegulatorName] = useState("");
 
   function closeModal() {
     setIsOpen(false);
   }
 
-  function openModal() {
+  function openModal(id: string, name: string) {
+    setRegulatorId(id);
+    setRegulatorName(name);
     setIsOpen(true);
   }
 
@@ -25,7 +41,8 @@ const RegulatorsListTable = () => {
         closeModal={closeModal}
         actionText={"Delete"}
         modalHeading={"Delete Bank"}
-        subText={"Central Bank for Nigeria (CBN) will be deleted."}
+        subText={`${regulatorName} will be deleted.`}
+        deleteAction={() => removeRegulator(regulatorId)}
       />
 
       <Table hoverable={true}>
@@ -55,38 +72,56 @@ const RegulatorsListTable = () => {
         </Table.Head>
 
         <Table.Body className="divide-y">
-          {[1, 2, 3].map((item, idx) => (
-            <Table.Row key={idx} className="bg-white">
-              <Table.Cell className="whitespace-nowrap font-medium text-gray-900">
-                Apple MacBook Pro 17"
+          {loading && (
+            <div className="container mx-auto my-8">
+              <Spinner
+                color="success"
+                aria-label="spinner"
+                className="text-buttonColor"
+                size={"xl"}
+              />
+            </div>
+          )}
+
+          {error && (
+            <div className="container mx-auto my-10">
+              <h1 className="text-start text-md">
+                Can't load banks at the moment. Please try again later
+              </h1>
+            </div>
+          )}
+
+          {filteredRegulators.map((regulator: any) => (
+            <Table.Row key={regulator._id} className="bg-white">
+              <Table.Cell>
+                <img
+                  src={regulator.logo?.imageUrl}
+                  alt={regulator.logo?.key}
+                  className="w-[39.52px] h-[40px]"
+                />
               </Table.Cell>
 
-              <Table.Cell className="w-[600px]">Sliver</Table.Cell>
+              <Table.Cell className="w-[600px]">{regulator.name}</Table.Cell>
 
               <Table.Cell className="flex space-x-6">
                 <CustomBtn
                   rightIcon={
                     <img src={EDIT_ICON} alt="edit icon" className="w-4" />
                   }
-                  onClick={() => navigate(`/regulators/edit/${idx}`)}
+                  onClick={() => navigate(`/regulators/edit/${regulator._id}`)}
                 />
 
                 <CustomBtn
                   rightIcon={
                     <img src={DELETE_ICON} alt="edit icon" className="w-4" />
                   }
-                  onClick={openModal}
+                  onClick={() => openModal(regulator._id, regulator.name)}
                 />
               </Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
       </Table>
-
-      <div className="flex justify-between mt-8">
-        <TableRecord />
-        <Pagination />
-      </div>
     </Fragment>
   );
 };

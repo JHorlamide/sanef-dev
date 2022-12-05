@@ -114,8 +114,28 @@ export const SOCIAL_LINK = [
     link: "https://www.linkedin.com/company/sanef-nigeria-ltd/"
   }
 ];
-
 // QUERIES TO FETCH NEWS/EVENT DATA FROM SANITY
 export const GET_NEWS_QUERIES = "*[_type == 'news'] | order(_createdAt asc)";
 export const GET_EVENTS_QUERIES =
   "*[_type == 'events'] | order(_createdAt asc)";
+
+export interface MonthList {
+  id: number;
+  name: string;
+  value: string;
+}
+
+export const monthsList: MonthList[] = [
+  { value: "january", name: "January", id: 1 },
+  { value: "february", name: "February", id: 2 },
+  { value: "march", name: "March", id: 3 },
+  { value: "april", name: "April", id: 4 },
+  { value: "may", name: "May", id: 5 },
+  { value: "june", name: "June", id: 6 },
+  { value: "july", name: "July", id: 7 },
+  { value: "august", name: "August", id: 8 },
+  { value: "september", name: "September", id: 9 },
+  { value: "october", name: "October", id: 10 },
+  { value: "november", name: "November", id: 11 },
+  { value: "december", name: "December", id: 12 }
+];

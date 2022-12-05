@@ -8,6 +8,16 @@ import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomSelect from "components/widgets/CustomInput/CustomSelect";
 import { CHECK_LIST } from "assets/icons";
 import RouterLink from "components/layout/Navbar/NavLink/RouterLink";
+import { useNavigate } from "react-router-dom";
+
+import { Combobox, Transition } from "@headlessui/react";
+import { BsCheck2 } from "react-icons/bs";
+import { HiOutlineChevronDown } from "react-icons/hi";
+import { StateType } from "hooks/useStateLga";
+import useStateLga from "hooks/useStateLga";
+import { registerNewAgentByUser } from "api/agents";
+import { IAgentRequest } from "types/agent";
+import toast from "react-hot-toast";
 
 interface FormData {
   firstName: string;
@@ -15,8 +25,6 @@ interface FormData {
   email: string;
   gender: string;
   businessName: string;
-  state: string;
-  lga: string;
   superAgent: string;
   proposedAgencyService: string;
   preferredPhoneNumber: string;
@@ -190,13 +198,32 @@ const FirstTabPanel = () => {
 };
 
 const SecondTabPanel = () => {
+  const navigate = useNavigate();
+  const DEFAULT_STATE_TO_FETCH_LGA = "lagos";
+  const [stateToFetchLGA, setStateToFetchLGA] = useState<string>("");
+
+  const { statesList, LGAsList } = useStateLga(
+    stateToFetchLGA ? stateToFetchLGA : DEFAULT_STATE_TO_FETCH_LGA
+  );
+
+  const [query, setQuery] = useState("");
+  const [selectedState, setSelectedState] = useState<StateType>(statesList[0]);
+  const [selectedLGA, setSelectedLGA] = useState(LGAsList && LGAsList[0]);
+  const regex = new RegExp(`${query}`, "gi");
+
+  const filterState =
+    query === ""
+      ? statesList
+      : statesList.filter((state) => state.name.match(regex));
+
+  const filterLGA =
+    query === "" ? LGAsList : LGAsList?.filter((lga) => lga.match(regex));
+
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
     email: "",
     gender: "",
-    state: "",
-    lga: "",
     superAgent: "",
     businessName: "",
     proposedAgencyService: "",
@@ -210,6 +237,57 @@ const SecondTabPanel = () => {
       [e.target.name]: e.target.value
     });
   };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const agentObj: IAgentRequest = {
+      email: formData.email,
+      firstName: formData.firstName,
+      surname: formData.lastName,
+      businessName: formData.businessName,
+      state: stateToFetchLGA,
+      LGA: selectedLGA as string,
+      approved: false,
+      createdDate: new Date(),
+      gender: formData.gender,
+      choiceOfSuperAgent: formData.superAgent,
+      preferredPhoneNumber: `+234${formData.preferredPhoneNumber}`,
+      alternativePhoneNumber: `+234${formData.alternatePhoneNumber}`,
+      proposedAgentService: formData.proposedAgencyService
+    };
+
+    console.log(agentObj);
+
+    registerNewAgentByUser(agentObj)
+      .then((response) => {
+        toast.success(response.message);
+        clearForm();
+        navigate("/become-agent");
+      })
+      .catch((error) => {
+        if (error.response) {
+          return toast.error(error.response.data.message);
+        }
+
+        toast.error(error.message);
+      });
+    console.log({ state: selectedState, lga: selectedLGA, ...formData });
+  };
+
+  const clearForm = () => {
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      gender: "",
+      superAgent: "",
+      businessName: "",
+      proposedAgencyService: "",
+      preferredPhoneNumber: "",
+      alternatePhoneNumber: ""
+    });
+  };
+
   return (
     <Fragment>
       <div className="sm:container space-y-5 md:w-[690px] md:justify-center px-5 mx-auto">
@@ -363,7 +441,7 @@ const SecondTabPanel = () => {
           </div>
 
           <form
-            action=""
+            onSubmit={handleSubmit}
             className="flex flex-col space-y-10 md:space-y-5 md:justify-center px-5 py-14 md:py-12 md:px-10 md:w-fit"
           >
             {/* FIRST & LAST NAME */}
@@ -461,7 +539,7 @@ const SecondTabPanel = () => {
                   <CustomInput
                     id="preferredPhoneNumber"
                     className="relative rounded-full border border-gray-300 outline-buttonColor
-                    focus:border-buttonColor focus:ring-buttonColor py-3 w-full px-24"
+                    focus:border-buttonColor focus:ring-buttonColor py-3 w-full pl-24"
                     inputProps={{
                       type: "text",
                       name: "preferredPhoneNumber",
@@ -484,7 +562,7 @@ const SecondTabPanel = () => {
                   <CustomInput
                     id="alternatePhoneNumber"
                     className="relative rounded-full border border-gray-300 outline-buttonColor 
-                    focus:border-buttonColor focus:ring-buttonColor py-3 w-full px-24"
+                    focus:border-buttonColor focus:ring-buttonColor py-3 w-full pl-24"
                     inputProps={{
                       type: "text",
                       name: "alternatePhoneNumber",
@@ -500,7 +578,88 @@ const SecondTabPanel = () => {
             <div className="container flex flex-col space-y-10 md:space-y-0 md:space-x-4 md:flex-row">
               <div className="space-y-2 w-full">
                 <label htmlFor="state">State</label>
-                <CustomSelect
+                <Combobox value={selectedState} onChange={setSelectedState}>
+                  <div className="relative mt-1">
+                    <Combobox.Input
+                      placeholder="Search States"
+                      className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
+                      focus:ring-buttonColor py-3 w-full"
+                      displayValue={(state: any) => {
+                        setStateToFetchLGA(state);
+                        return state;
+                      }}
+                      onChange={(event) => setQuery(event.target.value)}
+                    />
+
+                    <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
+                      <HiOutlineChevronDown
+                        className="h-5 w-5 text-gray-400"
+                        aria-hidden="true"
+                      />
+                    </Combobox.Button>
+
+                    <Transition
+                      as={Fragment}
+                      leave="transition ease-in duration-100"
+                      leaveFrom="opacity-100"
+                      leaveTo="opacity-0"
+                      afterLeave={() => setQuery("")}
+                    >
+                      <Combobox.Options
+                        className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md 
+                              bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 
+                              focus:outline-none sm:text-sm"
+                      >
+                        {filterState.length === 0 && query !== "" ? (
+                          <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
+                            Nothing found.
+                          </div>
+                        ) : (
+                          filterState.map((state, index) => (
+                            <Combobox.Option
+                              key={state.id}
+                              className={({ active }) =>
+                                `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                                  active
+                                    ? "bg-buttonColor text-white"
+                                    : "text-gray-900"
+                                }`
+                              }
+                              value={state?.id}
+                            >
+                              {({ selected, active }) => (
+                                <>
+                                  <span
+                                    className={`block truncate ${
+                                      selected ? "font-medium" : "font-normal"
+                                    }`}
+                                  >
+                                    {state.name}
+                                  </span>
+                                  {selected ? (
+                                    <span
+                                      className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
+                                        active
+                                          ? "text-white"
+                                          : "text-buttonColor"
+                                      }`}
+                                    >
+                                      <BsCheck2
+                                        className="h-5 w-5"
+                                        aria-hidden="true"
+                                      />
+                                    </span>
+                                  ) : null}
+                                </>
+                              )}
+                            </Combobox.Option>
+                          ))
+                        )}
+                      </Combobox.Options>
+                    </Transition>
+                  </div>
+                </Combobox>
+                {/* <CustomSelect
                   id="state"
                   className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 w-full"
                   selectProps={{
@@ -514,12 +673,90 @@ const SecondTabPanel = () => {
                     { value: "abuja", name: "Abuja" }
                   ]}
                   selectPlaceholder="Select a state"
-                />
+                /> */}
               </div>
 
               <div className="space-y-2 w-full">
                 <label htmlFor="lga">LGA</label>
-                <CustomSelect
+                <Combobox value={selectedLGA} onChange={setSelectedLGA}>
+                  <div className="relative mt-1">
+                    <Combobox.Input
+                      placeholder="Search LGA"
+                      className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
+                          focus:ring-buttonColor py-3 w-full"
+                      displayValue={(lga: any) => lga}
+                      onChange={(event) => setQuery(event.target.value)}
+                    />
+
+                    <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
+                      <HiOutlineChevronDown
+                        className="h-5 w-5 text-gray-400"
+                        aria-hidden="true"
+                      />
+                    </Combobox.Button>
+
+                    <Transition
+                      as={Fragment}
+                      leave="transition ease-in duration-100"
+                      leaveFrom="opacity-100"
+                      leaveTo="opacity-0"
+                      afterLeave={() => setQuery("")}
+                    >
+                      <Combobox.Options
+                        className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md 
+                              bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 
+                              focus:outline-none sm:text-sm"
+                      >
+                        {filterLGA?.length === 0 && query !== "" ? (
+                          <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
+                            Nothing found.
+                          </div>
+                        ) : (
+                          filterLGA?.map((lga, index) => (
+                            <Combobox.Option
+                              key={index}
+                              className={({ active }) =>
+                                `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                                  active
+                                    ? "bg-buttonColor text-white"
+                                    : "text-gray-900"
+                                }`
+                              }
+                              value={lga}
+                            >
+                              {({ selected, active }) => (
+                                <>
+                                  <span
+                                    className={`block truncate ${
+                                      selected ? "font-medium" : "font-normal"
+                                    }`}
+                                  >
+                                    {lga}
+                                  </span>
+                                  {selected ? (
+                                    <span
+                                      className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
+                                        active
+                                          ? "text-white"
+                                          : "text-buttonColor"
+                                      }`}
+                                    >
+                                      <BsCheck2
+                                        className="h-5 w-5"
+                                        aria-hidden="true"
+                                      />
+                                    </span>
+                                  ) : null}
+                                </>
+                              )}
+                            </Combobox.Option>
+                          ))
+                        )}
+                      </Combobox.Options>
+                    </Transition>
+                  </div>
+                </Combobox>
+                {/* <CustomSelect
                   id="lga"
                   className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 w-full"
                   selectProps={{
@@ -532,7 +769,7 @@ const SecondTabPanel = () => {
                     { value: "eti Osa", name: "Eti Osa" }
                   ]}
                   selectPlaceholder="Select an LGA"
-                />
+                /> */}
               </div>
             </div>
 

@@ -5,22 +5,23 @@ import DashboardLayout from "../../../components/DashboardLayout";
 import { DashboardMainView } from "app/components/Layout";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
-import useBankForm from "../../Banks/useBankForm";
 import { STRATEGIC_PARTNERS } from "routes/ROUTES_CONSTANTS";
+import usePartnerForm from "../usePartnerForm";
 
 const AddPartner = () => {
   const navigate = useNavigate();
   const {
-    bankLogo,
-    previewLogo,
+    partnerName,
+    partnerLogo,
     errorMessage,
+    previewLogo,
     hiddenFileInput,
-    handlePress,
-    handleSubmit,
     openFileInput,
+    handleNameChange,
     handleFileChange,
-    handleBankNameChange
-  } = useBankForm({});
+    handleSubmit,
+    handlePress
+  } = usePartnerForm();
 
   return (
     <DashboardLayout>
@@ -55,16 +56,17 @@ const AddPartner = () => {
               {/* Form Input */}
               <div className="w-[390px] space-y-12">
                 <div className="space-y-3">
-                  <label htmlFor="bankName">Name</label>
+                  <label htmlFor="partnerName">Name</label>
                   <CustomInput
-                    id="bankName"
+                    id="partnerName"
                     className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
                     focus:ring-buttonColor
                     py-3 w-full mt-8"
                     inputProps={{
                       type: "text",
-                      name: "bankName",
-                      onChange: handleBankNameChange
+                      name: "partnerName",
+                      value: partnerName,
+                      onChange: handleNameChange
                     }}
                   />
                 </div>
@@ -86,17 +88,17 @@ const AddPartner = () => {
                     </CustomBtn>
 
                     <p className="w-full text-md text-start whitespace-normal font-semibold text-gray-800">
-                      {bankLogo?.name}
+                      {partnerLogo?.name}
                     </p>
                   </div>
 
                   <CustomInput
-                    id="bankLogo"
+                    id="partnerLogo"
                     className="hidden border-none text-buttonColor font-semibold text-md"
                     inputProps={{
                       type: "file",
                       placeholder: "Upload logo",
-                      name: "bankLogo",
+                      name: "partnerLogo",
                       onChange: handleFileChange,
                       ref: hiddenFileInput
                     }}

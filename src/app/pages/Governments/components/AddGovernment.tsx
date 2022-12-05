@@ -5,22 +5,23 @@ import DashboardLayout from "../../../components/DashboardLayout";
 import { DashboardMainView } from "app/components/Layout";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
-import useBankForm from "../../Banks/useBankForm";
 import { GOVERNMENTS } from "routes/ROUTES_CONSTANTS";
+import useGovernmentForm from "../useGovernmentForm";
 
 const AddGovernment = () => {
   const navigate = useNavigate();
   const {
-    bankLogo,
-    previewLogo,
+    governmentName,
+    governmentLogo,
     errorMessage,
+    previewLogo,
     hiddenFileInput,
-    handlePress,
-    handleSubmit,
     openFileInput,
+    handleNameChange,
     handleFileChange,
-    handleBankNameChange
-  } = useBankForm({});
+    handleSubmit,
+    handlePress
+  } = useGovernmentForm();
 
   return (
     <DashboardLayout>
@@ -53,16 +54,17 @@ const AddGovernment = () => {
               {/* Form Input */}
               <div className="w-[390px] space-y-12">
                 <div className="space-y-3">
-                  <label htmlFor="bankName">Name</label>
+                  <label htmlFor="governmentName">Name</label>
                   <CustomInput
-                    id="bankName"
+                    id="governmentName"
                     className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
                     focus:ring-buttonColor
                     py-3 w-full mt-8"
                     inputProps={{
                       type: "text",
-                      name: "bankName",
-                      onChange: handleBankNameChange
+                      name: "governmentName",
+                      value: governmentName,
+                      onChange: handleNameChange
                     }}
                   />
                 </div>
@@ -84,7 +86,7 @@ const AddGovernment = () => {
                     </CustomBtn>
 
                     <p className="w-full text-md text-start whitespace-normal font-semibold text-gray-800">
-                      {bankLogo?.name}
+                      {governmentLogo?.name}
                     </p>
                   </div>
 

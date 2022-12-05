@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { LOGIN_LOGO } from "assets/images";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import NavLink from "components/layout/Navbar/NavLink/NavLink";
 import { useNavigate } from "react-router-dom";
-import {
-  setUser,
-  setToken,
-  setCredential,
-  setRefreshToken
-} from "redux/features/authSlice";
+import { setCredential } from "redux/features/authSlice";
 import { useLoginUserMutation } from "redux/api/loginApiSlice";
 import toast from "react-hot-toast";
 
@@ -54,16 +50,12 @@ const Login = () => {
 
       if (res.status === "Success") {
         dispatch(setCredential({ ...res.data }));
-        dispatch(setUser(res.data.user));
-        dispatch(setToken(res.data.accessToken));
-        dispatch(setRefreshToken(res.data.refreshToken));
+        localStorage.setItem("sanefToken", res.data.accessToken);
+        localStorage.setItem("refreshToken", res.data.refreshToken);
 
         toast.success(res.message);
 
         navigate("/banks");
-
-        localStorage.setItem("sanefToken", res.data.accessToken);
-        localStorage.setItem("refreshToken", res.data.refreshToken);
 
         setAuthData({
           email: "",
@@ -72,6 +64,8 @@ const Login = () => {
 
         return;
       }
+
+      toast.error(res.message);
     } catch (error: any) {
       if (error.status === "FETCH_ERROR") {
         return toast.error("Server error: Server seems to be down");
@@ -100,7 +94,9 @@ const Login = () => {
             </div>
 
             <div className="mx-5 w-[90.79px] h-[74px] mb-8">
-              <img src={LOGIN_LOGO} alt="..." className="w-full h-full" />
+              <Link to={"/"}>
+                <img src={LOGIN_LOGO} alt="..." className="w-full h-full" />
+              </Link>
             </div>
           </div>
         </div>
@@ -160,7 +156,7 @@ const Login = () => {
 
             <CustomBtn
               className="text-white font-semibold bg-buttonColor rounded-full py-3 px-5 w-[431px]
-             hover:bg-lightGreen"
+              hover:bg-lightGreen"
               onKeyPress={handlePress}
               isloading={isLoading}
             >

@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import { uploadImage } from "api/upload";
+import { registerNewSuperAgent } from "api/superAgents";
+import { ISuperAgentRequest } from "types/superAgent";
 
 type CompanyLogoType = File | undefined;
 
@@ -9,17 +14,6 @@ export type CompanyDataType = {
   companyContactPerson: string;
   designation: string;
   phoneNumber: string;
-
-  // For Update Data
-  serial?: string;
-  sid?: string;
-  submittedTime?: string;
-  completedTime?: string;
-  modifiedTime?: string;
-  draft?: string;
-  ipAddress?: string;
-  uid?: string;
-  username?: string;
 };
 
 interface useBankFormProps {
@@ -31,24 +25,16 @@ const useSuperAgentForm = ({
   company_logo,
   company_data
 }: useBankFormProps) => {
+  const navigate = useNavigate();
   const [companyData, setCompanyData] = useState<CompanyDataType>({
     companyName: "",
     companyAddress: "",
     companyContactPerson: "",
     designation: "",
     email: "",
-    phoneNumber: "",
-
-    serial: "",
-    sid: "",
-    submittedTime: "",
-    completedTime: "",
-    modifiedTime: "",
-    draft: "",
-    ipAddress: "",
-    uid: "",
-    username: ""
+    phoneNumber: ""
   });
+  const [imageUploadId, setImageUploadId] = useState("");
   const [companyLogo, setCompanyLogo] = useState<CompanyLogoType>(company_logo);
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [previewLogo, setPreviewLogo] = useState<string>("");
@@ -83,7 +69,7 @@ const useSuperAgentForm = ({
     return validExtensions.includes(fileExtension);
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLFormElement>) => {
+  const handleFileChange = async (e: React.ChangeEvent<HTMLFormElement>) => {
     const { files } = e.currentTarget;
 
     if (!files || !files[0]) {
@@ -93,6 +79,18 @@ const useSuperAgentForm = ({
 
     if (isValidFileUploaded(files[0])) {
       setCompanyLogo(files[0]);
+      const formData = new FormData();
+      formData.append("image", files[0] as File);
+      const response = await uploadImage(formData);
+
+      if (response.status === "Success") {
+        setImageUploadId(response.data._id);
+        toast.success("Image Uploaded Successfully");
+        return;
+      }
+
+      toast.error(response.message);
+      setErrorMessage("");
       setErrorMessage("");
       return;
     }
@@ -118,12 +116,31 @@ const useSuperAgentForm = ({
     setErrorMessage("");
   };
 
-  const handleSubmit = (
+  const handleSubmit = async (
     e: React.FormEvent<HTMLFormElement> | React.KeyboardEvent<HTMLButtonElement>
   ) => {
     e.preventDefault();
-    console.log({ companyData, companyLogo });
     validateSelectedFileSize();
+
+    const superAgentObj: ISuperAgentRequest = {
+      logo: imageUploadId,
+      email: companyData.email,
+      createdDate: new Date(),
+      companyName: companyData.companyName,
+      contactPerson: companyData.companyContactPerson,
+      designation: companyData.designation,
+      companyAddress: companyData.companyAddress,
+      phoneNumber: `+234${companyData.phoneNumber}`
+    };
+
+    registerNewSuperAgent(superAgentObj)
+      .then((response) => {
+        toast.success(response.message);
+        navigate("/super-agents");
+      })
+      .catch((error) => {
+        toast.error(error.response.data.message);
+      });
   };
 
   const handlePress = (e: React.KeyboardEvent<HTMLButtonElement>) => {

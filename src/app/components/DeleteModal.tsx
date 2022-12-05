@@ -1,7 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
-import toast from "react-hot-toast";
 
 interface DeleteModalProps {
   isOpen: boolean;
@@ -9,6 +8,8 @@ interface DeleteModalProps {
   modalHeading: string;
   subText: string;
   actionText: string;
+  deleteAction: () => void;
+  isLoading?: boolean;
 }
 
 const DeleteModal = ({
@@ -16,12 +17,12 @@ const DeleteModal = ({
   closeModal,
   modalHeading,
   subText,
-  actionText
+  actionText,
+  deleteAction,
+  isLoading
 }: DeleteModalProps) => {
   const handleDelete = () => {
-    console.log("Bank Deleted");
-    toast.success("Message sent successfully");
-
+    deleteAction();
     closeModal();
   };
 
@@ -69,6 +70,7 @@ const DeleteModal = ({
                       type="button"
                       className="inline-flex py-3 rounded-full px-12 bg-buttonColor text-white hover:bg-lightGreen"
                       onClick={handleDelete}
+                      isloading={isLoading}
                     >
                       {actionText}
                     </CustomBtn>

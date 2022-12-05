@@ -3,15 +3,14 @@ import { useNavigate } from "react-router-dom";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { AGENTS } from "routes/ROUTES_CONSTANTS";
-import useSuperAgentForm from "../SuperAgents/useSuperAgentForm";
 import { LONG_HORIZONTAL_LINE } from "assets/icons";
 import DeleteModal from "app/components/DeleteModal";
+import useAdminform from "./useAdminform";
 
 const Settings = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { companyData, handleSubmit, handlePress, handleCompanyDataChange } =
-    useSuperAgentForm({});
+  const { adminData, handleChange, handleSubmit } = useAdminform();
 
   function closeModal() {
     setIsOpen(false);
@@ -29,6 +28,7 @@ const Settings = () => {
         actionText={"Request Password Reset"}
         modalHeading={"Update Password"}
         subText={"You will receive a password reset link in your mailbox"}
+        deleteAction={() => console.log("testing")}
       />
 
       <div className="pl-10 py-5 h-auto">
@@ -51,12 +51,12 @@ const Settings = () => {
                     <CustomInput
                       id="firstName"
                       className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                    focus:ring-buttonColor py-3 w-full mt-8"
+                      focus:ring-buttonColor py-3 w-full mt-8"
                       inputProps={{
                         type: "text",
                         name: "firstName",
-                        value: companyData.companyName,
-                        onChange: handleCompanyDataChange
+                        value: adminData.firstName,
+                        onChange: handleChange
                       }}
                     />
                   </div>
@@ -72,8 +72,8 @@ const Settings = () => {
                       inputProps={{
                         type: "text",
                         name: "lastName",
-                        value: companyData.companyName,
-                        onChange: handleCompanyDataChange
+                        value: adminData.lastName,
+                        onChange: handleChange
                       }}
                     />
                   </div>
@@ -90,8 +90,8 @@ const Settings = () => {
                   inputProps={{
                     type: "email",
                     name: "email",
-                    value: companyData.companyAddress,
-                    onChange: handleCompanyDataChange
+                    value: adminData.email,
+                    onChange: handleChange
                   }}
                 />
               </div>
@@ -101,7 +101,6 @@ const Settings = () => {
               <CustomBtn
                 className="bg-buttonColor px-20 py-3 rounded-full text-white font-semibold hover:bg-lightGreen"
                 type="submit"
-                onKeyDown={handlePress}
               >
                 Update Changes
               </CustomBtn>

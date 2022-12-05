@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AgentsHeader from "./AgentsHeader";
 import DashboardLayout from "../../../components/DashboardLayout";
@@ -6,23 +6,38 @@ import { DashboardMainView } from "app/components/Layout";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { AGENTS } from "routes/ROUTES_CONSTANTS";
-import useSuperAgentForm from "../../SuperAgents/useSuperAgentForm";
 import CustomSelect from "components/widgets/CustomInput/CustomSelect";
+import useAgentForm from "../useAgentForm";
+import useStateLga from "hooks/useStateLga";
+
+import { Combobox, Transition } from "@headlessui/react";
+import { BsCheck2 } from "react-icons/bs";
+import { HiOutlineChevronDown } from "react-icons/hi";
+import { StateType } from "hooks/useStateLga";
 
 const AddAgents = () => {
+  const DEFAULT_STATE_TO_FETCH_LGA = "lagos";
   const navigate = useNavigate();
-  const {
-    companyData,
-    // companyLogo,
-    // errorMessage,
-    // previewLogo,
-    // hiddenFileInput,
-    handleSubmit,
-    // handleFileChange,
-    handlePress,
-    // openFileInput,
-    handleCompanyDataChange
-  } = useSuperAgentForm({});
+  const [stateToFetchLGA, setStateToFetchLGA] = useState<string>("");
+
+  const { statesList, LGAsList } = useStateLga(
+    stateToFetchLGA ? stateToFetchLGA : DEFAULT_STATE_TO_FETCH_LGA
+  );
+
+  const [query, setQuery] = useState("");
+  const [selectedState, setSelectedState] = useState<StateType>(statesList[0]);
+  const [selectedLGA, setSelectedLGA] = useState(LGAsList && LGAsList[0]);
+  const { agentData, handleSubmit, handlePress, handleCompanyDataChange } =
+    useAgentForm(stateToFetchLGA, selectedLGA);
+  const regex = new RegExp(`${query}`, "gi");
+
+  const filterState =
+    query === ""
+      ? statesList
+      : statesList.filter((state) => state.name.match(regex));
+
+  const filterLGA =
+    query === "" ? LGAsList : LGAsList?.filter((lga) => lga.match(regex));
 
   return (
     <DashboardLayout>
@@ -48,11 +63,11 @@ const AddAgents = () => {
                     <CustomInput
                       id="firstName"
                       className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                    focus:ring-buttonColor py-3 w-full mt-8"
+                      focus:ring-buttonColor py-3 w-full mt-8"
                       inputProps={{
                         type: "text",
                         name: "firstName",
-                        value: companyData.companyName,
+                        value: agentData.firstName,
                         onChange: handleCompanyDataChange
                       }}
                     />
@@ -65,11 +80,11 @@ const AddAgents = () => {
                     <CustomInput
                       id="surname"
                       className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                    focus:ring-buttonColor py-3 w-full mt-8"
+                      focus:ring-buttonColor py-3 w-full mt-8"
                       inputProps={{
                         type: "text",
                         name: "surname",
-                        value: companyData.companyName,
+                        value: agentData.surname,
                         onChange: handleCompanyDataChange
                       }}
                     />
@@ -79,16 +94,16 @@ const AddAgents = () => {
 
               {/* Business name */}
               <div className="space-y-3 w-full">
-                <label htmlFor="companyAddress">Business name</label>
+                <label htmlFor="businessName">Business name</label>
                 <CustomInput
-                  id="companyAddress"
+                  id="businessName"
                   className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
                     focus:ring-buttonColor
                     py-3 w-full mt-8"
                   inputProps={{
                     type: "text",
-                    name: "companyAddress",
-                    value: companyData.companyAddress,
+                    name: "businessName",
+                    value: agentData.businessName,
                     onChange: handleCompanyDataChange
                   }}
                 />
@@ -107,7 +122,7 @@ const AddAgents = () => {
                       inputProps={{
                         type: "text",
                         name: "email",
-                        value: companyData.companyName,
+                        value: agentData.email,
                         onChange: handleCompanyDataChange
                       }}
                     />
@@ -117,14 +132,14 @@ const AddAgents = () => {
                 {/* Form Input */}
                 <div className="w-[390px] space-y-12">
                   <div className="space-y-3">
-                    <label htmlFor="surname">Gender</label>
+                    <label htmlFor="gender">Gender</label>
                     <CustomSelect
-                      id="designation"
+                      id="gender"
                       className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
                       focus:ring-buttonColor py-3 w-full"
                       selectProps={{
-                        name: "designation",
-                        value: companyData.designation,
+                        name: "gender",
+                        value: agentData.gender,
                         onChange: handleCompanyDataChange
                       }}
                       selectOptions={[
@@ -140,7 +155,7 @@ const AddAgents = () => {
               {/* Phone Number */}
               <div className="flex space-x-6">
                 <div className="space-y-3 w-full">
-                  <label className="" htmlFor="phoneNumber">
+                  <label className="" htmlFor="preferredPhoneNumber">
                     Preferred Phone Number
                   </label>
 
@@ -150,13 +165,14 @@ const AddAgents = () => {
                     </p>
 
                     <CustomInput
-                      id="phoneNumber"
+                      id="preferredPhoneNumber"
                       className="relative rounded-full border border-gray-300 outline-buttonColor
-                      focus:border-buttonColor focus:ring-buttonColor py-3 w-full px-24"
+                      focus:border-buttonColor focus:ring-buttonColor py-3 w-full pl-24"
                       inputProps={{
                         type: "text",
-                        name: "phoneNumber",
-                        value: companyData.phoneNumber,
+                        name: "preferredPhoneNumber",
+                        value: agentData.preferredPhoneNumber,
+                        placeholder: "8023004029",
                         onChange: handleCompanyDataChange
                       }}
                     />
@@ -164,7 +180,7 @@ const AddAgents = () => {
                 </div>
 
                 <div className="space-y-3 w-full">
-                  <label className="" htmlFor="phoneNumber">
+                  <label className="" htmlFor="alternativePhoneNumber">
                     Alternate Phone Number
                   </label>
 
@@ -174,13 +190,14 @@ const AddAgents = () => {
                     </p>
 
                     <CustomInput
-                      id="phoneNumber"
+                      id="alternativePhoneNumber"
                       className="relative rounded-full border border-gray-300 outline-buttonColor
-                      focus:border-buttonColor focus:ring-buttonColor py-3 w-full px-24"
+                      focus:border-buttonColor focus:ring-buttonColor py-3 w-full pl-24"
                       inputProps={{
                         type: "text",
-                        name: "phoneNumber",
-                        value: companyData.phoneNumber,
+                        name: "alternativePhoneNumber",
+                        value: agentData.alternativePhoneNumber,
+                        placeholder: "8023334029",
                         onChange: handleCompanyDataChange
                       }}
                     />
@@ -193,60 +210,193 @@ const AddAgents = () => {
                 <div className="w-[390px] space-y-12">
                   <div className="space-y-3">
                     <label htmlFor="state">State</label>
-                    <CustomSelect
-                      id="state"
-                      className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
-                      focus:ring-buttonColor py-3 w-full"
-                      selectProps={{
-                        name: "state",
-                        value: companyData.designation,
-                        onChange: handleCompanyDataChange
-                      }}
-                      selectOptions={[
-                        { value: "male", name: "Male" },
-                        { value: "female", name: "Female" }
-                      ]}
-                      selectPlaceholder="Select gender"
-                    />
+                    <Combobox value={selectedState} onChange={setSelectedState}>
+                      <div className="relative mt-1">
+                        <Combobox.Input
+                          placeholder="Search States"
+                          className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
+                          focus:ring-buttonColor py-3 w-full"
+                          displayValue={(state: any) => {
+                            setStateToFetchLGA(state);
+                            return state;
+                          }}
+                          onChange={(event) => setQuery(event.target.value)}
+                        />
+
+                        <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
+                          <HiOutlineChevronDown
+                            className="h-5 w-5 text-gray-400"
+                            aria-hidden="true"
+                          />
+                        </Combobox.Button>
+
+                        <Transition
+                          as={Fragment}
+                          leave="transition ease-in duration-100"
+                          leaveFrom="opacity-100"
+                          leaveTo="opacity-0"
+                          afterLeave={() => setQuery("")}
+                        >
+                          <Combobox.Options
+                            className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md 
+                              bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 
+                              focus:outline-none sm:text-sm"
+                          >
+                            {filterState.length === 0 && query !== "" ? (
+                              <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
+                                Nothing found.
+                              </div>
+                            ) : (
+                              filterState.map((state, index) => (
+                                <Combobox.Option
+                                  key={state.id}
+                                  className={({ active }) =>
+                                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                                      active
+                                        ? "bg-buttonColor text-white"
+                                        : "text-gray-900"
+                                    }`
+                                  }
+                                  value={state?.id}
+                                >
+                                  {({ selected, active }) => (
+                                    <>
+                                      <span
+                                        className={`block truncate ${
+                                          selected
+                                            ? "font-medium"
+                                            : "font-normal"
+                                        }`}
+                                      >
+                                        {state.name}
+                                      </span>
+                                      {selected ? (
+                                        <span
+                                          className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
+                                            active
+                                              ? "text-white"
+                                              : "text-buttonColor"
+                                          }`}
+                                        >
+                                          <BsCheck2
+                                            className="h-5 w-5"
+                                            aria-hidden="true"
+                                          />
+                                        </span>
+                                      ) : null}
+                                    </>
+                                  )}
+                                </Combobox.Option>
+                              ))
+                            )}
+                          </Combobox.Options>
+                        </Transition>
+                      </div>
+                    </Combobox>
                   </div>
                 </div>
 
                 <div className="w-[390px] space-y-12">
                   <div className="space-y-3">
-                    <label htmlFor="lga">LGA</label>
-                    <CustomSelect
-                      id="lga"
-                      className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
-                      focus:ring-buttonColor py-3 w-full"
-                      selectProps={{
-                        name: "designation",
-                        value: companyData.designation,
-                        onChange: handleCompanyDataChange
-                      }}
-                      selectOptions={[
-                        { value: "male", name: "Male" },
-                        { value: "female", name: "Female" }
-                      ]}
-                      selectPlaceholder="Select gender"
-                    />
+                    <label htmlFor="LGA">LGA</label>
+                    <Combobox value={selectedLGA} onChange={setSelectedLGA}>
+                      <div className="relative mt-1">
+                        <Combobox.Input
+                          placeholder="Search LGA"
+                          className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
+                          focus:ring-buttonColor py-3 w-full"
+                          displayValue={(lga: any) => lga}
+                          onChange={(event) => setQuery(event.target.value)}
+                        />
+
+                        <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
+                          <HiOutlineChevronDown
+                            className="h-5 w-5 text-gray-400"
+                            aria-hidden="true"
+                          />
+                        </Combobox.Button>
+
+                        <Transition
+                          as={Fragment}
+                          leave="transition ease-in duration-100"
+                          leaveFrom="opacity-100"
+                          leaveTo="opacity-0"
+                          afterLeave={() => setQuery("")}
+                        >
+                          <Combobox.Options
+                            className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md 
+                              bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 
+                              focus:outline-none sm:text-sm"
+                          >
+                            {filterLGA?.length === 0 && query !== "" ? (
+                              <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
+                                Nothing found.
+                              </div>
+                            ) : (
+                              filterLGA?.map((lga, index) => (
+                                <Combobox.Option
+                                  key={index}
+                                  className={({ active }) =>
+                                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                                      active
+                                        ? "bg-buttonColor text-white"
+                                        : "text-gray-900"
+                                    }`
+                                  }
+                                  value={lga}
+                                >
+                                  {({ selected, active }) => (
+                                    <>
+                                      <span
+                                        className={`block truncate ${
+                                          selected
+                                            ? "font-medium"
+                                            : "font-normal"
+                                        }`}
+                                      >
+                                        {lga}
+                                      </span>
+                                      {selected ? (
+                                        <span
+                                          className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
+                                            active
+                                              ? "text-white"
+                                              : "text-buttonColor"
+                                          }`}
+                                        >
+                                          <BsCheck2
+                                            className="h-5 w-5"
+                                            aria-hidden="true"
+                                          />
+                                        </span>
+                                      ) : null}
+                                    </>
+                                  )}
+                                </Combobox.Option>
+                              ))
+                            )}
+                          </Combobox.Options>
+                        </Transition>
+                      </div>
+                    </Combobox>
                   </div>
                 </div>
               </div>
 
               {/* Proposed Agency Service/Business Address */}
               <div className="space-y-3 w-full">
-                <label htmlFor="proposedAgency">
+                <label htmlFor="proposedAgentService">
                   Proposed Agency Service/Business Address
                 </label>
                 <CustomInput
-                  id="proposedAgency"
+                  id="proposedAgentService"
                   className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
                     focus:ring-buttonColor
                     py-3 w-full mt-8"
                   inputProps={{
                     type: "text",
-                    name: "proposedAgency",
-                    value: companyData.companyAddress,
+                    name: "proposedAgentService",
+                    value: agentData.proposedAgentService,
                     onChange: handleCompanyDataChange
                   }}
                 />
@@ -265,11 +415,13 @@ const AddAgents = () => {
                   inputProps={{
                     type: "text",
                     name: "choiceOfSuperAgent",
-                    value: companyData.companyAddress,
+                    value: agentData.choiceOfSuperAgent,
                     onChange: handleCompanyDataChange
                   }}
                 />
               </div>
+
+              {/* <AuthComplete /> */}
             </div>
 
             <div className="flex space-x-16">

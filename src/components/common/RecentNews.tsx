@@ -25,7 +25,7 @@ const RecentNews = () => {
 
   return (
     <div className="hidden md:grid md:grid-cols-1 lg:grid-cols-3 md:gap-4 md:px-10 lg:px-16">
-      {data.slice(0, 4).map((post: any) => (
+      {data.slice(0, 3).map((post: any) => (
         <RecentCard
           id={post._id}
           key={post._id}

@@ -6,21 +6,22 @@ import { DashboardMainView } from "app/components/Layout";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { REGULATORS } from "routes/ROUTES_CONSTANTS";
-import useBankForm from "app/pages/Banks/useBankForm";
+import useRegulatorForm from "../useRegulatorForm";
 
 const AddRegulator = () => {
   const navigate = useNavigate();
   const {
-    bankLogo,
+    hiddenFileInput,
+    regulatorLogo,
     previewLogo,
     errorMessage,
-    hiddenFileInput,
-    handlePress,
+    handleNameChange,
     handleSubmit,
-    openFileInput,
     handleFileChange,
-    handleBankNameChange
-  } = useBankForm({});
+    openFileInput,
+    handlePress
+  } = useRegulatorForm();
+
   return (
     <DashboardLayout>
       <RegulatorHeader />
@@ -52,16 +53,16 @@ const AddRegulator = () => {
               {/* Form Input */}
               <div className="w-[390px] space-y-12">
                 <div className="space-y-3">
-                  <label htmlFor="bankName">Name</label>
+                  <label htmlFor="regulatorName">Name</label>
                   <CustomInput
-                    id="bankName"
+                    id="regulatorName"
                     className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
                     focus:ring-buttonColor
                     py-3 w-full mt-8"
                     inputProps={{
                       type: "text",
-                      name: "bankName",
-                      onChange: handleBankNameChange
+                      name: "regulatorName",
+                      onChange: handleNameChange
                     }}
                   />
                 </div>
@@ -83,22 +84,21 @@ const AddRegulator = () => {
                     </CustomBtn>
 
                     <p className="w-full text-md text-start whitespace-normal font-semibold text-gray-800">
-                      {bankLogo?.name}
+                      {regulatorLogo?.name}
                     </p>
                   </div>
 
                   <CustomInput
-                    id="bankLogo"
+                    id="regulatorLogo"
                     className="hidden border-none text-buttonColor font-semibold text-md"
                     inputProps={{
                       type: "file",
                       placeholder: "Upload logo",
-                      name: "bankLogo",
+                      name: "regulatorLogo",
                       onChange: handleFileChange,
                       ref: hiddenFileInput
                     }}
                   />
-
                   <small>Formats accepted: PNG, JPG, GIF. Maximum 5MB.</small>
                 </div>
               </div>
@@ -110,7 +110,7 @@ const AddRegulator = () => {
                 type="submit"
                 onKeyDown={handlePress}
               >
-                Add Bank
+                Add Regulator
               </CustomBtn>
 
               <CustomBtn

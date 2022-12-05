@@ -1,20 +1,36 @@
 import { Fragment, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Table } from "flowbite-react";
+import { Spinner, Table } from "flowbite-react";
 import { DELETE_ICON, EDIT_ICON, FILTER_ICON } from "assets/icons";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
-import Pagination, { TableRecord } from "app/components/Pagination";
 import DeleteModal from "app/components/DeleteModal";
+import { ISuperAgent } from "types/superAgent";
 
-const SuperAgentList = () => {
+export interface SuperAgentProps {
+  superAgents: ISuperAgent[];
+  loading: boolean;
+  error: string;
+  removeSuperAgent: (superAgentId: string) => void;
+}
+
+const SuperAgentList = ({
+  superAgents,
+  loading,
+  error,
+  removeSuperAgent
+}: SuperAgentProps) => {
   const navigate = useNavigate();
   let [isOpen, setIsOpen] = useState(false);
+  const [superAgentId, setSuperAgentId] = useState<string>("");
+  const [superAgentName, setSuperAgentName] = useState<string>("");
 
   function closeModal() {
     setIsOpen(false);
   }
 
-  function openModal() {
+  function openModal(id: string, name: string) {
+    setSuperAgentId(id);
+    setSuperAgentName(name);
     setIsOpen(true);
   }
 
@@ -25,7 +41,8 @@ const SuperAgentList = () => {
         closeModal={closeModal}
         actionText={"Delete"}
         modalHeading={"Delete Super Agent"}
-        subText={"Super Agent E-tranzact will be deleted."}
+        subText={`${superAgentName} will be deleted`}
+        deleteAction={() => removeSuperAgent(superAgentId)}
       />
 
       <Table hoverable={true}>
@@ -84,40 +101,70 @@ const SuperAgentList = () => {
         </Table.Head>
 
         <Table.Body className="divide-y">
-          {[1, 2, 3].map((item, idx) => (
-            <Table.Row key={idx} className="bg-white">
+          {loading && (
+            <div className="container mx-auto my-8 flex justify-center item-center ml-40">
+              <Spinner
+                color="success"
+                aria-label="spinner"
+                className="text-buttonColor"
+                size={"xl"}
+              />
+            </div>
+          )}
+
+          {error && (
+            <div className="container mx-auto my-10 ml-72">
+              <h1 className="text-start text-md">
+                Can't load super agents at the moment. Please try reloading the
+                page
+              </h1>
+            </div>
+          )}
+
+          {superAgents.length <= 0 && (
+            <div className="container mx-auto flex justify-center items-center py-10 ml-40">
+              <h1 className="font-semibold">Your bank record is empty!</h1>
+            </div>
+          )}
+
+          {superAgents.map((superAgent) => (
+            <Table.Row key={superAgent._id} className="bg-white">
               <Table.Cell className="whitespace-nowrap font-medium text-gray-900">
-                Apple MacBook Pro 17"
+                <img
+                  src={superAgent.logo?.imageUrl}
+                  alt={superAgent.logo?.key}
+                  className="w-[39.52px] h-[40px]"
+                />
               </Table.Cell>
 
-              <Table.Cell className="">Sliver</Table.Cell>
-              <Table.Cell className="">Sliver</Table.Cell>
-              <Table.Cell className="">Sliver</Table.Cell>
-              <Table.Cell className="">Sliver</Table.Cell>
+              <Table.Cell className="">{superAgent.companyName}</Table.Cell>
+              <Table.Cell className="">{superAgent.contactPerson}</Table.Cell>
+              <Table.Cell className="">{superAgent.designation}</Table.Cell>
+              <Table.Cell className="">{superAgent.email}</Table.Cell>
 
               <Table.Cell className="flex space-x-6">
                 <CustomBtn
                   rightIcon={
                     <img src={EDIT_ICON} alt="edit icon" className="w-4" />
                   }
-                  onClick={() => navigate(`/super-agent/edit/${idx}`)}
+                  onClick={() =>
+                    navigate(`/super-agent/edit/${superAgent._id}`)
+                  }
                 />
 
                 <CustomBtn
                   rightIcon={
                     <img src={DELETE_ICON} alt="edit icon" className="w-4" />
                   }
-                  onClick={openModal}
+                  onClick={() =>
+                    openModal(superAgent._id, superAgent.companyName)
+                  }
                 />
               </Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
       </Table>
-      <div className="flex justify-between mt-8">
-        <TableRecord />
-        <Pagination />
-      </div>
     </Fragment>
   );
 };

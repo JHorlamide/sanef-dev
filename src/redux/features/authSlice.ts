@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { IUser } from "types/user";
 import { RootState } from "../store";
 
@@ -24,18 +24,6 @@ const authSlice = createSlice({
       state.refreshToken = action.payload.refreshToken;
     },
 
-    setUser: (state, action: PayloadAction<IUser | null>) => {
-      state.user = action.payload;
-    },
-
-    setToken: (state, action: PayloadAction<string | null>) => {
-      state.token = action.payload;
-    },
-
-    setRefreshToken: (state, action: PayloadAction<string | null>) => {
-      state.refreshToken = action.payload;
-    },
-
     logoutUser: (state) => {
       state.user = null;
       state.token = null;
@@ -43,8 +31,7 @@ const authSlice = createSlice({
   }
 });
 
-export const { setToken, setRefreshToken, setUser, setCredential, logoutUser } =
-  authSlice.actions;
+export const { setCredential, logoutUser } = authSlice.actions;
 
 export const selectCurrentUser = (state: RootState) => state.auth.user;
 export const selectCurrentToken = (state: RootState) => state.auth.token;
