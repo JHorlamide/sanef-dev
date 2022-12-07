@@ -87,7 +87,7 @@ const Login = () => {
     <div className="container mx-auto">
       <div className="container mx-auto my-20 bg-white rounded-xl w-[580px] h-[530px] shadow-lg">
         <div className="px-20 py-10">
-          <div className="flex justify-between items-center">
+          <div className="flex items-center justify-between">
             <div className="flex flex-col space-y-1">
               <h1 className="font-bold text-[24px]">Login</h1>
               <p className="text-[14px]">sign into an existing account</p>
@@ -101,7 +101,7 @@ const Login = () => {
           </div>
         </div>
 
-        <form className="px-16 w-full" onSubmit={handleSubmit}>
+        <form className="w-full px-16" onSubmit={handleSubmit}>
           <div className="flex flex-col space-y-4">
             <div className="flex flex-col space-y-2">
               <label className="text[12px]" htmlFor="firstName">
@@ -147,7 +147,7 @@ const Login = () => {
             </div>
           </div>
 
-          <div className="pt-10 flex flex-col space-y-5">
+          <div className="flex flex-col pt-10 space-y-5">
             <NavLink
               path="/forgot-password"
               title="Forgot Password?"
