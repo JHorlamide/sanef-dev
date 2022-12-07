@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { LOGIN_LOGO } from "assets/images";
@@ -7,9 +6,10 @@ import CustomInput from "components/widgets/CustomInput/CustomInput";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import NavLink from "components/layout/Navbar/NavLink/NavLink";
 import { useNavigate } from "react-router-dom";
-import { setCredential } from "redux/features/authSlice";
-import { useLoginUserMutation } from "redux/api/loginApiSlice";
 import toast from "react-hot-toast";
+import AuthContext, { AuthType } from "context/AuthProvider";
+import { AuthContextType } from "context/AuthProvider";
+import { loginUser, LoginType } from "api/user";
 
 type SignFormType = {
   email: string;
@@ -18,15 +18,14 @@ type SignFormType = {
 
 const Login = () => {
   const navigate = useNavigate();
+  const { saveAuth } = React.useContext(AuthContext) as AuthContextType;
 
+  const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [authData, setAuthData] = useState<SignFormType>({
     email: "",
     password: ""
   });
-
-  const [login, { isLoading }] = useLoginUserMutation();
-  const dispatch = useDispatch();
 
   const togglePasswordShow = () => {
     setShowPassword((prevState) => !prevState);
@@ -41,38 +40,43 @@ const Login = () => {
 
   const handleSubmit = async (e?: React.FormEvent<HTMLFormElement>) => {
     e?.preventDefault();
+    setLoading(true);
 
-    try {
-      const res = await login({
-        email: authData.email,
-        password: authData.password
-      }).unwrap();
+    const loginData: LoginType = {
+      email: authData.email,
+      password: authData.password
+    };
 
-      if (res.status === "Success") {
-        dispatch(setCredential({ ...res.data }));
-        localStorage.setItem("sanefToken", res.data.accessToken);
-        localStorage.setItem("refreshToken", res.data.refreshToken);
+    loginUser(loginData)
+      .then((response) => {
+        setLoading(false);
 
-        toast.success(res.message);
+        const authData: AuthType = {
+          user: response.data.user,
+          accessToken: response.data.accessToken,
+          refreshToken: response.data.refreshToken
+        };
 
+        // Store User Credential in Context State
+        saveAuth(authData);
+
+        toast.success(response.message);
         navigate("/banks");
 
-        setAuthData({
-          email: "",
-          password: ""
-        });
+        localStorage.setItem("sanefToken", response.data.accessToken);
+        localStorage.setItem("refreshToken", response.data.refreshToken);
+      })
+      .catch((error) => {
+        if (error.status === "FETCH_ERROR") {
+          return toast.error("Server error: Server seems to be down");
+        }
 
-        return;
-      }
+        if (error.response) {
+          return toast.error(error.response.data.message);
+        }
 
-      toast.error(res.message);
-    } catch (error: any) {
-      if (error.status === "FETCH_ERROR") {
-        return toast.error("Server error: Server seems to be down");
-      }
-
-      toast.error(error.data.message);
-    }
+        toast.error(error.message);
+      });
   };
 
   const handlePress = (e: React.KeyboardEvent<HTMLButtonElement>) => {
@@ -158,7 +162,7 @@ const Login = () => {
               className="text-white font-semibold bg-buttonColor rounded-full py-3 px-5 w-[431px]
               hover:bg-lightGreen"
               onKeyPress={handlePress}
-              isloading={isLoading}
+              isloading={loading}
             >
               Login
             </CustomBtn>
