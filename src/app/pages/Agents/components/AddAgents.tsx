@@ -43,15 +43,15 @@ const AddAgents = () => {
     <DashboardLayout>
       <AgentsHeader />
 
-      <DashboardMainView className="pl-10 py-5 h-auto">
+      <DashboardMainView className="h-auto py-5 pl-10">
         <div className="bg-white w-[690px] border rounded-lg py-6 flex flex-col space-y-10">
           <div className="space-y-4">
             <h1 className="text-[18px] font-bold pl-10">New Agent</h1>
-            <hr className="border w-full" />
+            <hr className="w-full border" />
           </div>
 
           <form
-            className="container mx-auto px-8 space-y-10"
+            className="container px-8 mx-auto space-y-10"
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col space-y-5">
@@ -62,8 +62,7 @@ const AddAgents = () => {
                     <label htmlFor="firstName">First name</label>
                     <CustomInput
                       id="firstName"
-                      className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                      focus:ring-buttonColor py-3 w-full mt-8"
+                      className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                       inputProps={{
                         type: "text",
                         name: "firstName",
@@ -79,8 +78,7 @@ const AddAgents = () => {
                     <label htmlFor="surname">Surname</label>
                     <CustomInput
                       id="surname"
-                      className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                      focus:ring-buttonColor py-3 w-full mt-8"
+                      className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                       inputProps={{
                         type: "text",
                         name: "surname",
@@ -93,13 +91,11 @@ const AddAgents = () => {
               </div>
 
               {/* Business name */}
-              <div className="space-y-3 w-full">
+              <div className="w-full space-y-3">
                 <label htmlFor="businessName">Business name</label>
                 <CustomInput
                   id="businessName"
-                  className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                    focus:ring-buttonColor
-                    py-3 w-full mt-8"
+                  className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                   inputProps={{
                     type: "text",
                     name: "businessName",
@@ -117,8 +113,7 @@ const AddAgents = () => {
                     <label htmlFor="email">Email</label>
                     <CustomInput
                       id="email"
-                      className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                      focus:ring-buttonColor py-3 w-full mt-8"
+                      className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                       inputProps={{
                         type: "text",
                         name: "email",
@@ -135,8 +130,7 @@ const AddAgents = () => {
                     <label htmlFor="gender">Gender</label>
                     <CustomSelect
                       id="gender"
-                      className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
-                      focus:ring-buttonColor py-3 w-full"
+                      className="w-full py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                       selectProps={{
                         name: "gender",
                         value: agentData.gender,
@@ -154,7 +148,7 @@ const AddAgents = () => {
 
               {/* Phone Number */}
               <div className="flex space-x-6">
-                <div className="space-y-3 w-full">
+                <div className="w-full space-y-3">
                   <label className="" htmlFor="preferredPhoneNumber">
                     Preferred Phone Number
                   </label>
@@ -166,8 +160,7 @@ const AddAgents = () => {
 
                     <CustomInput
                       id="preferredPhoneNumber"
-                      className="relative rounded-full border border-gray-300 outline-buttonColor
-                      focus:border-buttonColor focus:ring-buttonColor py-3 w-full pl-24"
+                      className="relative w-full py-3 pl-24 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                       inputProps={{
                         type: "text",
                         name: "preferredPhoneNumber",
@@ -179,7 +172,7 @@ const AddAgents = () => {
                   </div>
                 </div>
 
-                <div className="space-y-3 w-full">
+                <div className="w-full space-y-3">
                   <label className="" htmlFor="alternativePhoneNumber">
                     Alternate Phone Number
                   </label>
@@ -191,8 +184,7 @@ const AddAgents = () => {
 
                     <CustomInput
                       id="alternativePhoneNumber"
-                      className="relative rounded-full border border-gray-300 outline-buttonColor
-                      focus:border-buttonColor focus:ring-buttonColor py-3 w-full pl-24"
+                      className="relative w-full py-3 pl-24 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                       inputProps={{
                         type: "text",
                         name: "alternativePhoneNumber",
@@ -214,8 +206,7 @@ const AddAgents = () => {
                       <div className="relative mt-1">
                         <Combobox.Input
                           placeholder="Search States"
-                          className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
-                          focus:ring-buttonColor py-3 w-full"
+                          className="w-full py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                           displayValue={(state: any) => {
                             setStateToFetchLGA(state);
                             return state;
@@ -225,7 +216,7 @@ const AddAgents = () => {
 
                         <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
                           <HiOutlineChevronDown
-                            className="h-5 w-5 text-gray-400"
+                            className="w-5 h-5 text-gray-400"
                             aria-hidden="true"
                           />
                         </Combobox.Button>
@@ -237,13 +228,9 @@ const AddAgents = () => {
                           leaveTo="opacity-0"
                           afterLeave={() => setQuery("")}
                         >
-                          <Combobox.Options
-                            className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md 
-                              bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 
-                              focus:outline-none sm:text-sm"
-                          >
+                          <Combobox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                             {filterState.length === 0 && query !== "" ? (
-                              <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
+                              <div className="relative px-4 py-2 text-gray-700 cursor-default select-none">
                                 Nothing found.
                               </div>
                             ) : (
@@ -279,7 +266,7 @@ const AddAgents = () => {
                                           }`}
                                         >
                                           <BsCheck2
-                                            className="h-5 w-5"
+                                            className="w-5 h-5"
                                             aria-hidden="true"
                                           />
                                         </span>
@@ -303,15 +290,14 @@ const AddAgents = () => {
                       <div className="relative mt-1">
                         <Combobox.Input
                           placeholder="Search LGA"
-                          className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
-                          focus:ring-buttonColor py-3 w-full"
+                          className="w-full py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                           displayValue={(lga: any) => lga}
                           onChange={(event) => setQuery(event.target.value)}
                         />
 
                         <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
                           <HiOutlineChevronDown
-                            className="h-5 w-5 text-gray-400"
+                            className="w-5 h-5 text-gray-400"
                             aria-hidden="true"
                           />
                         </Combobox.Button>
@@ -323,13 +309,9 @@ const AddAgents = () => {
                           leaveTo="opacity-0"
                           afterLeave={() => setQuery("")}
                         >
-                          <Combobox.Options
-                            className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md 
-                              bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 
-                              focus:outline-none sm:text-sm"
-                          >
+                          <Combobox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                             {filterLGA?.length === 0 && query !== "" ? (
-                              <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
+                              <div className="relative px-4 py-2 text-gray-700 cursor-default select-none">
                                 Nothing found.
                               </div>
                             ) : (
@@ -365,7 +347,7 @@ const AddAgents = () => {
                                           }`}
                                         >
                                           <BsCheck2
-                                            className="h-5 w-5"
+                                            className="w-5 h-5"
                                             aria-hidden="true"
                                           />
                                         </span>
@@ -384,15 +366,13 @@ const AddAgents = () => {
               </div>
 
               {/* Proposed Agency Service/Business Address */}
-              <div className="space-y-3 w-full">
+              <div className="w-full space-y-3">
                 <label htmlFor="proposedAgentService">
                   Proposed Agency Service/Business Address
                 </label>
                 <CustomInput
                   id="proposedAgentService"
-                  className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                    focus:ring-buttonColor
-                    py-3 w-full mt-8"
+                  className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                   inputProps={{
                     type: "text",
                     name: "proposedAgentService",
@@ -403,15 +383,13 @@ const AddAgents = () => {
               </div>
 
               {/* Choice of Super Agent */}
-              <div className="space-y-3 w-full">
+              <div className="w-full space-y-3">
                 <label htmlFor="choiceOfSuperAgent">
                   Choice of Super Agent
                 </label>
                 <CustomInput
                   id="choiceOfSuperAgent"
-                  className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                    focus:ring-buttonColor
-                    py-3 w-full mt-8"
+                  className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                   inputProps={{
                     type: "text",
                     name: "choiceOfSuperAgent",
@@ -426,15 +404,15 @@ const AddAgents = () => {
 
             <div className="flex space-x-16">
               <CustomBtn
-                className="bg-buttonColor px-20 py-3 rounded-full text-white font-semibold hover:bg-lightGreen"
+                className="px-20 py-3 font-semibold text-white rounded-full bg-buttonColor hover:bg-lightGreen"
                 type="submit"
                 onKeyDown={handlePress}
               >
-                Add Super Agent
+                Add Agent
               </CustomBtn>
 
               <CustomBtn
-                className="text-buttonColor font-semibold"
+                className="font-semibold text-buttonColor"
                 type="button"
                 onClick={() => navigate(AGENTS)}
               >

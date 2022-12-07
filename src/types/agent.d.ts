@@ -7,6 +7,7 @@ export interface IAgent {
   state: string;
   LGA: string;
   gender: string;
+  approved: boolean;
   choiceOfSuperAgent: string;
   preferredPhoneNumber: string;
   alternativePhoneNumber: string;

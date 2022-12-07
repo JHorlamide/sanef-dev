@@ -47,8 +47,7 @@ const BankTableHeader = ({
         <div className="relative flex flex-col space-y-2">
           <CustomInput
             id="password"
-            className="rounded-full border border-gray-300 outline-buttonColor 
-            focus:border-buttonColor focus:ring-buttonColor py-2 px-10"
+            className="px-10 py-2 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
             inputProps={{
               type: "text",
               name: "password",
@@ -67,8 +66,7 @@ const BankTableHeader = ({
       {/* Download & New Bank Buttons */}
       <div className="flex space-x-2">
         <CustomBtn
-          className="font-medium py-2 px-5 bg-white rounded-full text-buttonColor flex transition 
-          ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 duration-300"
+          className="flex px-5 py-2 font-medium transition bg-white rounded-full text-buttonColor hover:bg-lightGreen hover:text-white"
           leftIcon={
             <img
               src={DOWNLOAD_ICON}
@@ -84,7 +82,7 @@ const BankTableHeader = ({
         </CustomBtn>
 
         <CustomBtn
-          className="font-medium py-2 px-8 bg-buttonColor rounded-full text-white hover:bg-lightGreen"
+          className="px-8 py-2 font-medium text-white rounded-full bg-buttonColor hover:bg-lightGreen"
           onClick={() => navigate(path)}
         >
           {buttonText}

@@ -20,6 +20,7 @@ const Agent = () => {
     totalAgents,
     filteredAgents,
     setSearchTerm,
+    setIsApproved,
     deleteAgent
   } = useAgents(pageNumber, agentPerPage);
 
@@ -33,10 +34,11 @@ const Agent = () => {
         <img src={LONG_HORIZONTAL_LINE} alt="" className="w-full" />
 
         <AgentTableHeader
-          buttonText={"New Super Agent"}
+          buttonText={"New Agent"}
           path={ADD_AGENT}
           setSearchTerm={setSearchTerm}
           agents={filteredAgents}
+          setIsApproved={setIsApproved}
         />
 
         <TestTable

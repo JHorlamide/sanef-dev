@@ -1,33 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { useParams } from "react-router-dom";
-import {
-  useGetBankDetailsQuery,
-  useUpdateBankDetailsMutation
-} from "redux/api/bankApiSlice";
-import { useUploadImageMutation } from "redux/api/uploadApiSlice";
+import { createBank } from "api/banks";
+import { uploadImage } from "api/upload";
 
-interface useBankFormProps {
-  bank_name?: string;
-  bank_logo?: string | any;
-}
-
-const useBankForm = ({ bank_name, bank_logo }: useBankFormProps) => {
-  const { id } = useParams();
-  const { data } = useGetBankDetailsQuery(id as string);
-  const [updateBankDetails, { isLoading }] = useUpdateBankDetailsMutation();
-  const [upload] = useUploadImageMutation();
-  const [bankName, setBankName] = useState<string | undefined>(data?.data.name);
-  const [bankLogo, setBankLogo] = useState<string | any>(
-    data?.data.logo.imageUrl
-  );
+const useBankForm = () => {
+  const navigate = useNavigate();
+  const [imageUploadId, setImageUploadId] = useState("");
+  const [bankName, setBankName] = useState<string | undefined>("");
+  const [bankLogo, setBankLogo] = useState<string | any>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
-  const [previewLogo, setPreviewLogo] = useState<string>(
-    data?.data.logo.imageUrl
-  );
-
+  const [previewLogo, setPreviewLogo] = useState<string>("");
   const hiddenFileInput = React.useRef<HTMLInputElement>(null);
-  console.log("Bank Name: ", bankName);
 
   useEffect(() => {
     if (!bankLogo) {
@@ -35,33 +19,8 @@ const useBankForm = ({ bank_name, bank_logo }: useBankFormProps) => {
       return;
     }
 
-    if (typeof bankLogo === "string") {
-      setPreviewLogo("");
-      return;
-    }
-
     const objectUrl = URL.createObjectURL(bankLogo);
     setPreviewLogo(objectUrl);
-
-    const uploadImage = async () => {
-      const formData = new FormData();
-      formData.append("image", bankLogo);
-      const res = await upload(formData).unwrap();
-
-      if (res.status === "Success") {
-        setBankLogo(res.data._id);
-        setPreviewLogo("");
-        toast.success("Image Uploaded Successfully");
-        return;
-      }
-
-      toast.error(res.data.message);
-    };
-
-    if (bankLogo) {
-      uploadImage();
-      return;
-    }
 
     return () => URL.revokeObjectURL(objectUrl);
   }, [bankLogo]);
@@ -80,7 +39,7 @@ const useBankForm = ({ bank_name, bank_logo }: useBankFormProps) => {
     return validExtensions.includes(fileExtension);
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLFormElement>) => {
+  const handleFileChange = async (e: React.ChangeEvent<HTMLFormElement>) => {
     const { files } = e.currentTarget;
 
     if (!files || !files[0]) {
@@ -90,6 +49,18 @@ const useBankForm = ({ bank_name, bank_logo }: useBankFormProps) => {
 
     if (isValidFileUploaded(files[0])) {
       setBankLogo(files[0]);
+
+      const formData = new FormData();
+      formData.append("image", files[0] as File);
+      const response = await uploadImage(formData);
+
+      if (response.status === "Success") {
+        setImageUploadId(response.data._id);
+        toast.success("Image Uploaded Successfully");
+        return;
+      }
+
+      toast.error(response.data.message);
       setErrorMessage("");
       return;
     }
@@ -119,17 +90,23 @@ const useBankForm = ({ bank_name, bank_logo }: useBankFormProps) => {
     e: React.FormEvent<HTMLFormElement> | React.KeyboardEvent<HTMLButtonElement>
   ) => {
     e.preventDefault();
-    const response = await updateBankDetails({
-      id: id as string,
-      name: bankName as string,
-      logo: bankLogo
-    }).unwrap();
-
-    if (response.status === "Success") {
-      toast.success(response.data.message);
-    }
-
     validateSelectedFileSize();
+
+    const bankObj = {
+      name: bankName as string,
+      logo: imageUploadId
+    };
+
+    createBank(bankObj)
+      .then((response) => {
+        toast.success(response.message);
+        navigate("/banks");
+      })
+      .catch((error) => {
+        if (error.response) {
+          return toast.error(error.response.data.message);
+        }
+      });
   };
 
   const handlePress = (e: React.KeyboardEvent<HTMLButtonElement>) => {
@@ -141,17 +118,15 @@ const useBankForm = ({ bank_name, bank_logo }: useBankFormProps) => {
   };
 
   return {
-    bankName,
     bankLogo,
     errorMessage,
     previewLogo,
     hiddenFileInput,
-    isLoading,
-    handleSubmit,
-    handleBankNameChange,
-    handleFileChange,
     handlePress,
-    openFileInput
+    handleSubmit,
+    openFileInput,
+    handleFileChange,
+    handleBankNameChange
   };
 };
 

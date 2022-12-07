@@ -44,6 +44,7 @@ const BankManager = () => {
             recordPerPage={bankPerPage}
             setRecordPerPate={setBankPerPage}
           />
+
           <Pagination
             setPageNumber={setPageNumber}
             pageNumber={pageNumber}

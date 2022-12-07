@@ -17,6 +17,7 @@ const useAgents = (pageNumber: number = 0, agentPerPage: number = 20) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [totalPages, setTotalPage] = useState(0);
   const [totalAgents, setTotalAgents] = useState(0);
+  const [isApproved, setIsApproved] = useState("");
 
   useEffect(() => {
     getTotalNumOfCreatedAgents()
@@ -63,8 +64,24 @@ const useAgents = (pageNumber: number = 0, agentPerPage: number = 20) => {
       );
     }
 
+    if (isApproved === "approved") {
+      return agent.approved === true;
+    }
+
+    if (isApproved === "new_request") {
+      return agent.approved === false;
+    }
+
     return agent;
   });
+
+  // const filterAgent = agents.filter((agent) => {
+  //   if (isApproved === "approved") {
+  //     return agent.approved === true;
+  //   }
+
+  //   return agent.approved === false;
+  // });
 
   const updateDetails = (agentId: IUpdateAgent) => {
     updateAgentDetails(agentId)
@@ -103,6 +120,7 @@ const useAgents = (pageNumber: number = 0, agentPerPage: number = 20) => {
     error,
     totalPages,
     totalAgents,
+    setIsApproved,
     filteredAgents,
     setSearchTerm,
     updateDetails,

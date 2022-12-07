@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import { useNavigate } from "react-router-dom";
-import { DOWNLOAD_ICON, FILTER_ICON2, SEARCH_ICON } from "assets/icons";
+import { DOWNLOAD_ICON, SEARCH_ICON } from "assets/icons"; //FILTER_ICON2
 import CustomInput from "components/widgets/CustomInput/CustomInput";
-import CustomSelect from "components/widgets/CustomInput/CustomSelect";
+// import CustomSelect from "components/widgets/CustomInput/CustomSelect";
 import { CSVLink } from "react-csv";
 
 interface TableHeaderProps {
@@ -21,11 +21,11 @@ const SuperAgentTableHeader = ({
 }: TableHeaderProps) => {
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState<string>("");
-  const [filter, setFilter] = useState("");
+  // const [filter, setFilter] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFilter(e.target.value);
-  };
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   setFilter(e.target.value);
+  // };
 
   useEffect(() => {
     setSearchTerm(searchValue);
@@ -58,8 +58,7 @@ const SuperAgentTableHeader = ({
         <div className="relative flex flex-col space-y-2">
           <CustomInput
             id="password"
-            className="rounded-full border border-gray-300 outline-buttonColor 
-            focus:border-buttonColor focus:ring-buttonColor py-2 px-10"
+            className="px-10 py-2 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
             inputProps={{
               type: "text",
               name: "password",
@@ -75,11 +74,10 @@ const SuperAgentTableHeader = ({
         </div>
 
         {/* Filter */}
-        <div className="relative">
+        {/* <div className="relative">
           <CustomSelect
             id="gender"
-            className="rounded-full border border-gray-300 outline-buttonColor 
-            focus:border-buttonColor focus:ring-buttonColor py-2 w-52 px-10"
+            className="px-10 py-2 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor w-52"
             selectProps={{
               name: "gender",
               value: filter,
@@ -96,14 +94,13 @@ const SuperAgentTableHeader = ({
           <div className="absolute inset-y-0 top-3 left-3">
             <img src={FILTER_ICON2} alt="" />
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Download & New Bank Buttons */}
       <div className="flex space-x-2">
         <CustomBtn
-          className="font-medium py-2 px-5 bg-white rounded-full text-buttonColor flex transition 
-          ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 duration-300"
+          className="flex px-5 py-2 font-medium bg-white rounded-full text-buttonColor hover:bg-lightGreen hover:text-white"
           leftIcon={
             <img
               src={DOWNLOAD_ICON}
@@ -118,7 +115,7 @@ const SuperAgentTableHeader = ({
         </CustomBtn>
 
         <CustomBtn
-          className="font-medium py-2 px-8 bg-buttonColor rounded-full text-white hover:bg-lightGreen"
+          className="px-8 py-2 font-medium text-white rounded-full bg-buttonColor hover:bg-lightGreen"
           onClick={() => navigate(path)}
         >
           {buttonText}

@@ -19,6 +19,7 @@ const Regulators = () => {
     deleteRegulator,
     setSearchTerm
   } = useRegulator(pageNumber, regulatorPerPage);
+
   return (
     <DashboardLayout>
       <RegulatorHeader />

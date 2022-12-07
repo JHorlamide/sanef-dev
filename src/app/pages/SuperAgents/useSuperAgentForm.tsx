@@ -16,7 +16,7 @@ export type CompanyDataType = {
   phoneNumber: string;
 };
 
-interface useBankFormProps {
+interface useSuperAgentFormProps {
   company_logo?: CompanyLogoType;
   company_data?: CompanyDataType;
 }
@@ -24,7 +24,7 @@ interface useBankFormProps {
 const useSuperAgentForm = ({
   company_logo,
   company_data
-}: useBankFormProps) => {
+}: useSuperAgentFormProps) => {
   const navigate = useNavigate();
   const [companyData, setCompanyData] = useState<CompanyDataType>({
     companyName: "",
