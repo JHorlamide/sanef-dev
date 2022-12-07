@@ -102,7 +102,7 @@ const SuperAgentList = ({
 
         <Table.Body className="divide-y">
           {loading && (
-            <div className="container mx-auto my-8 flex justify-center item-center ml-40">
+            <div className="container flex justify-center mx-auto my-8 ml-40 item-center">
               <Spinner
                 color="success"
                 aria-label="spinner"
@@ -122,14 +122,16 @@ const SuperAgentList = ({
           )}
 
           {superAgents.length <= 0 && (
-            <div className="container mx-auto flex justify-center items-center py-10 ml-40">
-              <h1 className="font-semibold">Your bank record is empty!</h1>
+            <div className="container flex items-center justify-center py-10 mx-auto ml-72">
+              <h1 className="font-semibold">
+                Your super agent record is empty!
+              </h1>
             </div>
           )}
 
           {superAgents.map((superAgent) => (
             <Table.Row key={superAgent._id} className="bg-white">
-              <Table.Cell className="whitespace-nowrap font-medium text-gray-900">
+              <Table.Cell className="font-medium text-gray-900 whitespace-nowrap">
                 <img
                   src={superAgent.logo?.imageUrl}
                   alt={superAgent.logo?.key}

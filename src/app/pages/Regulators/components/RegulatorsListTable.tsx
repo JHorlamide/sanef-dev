@@ -40,7 +40,7 @@ const RegulatorsListTable = ({
         isOpen={isOpen}
         closeModal={closeModal}
         actionText={"Delete"}
-        modalHeading={"Delete Bank"}
+        modalHeading={"Delete Regulator"}
         subText={`${regulatorName} will be deleted.`}
         deleteAction={() => removeRegulator(regulatorId)}
       />
@@ -86,8 +86,14 @@ const RegulatorsListTable = ({
           {error && (
             <div className="container mx-auto my-10">
               <h1 className="text-start text-md">
-                Can't load banks at the moment. Please try again later
+                Can't load regulators at the moment. Please try again later
               </h1>
+            </div>
+          )}
+
+          {filteredRegulators.length <= 0 && (
+            <div className="container flex items-center justify-center py-10 mx-auto ml-[150px]">
+              <h1 className="font-semibold">Your regulator record is empty!</h1>
             </div>
           )}
 

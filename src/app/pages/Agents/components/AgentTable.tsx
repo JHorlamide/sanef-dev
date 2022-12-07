@@ -105,7 +105,7 @@ const TestTable = ({
         </Table.Head>
         <Table.Body className="divide-y">
           {loading && (
-            <div className="container mx-auto my-8 flex justify-center item-center ml-40">
+            <div className="container flex justify-center mx-auto my-8 ml-40 item-center">
               <Spinner
                 color="success"
                 aria-label="spinner"
@@ -125,8 +125,8 @@ const TestTable = ({
           )}
 
           {filterAgents.length <= 0 && (
-            <div className="container mx-auto flex justify-center items-center py-10 ml-72">
-              <h1 className="font-semibold">Your bank record is empty!</h1>
+            <div className="container flex items-center justify-center py-10 mx-auto ml-72">
+              <h1 className="font-semibold">Your agent record is empty!</h1>
             </div>
           )}
 

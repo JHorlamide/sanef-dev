@@ -91,9 +91,17 @@ const GovernmentListTable = ({
             </div>
           )}
 
+          {filteredGovernments.length <= 0 && (
+            <div className="container flex items-center justify-center py-10 mx-auto ml-[150px]">
+              <h1 className="font-semibold">
+                Your government\MDAs record is empty!
+              </h1>
+            </div>
+          )}
+
           {filteredGovernments.map((government) => (
             <Table.Row key={government._id} className="bg-white">
-              <Table.Cell className="whitespace-nowrap font-medium text-gray-900">
+              <Table.Cell className="font-medium text-gray-900 whitespace-nowrap">
                 <img
                   src={government.logo?.imageUrl}
                   alt={government.logo?.key}
