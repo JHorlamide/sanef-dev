@@ -7,7 +7,7 @@ import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { AGENTS } from "routes/ROUTES_CONSTANTS";
 import CustomSelect from "components/widgets/CustomInput/CustomSelect";
-import useAgentForm from "../useAgentForm";
+import useAgentForm from "../hooks/useAgentForm";
 import useStateLga from "hooks/useStateLga";
 
 import { Combobox, Transition } from "@headlessui/react";

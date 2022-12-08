@@ -8,7 +8,7 @@ import SuperAgentList from "./components/SuperAgentList";
 import { LONG_HORIZONTAL_LINE } from "assets/icons";
 import { ADD_SUPER_AGENT } from "routes/ROUTES_CONSTANTS";
 import SuperAgentTableHeader from "./components/SuperAgentTableHeader";
-import useSuperAgent from "hooks/useSuperAgent";
+import useSuperAgent from "app/pages/SuperAgents/hooks/useSuperAgent";
 
 const SuperAgent = () => {
   const [pageNumber, setPageNumber] = useState(0);

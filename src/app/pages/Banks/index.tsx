@@ -4,7 +4,7 @@ import BankListTable from "./components/BankListTable";
 import { DashboardMainView } from "app/components/Layout";
 import { ADD_BANK } from "routes/ROUTES_CONSTANTS";
 import BankHeader from "./components/BankHeader";
-import useBank from "hooks/useBank";
+import useBank from "app/pages/Banks/hooks/useBank";
 import BankTableHeader from "./components/BankTableHeader";
 import Pagination, { TableRecord } from "app/components/Pagination";
 

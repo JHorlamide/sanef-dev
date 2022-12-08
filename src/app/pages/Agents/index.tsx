@@ -6,7 +6,7 @@ import Analytics from "./components/Analytics";
 import { LONG_HORIZONTAL_LINE } from "assets/icons";
 import TestTable from "./components/AgentTable";
 import { ADD_AGENT } from "routes/ROUTES_CONSTANTS";
-import useAgents from "hooks/useAgents";
+import useAgents from "app/pages/Agents/hooks/useAgents";
 import AgentTableHeader from "./components/AgentTableHeader";
 import Pagination, { TableRecord } from "app/components/Pagination";
 

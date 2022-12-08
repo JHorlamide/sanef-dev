@@ -9,7 +9,7 @@ import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { GOVERNMENTS } from "routes/ROUTES_CONSTANTS";
 import toast from "react-hot-toast";
 import { IUpdateGovernmentRequest } from "types/government";
-import useGovernment from "hooks/useGovernmnet";
+import useGovernment from "app/pages/Governments/hooks/useGovernmnet";
 import { uploadImage } from "api/upload";
 import { getGovernmentDetails } from "api/government";
 

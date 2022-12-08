@@ -8,11 +8,11 @@ import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { SUPER_AGENT } from "routes/ROUTES_CONSTANTS";
 import CustomSelect from "components/widgets/CustomInput/CustomSelect";
-import { CompanyDataType } from "../useSuperAgentForm";
+import { CompanyDataType } from "../hooks/useSuperAgentForm";
 import toast from "react-hot-toast";
 import { uploadImage } from "api/upload";
 import { IUpdateSuperAgentRequest } from "types/superAgent";
-import useSuperAgent from "hooks/useSuperAgent";
+import useSuperAgent from "app/pages/SuperAgents/hooks/useSuperAgent";
 import { getSuperAgentDetails } from "api/superAgents";
 
 interface UpdateSuperAgent extends CompanyDataType {

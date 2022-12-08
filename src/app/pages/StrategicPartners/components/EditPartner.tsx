@@ -7,7 +7,7 @@ import { DashboardMainView } from "app/components/Layout";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { STRATEGIC_PARTNERS } from "routes/ROUTES_CONSTANTS";
-import useStrategicPartner from "hooks/useStrategicPartner";
+import useStrategicPartner from "app/pages/StrategicPartners/hooks/useStrategicPartner";
 import { getPartnerDetails } from "api/strategicPartner";
 import { uploadImage } from "api/upload";
 import toast from "react-hot-toast";

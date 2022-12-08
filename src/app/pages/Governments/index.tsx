@@ -4,7 +4,7 @@ import GovernmentHeader from "./components/GovernmentHeader";
 import { DashboardMainView } from "app/components/Layout";
 import { ADD_GOVERNMENT } from "routes/ROUTES_CONSTANTS";
 import GovernmentListTable from "./components/GovernmentListTable";
-import useGovernment from "hooks/useGovernmnet";
+import useGovernment from "app/pages/Governments/hooks/useGovernmnet";
 import GovernmentTableHeader from "./components/GovernmentTableHeader";
 import Pagination, { TableRecord } from "app/components/Pagination";
 

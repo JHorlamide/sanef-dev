@@ -5,7 +5,7 @@ import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { AGENTS } from "routes/ROUTES_CONSTANTS";
 import { LONG_HORIZONTAL_LINE } from "assets/icons";
 import DeleteModal from "app/components/DeleteModal";
-import useAdminform from "./useAdminform";
+import useAdminform from "./hooks/useAdminform";
 
 const Settings = () => {
   const navigate = useNavigate();

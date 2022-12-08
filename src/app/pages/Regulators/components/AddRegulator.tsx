@@ -6,7 +6,7 @@ import { DashboardMainView } from "app/components/Layout";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { REGULATORS } from "routes/ROUTES_CONSTANTS";
-import useRegulatorForm from "../useRegulatorForm";
+import useRegulatorForm from "../hooks/useRegulatorForm";
 
 const AddRegulator = () => {
   const navigate = useNavigate();

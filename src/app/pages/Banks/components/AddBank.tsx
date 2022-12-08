@@ -10,7 +10,7 @@ import { BANKS } from "routes/ROUTES_CONSTANTS";
 // import toast from "react-hot-toast";
 // import { createBank } from "api/banks";
 // import { uploadImage } from "api/upload";
-import useBankForm from "../useBankForm";
+import useBankForm from "../hooks/useBankForm";
 
 const AddBank = () => {
   const navigate = useNavigate();

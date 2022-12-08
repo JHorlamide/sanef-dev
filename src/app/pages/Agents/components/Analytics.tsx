@@ -4,7 +4,7 @@ import { Spinner } from "flowbite-react";
 import { Combobox, Transition } from "@headlessui/react";
 import { HiOutlineChevronDown } from "react-icons/hi";
 import { BsCheck2 } from "react-icons/bs";
-import useAnalytics from "hooks/useAgentAnalytics";
+import useAnalytics from "app/pages/Agents/hooks/useAgentAnalytics";
 
 interface MonthList {
   id: number;
@@ -28,8 +28,8 @@ const Analytics = ({ totalAgents }: { totalAgents: number }) => {
 
   return (
     <div className="relative grid grid-cols-12  items-center border border-gray-200 px-8 bg-white h-[113px] rounded-lg shadow-md">
-      <div className="col-span-3 flex flex-col space-y-1">
-        <h1 className="text-buttonColor text-2xl font-bold">{totalAgents}</h1>
+      <div className="flex flex-col col-span-3 space-y-1">
+        <h1 className="text-2xl font-bold text-buttonColor">{totalAgents}</h1>
         <p className="">Total Number of Agents</p>
       </div>
 
@@ -37,7 +37,7 @@ const Analytics = ({ totalAgents }: { totalAgents: number }) => {
         <img src={SMALL_VERTICAL_LINE} alt="" className="" />
       </div>
 
-      <div className="col-span-5 flex flex-col space-y-1">
+      <div className="flex flex-col col-span-5 space-y-1">
         {loadingMonths ? (
           <Spinner
             color="success"
@@ -46,7 +46,7 @@ const Analytics = ({ totalAgents }: { totalAgents: number }) => {
             size={"md"}
           />
         ) : (
-          <h1 className="text-buttonColor text-2xl font-bold">{reqNewMonth}</h1>
+          <h1 className="text-2xl font-bold text-buttonColor">{reqNewMonth}</h1>
         )}
         <div className="flex space-x-10">
           New Requests in{" "}
@@ -55,22 +55,17 @@ const Analytics = ({ totalAgents }: { totalAgents: number }) => {
               value={selectedNewReqMonth}
               onChange={setSelectedNewReqMonth}
             >
-              <div className="relative -mt-2 z-50">
-                <div
-                  className="relative w-auto cursor-default overflow-hidden rounded-lg text-left 
-                  focus:outline-none focus-visible:ring-2 
-                  focus-visible:ring-opacity-75 focus-visible:ring-offset-2 
-                  focus-visible:ring-offset-teal-300 sm:text-sm"
-                >
+              <div className="relative z-50 -mt-2">
+                <div className="relative w-auto overflow-hidden text-left rounded-lg cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
                   <Combobox.Input
-                    className="font-semibold w-auto border-none py-2 text-sm leading-5 text-gray-900 focus:ring-0"
+                    className="w-auto py-2 text-sm font-semibold leading-5 text-gray-900 border-none focus:ring-0"
                     displayValue={(month: MonthList) => month.name}
                     onChange={(event) => setQuery(event.target.value)}
                   />
 
                   <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
                     <HiOutlineChevronDown
-                      className="h-5 w-5 text-gray-400"
+                      className="w-5 h-5 text-gray-400"
                       aria-hidden="true"
                     />
                   </Combobox.Button>
@@ -83,9 +78,9 @@ const Analytics = ({ totalAgents }: { totalAgents: number }) => {
                   leaveTo="opacity-0"
                   afterLeave={() => setQuery("")}
                 >
-                  <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                  <Combobox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                     {filteredMonth.length === 0 && query !== "" ? (
-                      <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
+                      <div className="relative px-4 py-2 text-gray-700 cursor-default select-none">
                         Nothing found.
                       </div>
                     ) : (
@@ -117,7 +112,7 @@ const Analytics = ({ totalAgents }: { totalAgents: number }) => {
                                   }`}
                                 >
                                   <BsCheck2
-                                    className="h-5 w-5"
+                                    className="w-5 h-5"
                                     aria-hidden="true"
                                   />
                                 </span>
@@ -139,7 +134,7 @@ const Analytics = ({ totalAgents }: { totalAgents: number }) => {
         <img src={SMALL_VERTICAL_LINE} alt="" className="" />
       </div>
 
-      <div className="col-span-4 flex flex-col space-y-1 -ml-10">
+      <div className="flex flex-col col-span-4 -ml-10 space-y-1">
         {loadingMonths ? (
           <Spinner
             color="success"
@@ -148,7 +143,7 @@ const Analytics = ({ totalAgents }: { totalAgents: number }) => {
             size={"md"}
           />
         ) : (
-          <h1 className="text-buttonColor text-2xl font-bold">
+          <h1 className="text-2xl font-bold text-buttonColor">
             {reqApprMonth}
           </h1>
         )}
@@ -159,22 +154,17 @@ const Analytics = ({ totalAgents }: { totalAgents: number }) => {
               value={selectedApprAgentMonth}
               onChange={setSelectedApprAgentMonth}
             >
-              <div className="relative -mt-2 z-50">
-                <div
-                  className="relative w-auto cursor-default overflow-hidden rounded-lg text-left 
-                  focus:outline-none focus-visible:ring-2 
-                  focus-visible:ring-opacity-75 focus-visible:ring-offset-2 
-                  focus-visible:ring-offset-teal-300 sm:text-sm"
-                >
+              <div className="relative z-50 -mt-2">
+                <div className="relative w-auto overflow-hidden text-left rounded-lg cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
                   <Combobox.Input
-                    className="font-semibold w-auto border-none py-2 text-sm leading-5 text-gray-900 focus:ring-0"
+                    className="w-auto py-2 text-sm font-semibold leading-5 text-gray-900 border-none focus:ring-0"
                     displayValue={(month: MonthList) => month.name}
                     onChange={(event) => setQuery(event.target.value)}
                   />
 
                   <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
                     <HiOutlineChevronDown
-                      className="h-5 w-5 text-gray-400"
+                      className="w-5 h-5 text-gray-400"
                       aria-hidden="true"
                     />
                   </Combobox.Button>
@@ -187,9 +177,9 @@ const Analytics = ({ totalAgents }: { totalAgents: number }) => {
                   leaveTo="opacity-0"
                   afterLeave={() => setQuery("")}
                 >
-                  <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                  <Combobox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                     {filteredMonth.length === 0 && query !== "" ? (
-                      <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
+                      <div className="relative px-4 py-2 text-gray-700 cursor-default select-none">
                         Nothing found.
                       </div>
                     ) : (
@@ -221,7 +211,7 @@ const Analytics = ({ totalAgents }: { totalAgents: number }) => {
                                   }`}
                                 >
                                   <BsCheck2
-                                    className="h-5 w-5"
+                                    className="w-5 h-5"
                                     aria-hidden="true"
                                   />
                                 </span>

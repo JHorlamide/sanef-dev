@@ -11,7 +11,7 @@ import toast from "react-hot-toast";
 import { getRegulatorDetails } from "api/regulator";
 import { uploadImage } from "api/upload";
 import { IUpdateRegulatorRequest } from "types/regulator";
-import useRegulator from "hooks/useRegulator";
+import useRegulator from "app/pages/Regulators/hooks/useRegulator";
 
 const EditRegulators = () => {
   const navigate = useNavigate();

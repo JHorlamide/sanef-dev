@@ -5,7 +5,7 @@ import { DashboardMainView } from "app/components/Layout";
 import Pagination, { TableRecord } from "app/components/Pagination";
 import { ADD_REGULATOR } from "routes/ROUTES_CONSTANTS";
 import RegulatorsListTable from "./components/RegulatorsListTable";
-import useRegulator from "hooks/useRegulator";
+import useRegulator from "app/pages/Regulators/hooks/useRegulator";
 import RegulatorTableHeader from "./components/RegulatorTableHeader";
 
 const Regulators = () => {

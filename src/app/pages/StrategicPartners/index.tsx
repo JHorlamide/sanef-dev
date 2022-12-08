@@ -5,7 +5,7 @@ import { DashboardMainView } from "../../components/Layout";
 import { ADD_STRATEGIC_PARTNERS } from "routes/ROUTES_CONSTANTS";
 import StrategicPartnerTable from "./components/StrategicPartnerTable";
 import StrategicPartnerTableHeader from "./components/StrategicPartnerTableHeader";
-import useStrategicPartner from "hooks/useStrategicPartner";
+import useStrategicPartner from "app/pages/StrategicPartners/hooks/useStrategicPartner";
 import Pagination, { TableRecord } from "app/components/Pagination";
 
 const StrategicPartner = () => {

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom"; //useLocation
 import { IBank, IUpdateBankRequest } from "types/bank";
 import { getBanks, deleteBank, updateBankDetails } from "api/banks";
@@ -35,7 +35,6 @@ const useBank = (pageNumber: number = 0, bankPerPage: number = 20) => {
         setIsError(true);
         setError(error.message);
         toast.error(error.message);
-        // navigate("/login", { state: { from: location }, replace: true });
       });
 
     // Anytime the component unmount it will abort the controller;
@@ -69,26 +68,27 @@ const useBank = (pageNumber: number = 0, bankPerPage: number = 20) => {
       });
   };
 
-  const filteredBanks = banks.filter((bank) => {
-    if (searchTerm !== "") {
-      const regex = new RegExp(`${searchTerm}`, "gi");
-      return bank.name.match(regex);
-    }
+  const filteredBanks = useMemo(
+    () =>
+      banks.filter((bank) => {
+        if (searchTerm !== "") {
+          const regex = new RegExp(`${searchTerm}`, "gi");
+          return bank.name.match(regex);
+        }
 
-    return bank;
-  });
+        return bank;
+      }),
+    [banks, searchTerm]
+  );
 
-  // const filterFunction = (searchValue: string) => {
-  //   console.log(searchValue);
-  //   banks.filter((bank) => {
-  //     if (searchTerm !== "") {
-  //       const regex = new RegExp(`${searchValue}`, "gi");
-  //       return bank.name.match(regex);
-  //     }
+  // const filteredBanks = banks.filter((bank) => {
+  //   if (searchTerm !== "") {
+  //     const regex = new RegExp(`${searchTerm}`, "gi");
+  //     return bank.name.match(regex);
+  //   }
 
-  //     return bank;
-  //   });
-  // };
+  //   return bank;
+  // });
 
   return {
     banks,

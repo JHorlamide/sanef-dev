@@ -4,7 +4,6 @@ import { Table, Spinner } from "flowbite-react";
 
 import { DELETE_ICON, EDIT_ICON, FILTER_ICON } from "assets/icons";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
-// import Pagination, { TableRecord } from "app/components/Pagination";
 import DeleteModal from "app/components/DeleteModal";
 import { IBank } from "types/bank";
 
@@ -79,7 +78,7 @@ const BankListTable = ({
 
         <Table.Body className="divide-y">
           {loading && (
-            <div className="container mx-auto my-8 flex justify-center item-center ml-40">
+            <div className="container flex justify-center mx-auto my-8 ml-40 item-center">
               <Spinner
                 color="success"
                 aria-label="spinner"
@@ -97,8 +96,8 @@ const BankListTable = ({
             </div>
           )}
 
-          {banks.length <= 0 && (
-            <div className="container mx-auto flex justify-center items-center py-10 ml-40">
+          {banks?.length <= 0 && (
+            <div className="container flex items-center justify-center py-10 mx-auto ml-40">
               <h1 className="font-semibold">Your bank record is empty!</h1>
             </div>
           )}

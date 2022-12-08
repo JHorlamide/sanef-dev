@@ -10,7 +10,7 @@ import { BANKS } from "routes/ROUTES_CONSTANTS";
 import toast from "react-hot-toast";
 import { getBankDetails } from "api/banks";
 import { uploadImage } from "api/upload";
-import useBank from "hooks/useBank";
+import useBank from "app/pages/Banks/hooks/useBank";
 
 const EditBank = () => {
   const navigate = useNavigate();
@@ -140,7 +140,7 @@ const EditBank = () => {
     <DashboardLayout>
       <BankHeader />
 
-      <DashboardMainView className="pl-10 pt-10 h-screen">
+      <DashboardMainView className="h-screen pt-10 pl-10">
         <div className="bg-white w-[690px] h-[451px] border rounded-lg py-6 flex flex-col space-y-10">
           <div className="space-y-4">
             <div className="flex justify-between px-5">
@@ -150,9 +150,7 @@ const EditBank = () => {
                 <p className="mr-3 font-medium">Active</p>
                 <div className="form-check form-switch">
                   <input
-                    className="form-check-input appearance-none w-11 -ml-10 rounded-full float-left 
-                    h-5 align-top bg-buttonColor bg-no-repeat bg-contain focus:outline-none 
-                    outline-buttonColor cursor-pointer shadow-sm border-buttonColor focus:outline-buttonColor"
+                    className="float-left h-5 -ml-10 align-top bg-no-repeat bg-contain rounded-full shadow-sm appearance-none cursor-pointer form-check-input w-11 bg-buttonColor focus:outline-none outline-buttonColor border-buttonColor focus:outline-buttonColor"
                     type="checkbox"
                     role="switch"
                     id="flexSwitchCheckDefault"
@@ -160,11 +158,11 @@ const EditBank = () => {
                 </div>
               </div>
             </div>
-            <hr className="border w-full" />
+            <hr className="w-full border" />
           </div>
 
           <form
-            className="container mx-auto px-8 space-y-20"
+            className="container px-8 mx-auto space-y-20"
             onSubmit={handleSubmit}
           >
             <div className="flex space-x-10">
@@ -200,9 +198,7 @@ const EditBank = () => {
                   <label htmlFor="bankName">Name</label>
                   <CustomInput
                     id="bankName"
-                    className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                    focus:ring-buttonColor
-                    py-3 w-full mt-8"
+                    className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                     inputProps={{
                       type: "text",
                       name: "bankName",
@@ -214,28 +210,28 @@ const EditBank = () => {
 
                 <div className="flex flex-col">
                   {errorMessage && (
-                    <p className="text-red-500 text-sm text-center">
+                    <p className="text-sm text-center text-red-500">
                       {errorMessage}
                     </p>
                   )}
 
                   <div className="flex">
                     <CustomBtn
-                      className="text-buttonColor text-start font-semibold text-md mb-2 w-full outline-none"
+                      className="w-full mb-2 font-semibold outline-none text-buttonColor text-start text-md"
                       onClick={openFileInput}
                       type="button"
                     >
                       Upload logo
                     </CustomBtn>
 
-                    <p className="w-full text-md text-start whitespace-normal font-semibold text-gray-800">
+                    <p className="w-full font-semibold text-gray-800 whitespace-normal text-md text-start">
                       {bankLogo?.name}
                     </p>
                   </div>
 
                   <CustomInput
                     id="bankLogo"
-                    className="hidden border-none text-buttonColor font-semibold text-md"
+                    className="hidden font-semibold border-none text-buttonColor text-md"
                     inputProps={{
                       type: "file",
                       placeholder: "Upload logo",
@@ -252,7 +248,7 @@ const EditBank = () => {
 
             <div className="flex space-x-16">
               <CustomBtn
-                className="bg-buttonColor px-20 py-3 rounded-full text-white font-semibold hover:bg-lightGreen"
+                className="px-20 py-3 font-semibold text-white rounded-full bg-buttonColor hover:bg-lightGreen"
                 type="submit"
                 onKeyDown={handlePress}
               >
@@ -260,7 +256,7 @@ const EditBank = () => {
               </CustomBtn>
 
               <CustomBtn
-                className="text-buttonColor font-semibold hover:text-lightGreen"
+                className="font-semibold text-buttonColor hover:text-lightGreen"
                 type="button"
                 onClick={() => navigate(BANKS)}
               >

@@ -6,7 +6,7 @@ import { DashboardMainView } from "app/components/Layout";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { GOVERNMENTS } from "routes/ROUTES_CONSTANTS";
-import useGovernmentForm from "../useGovernmentForm";
+import useGovernmentForm from "../hooks/useGovernmentForm";
 
 const AddGovernment = () => {
   const navigate = useNavigate();

@@ -6,7 +6,7 @@ import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import CustomInput from "components/widgets/CustomInput/CustomInput";
 import { SUPER_AGENT } from "routes/ROUTES_CONSTANTS";
 import CustomSelect from "components/widgets/CustomInput/CustomSelect";
-import useEditAgentForm from "../useEditAgentForm";
+import useEditAgentForm from "../hooks/useEditAgentForm";
 
 const SubUpdateForm = () => {
   return (
