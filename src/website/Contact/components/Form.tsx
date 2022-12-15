@@ -28,8 +28,7 @@ export const SocialIcon = ({ parentClassName }: SocialIconProps) => {
           href={link}
           target={"_blank"}
           rel="noreferrer"
-          className="bg-buttonColor rounded-full shadow-lg p-2 transition 
-          ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+          className="p-2 transition duration-300 ease-in-out delay-150 rounded-full shadow-lg bg-buttonColor hover:-translate-y-1 hover:scale-110"
         >
           <Icon size={25} className="text-white" />
         </a>
@@ -61,7 +60,7 @@ export const MobileForm = () => {
   };
 
   return (
-    <section className="relative overflow-hidden flex flex-col space-y-5 pt-10 px-5">
+    <section className="relative flex flex-col px-5 pt-10 space-y-5 overflow-hidden">
       <div className="">
         <h1 className="text-[24px] leading-[32px] font-bold">
           Send Us a Message
@@ -78,7 +77,7 @@ export const MobileForm = () => {
         </label>
         <CustomInput
           id="firstName"
-          className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 w-full"
+          className="w-full py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
           inputProps={{
             type: "text",
             name: "firstName",
@@ -92,7 +91,7 @@ export const MobileForm = () => {
         </label>
         <CustomInput
           id="lastName"
-          className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 w-full"
+          className="w-full py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
           inputProps={{
             type: "text",
             name: "lastName",
@@ -106,7 +105,7 @@ export const MobileForm = () => {
         </label>
         <CustomInput
           id="email"
-          className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 w-full"
+          className="w-full py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
           inputProps={{
             type: "text",
             name: "email",
@@ -126,8 +125,7 @@ export const MobileForm = () => {
 
           <CustomInput
             id="phoneNumber"
-            className="relative rounded-full border border-gray-300 outline-buttonColor
-            focus:border-buttonColor focus:ring-buttonColor py-3 w-full px-24"
+            className="relative w-full px-24 py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
             inputProps={{
               type: "text",
               name: "phoneNumber",
@@ -142,8 +140,7 @@ export const MobileForm = () => {
         </label>
         <CustomTextarea
           id="message"
-          className="container w-full rounded-2xl border border-gray-300 outline-buttonColor
-          focus:border-buttonColor focus:ring-buttonColor"
+          className="container w-full border border-gray-300 rounded-2xl outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
           boxProps={{
             name: "message",
             rows: 3,
@@ -152,10 +149,7 @@ export const MobileForm = () => {
           }}
         />
 
-        <CustomBtn
-          className="text-white bg-buttonColor rounded-full py-3 px-5 w-60 
-         hover:bg-lightGreen"
-        >
+        <CustomBtn className="px-5 py-3 text-white rounded-full bg-buttonColor w-60 hover:bg-lightGreen">
           Send Message
         </CustomBtn>
       </form>
@@ -222,7 +216,7 @@ export const DesktopForm = () => {
               </label>
               <CustomInput
                 id="firstName"
-                className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 px-5 w-80"
+                className="px-5 py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor w-80"
                 inputProps={{
                   type: "text",
                   name: "firstName",
@@ -238,7 +232,7 @@ export const DesktopForm = () => {
               </label>
               <CustomInput
                 id="lastName"
-                className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 px-5 w-80"
+                className="px-5 py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor w-80"
                 inputProps={{
                   type: "text",
                   name: "lastName",
@@ -256,7 +250,7 @@ export const DesktopForm = () => {
               </label>
               <CustomInput
                 id="email"
-                className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 px-5 w-80"
+                className="px-5 py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor w-80"
                 inputProps={{
                   type: "text",
                   name: "email",
@@ -277,7 +271,7 @@ export const DesktopForm = () => {
                 </p>
                 <CustomInput
                   id="phoneNumber"
-                  className="relative rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor focus:ring-buttonColor py-3 px-24 w-80"
+                  className="relative px-24 py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor w-80"
                   inputProps={{
                     type: "text",
                     name: "phoneNumber",
@@ -295,8 +289,7 @@ export const DesktopForm = () => {
             </label>
             <CustomTextarea
               id="message"
-              className="container w-full rounded-2xl border border-gray-300 
-              outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
+              className="container w-full border border-gray-300 rounded-2xl outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
               boxProps={{
                 name: "message",
                 rows: 3,
@@ -307,25 +300,19 @@ export const DesktopForm = () => {
           </div>
 
           <div className="pt-5">
-            <CustomBtn
-              className="text-white bg-buttonColor rounded-full py-3 px-5 w-60 
-             hover:bg-lightGreen"
-            >
+            <CustomBtn className="px-5 py-3 text-white rounded-full bg-buttonColor w-60 hover:bg-lightGreen">
               Send Message
             </CustomBtn>
           </div>
         </form>
       </div>
 
-      <div
-        className="relative flex md:flex-row md:space-x-8 lg:space-x-0 
-        lg:flex-col md:space-y-0 lg:space-y-12 md:w-full"
-      >
+      <div className="relative flex md:flex-row md:space-x-8 lg:space-x-0 lg:flex-col md:space-y-0 lg:space-y-12 md:w-full">
         <div className="">
           <h1 className="font-bold text-[24px]">Contact Details</h1>
         </div>
         <div className="">
-          <p className="text-[18px] text-start w-64">
+          <p className="text-[15px] text-start w-64">
             SANEF Limited, NCWS House, 2nd Floor, Plot 14B Ahmed Onibudo Street,
             Victoria Island, Lagos
           </p>
