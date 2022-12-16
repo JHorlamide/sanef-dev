@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import CustomBtn from "components/widgets/CustomBtn/CustomBtn";
 import Image from "components/widgets/Image/Image";
 import BoardModal from "./BoardModal";
@@ -36,7 +36,7 @@ const CardSubContentMobile = ({
   handleSetUserInfo
 }: CardProps) => {
   return (
-    <div className="space-y-6 flex flex-col items-baseline">
+    <div className="flex flex-col items-baseline space-y-6">
       <div className="text-ellipsis leading-[30px]">
         <p className="">{shortBio}</p>
       </div>
@@ -68,20 +68,20 @@ const CardSubContentDesktop = ({
   position,
   handleSetUserInfo
 }: CardProps) => {
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      console.log("I was resized");
-    });
-  });
+  // useEffect(() => {
+  //   window.addEventListener("resize", () => {
+  //     console.log("I was resized");
+  //   });
+  // });
   return (
-    <div className="overflow-hidden space-y-4 items-baseline">
+    <div className="items-baseline space-y-4 overflow-hidden">
       <div className="text-ellipsis leading-[30px]">
         <p className={`${style.clamp}`}>{shortBio2}</p>
       </div>
 
       <div className="block">
         <CustomBtn
-          className="text-buttonColor font-bold hover:text-lightGreen"
+          className="font-bold text-buttonColor hover:text-lightGreen"
           onClick={() =>
             handleSetUserInfo({
               image,
@@ -149,7 +149,7 @@ const BoardCard = ({
         <div className="flex flex-col justify-start mt-5 space-y-4 lg:pb-10 lg:space-y-8">
           <div className="">
             <h1 className="text-xl font-bold">{name}</h1>
-            <p className="font-medium pt-1">{position}</p>
+            <p className="pt-1 font-medium">{position}</p>
           </div>
 
           {/* Desktop */}

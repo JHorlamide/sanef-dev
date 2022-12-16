@@ -35,7 +35,7 @@ export const OUR_IMPACT_CARD_CONTENT = {
   SECOND_ITEM: [
     {
       id: 1,
-      headingText: "1.3M",
+      headingText: "1.4M",
       content: `Number of Financial \n Access Points/Agents`
     },
     {
