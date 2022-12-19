@@ -34,7 +34,7 @@ const BackToTop = () => {
             window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
           }}
           className="fixed px-8 py-4 font-[20px] bottom-[40px] right-[40px] 
-        bg-buttonColor text-white text-center z-50 rounded-full"
+          bg-buttonColor text-white text-center z-50 rounded-full"
         >
           Back to top
         </button>

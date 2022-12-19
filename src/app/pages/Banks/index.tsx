@@ -10,7 +10,7 @@ import Pagination, { TableRecord } from "app/components/Pagination";
 // import ReactPaginate from "react-paginated";
 
 const BankManager = () => {
-  const [pageNumber, setPageNumber] = useState(0);
+  const [pageNumber, setPageNumber] = useState(1);
   const [bankPerPage, setBankPerPage] = useState(10);
   const {
     loading,
@@ -30,7 +30,7 @@ const BankManager = () => {
     <DashboardLayout>
       <BankHeader />
 
-      <DashboardMainView className="h-screen">
+      <DashboardMainView className="h-auto">
         <BankTableHeader
           buttonText={"New Bank"}
           path={ADD_BANK}
@@ -45,7 +45,7 @@ const BankManager = () => {
           removeBank={removeBank}
         />
 
-        <div className="flex justify-between mt-8">
+        <div className="flex justify-between py-5">
           <TableRecord
             recordPerPage={bankPerPage}
             setRecordPerPate={setBankPerPage}
