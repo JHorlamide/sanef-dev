@@ -1,14 +1,15 @@
 import React from "react";
+import { Fragment } from "react";
+import { IoIosArrowDown } from "react-icons/io";
+import { Menu, Transition } from "@headlessui/react";
+import { Pagination } from "flowbite-react";
+
 // import {
 //   IoIosArrowForward,
 //   IoIosArrowBack
 //   // IoIosArrowDown
 // } from "react-icons/io";
 // import Test from "./Test";
-import { Fragment } from "react";
-import { IoIosArrowDown } from "react-icons/io";
-import { Menu, Transition } from "@headlessui/react";
-import { Pagination } from "flowbite-react";
 
 export interface IPaginationProps {
   pageNumber: number;
@@ -21,12 +22,11 @@ export interface TableRecordProps {
   setRecordPerPate: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const ItemList = [10, 20, 30, 40, 50];
-
 export const TableRecord = ({
   recordPerPage,
   setRecordPerPate
 }: TableRecordProps) => {
+  const ItemList = [10, 20, 30, 40, 50];
   return (
     <div className="">
       <p className="text-[12px] flex">
@@ -55,11 +55,7 @@ export const TableRecord = ({
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items
-                className="absolute left-5 mt-2 w-16 origin-top-right divide-y 
-                divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black 
-                ring-opacity-5 focus:outline-none"
-              >
+              <Menu.Items className="absolute w-16 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg left-5 ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <div className="px-1 py-1 ">
                   {ItemList.map((item, index) => (
                     <Menu.Item key={index}>
@@ -93,8 +89,8 @@ const PaginationItem = ({
   totalPage,
   setPageNumber
 }: IPaginationProps) => {
-  const onPageChange = () => {
-    setPageNumber((prevState) => prevState + 1);
+  const onPageChange = (selected: number) => {
+    setPageNumber(selected);
   };
 
   return (

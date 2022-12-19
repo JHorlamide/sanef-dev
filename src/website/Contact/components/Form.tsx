@@ -324,12 +324,13 @@ export const DesktopForm = () => {
           >
             info@sanefng.com
           </a>
-          <a
+          <p className="text-white">+234 909 555 7912</p>
+          {/* <a
             href="tel:+234 909 555 7912"
             className="mt-3 font-medium hover:text-buttonColor"
           >
             +234 909 555 7912
-          </a>
+          </a> */}
         </div>
 
         <SocialIcon parentClassName="md:hidden lg:flex space-x-5 py-10" />

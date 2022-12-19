@@ -68,11 +68,6 @@ const CardSubContentDesktop = ({
   position,
   handleSetUserInfo
 }: CardProps) => {
-  // useEffect(() => {
-  //   window.addEventListener("resize", () => {
-  //     console.log("I was resized");
-  //   });
-  // });
   return (
     <div className="items-baseline space-y-4 overflow-hidden">
       <div className="text-ellipsis leading-[30px]">

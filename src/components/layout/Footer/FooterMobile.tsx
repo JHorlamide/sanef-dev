@@ -44,10 +44,10 @@ const NewsLetterForm = ({ status, message, onValidated }: NewsLetterProps) => {
   return (
     <Fragment>
       {/* SUCCESS SUBSCRIPTION MESSAGE */}
-      <div className="context mx-auto flex justify-center">
+      <div className="flex justify-center mx-auto context">
         {status === "success" && (
           <div
-            className="text-buttonColor font-bold pt-2"
+            className="pt-2 font-bold text-buttonColor"
             dangerouslySetInnerHTML={{ __html: message as string }}
           />
         )}
@@ -81,7 +81,7 @@ const NewsLetterForm = ({ status, message, onValidated }: NewsLetterProps) => {
       </div>
 
       {/* ERROR MESSAGE */}
-      <div className="container mx-auto flex justify-center pt-3">
+      <div className="container flex justify-center pt-3 mx-auto">
         {error && <div dangerouslySetInnerHTML={{ __html: error }} />}
 
         {status === "error" ? (
@@ -100,13 +100,13 @@ const FooterMobile = () => {
   const MAILCHIMP_URL = process.env.REACT_APP_MAILCHIMP_URL as string;
 
   return (
-    <section className="md:hidden lg:hidden bg-footer-image-mobile bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center pt-10">
+    <section className="flex flex-col items-center justify-center pt-10 bg-center bg-no-repeat bg-cover md:hidden lg:hidden bg-footer-image-mobile">
       <div className="">
         <img className="w-28" src={Logo} alt="" />
       </div>
 
       <div className="flex flex-col justify-center items-center space-y-2.5 mt-12">
-        <h1 className="text-white text-2xl font-bold">SANEF</h1>
+        <h1 className="text-2xl font-bold text-white">SANEF</h1>
         {FOOTER_NAVIGATION.FIRST_LINKS.map(({ id, title, path }) => (
           <RouterLink
             className="text-white hover:text-buttonColor"
@@ -117,8 +117,8 @@ const FooterMobile = () => {
         ))}
       </div>
 
-      <div className="flex flex-col justify-center items-center space-y-4 mt-12">
-        <h1 className="text-white text-2xl font-bold">Quick Actions</h1>
+      <div className="flex flex-col items-center justify-center mt-12 space-y-4">
+        <h1 className="text-2xl font-bold text-white">Quick Actions</h1>
         {FOOTER_NAVIGATION.SECOND_LINKS.map(({ id, title, path }) => (
           <RouterLink
             className="text-white hover:text-buttonColor"
@@ -132,7 +132,7 @@ const FooterMobile = () => {
       <FooterContentOne
         parentClassName="flex flex-col justify-center items-center space-y-1 mt-12"
         headingClassName="text-white text-xl font-bold"
-        contentClassName="text-white text-xs"
+        contentClassName="text-white text-xs hover:text-white"
       />
 
       <MailchimpSubscribe
@@ -150,15 +150,17 @@ const FooterMobile = () => {
         <img src={MOBILE_LINE} alt="horizontal-line" />
       </div>
 
-      <div className="mt-10 text-white font-semibold flex flex-col justify-center items-center space-y-9">
+      <div className="flex flex-col items-center justify-center mt-10 font-semibold text-white space-y-9">
         {/* <p>Terms and Condition</p>
         <p>Privacy Policy</p> */}
         <a href="mailto:info@sanefng.com" className="hover:text-buttonColor">
           info@sanefng.com
         </a>
-        <a href="tel:+234 909 555 7912" className="hover:text-buttonColor">
+
+        <p className="text-white">+234 909 555 7912</p>
+        {/* <a href="tel:+234 909 555 7912" className="hover:text-buttonColor">
           +234 909 555 7912
-        </a>
+        </a> */}
       </div>
 
       <div className="mt-10">

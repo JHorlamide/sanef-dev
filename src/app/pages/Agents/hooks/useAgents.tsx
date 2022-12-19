@@ -95,7 +95,7 @@ const useAgents = (pageNumber: number = 0, agentPerPage: number = 20) => {
         toast.error(response.message);
       })
       .catch((error) => {
-        console.log("Error updating agent: ", error.message);
+        toast.error(`Error updating agent ${error.message}`);
       });
   };
 
@@ -111,7 +111,7 @@ const useAgents = (pageNumber: number = 0, agentPerPage: number = 20) => {
         toast.error(response.message);
       })
       .catch((error) => {
-        console.log("Error deleting agent", error.message);
+        toast.error(`Error deleting agent: ${error.message}`);
       });
   };
 

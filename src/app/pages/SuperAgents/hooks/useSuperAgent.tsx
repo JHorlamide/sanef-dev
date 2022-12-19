@@ -90,7 +90,8 @@ const useSuperAgent = (
         toast.error(response.message);
       })
       .catch((error) => {
-        console.log("Remove Super Agent Error: ", error.message);
+        toast.error("Remove Super Agent Error");
+        console.log(error.message);
       });
   };
 

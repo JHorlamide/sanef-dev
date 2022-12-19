@@ -62,7 +62,8 @@ const useRegulator = (
         toast.error(response.message);
       })
       .catch((error) => {
-        console.log("Error updating regulator: ", error.message);
+        toast.error("Error updating regulator");
+        console.log(error.message);
       });
   };
 
@@ -81,7 +82,8 @@ const useRegulator = (
         toast.error(response.message);
       })
       .catch((error) => {
-        console.log("Error deleting regulators", error.message);
+        toast.error("Error deleting regulators");
+        console.log(error.message);
       });
   };
 

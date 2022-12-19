@@ -7,10 +7,11 @@ import BankHeader from "./components/BankHeader";
 import useBank from "app/pages/Banks/hooks/useBank";
 import BankTableHeader from "./components/BankTableHeader";
 import Pagination, { TableRecord } from "app/components/Pagination";
+// import ReactPaginate from "react-paginated";
 
 const BankManager = () => {
   const [pageNumber, setPageNumber] = useState(0);
-  const [bankPerPage, setBankPerPage] = useState(20);
+  const [bankPerPage, setBankPerPage] = useState(10);
   const {
     loading,
     error,
@@ -19,6 +20,11 @@ const BankManager = () => {
     removeBank,
     setSearchTerm
   } = useBank(pageNumber, bankPerPage);
+
+  // const pageCount = Math.ceil(totalPages / bankPerPage);
+
+  console.log("filteredBanks: ", filteredBanks);
+  console.log("pageNumber ", pageNumber);
 
   return (
     <DashboardLayout>

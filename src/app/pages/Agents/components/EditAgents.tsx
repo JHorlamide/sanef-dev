@@ -13,31 +13,27 @@ const SubUpdateForm = () => {
     <section className="space-y-4">
       <div className="flex space-x-3">
         {/* Serial Number */}
-        <div className="space-y-3 w-full">
+        <div className="w-full space-y-3">
           <label htmlFor="serial">Serial</label>
           <CustomInput
             id="serial"
-            className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-            focus:ring-buttonColor py-3 w-full mt-8"
+            className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
             inputProps={{
               type: "text",
-              name: "serial",
-              onChange: () => console.log("")
+              name: "serial"
             }}
           />
         </div>
 
         {/* SID Number */}
-        <div className="space-y-3 w-full">
+        <div className="w-full space-y-3">
           <label htmlFor="sid">SID</label>
           <CustomInput
             id="sid"
-            className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-            focus:ring-buttonColor py-3 w-full mt-8"
+            className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
             inputProps={{
               type: "text",
-              name: "sid",
-              onChange: () => console.log("")
+              name: "sid"
             }}
           />
         </div>
@@ -45,46 +41,40 @@ const SubUpdateForm = () => {
 
       <div className="flex space-x-3">
         {/* SubmittedTime */}
-        <div className="space-y-3 w-full">
+        <div className="w-full space-y-3">
           <label htmlFor="submittedTime">Submitted Time</label>
           <CustomInput
             id="submittedTime"
-            className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-            focus:ring-buttonColor py-3 w-full mt-8"
+            className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
             inputProps={{
               type: "text",
-              name: "submittedTime",
-              onChange: () => console.log("")
+              name: "submittedTime"
             }}
           />
         </div>
 
         {/* Completed Time */}
-        <div className="space-y-3 w-full">
+        <div className="w-full space-y-3">
           <label htmlFor="completedTime">Completed Time</label>
           <CustomInput
             id="completedTime"
-            className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-            focus:ring-buttonColor py-3 w-full mt-8"
+            className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
             inputProps={{
               type: "text",
-              name: "completedTime",
-              onChange: () => console.log("")
+              name: "completedTime"
             }}
           />
         </div>
 
         {/* Modified Time */}
-        <div className="space-y-3 w-full">
+        <div className="w-full space-y-3">
           <label htmlFor="modifiedTime">Modified Time</label>
           <CustomInput
             id="modifiedTime"
-            className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-            focus:ring-buttonColor py-3 w-full mt-8"
+            className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
             inputProps={{
               type: "text",
-              name: "modifiedTime",
-              onChange: () => console.log("")
+              name: "modifiedTime"
             }}
           />
         </div>
@@ -92,31 +82,27 @@ const SubUpdateForm = () => {
 
       <div className="flex space-x-3">
         {/* Serial Number */}
-        <div className="space-y-3 w-full">
+        <div className="w-full space-y-3">
           <label htmlFor="draft">Draft</label>
           <CustomInput
             id="draft"
-            className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-            focus:ring-buttonColor py-3 w-full mt-8"
+            className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
             inputProps={{
               type: "text",
-              name: "draft",
-              onChange: () => console.log("")
+              name: "draft"
             }}
           />
         </div>
 
         {/* SID Number */}
-        <div className="space-y-3 w-full">
+        <div className="w-full space-y-3">
           <label htmlFor="ipAddress">IP Address</label>
           <CustomInput
             id="ipAddress"
-            className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-            focus:ring-buttonColor py-3 w-full mt-8"
+            className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
             inputProps={{
               type: "text",
-              name: "ipAddress",
-              onChange: () => console.log("")
+              name: "ipAddress"
             }}
           />
         </div>
@@ -124,31 +110,27 @@ const SubUpdateForm = () => {
 
       <div className="flex space-x-3">
         {/* Serial Number */}
-        <div className="space-y-3 w-full">
+        <div className="w-full space-y-3">
           <label htmlFor="uid">UID</label>
           <CustomInput
             id="uid"
-            className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-            focus:ring-buttonColor py-3 w-full mt-8"
+            className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
             inputProps={{
               type: "text",
-              name: "uid",
-              onChange: () => console.log("")
+              name: "uid"
             }}
           />
         </div>
 
         {/* SID Number */}
-        <div className="space-y-3 w-full">
+        <div className="w-full space-y-3">
           <label htmlFor="username">Username</label>
           <CustomInput
             id="username"
-            className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-            focus:ring-buttonColor py-3 w-full mt-8"
+            className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
             inputProps={{
               type: "text",
-              name: "username",
-              onChange: () => console.log("")
+              name: "username"
             }}
           />
         </div>
@@ -166,7 +148,7 @@ const EditAgents = () => {
     <DashboardLayout>
       <AgentsHeader />
 
-      <DashboardMainView className="pl-10 py-5 h-auto">
+      <DashboardMainView className="h-auto py-5 pl-10">
         <div className="bg-white w-[690px] border rounded-lg py-6 flex flex-col space-y-10">
           <div className="space-y-4">
             <div className="flex justify-between px-5">
@@ -176,9 +158,7 @@ const EditAgents = () => {
                 <p className="mr-3 font-medium">Active</p>
                 <div className="form-check form-switch">
                   <input
-                    className="form-check-input appearance-none w-11 -ml-10 rounded-full float-left 
-                    h-5 align-top bg-buttonColor bg-no-repeat bg-contain focus:outline-none
-                    outline-buttonColor cursor-pointer shadow-sm border-buttonColor focus:outline-buttonColor"
+                    className="float-left h-5 -ml-10 align-top bg-no-repeat bg-contain rounded-full shadow-sm appearance-none cursor-pointer form-check-input w-11 bg-buttonColor focus:outline-none outline-buttonColor border-buttonColor focus:outline-buttonColor"
                     type="checkbox"
                     role="switch"
                     id="flexSwitchCheckDefault"
@@ -186,11 +166,11 @@ const EditAgents = () => {
                 </div>
               </div>
             </div>
-            <hr className="border w-full" />
+            <hr className="w-full border" />
           </div>
 
           <form
-            className="container mx-auto px-8 pb-8 space-y-10"
+            className="container px-8 pb-8 mx-auto space-y-10"
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col space-y-5">
@@ -201,8 +181,7 @@ const EditAgents = () => {
                     <label htmlFor="firstName">First name</label>
                     <CustomInput
                       id="firstName"
-                      className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                    focus:ring-buttonColor py-3 w-full mt-8"
+                      className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                       inputProps={{
                         type: "text",
                         name: "firstName",
@@ -218,8 +197,7 @@ const EditAgents = () => {
                     <label htmlFor="surname">Surname</label>
                     <CustomInput
                       id="surname"
-                      className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                      focus:ring-buttonColor py-3 w-full mt-8"
+                      className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                       inputProps={{
                         type: "text",
                         name: "surname",
@@ -232,13 +210,11 @@ const EditAgents = () => {
               </div>
 
               {/* Business name */}
-              <div className="space-y-3 w-full">
+              <div className="w-full space-y-3">
                 <label htmlFor="businessName">Business name</label>
                 <CustomInput
                   id="businessName"
-                  className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                    focus:ring-buttonColor
-                    py-3 w-full mt-8"
+                  className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                   inputProps={{
                     type: "text",
                     name: "businessName",
@@ -256,8 +232,7 @@ const EditAgents = () => {
                     <label htmlFor="email">Email</label>
                     <CustomInput
                       id="email"
-                      className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                      focus:ring-buttonColor py-3 w-full mt-8"
+                      className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                       inputProps={{
                         type: "text",
                         name: "email",
@@ -274,8 +249,7 @@ const EditAgents = () => {
                     <label htmlFor="gender">Gender</label>
                     <CustomSelect
                       id="gender"
-                      className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
-                      focus:ring-buttonColor py-3 w-full"
+                      className="w-full py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                       selectProps={{
                         name: "gender",
                         value: agentData.gender,
@@ -293,7 +267,7 @@ const EditAgents = () => {
 
               {/* Phone Number */}
               <div className="flex space-x-6">
-                <div className="space-y-3 w-full">
+                <div className="w-full space-y-3">
                   <label className="" htmlFor="preferredPhoneNumber">
                     Preferred Phone Number
                   </label>
@@ -305,8 +279,7 @@ const EditAgents = () => {
 
                     <CustomInput
                       id="preferredPhoneNumber"
-                      className="relative rounded-full border border-gray-300 outline-buttonColor
-                      focus:border-buttonColor focus:ring-buttonColor py-3 w-full px-24"
+                      className="relative w-full px-24 py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                       inputProps={{
                         type: "text",
                         name: "preferredPhoneNumber",
@@ -317,7 +290,7 @@ const EditAgents = () => {
                   </div>
                 </div>
 
-                <div className="space-y-3 w-full">
+                <div className="w-full space-y-3">
                   <label className="" htmlFor="alternativePhoneNumber">
                     Alternate Phone Number
                   </label>
@@ -329,8 +302,7 @@ const EditAgents = () => {
 
                     <CustomInput
                       id="alternativePhoneNumber"
-                      className="relative rounded-full border border-gray-300 outline-buttonColor
-                      focus:border-buttonColor focus:ring-buttonColor py-3 w-full px-24"
+                      className="relative w-full px-24 py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                       inputProps={{
                         type: "text",
                         name: "alternativePhoneNumber",
@@ -349,8 +321,7 @@ const EditAgents = () => {
                     <label htmlFor="state">State</label>
                     <CustomSelect
                       id="state"
-                      className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
-                      focus:ring-buttonColor py-3 w-full"
+                      className="w-full py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                       selectProps={{
                         name: "state",
                         value: agentData.state,
@@ -370,8 +341,7 @@ const EditAgents = () => {
                     <label htmlFor="LGA">LGA</label>
                     <CustomSelect
                       id="LGA"
-                      className="rounded-full border border-gray-300 outline-buttonColor focus:border-buttonColor
-                      focus:ring-buttonColor py-3 w-full"
+                      className="w-full py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                       selectProps={{
                         name: "LGA",
                         value: agentData.LGA,
@@ -388,15 +358,13 @@ const EditAgents = () => {
               </div>
 
               {/* Proposed Agency Service/Business Address */}
-              <div className="space-y-3 w-full">
+              <div className="w-full space-y-3">
                 <label htmlFor="proposedAgentService">
                   Proposed Agency Service/Business Address
                 </label>
                 <CustomInput
                   id="proposedAgentService"
-                  className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                    focus:ring-buttonColor
-                    py-3 w-full mt-8"
+                  className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                   inputProps={{
                     type: "text",
                     name: "proposedAgentService",
@@ -407,15 +375,13 @@ const EditAgents = () => {
               </div>
 
               {/* Choice of Super Agent */}
-              <div className="space-y-3 w-full">
+              <div className="w-full space-y-3">
                 <label htmlFor="choiceOfSuperAgent">
                   Choice of Super Agent
                 </label>
                 <CustomInput
                   id="choiceOfSuperAgent"
-                  className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                    focus:ring-buttonColor
-                    py-3 w-full mt-8"
+                  className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                   inputProps={{
                     type: "text",
                     name: "choiceOfSuperAgent",
@@ -426,7 +392,7 @@ const EditAgents = () => {
               </div>
             </div>
 
-            <hr className="border w-full" />
+            <hr className="w-full border" />
 
             {/* SubUpdateForm */}
             <SubUpdateForm
@@ -436,7 +402,7 @@ const EditAgents = () => {
 
             <div className="flex space-x-16">
               <CustomBtn
-                className="bg-buttonColor px-20 py-3 rounded-full text-white font-semibold hover:bg-lightGreen"
+                className="px-20 py-3 font-semibold text-white rounded-full bg-buttonColor hover:bg-lightGreen"
                 type="submit"
                 onKeyDown={handlePress}
               >
@@ -444,7 +410,7 @@ const EditAgents = () => {
               </CustomBtn>
 
               <CustomBtn
-                className="text-buttonColor font-semibold hover:text-lightGreen"
+                className="font-semibold text-buttonColor hover:text-lightGreen"
                 type="button"
                 onClick={() => navigate(SUPER_AGENT)}
               >

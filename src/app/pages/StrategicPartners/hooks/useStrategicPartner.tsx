@@ -62,7 +62,8 @@ const useStrategicPartner = (
         toast.error(response.message);
       })
       .catch((error) => {
-        console.log("Error updating strategic partner: ", error.message);
+        toast.error("Error updating strategic partner");
+        console.log(error.message);
       });
   };
 
@@ -79,7 +80,8 @@ const useStrategicPartner = (
         toast.error(response.message);
       })
       .catch((error) => {
-        console.log("Error deleting strategic partner", error.message);
+        toast.error("Error deleting strategic partner");
+        console.log(error.message);
       });
   };
 

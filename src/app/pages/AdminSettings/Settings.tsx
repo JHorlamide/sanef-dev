@@ -28,18 +28,18 @@ const Settings = () => {
         actionText={"Request Password Reset"}
         modalHeading={"Update Password"}
         subText={"You will receive a password reset link in your mailbox"}
-        deleteAction={() => console.log("testing")}
+        deleteAction={() => alert("testing")}
       />
 
-      <div className="pl-10 py-5 h-auto">
+      <div className="h-auto py-5 pl-10">
         <div className="bg-white w-[690px] border rounded-lg py-6 flex flex-col space-y-10">
           <div className="space-y-4">
             <h1 className="text-[18px] font-bold pl-10">Admin Settings</h1>
-            <hr className="border w-full" />
+            <hr className="w-full border" />
           </div>
 
           <form
-            className="container mx-auto px-8 space-y-10"
+            className="container px-8 mx-auto space-y-10"
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col space-y-5">
@@ -50,8 +50,7 @@ const Settings = () => {
                     <label htmlFor="firstName">First name</label>
                     <CustomInput
                       id="firstName"
-                      className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                      focus:ring-buttonColor py-3 w-full mt-8"
+                      className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                       inputProps={{
                         type: "text",
                         name: "firstName",
@@ -67,8 +66,7 @@ const Settings = () => {
                     <label htmlFor="lastName">Last Name</label>
                     <CustomInput
                       id="lastName"
-                      className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                      focus:ring-buttonColor py-3 w-full mt-8"
+                      className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                       inputProps={{
                         type: "text",
                         name: "lastName",
@@ -81,12 +79,11 @@ const Settings = () => {
               </div>
 
               {/* Business name */}
-              <div className="space-y-3 w-full">
+              <div className="w-full space-y-3">
                 <label htmlFor="email">Email Address</label>
                 <CustomInput
                   id="email"
-                  className="rounded-full border-gray-300 outline-buttonColor focus:border-buttonColor 
-                  focus:ring-buttonColor py-3 w-full mt-8"
+                  className="w-full py-3 mt-8 border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
                   inputProps={{
                     type: "email",
                     name: "email",
@@ -99,14 +96,14 @@ const Settings = () => {
 
             <div className="flex space-x-16">
               <CustomBtn
-                className="bg-buttonColor px-20 py-3 rounded-full text-white font-semibold hover:bg-lightGreen"
+                className="px-20 py-3 font-semibold text-white rounded-full bg-buttonColor hover:bg-lightGreen"
                 type="submit"
               >
                 Update Changes
               </CustomBtn>
 
               <CustomBtn
-                className="text-buttonColor font-semibold hover:text-lightGreen"
+                className="font-semibold text-buttonColor hover:text-lightGreen"
                 type="button"
                 onClick={() => navigate(AGENTS)}
               >

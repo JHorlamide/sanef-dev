@@ -9,7 +9,6 @@ const BackToTop = () => {
       document.documentElement.scrollHeight;
 
     if (bottom) {
-      console.log("at the bottom");
       setBottomPage(true);
       return;
     } else {

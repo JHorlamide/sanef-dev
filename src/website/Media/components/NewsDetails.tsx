@@ -10,11 +10,12 @@ import { urlFor } from "lib/client";
 import MobileNewTab from "components/common/MobileNewTab";
 import RecentNews from "components/common/RecentNews";
 import { Spinner } from "flowbite-react";
+import RouterLink from "components/layout/Navbar/NavLink/RouterLink";
+import { MEDIA } from "routes/ROUTES_CONSTANTS";
 
 const NewsDetails = () => {
   const { id } = useParams();
   const queries = `*[_type == 'news' && _id == '${id}'][0]`;
-
   const { data } = useData<NewsType>(queries);
 
   if (!data) {
@@ -32,7 +33,7 @@ const NewsDetails = () => {
 
   return (
     <Layout>
-      <header className="bg-gradient-to-r from-lightBlue to-darkBlue align-top pb-2">
+      <header className="pb-2 align-top bg-gradient-to-r from-lightBlue to-darkBlue">
         <Navbar />
       </header>
 
@@ -41,7 +42,7 @@ const NewsDetails = () => {
         <img
           src={urlFor(data.image).toString()}
           alt="..."
-          className="object-cover bg-no-repeat w-full h-full"
+          className="object-cover w-full h-full bg-no-repeat"
         />
       </div>
 
@@ -54,10 +55,18 @@ const NewsDetails = () => {
         />
       </div>
 
-      <section className="container mx-auto grid grid-cols-12 items-center relative py-5 px-5 md:px-32">
+      <section className="container relative grid items-center grid-cols-12 px-5 py-5 mx-auto md:px-32">
         <div className="col-span-12 lg:col-span-12">
           {/* Article Published Date */}
-          <p className="text-[12px] py-6">{moment(data?.date).format("LLL")}</p>
+          <div className="flex py-6 space-x-12">
+            <p className="text-[12px] ">{moment(data?.date).format("LLL")}</p>
+
+            <RouterLink
+              path={MEDIA}
+              title="Back"
+              className="-my-1 font-semibold text-buttonColor"
+            />
+          </div>
 
           {/* Article Headline */}
           <h1 className="text-buttonColor text-[26px] leading-[39px] font-bold">
@@ -85,9 +94,9 @@ const NewsDetails = () => {
 
       <div className="">
         <div className="mt-10">
-          <section className="flex flex-col justify-center items-center">
-            <h1 className="text-center text-2xl font-bold">Recent News</h1>
-            <hr className="border-b-4 border-buttonColor w-16 mt-2" />
+          <section className="flex flex-col items-center justify-center">
+            <h1 className="text-2xl font-bold text-center">Recent News</h1>
+            <hr className="w-16 mt-2 border-b-4 border-buttonColor" />
           </section>
         </div>
 

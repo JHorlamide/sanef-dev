@@ -4,7 +4,7 @@ import { IBank, IUpdateBankRequest } from "types/bank";
 import { getBanks, deleteBank, updateBankDetails } from "api/banks";
 import toast from "react-hot-toast";
 
-const useBank = (pageNumber: number = 0, bankPerPage: number = 20) => {
+const useBank = (pageNumber: number = 1, bankPerPage: number = 1) => {
   const navigate = useNavigate();
   // const location = useLocation();
   const [loading, setLoading] = useState(false);
@@ -80,15 +80,6 @@ const useBank = (pageNumber: number = 0, bankPerPage: number = 20) => {
       }),
     [banks, searchTerm]
   );
-
-  // const filteredBanks = banks.filter((bank) => {
-  //   if (searchTerm !== "") {
-  //     const regex = new RegExp(`${searchTerm}`, "gi");
-  //     return bank.name.match(regex);
-  //   }
-
-  //   return bank;
-  // });
 
   return {
     banks,

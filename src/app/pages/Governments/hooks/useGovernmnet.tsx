@@ -59,7 +59,8 @@ const useGovernment = (pageNumber: number = 0, govPerPage: number = 20) => {
         toast.error(response.message);
       })
       .catch((error) => {
-        console.log("Error updating government: ", error.message);
+        toast.error("Error updating government: ");
+        console.log(error.message);
       });
   };
 
@@ -77,7 +78,7 @@ const useGovernment = (pageNumber: number = 0, govPerPage: number = 20) => {
         toast.error(response.message);
       })
       .catch((error) => {
-        console.log("Error deleting regulators", error.message);
+        console.log(error.message);
       });
   };
 

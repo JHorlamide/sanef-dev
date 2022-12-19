@@ -37,7 +37,6 @@ const useEditAgentForm = (agentId: string | undefined) => {
   useEffect(() => {
     getAgentDetails(agentId)
       .then((data) => {
-        console.log("FormData: ", data);
         setAgentData({
           ...agentData,
           email: data.email,
@@ -92,8 +91,6 @@ const useEditAgentForm = (agentId: string | undefined) => {
       navigate("/agents");
       return;
     }
-
-    console.log("Add Response: ", response);
 
     toast.error(response.message);
   };

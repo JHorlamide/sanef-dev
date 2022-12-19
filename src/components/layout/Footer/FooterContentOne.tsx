@@ -1,5 +1,5 @@
 import React from "react";
-import RouterLink from "components/layout/Navbar/NavLink/RouterLink";
+// import RouterLink from "components/layout/Navbar/NavLink/RouterLink";
 
 export interface FooterContentProps {
   parentClassName?: string;
@@ -16,11 +16,7 @@ const FooterContentOne = ({
     <section className={parentClassName}>
       <h1 className={headingClassName}>Subscribe</h1>
 
-      <RouterLink
-        className={contentClassName}
-        path={"/about-us"}
-        title={"Subscribe to learn more about SANEF"}
-      />
+      <p className={contentClassName}>Subscribe to learn more about SANEF</p>
     </section>
   );
 };
