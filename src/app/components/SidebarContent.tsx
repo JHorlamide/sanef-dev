@@ -69,7 +69,7 @@ const SidebarLink = ({ path, title, className }: SidebarLinkProps) => {
 
 const SidebarUserAuth = ({ name, logOut }: SidebarUserAuthProps) => {
   return (
-    <div className="flex justify-center items-center space-x-3 mt-5">
+    <div className="flex items-center justify-center mt-5 space-x-3">
       <div className="">
         <img src={USER} alt="user-icon" className="" />
       </div>
@@ -90,17 +90,9 @@ const SidebarUserAuth = ({ name, logOut }: SidebarUserAuthProps) => {
   );
 };
 
-const HorizontalRule = () => {
-  return (
-    <div className="w-full">
-      <hr className="w-full" />
-    </div>
-  );
-};
-
 // const SidebarFooter = () => {
 //   return (
-//     <div className="flex justify-center items-center absolute bottom-0 left-10">
+//     <div className="absolute bottom-0 flex items-center justify-center left-10">
 //       <p className="text-gray-400 text-[12px] text-justify">
 //         © 2022. Shared Agent Network Expansion Facilities. <br /> All right
 //         reserved
@@ -124,12 +116,13 @@ const SidebarContent = () => {
   };
 
   return (
-    <div className="container mx-auto flex flex-col">
+    <div className="container flex flex-col mx-auto">
       <div className="mx-5 w-[101px] h-[96px] my-2">
         <img src={LOGIN_LOGO} alt="..." className="w-full h-full" />
       </div>
 
-      <HorizontalRule />
+      {/* <HorizontalRule /> */}
+      <hr className="w-full" />
 
       {/* Sidebar User Banner */}
       <SidebarUserAuth
@@ -138,7 +131,7 @@ const SidebarContent = () => {
       />
 
       {/* Sidebar Links */}
-      <div className="px-10 py-8 flex flex-col space-y-5">
+      <div className="flex flex-col px-10 py-8 space-y-5">
         {LinkItems.map((item, idx) => (
           <SidebarLink
             key={idx}
@@ -149,10 +142,11 @@ const SidebarContent = () => {
         ))}
       </div>
 
-      <HorizontalRule />
+      {/* <HorizontalRule /> */}
+      <hr className="w-full" />
 
       {/* Settings Links */}
-      <div className="px-10 py-8 flex flex-col space-y-5">
+      <div className="flex flex-col px-10 py-8 space-y-5">
         <SidebarLink
           path={"/admin-settings"}
           title={"Admin Settings"}

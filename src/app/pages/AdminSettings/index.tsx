@@ -8,7 +8,7 @@ const index = () => {
     <DashboardLayout>
       <AdminHeader />
 
-      <DashboardMainView className="pl-10 py-5 h-screen">
+      <DashboardMainView className="h-screen py-5 pl-10">
         <Setting />
       </DashboardMainView>
     </DashboardLayout>
