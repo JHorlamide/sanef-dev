@@ -15,7 +15,7 @@ export const image2 = `${IMAGES_PATH}/image-2.png`;
 export const image3 = `${IMAGES_PATH}/image-3.png`;
 export const image4 = `${IMAGES_PATH}/image-4.png`;
 
-export const Logo = "/assets/website/images/logo2.png";
+export const Logo = "/assets/website/images/logo.png";
 
 export const DEEPENING_FINANCIAL = `${HERO_IMAGE_PATH}/desktop_home_deepening_financial_inclusion.jpeg`;
 export const CENTER_OF_EXCELLENCE = `${HERO_IMAGE_PATH}/desktop_home_centre_of_excellence.jpeg`;
