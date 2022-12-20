@@ -119,13 +119,13 @@ export const MobileForm = () => {
         </label>
 
         <div>
-          <p className="z-50 absolute bg-gray-200 py-[9px] px-6 rounded-full ml-1 mt-1">
+          {/* <p className="z-50 absolute bg-gray-200 py-[9px] px-6 rounded-full ml-1 mt-1">
             +234
-          </p>
+          </p> */}
 
           <CustomInput
             id="phoneNumber"
-            className="relative w-full px-24 py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
+            className="relative w-full py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor"
             inputProps={{
               type: "text",
               name: "phoneNumber",
@@ -266,12 +266,12 @@ export const DesktopForm = () => {
               </label>
 
               <div className="">
-                <p className="z-50 absolute bg-gray-200 py-[9px] px-6 rounded-full ml-1 mt-1">
+                {/* <p className="z-50 absolute bg-gray-200 py-[9px] px-6 rounded-full ml-1 mt-1">
                   +234
-                </p>
+                </p> */}
                 <CustomInput
                   id="phoneNumber"
-                  className="relative px-24 py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor w-80"
+                  className="relative py-3 border border-gray-300 rounded-full outline-buttonColor focus:border-buttonColor focus:ring-buttonColor w-80"
                   inputProps={{
                     type: "text",
                     name: "phoneNumber",

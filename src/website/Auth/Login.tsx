@@ -10,6 +10,7 @@ import toast from "react-hot-toast";
 import AuthContext, { AuthType } from "context/AuthProvider";
 import { AuthContextType } from "context/AuthProvider";
 import { loginUser, LoginType } from "api/user";
+import { HOME } from "routes/ROUTES_CONSTANTS";
 
 type SignFormType = {
   email: string;
@@ -98,7 +99,7 @@ const Login = () => {
             </div>
 
             <div className="mx-5 w-[90.79px] h-[74px] mb-8">
-              <Link to={"/"}>
+              <Link to={HOME}>
                 <img src={LOGIN_LOGO} alt="..." className="w-full h-full" />
               </Link>
             </div>
