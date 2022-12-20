@@ -30,8 +30,8 @@ const Navbar = () => {
   return (
     <Fragment>
       {/* DESKTOP NAV */}
-      <nav className="z-50 relative py-5 px-5 md:px-14 md:py-0 lg:py-0">
-        <div className="flex justify-between items-center">
+      <nav className="relative z-50 px-5 py-5 md:px-14 md:py-0 lg:py-0">
+        <div className="flex items-center justify-between">
           {/* LOGO CONTAINER */}
           <Link to={HOME} arial-current="page">
             <img
@@ -42,8 +42,14 @@ const Navbar = () => {
           </Link>
 
           {/* NAV LINK CONTAINER */}
-          <div className="hidden justify-between items-center space-x-6 lg:flex lg:w-auto -mt-14 lg:mt-0">
+          <div className="items-center justify-between hidden space-x-6 lg:flex lg:w-auto -mt-14 lg:mt-0">
             <div className="flex flex-col mt-4 text-[14px] font-bold lg:flex-row lg:space-x-4 lg:mt-0">
+              <NavLink
+                path={HOME}
+                title={"Home"}
+                className={`text-white hover:text-buttonColor whitespace-nowrap block py-2 pr-4 pl-3`}
+              />
+
               <NavLink
                 path={ABOUT_US}
                 title={"About Us"}
@@ -73,20 +79,11 @@ const Navbar = () => {
                 title={"Contact"}
                 className={`text-white hover:text-buttonColor whitespace-nowrap block py-2 pr-4 pl-3`}
               />
-
-              {/* {NAVIGATION.map(({ id, path, title }) => (
-                <NavLink
-                  key={id}
-                  path={path}
-                  title={title}
-                  className={`text-white hover:text-buttonColor whitespace-nowrap font-semibold block py-2 pr-4 pl-3`}
-                />
-              ))} */}
             </div>
           </div>
 
           {/* AUTH BUTTON */}
-          <div className="hidden md:-mr-96 lg:mr-0 lg:flex lg:items-baseline space-x-10">
+          <div className="hidden space-x-10 md:-mr-96 lg:mr-0 lg:flex lg:items-baseline">
             <div className="block">
               <BecomeAgent
                 path={BECOME_AGENT}
@@ -100,10 +97,9 @@ const Navbar = () => {
               <NavLink
                 title={"Login"}
                 path={LOGIN}
-                className="font-semibold text-white hover:text-buttonColor border-b-4 
-                border-b-white hover:border-b-buttonColor"
+                className="font-semibold text-white border-b-4 hover:text-buttonColor border-b-white hover:border-b-buttonColor"
               />
-              {/* <hr className="border-2 border-white mt-1 hover:border-buttonColor" /> */}
+              {/* <hr className="mt-1 border-2 border-white hover:border-buttonColor" /> */}
             </div>
           </div>
 
@@ -149,7 +145,7 @@ const Navbar = () => {
             </div>
 
             <div className="flex flex-col items-center justify-center">
-              <div className="space-y-5 pb-10">
+              <div className="pb-10 space-y-5">
                 {NAVIGATION.map((link) => (
                   <NavLink
                     key={link.id}
@@ -161,9 +157,9 @@ const Navbar = () => {
                 ))}
               </div>
 
-              <hr className="border-3 w-64" />
+              <hr className="w-64 border-3" />
 
-              <div className="flex flex-col space-y-8 pt-10">
+              <div className="flex flex-col pt-10 space-y-8">
                 <BecomeAgent
                   path={BECOME_AGENT}
                   title={"Become an Agent"}
@@ -171,8 +167,7 @@ const Navbar = () => {
                 whitespace-nowrap hover:text-white hover:bg-buttonColor`}
                 />
                 {/* <CustomBtn
-                  className="px-4 py-2 border rounded-3xl font-bold bg-white text-dark hover:text-white 
-                 hover:bg-buttonColor hover:border-buttonColor"
+                  className="px-4 py-2 font-bold bg-white border rounded-3xl text-dark hover:text-white hover:bg-buttonColor hover:border-buttonColor"
                   onClick={handleNavigate}
                 >
                   Become an Agent
@@ -181,8 +176,7 @@ const Navbar = () => {
                 <NavLink
                   path={LOGIN}
                   title={"Login"}
-                  className="text-center mx-auto w-12 font-semibold border-b-4 text-white 
-                  hover:text-buttonColor hover:border-b-buttonColor"
+                  className="w-12 mx-auto font-semibold text-center text-white border-b-4 hover:text-buttonColor hover:border-b-buttonColor"
                 />
               </div>
             </div>
