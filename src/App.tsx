@@ -2,7 +2,7 @@ import React from "react";
 import RouteConfig from "routes/RouteConfig";
 import ScrollToTop from "utils/scrollToTop";
 import { Toaster } from "react-hot-toast";
-import BackToTop from "website/BackToTop";
+import BackToTop from "pages/BackToTop";
 
 function App() {
   return (

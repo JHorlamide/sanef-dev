@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import {
   HOME,
@@ -32,113 +33,151 @@ import {
   ADD_AGENT,
   EDIT_AGENT
 } from "./ROUTES_CONSTANTS";
-import Home from "website/Home";
-import About from "website/About";
-import OurPartners from "website/OurPartners";
-import ValueAddedServices from "website/ValueAddedServices";
-import Media from "website/Media";
-import ContactUs from "website/Contact";
-import BecomeAnAgent from "website/BecomeAnAgent";
-import NewsDetails from "website/Media/components/NewsDetails";
-import EventDetails from "website/Media/components/EventDetails";
-import Login from "website/Auth/Login";
-import ForgotPassword from "website/Auth/ForgotPassword";
-import ResetPassword from "website/Auth/ResetPassword";
-import AuthLayoutAuth from "app/components/AuthLayout";
-import PersistLogin from "app/components/PersistLogin";
-import NotFound from "website/NotFound";
+import AuthLayoutAuth from "pages/Dashboard/components/AuthLayout";
+import PersistLogin from "pages/Dashboard/components/PersistLogin";
+import NotFound from "pages/NotFound";
+import PreLoader from "components/layout/PreLoader/PreLoader";
 
-// Dashboard
-import AdminSettings from "app/pages/AdminSettings";
+const Home = lazy(() => import("pages/Home"));
+const About = lazy(() => import("pages/About"));
+const OurPartners = lazy(() => import("pages/OurPartners"));
+const ValueAddedServices = lazy(() => import("pages/ValueAddedServices"));
+const Media = lazy(() => import("pages/Media"));
+const ContactUs = lazy(() => import("pages/Contact"));
+const BecomeAnAgent = lazy(() => import("pages/BecomeAnAgent"));
+const NewsDetails = lazy(() => import("pages/Media/components/NewsDetails"));
+const EventDetails = lazy(() => import("pages/Media/components/EventDetails"));
+const Login = lazy(() => import("pages/Auth/Login/Login"));
+const ForgotPassword = lazy(
+  () => import("pages/Auth/ForgotPassword/ForgotPassword")
+);
+const ResetPassword = lazy(
+  () => import("pages/Auth/ResetPassword/ResetPassword")
+);
 
-// BANKS
-import Banks from "app/pages/Banks/index";
-import CreateBank from "app/pages/Banks/components/AddBank";
-import EditBank from "app/pages/Banks/components/EditBank";
+// Admin Settings
+const AdminSettings = lazy(() => import("pages/Dashboard/pages/AdminSettings"));
 
-// SUPER AGENTS
-import SuperAgents from "app/pages/SuperAgents/index";
-import AddSuperAgent from "app/pages/SuperAgents/components/AddSuperAgent";
-import EditSuperAgent from "app/pages/SuperAgents/components/EditSuperAgent";
+// Banks
+const Banks = lazy(() => import("pages/Dashboard/pages/Banks/index"));
+const CreateBank = lazy(
+  () => import("pages/Dashboard/pages/Banks/components/AddBank")
+);
+const EditBank = lazy(
+  () => import("pages/Dashboard/pages/Banks/components/EditBank")
+);
 
-// REGULATORS
-import Regulators from "app/pages/Regulators/index";
-import AddRegulator from "app/pages/Regulators/components/AddRegulator";
-import EditRegulator from "app/pages/Regulators/components/EditRegulators";
+// SuperAgents
+const SuperAgents = lazy(
+  () => import("pages/Dashboard/pages/SuperAgents/index")
+);
+const AddSuperAgent = lazy(
+  () => import("pages/Dashboard/pages/SuperAgents/components/AddSuperAgent")
+);
+const EditSuperAgent = lazy(
+  () => import("pages/Dashboard/pages/SuperAgents/components/EditSuperAgent")
+);
 
-// STRATEGIC PARTNER
-import StrategicPartners from "app/pages/StrategicPartners/index";
-import AddPartner from "app/pages/StrategicPartners/components/AddPartner";
-import EditPartner from "app/pages/StrategicPartners/components/EditPartner";
+// Regulators
+const Regulators = lazy(() => import("pages/Dashboard/pages/Regulators/index"));
+const AddRegulator = lazy(
+  () => import("pages/Dashboard/pages/Regulators/components/AddRegulator")
+);
+const EditRegulator = lazy(
+  () => import("pages/Dashboard/pages/Regulators/components/EditRegulators")
+);
 
-// GOVERNMENT/MDA
-import Governments from "app/pages/Governments/index";
-import AddGovernment from "app/pages/Governments/components/AddGovernment";
-import EditGovernment from "app/pages/Governments/components/EditGovernment";
+// StrategicPartners
+const StrategicPartners = lazy(
+  () => import("pages/Dashboard/pages/StrategicPartners/index")
+);
+const AddPartner = lazy(
+  () => import("pages/Dashboard/pages/StrategicPartners/components/AddPartner")
+);
+const EditPartner = lazy(
+  () => import("pages/Dashboard/pages/StrategicPartners/components/EditPartner")
+);
 
-// AGENTS
-import Agents from "app/pages/Agents/index";
-import AddAgents from "app/pages/Agents/components/AddAgents";
-import EditAgents from "app/pages/Agents/components/EditAgents";
+// Governments
+const Governments = lazy(
+  () => import("pages/Dashboard/pages/Governments/index")
+);
+const AddGovernment = lazy(
+  () => import("pages/Dashboard/pages/Governments/components/AddGovernment")
+);
+const EditGovernment = lazy(
+  () => import("pages/Dashboard/pages/Governments/components/EditGovernment")
+);
+
+// Agents
+const Agents = lazy(() => import("pages/Dashboard/pages/Agents/index"));
+const AddAgents = lazy(
+  () => import("pages/Dashboard/pages/Agents/components/AddAgents")
+);
+const EditAgents = lazy(
+  () => import("pages/Dashboard/pages/Agents/components/EditAgents")
+);
 
 const RouteConfig = () => {
   return (
-    <Routes>
-      {/* Public Routes */}
-      <Route path={HOME} element={<Home />} />
-      <Route path={MEDIA} element={<Media />} />
-      <Route path={CONTACT_US} element={<ContactUs />} />
-      <Route path={ABOUT_US} element={<About />} />
-      <Route path={OUR_PARTNERS} element={<OurPartners />} />
-      <Route path={VALUE_ADDED_SERVICES} element={<ValueAddedServices />} />
-      <Route path={BECOME_AGENT} element={<BecomeAnAgent />} />
-      <Route path={MEDIA_NEWS_DETAILS} element={<NewsDetails />} />
-      <Route path={MEDIA_EVENT_DETAILS} element={<EventDetails />} />
-      <Route path={LOGIN} element={<Login />} />
-      <Route path={FORGOT_PASSWORD} element={<ForgotPassword />} />
-      <Route path={RESET_PASSWORD} element={<ResetPassword />} />
+    <Suspense fallback={<PreLoader />}>
+      <Routes>
+        {/* Public Routes */}
+        <Route path={HOME} element={<Home />} />
+        <Route path={MEDIA} element={<Media />} />
+        <Route path={CONTACT_US} element={<ContactUs />} />
+        <Route path={ABOUT_US} element={<About />} />
+        <Route path={OUR_PARTNERS} element={<OurPartners />} />
+        <Route path={VALUE_ADDED_SERVICES} element={<ValueAddedServices />} />
+        <Route path={BECOME_AGENT} element={<BecomeAnAgent />} />
+        <Route path={MEDIA_NEWS_DETAILS} element={<NewsDetails />} />
+        <Route path={MEDIA_EVENT_DETAILS} element={<EventDetails />} />
+        <Route path={LOGIN} element={<Login />} />
+        <Route path={FORGOT_PASSWORD} element={<ForgotPassword />} />
+        <Route path={RESET_PASSWORD} element={<ResetPassword />} />
 
-      {/* Protected Routes */}
-      <Route element={<PersistLogin />}>
-        <Route element={<AuthLayoutAuth />}>
-          {/* Banks */}
-          <Route path={BANKS} element={<Banks />} />
-          <Route path={ADD_BANK} element={<CreateBank />} />
-          <Route path={EDIT_BANK} element={<EditBank />} />
+        {/* Protected Routes */}
+        <Route element={<PersistLogin />}>
+          <Route element={<AuthLayoutAuth />}>
+            {/* Banks */}
+            <Route path={BANKS} element={<Banks />} />
+            <Route path={ADD_BANK} element={<CreateBank />} />
+            <Route path={EDIT_BANK} element={<EditBank />} />
 
-          {/* Agents */}
-          <Route path={AGENTS} element={<Agents />} />
-          <Route path={ADD_AGENT} element={<AddAgents />} />
-          <Route path={EDIT_AGENT} element={<EditAgents />} />
+            {/* Agents */}
+            <Route path={AGENTS} element={<Agents />} />
+            <Route path={ADD_AGENT} element={<AddAgents />} />
+            <Route path={EDIT_AGENT} element={<EditAgents />} />
 
-          {/* Strategic Partners */}
-          <Route path={STRATEGIC_PARTNERS} element={<StrategicPartners />} />
-          <Route path={ADD_STRATEGIC_PARTNERS} element={<AddPartner />} />
-          <Route path={EDIT_STRATEGIC_PARTNERS} element={<EditPartner />} />
+            {/* Strategic Partners */}
+            <Route path={STRATEGIC_PARTNERS} element={<StrategicPartners />} />
+            <Route path={ADD_STRATEGIC_PARTNERS} element={<AddPartner />} />
+            <Route path={EDIT_STRATEGIC_PARTNERS} element={<EditPartner />} />
 
-          {/* Admin Settings */}
-          <Route path={ADMIN_SETTINGS} element={<AdminSettings />} />
+            {/* Admin Settings */}
+            <Route path={ADMIN_SETTINGS} element={<AdminSettings />} />
 
-          {/* Governments */}
-          <Route path={GOVERNMENTS} element={<Governments />} />
-          <Route path={ADD_GOVERNMENT} element={<AddGovernment />} />
-          <Route path={EDIT_GOVERNMENT} element={<EditGovernment />} />
+            {/* Governments */}
+            <Route path={GOVERNMENTS} element={<Governments />} />
+            <Route path={ADD_GOVERNMENT} element={<AddGovernment />} />
+            <Route path={EDIT_GOVERNMENT} element={<EditGovernment />} />
 
-          {/* Super Agents */}
-          <Route path={SUPER_AGENT} element={<SuperAgents />} />
-          <Route path={ADD_SUPER_AGENT} element={<AddSuperAgent />} />
-          <Route path={EDIT_SUPER_AGENT} element={<EditSuperAgent />} />
+            {/* Super Agents */}
+            <Route path={SUPER_AGENT} element={<SuperAgents />} />
+            <Route path={ADD_SUPER_AGENT} element={<AddSuperAgent />} />
+            <Route path={EDIT_SUPER_AGENT} element={<EditSuperAgent />} />
 
-          {/* Regulators */}
-          <Route path={REGULATORS} element={<Regulators />} />
-          <Route path={ADD_REGULATOR} element={<AddRegulator />} />
-          <Route path={EDIT_REGULATOR} element={<EditRegulator />} />
+            {/* Regulators */}
+            <Route path={REGULATORS} element={<Regulators />} />
+            <Route path={ADD_REGULATOR} element={<AddRegulator />} />
+            <Route path={EDIT_REGULATOR} element={<EditRegulator />} />
+          </Route>
         </Route>
-      </Route>
 
-      {/* Catch All */}
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+        {/* Catch All */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Suspense>
   );
 };
 
